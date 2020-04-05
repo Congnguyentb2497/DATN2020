@@ -1,0 +1,11 @@
+Editor Option: VIM
+Custom Editor Path: 
+Path Option: CmdTools
+SSH Option: OpenSSH
+Tortoise Option: false
+CURL Option: WinSSL
+CRLF Option: CRLFAlways
+Bash Terminal Option: ConHost
+Performance Tweaks FSCache: Disabled
+Use Credential Manager: Disabled
+Enable Symlinks: Disabled
