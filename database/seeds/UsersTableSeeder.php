@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
     		'remember_token'=> Str::random(10),
     		'rule'       => '1',
     		'address'    => 'Ha Noi',
-    		'department_id'=> 'VT',
+    		'department_id'=> '2',
     	]);
     }
 }
