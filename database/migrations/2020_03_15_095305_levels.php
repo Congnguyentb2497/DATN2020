@@ -16,7 +16,7 @@ class Levels extends Migration
         //
         Schema::create('levels', function (Blueprint $table) {
             $table->integer('level_id');
-            $table->string('rule');
+            $table->string('rules');
             $table->timestamps();
         });
     }

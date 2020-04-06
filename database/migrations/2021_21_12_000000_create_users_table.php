@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
              $table->string('address')->nullable();
             $table->string('password');
             $table->integer('rule');
-            // $table->foreign('rule')->references('level_id')->on('levels')->onDelete('cascade');
+            $table->foreigns('rule')->references('level_id')->on('levels')->onDelete('cascade');
             $table->string('department_id');
             $table->rememberToken();
             $table->timestamps();
