@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
     		'mobile'    => '0987654321',
     		'password'   => Hash::make('123456'),
     		'remember_token'=> Str::random(10),
-    		'role'       => '1',
+    		'rule'       => '1',
     		'address'    => 'Ha Noi',
     		'department_id'=> 'VT',
     	]);
