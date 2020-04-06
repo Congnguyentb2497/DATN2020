@@ -49,6 +49,7 @@
           <select class="rule" name="rule" class="form-control">
             <option value="">Lựa chọn chức năng</option>
          @if($levels)
+         
           @foreach( $levels as $level )
         <option  value="{{$level->level_id}}">{{$level->rules}}</option>
           @endforeach

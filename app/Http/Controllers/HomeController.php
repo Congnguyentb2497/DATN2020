@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Level;
 class HomeController extends Controller
 {
     //
@@ -20,7 +21,6 @@ class HomeController extends Controller
         {
             $remember = 1;
         }
-
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember))
              {
             

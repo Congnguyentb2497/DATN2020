@@ -37,9 +37,10 @@ class adminController extends Controller
     }
 
     public function addUser(){
+        $user = User::all();
         $levels = Level::all();
         $dep = Department::all();
-        return view('admin.addUser',compact('levels','dep'));
+        return view('admin.addUser',compact('user','levels','dep'));
     }
 
     public function postUser(Request $request){
