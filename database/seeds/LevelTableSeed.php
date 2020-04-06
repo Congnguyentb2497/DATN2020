@@ -11,14 +11,17 @@ class LevelTableSeed extends Seeder
      */
     public function run()
     {
-        Level::create([
-            'level_id'  => 1,
-            'rules' => 'KTV'
-        ],
-        [
-            'level_id'  => 2,
-            'rules' => 'Doctor'
-        ]
+        Level::create(
+            [
+                [
+                    'level_id'  => 1,
+                    'rules' => 'KTV'
+                ],
+                [
+                    'level_id'  => 2,
+                    'rules' => 'Doctor'
+                ]
+            ]
 
     );
     }
