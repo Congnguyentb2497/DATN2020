@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Level;
 class LevelsTableSeeder extends Seeder
 {
     /**
@@ -11,7 +10,7 @@ class LevelsTableSeeder extends Seeder
      */
     public function run()
     {
-        Level::create(
+        DB::table('levels')->insert(
             [
                 [
                     'level_id'  => 1,
