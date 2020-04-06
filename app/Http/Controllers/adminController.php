@@ -145,7 +145,7 @@ class adminController extends Controller
       return redirect()->route('add.department')->with('message','Thêm một khoa phòng thành công.');
     }
     public function getDelDep($id){
-        DB::table('department')->where('department_id', $id)->delete();
+        DB::table('department')->where('id', $id)->delete();
     return redirect()->route('show.department')->with('message','Đã xóa một khoa phòng');
     }
 
