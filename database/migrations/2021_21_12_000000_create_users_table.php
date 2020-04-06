@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('mobile')->nullable();
              $table->string('address')->nullable();
             $table->string('password');
-            $table->interger('rule')->insigned();
-            $table->foreign('rule')->references('id')->on('levels')->onDelete('cascade');
+            $table->integer('rule');
+            // $table->foreign('rule')->references('level_id')->on('levels')->onDelete('cascade');
             $table->string('department_id');
             $table->rememberToken();
             $table->timestamps();

@@ -18,8 +18,6 @@ class Department extends Migration
             $table->bigIncrements('department_id');
             $table->string('department_name');
             $table->string('address');
-            $table->dateTime('created_at'); 
-            $table->dateTime('update_at'); 
             $table->timestamps();
         });
     }

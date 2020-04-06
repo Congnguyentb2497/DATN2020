@@ -15,7 +15,7 @@ class Levels extends Migration
     {
         //
         Schema::create('levels', function (Blueprint $table) {
-            $table->bigIncrements('level_id');
+            $table->integer('level_id');
             $table->string('rules');
             $table->timestamps();
         });
