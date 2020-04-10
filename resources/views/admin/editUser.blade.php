@@ -62,8 +62,8 @@
           <option value="{{$user->department_id}}">{{$user->department->department_name}}</option>
       @if(isset($dep))
       @foreach($dep as $row)
-      @if($row->department_id != $user->department_id)
-      <option value="{{$row->department_id}}">{{$row->department_name}}</option>
+      @if($row->id != $user->department_id)
+      <option value="{{$row->id}}">{{$row->department_name}}</option>
       @endif
       @endforeach
       @endif

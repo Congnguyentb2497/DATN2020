@@ -51,7 +51,7 @@
          @if($levels)
          
           @foreach( $levels as $level )
-        <option  value="{{$level->level_id}}">{{$level->rules}}</option>
+        <option  value="{{$level->id}}">{{$level->rules}}</option>
           @endforeach
         @endif
             </select>
