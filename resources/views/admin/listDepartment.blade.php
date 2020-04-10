@@ -54,6 +54,7 @@
       </tr>
     </thead>
     <tbody style="font-size: 17px;">
+      @if(isset($deps))
     	@foreach($deps as $dep)
       <tr style="font-size: 15px;">
         <td>{{$dep->id}}</td>
@@ -65,6 +66,7 @@
         </td>
       </tr>
       @endforeach
+      @endif
     </tbody>
   </table> 
 </div>

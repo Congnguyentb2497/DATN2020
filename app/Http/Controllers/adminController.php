@@ -73,7 +73,7 @@ class adminController extends Controller
   public function getEditUser($id){
     $dep = Department::all();
     $user = User::find($id);
-    return view ('admin.editUser',['user'=>$user,'dep'=>$dep]);
+    return view ('admin.editUser',['user'=>$user,'deps'=>$dep]);
 }
     public function postEditUser(Request $request,$id)
 {

@@ -74,6 +74,7 @@
       </tr>
     </thead>
     <tbody>
+        @if(isset($notices))
         @foreach($notices as $notice)
       <tr style="font-size: 15px;">
         <td>{{$notice->id}}</td>
@@ -87,6 +88,7 @@
         </td>
       </tr>
       @endforeach
+      @endif
     </tbody>
   </table>
   <div class="page-nav text-right">
