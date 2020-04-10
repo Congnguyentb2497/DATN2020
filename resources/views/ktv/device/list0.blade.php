@@ -173,7 +173,7 @@
 						<select type="text" name="select_dept" style="font-style: 17px;">
 							@if(isset($depts))
 							@foreach($depts as $rows)
-							<option  value="{{$rows->department_id}}">{{$rows->department_name}}</option>
+							<option  value="{{$rows->id}}">{{$rows->department_name}}</option>
 							@endforeach
 							@endif
 						</select>

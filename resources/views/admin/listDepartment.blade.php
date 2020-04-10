@@ -56,17 +56,17 @@
     <tbody style="font-size: 17px;">
     	@foreach($deps as $dep)
       <tr style="font-size: 15px;">
-        <td>{{$dep->department_id}}</td>
+        <td>{{$dep->id}}</td>
         <td>{{$dep->department_name}}</td>
         <td>{{$dep->address}}</td>
         <td style="text-align: center;">
-          <a href="{{route('edit.dep',['id'=>$dep->department_id])}}"><i class="material-icons" style="cursor: pointer;">mode_edit</i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="{{route('del.dep',['id'=>$dep->department_id])}}" onclick="return confirm('Bạn có chắc chắn xóa?')"><i class="material-icons" style="color: red; cursor: pointer;">delete_sweep</i></a>
+          <a href="{{route('edit.dep',['id'=>$dep->id])}}"><i class="material-icons" style="cursor: pointer;">mode_edit</i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="{{route('del.dep',['id'=>$dep->id])}}" onclick="return confirm('Bạn có chắc chắn xóa?')"><i class="material-icons" style="color: red; cursor: pointer;">delete_sweep</i></a>
         </td>
       </tr>
       @endforeach
     </tbody>
-  </table>
+  </table> 
 </div>
     <div class="page-nav text-right">
     <nav aria-label="Page navigation">

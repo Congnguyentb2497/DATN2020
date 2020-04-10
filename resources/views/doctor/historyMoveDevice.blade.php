@@ -86,7 +86,7 @@ hr{
 						<option value="">Lựa chọn khoa phòng điều chuyển đến</option>
 						@if(isset($depts))
 						@foreach($depts as $row)
-						<option value="{{$row->department_id}}">{{$row->department_name}}</option>
+						<option value="{{$row->id}}">{{$row->department_name}}</option>
 						@endforeach
 						@endif
 					</select></div>

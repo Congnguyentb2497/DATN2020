@@ -89,8 +89,8 @@ hr{
 						<option value="">Lựa chọn khoa phòng điều chuyển đến</option>
 						@if(isset($depts))
 						@foreach($depts as $row)
-						@if($row->department_id != Auth::user()->department_id)
-						<option value="{{$row->department_id}}">{{$row->department_name}}</option>
+						@if($row->id != Auth::user()->department_id)
+						<option value="{{$row->id}}">{{$row->department_name}}</option>
 						@endif
 						@endforeach
 						@endif

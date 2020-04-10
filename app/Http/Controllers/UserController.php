@@ -74,8 +74,8 @@ public function postPswKTV(Request $request, $id){
 //accept notice biến cần tuyền từ route sang theo đúng thứ tự $user_id, $id, $dv_id, $status
 public function acceptNotice( $user_id, $id, $dv_id, $status){
     $notice = Notification::find($id);
-    $dep_now = Department::where(['department_id'=>$notice->dept_now])->pluck('department_name')->first();
-    $dep_next = Department::where(['department_id'=>$notice->dept_next])->pluck('department_name')->first();
+    $dep_now = Department::where(['id'=>$notice->dept_now])->pluck('department_name')->first();
+    $dep_next = Department::where(['id'=>$notice->dept_next])->pluck('department_name')->first();
     $device = DB::table('device')->where('id','=',$dv_id)->first();
     if((int)$status == 0)
     {

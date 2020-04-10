@@ -14,7 +14,7 @@
  		<div class="alert alert-danger">
  			@foreach($errors->all() as $error)
  				{{$error}}<br>
- 			@endforeach
+ 			@endforeach 
  		</div>
  	@endif
  	@if(session('message'))
@@ -24,7 +24,7 @@
  	@endif
  </div>
  <hr>
-<form action="{{route('add.user')}}" method="post" class="form">
+<form action="{{route('post.user')}}" method="post" class="form">
 	@csrf
     <table class="addUser" border="0" width="600px;">
       <tr>
@@ -63,7 +63,7 @@
           <option value="">Lựa chọn khoa phòng</option>
           @if($dep)
           @foreach ($dep as $dep)
-          <option value="{{$dep->department_id}}">{{$dep->department_name}}</option>
+          <option value="{{$dep->id}}">{{$dep->department_name}}</option>
           @endforeach
           @endif
             </select></td>

@@ -23,7 +23,7 @@ Route::get('/admin',function(){
 Route::group(['prefix'=>'admin'],function(){
 		//admin/user/show
 		Route::get('list','adminController@index')->name('show.user');
-		Route::get('add','adminController@addUser')->name('add.user');	
+		Route::get('add','adminController@addUser')->name('add.user');	 
 		Route::post('add','adminController@postUser')->name('post.user');
 		Route::get('edit/{id}','adminController@getEditUser')->name('edit.user');
 		Route::post('edit/{id}','adminController@postEditUser')->name('post.editUser');

@@ -35,7 +35,7 @@ class adminController extends Controller
         $users = $users->paginate($limit);
         return view('admin.listUser')->with( ['users' => $users,'deps'=>$deps]);
     }
-
+ 
     public function addUser(){
         $user = User::all();
         $levels = Level::all();
@@ -104,7 +104,7 @@ class adminController extends Controller
 }
 //department
     public function showDepartment(Request $request){
-        $dep = Department::latest();
+        $dep = Department::latest();   
         if($request->searchName)
         {
             $dep = $dep->where('department_name','like','%'.$request->searchName.'%');
@@ -114,7 +114,7 @@ class adminController extends Controller
     }
     public function getEditDep($id){
 
-        $dep = Department::find($id);
+        $dep = Department::find($id); 
         return view ('admin.editDep',['dep'=>$dep]);
     }
 

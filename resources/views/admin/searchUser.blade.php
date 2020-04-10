@@ -22,7 +22,7 @@
         <option >Chọn Khoa</option>
         @if($dep)
         @foreach ($dep as $dep)
-        <option name="depName" value="{{$dep->department_id}}">{{$dep->department_name}}</option>
+        <option name="depName" value="{{$dep->id}}">{{$dep->department_name}}</option>
         @endforeach
         @endif
       </select>

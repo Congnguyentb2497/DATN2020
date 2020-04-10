@@ -20,7 +20,7 @@
   @endif
  </div>
   <hr>
-<form action="{{route('post.dep',['id'=>$dep->department_id])}}" method="post" class="form">
+<form action="{{route('post.dep',['id'=>$dep->id])}}" method="post" class="form">
   @csrf
     <table border="0">
       <tr>

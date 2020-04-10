@@ -121,7 +121,7 @@
               <option value="">Mọi khoa</option>
               @if(isset($departments))
               @foreach($departments as $rows)
-              <option value="{{ $rows->department_id }}" >
+              <option value="{{ $rows->id }}" >
                 {{ $rows->department_name }}
               </option>
               @endforeach

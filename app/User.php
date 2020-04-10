@@ -42,7 +42,7 @@ class User extends Authenticatable
     }
     public function department()
     {
-        return $this->hasOne('App\Department', 'department_id', 'department_id');
+        return $this->hasOne('App\Department', 'department_id', 'id');
     }
     function isAdmin()
     {
