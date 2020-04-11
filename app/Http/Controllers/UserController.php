@@ -55,13 +55,6 @@ public function getPswKTV($id){
 
 public function postPswKTV(Request $request, $id){
     $user = User::find($id);
-    $oldPsw = $user->password;
-    $newPsw = Hash::make($request->current_psw);
-    if($oldPsw != $newPsw)
-    {
-        return redirect()->route('getPsw.ktv',['id'=>$id])->with('message','Mật khẩu cũ không đúng');
-    }else
-    {
          $this->validate($request,
         [
             'new_psw' => 'different:current-psw',
@@ -76,7 +69,6 @@ public function postPswKTV(Request $request, $id){
         $user->password = Hash::make($request->new_psw);
         $user->save();
      return redirect()->route('get.home')->with('message','Cập nhật mật khẩu thành công!');
-    }
 
 }
 //accept notice biến cần tuyền từ route sang theo đúng thứ tự $user_id, $id, $dv_id, $status

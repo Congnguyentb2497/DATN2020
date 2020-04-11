@@ -133,11 +133,6 @@ class DoctorController extends Controller
 
     public function postPsw(Request $request, $id){
         $user = User::find($id);
-        $oldPsw = $user->password;
-        $newPsw = Hash($request->current_psw);
-        if($oldPsw != $newPsw){
-            return redirect()->route('doctor.getPsw',['id'=>$id])->with('message','Mật khẩu cũ không đúng');
-        }else{
              $this->validate($request,
             [
                 'new_psw' => 'different:current-psw',
@@ -152,6 +147,6 @@ class DoctorController extends Controller
             $user->password = Hash::make($request->new_psw);
             $user->save();
          return redirect()->route('doctor.home')->with('message','Cập nhật mật khẩu thành công!');
-        }
+        
     }
 }
