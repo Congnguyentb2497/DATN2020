@@ -10,8 +10,8 @@ class Department extends Model
     protected $table = 'department';
     protected $primaryKey = 'id';
 
-    // public function users()
-    // {
-    // 	return $this->hasMany('App\User', 'department_id', 'department_id');
-    // }
+    public function users()
+    {
+    	return $this->hasMany('App\User', 'department_id', 'id');
+    }
 }
