@@ -14,8 +14,8 @@ class CreateDeviceAccessoryTable extends Migration
     public function up()
     {
         Schema::create('device_accessory', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigIncrements('acc_id');
+            $table->integer('id');
+            $table->integer('acc_id');
             $table->integer('amount')->nullable();
             $table->date('export_date')->nullable();
             $table->timestamps();
