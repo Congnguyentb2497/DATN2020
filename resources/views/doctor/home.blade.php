@@ -42,7 +42,7 @@
 
   }
 </style>
-<h2>Bạn có <span style="color: red;"> {{$notices->total()}} </span>thông báo chưa xác nhận</h2>
+<h2>Danh sách thông báo</h2>
 <div class="container2">
   <!-- <div>
     <div style="padding: 0px; margin-left:50px; width: 40%; font-size: 14px;">
@@ -78,6 +78,7 @@
       </tr>
     </thead>
     <tbody>
+    $if(isset($notices))
         @foreach($notices as $notice)
       <tr style="font-size: 15px;">
         <td>{{$notice->id}}</td>
@@ -89,6 +90,7 @@
         </td>
       </tr>
       @endforeach
+      @endif
     </tbody>
   </table>
   <div class="page-nav text-right">
