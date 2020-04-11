@@ -60,11 +60,11 @@ label {
   <form action="{{route('doctor.postPsw',['id'=>$user->id])}}" method="post">
          @csrf
     <label for="password">Nhập mật khẩu cũ</label><br>
-    <input type="password"  name="current-psw" ><br>
+    <input type="password"  name="current_psw" ><br>
     <label for="password">Nhập mật khẩu mới</label><br>
     <input type="password"  name="new_psw" ><br>
     <label for="password">Nhập lại mật khẩu mới</label><br>
-    <input type="password"  name="repeat-psw" ><br>
+    <input type="password"  name="repeat_psw" ><br>
     <input class="btn" type="submit" value="Đổi mật khẩu" style="margin-left: 50px" ></input>
     <div class="btn"><a href="{{route('doctor.home')}}" style="color: black; text-decoration: none;">Hủy</a></div>
   </form>

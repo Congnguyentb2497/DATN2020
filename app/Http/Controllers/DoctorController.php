@@ -112,13 +112,40 @@ class DoctorController extends Controller
      	return view('doctor.edit',compact('user'));
     }
      public function postEdit(Request $request, $id){
-     	return view('doctor.home');
+        $this->validate($request,
+        [
+            'phone' => 'min:10'
+        ],
+        [
+            'phone.min'=>'Số điện thoại ít nhất 10 số!'
+        ]);
+       $user=User::find($id);
+       $user ->fullname = $request->fullname;
+       $user ->mobile = $request->phone;
+       $user ->address = $request->address;
+       $user->save();
+     	return view('doctor.home')->with('message','Cập nhật thông tin thành công!');
     }
      public function getPsw($id){
      	$user = User::find($id);
      	return view('doctor.resetPsw',compact('user'));
     }
     public function postPsw(Request $request, $id){
-    	return view('doctor.home');
+        
+        $this->validate($request,
+    [
+        'new_psw' => 'different:current-psw|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,20}$/',
+        'repeat-psw' => 'same:new_psw',
+
+    ],
+    [
+        'new_psw.regex'=>'Mật khẩu tối thiểu 6 và tối đa 20 kĩ tự, bao gồm chữ thường, chữ hoa, số và kí tự đặc biệt @,$,*...',
+        'new_psw.different'=>'Mật khẩu mới phải khác mật khẩu cũ!',
+        'repeat_psw.same'=>'Mật khẩu xác nhận không khớp!'
+    ]);
+    $user=User::find($id); 
+  $user->password = Hash::make($request->new_psw);
+  $user->save();
+  return redirect()->route('doctor.getPsw')->with('message','Cập nhật mật khẩu thành công!');
     }
 }
