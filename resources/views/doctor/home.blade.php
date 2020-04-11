@@ -42,31 +42,9 @@
 
   }
 </style>
-<h2>Danh sách thông báo</h2>
+<h2>Đang có {{$notices->total()}} thông báo</h2>
 <div class="container2">
-  <!-- <div>
-    <div style="padding: 0px; margin-left:50px; width: 40%; font-size: 14px;">
-      @if(isset($message))
-      <div class="alert alert-success" style="width: 70%;">
-        {{ $message }}
-      </div>
-      @endif
-    </div>
-    <form action="" method="get" style="float: left;">
-      @csrf
-      <table width="100%" border="0" class="input-group mb-3">
-        <tr>
-            <td width="40%"><label for="date">Từ ngày</label>
-            <input type="date" id="fromdate" name="fromDate" ></td>
-            <td width="40%"> <label for="date">Đến ngày</label>
-            <input type="date" id="todate" name="toDate"></td>
-            <td><div style="border-top: 0px;"><button class="btnsearch" type="submit" ><i class="fa fa-search"></i> Tìm kiếm</button></div>
-            </td>
-        </tr>
-      </table>  
-    </form>
-  </div><br><br> --><br>
-  
+  <br>
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #00BD9C;">
       <tr style="font-size: 20px;">

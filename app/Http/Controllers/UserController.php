@@ -45,7 +45,7 @@ class UserController extends Controller
    $user ->mobile = $request->phone;
    $user ->address = $request->address;
    $user->save();
-   return view('ktv.index')->with('message','Cập nhật thông tin thành công!');
+   return redirect()->route('get.home')->with('message','Cập nhật thông tin thành công!');
 }
 
 public function getPswKTV($id){
@@ -54,21 +54,29 @@ public function getPswKTV($id){
 }
 
 public function postPswKTV(Request $request, $id){
-  $this->validate($request,
-    [
-        'new_psw' => 'different:current-psw|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,20}$/',
-        'repeat-psw' => 'same:new_psw',
+    $user = User::find($id);
+    $oldPsw = $user->password;
+    $newPsw = Hash::make($request->current_psw);
+    if($oldPsw != $newPsw)
+    {
+        return redirect()->route('getPsw.ktv')->with('message','Mật khẩu cũ không đúng');
+    }else
+    {
+         $this->validate($request,
+        [
+            'new_psw' => 'different:current-psw',
+            'repeat-psw' => 'same:new_psw',
 
-    ],
-    [
-        'new_psw.regex'=>'Mật khẩu tối thiểu 6 và tối đa 20 kĩ tự, bao gồm chữ thường, chữ hoa, số và kí tự đặc biệt @,$,*...',
-        'new_psw.different'=>'Mật khẩu mới phải khác mật khẩu cũ!',
-        'repeat-psw.same'=>'Mật khẩu xác nhận không khớp!'
+         ],
+         [
+    'new_psw.regex'=>'Mật khẩu tối thiểu 6 và tối đa 20 kĩ tự, bao gồm chữ thường, chữ hoa và số ',
+    'new_psw.different'=>'Mật khẩu mới phải khác mật khẩu cũ!',
+    'repeat_psw.same'=>'Mật khẩu xác nhận không khớp!'
     ]);
-  $user=User::find($id);
-  $user->password = Hash::make($request->new_psw);
-  $user->save();
-  return view('ktv.index')->with('message','Cập nhật mật khẩu thành công!');
+        $user->password = Hash::make($request->new_psw);
+        $user->save();
+     return redirect()->route('getPsw.ktv')->with('message','Cập nhật mật khẩu thành công!');
+    }
 
 }
 //accept notice biến cần tuyền từ route sang theo đúng thứ tự $user_id, $id, $dv_id, $status
