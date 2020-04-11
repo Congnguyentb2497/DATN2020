@@ -16,7 +16,7 @@ class DoctorController extends Controller
     //
     public function index(){
         $notice = Notification::where('status','=',4)->orWhere('status',6)->orWhere('status',8)->paginate(10);
-    	// return view('doctor.home',['notices'=>$notice]);
+    	return view('doctor.home',['notices'=>$notice]);
     }
 
     public function showDev(Request $request, $id){
