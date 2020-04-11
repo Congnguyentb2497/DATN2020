@@ -136,7 +136,7 @@ class DoctorController extends Controller
         $oldPsw = $user->password;
         $newPsw = Hash($request->current_psw);
         if($oldPsw != $newPsw){
-            return redirect()->route('doctor.getPsw')->with('message','Mật khẩu cũ không đúng');
+            return redirect()->route('doctor.getPsw',['id'=>$id])->with('message','Mật khẩu cũ không đúng');
         }else{
              $this->validate($request,
             [
@@ -151,7 +151,7 @@ class DoctorController extends Controller
         ]);
             $user->password = Hash::make($request->new_psw);
             $user->save();
-         return redirect()->route('doctor.getPsw')->with('message','Cập nhật mật khẩu thành công!');
+         return redirect()->route('doctor.home')->with('message','Cập nhật mật khẩu thành công!');
         }
     }
 }

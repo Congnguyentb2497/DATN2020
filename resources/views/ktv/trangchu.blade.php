@@ -41,26 +41,6 @@
 </style>
 <h2>Bạn có <span style="font-size: 35px; color: red;">{{$notices->total()}}</span> thông báo</h2>
 <div class="container2">
-    <div style="padding: 0px; margin-left: : 150px; width: 40%; font-size: 14px;">
-      @if(session('message'))
-      <div class="alert alert-success" style="width: 70%;">
-        {{session('message')}}
-      </div>
-      @endif
-    </div>
-   <!--  <form action="" method="get" style="float: left;">
-      @csrf
-      <table width="100%" border="0" class="input-group mb-3">
-        <tr>
-            <td> <label for="date">Từ ngày</label>
-            <input type="date" id="fromdate" name="fromDate" ></td>
-            <td> <label for="date">Đến ngày</label>
-            <input type="date" id="todate" name="toDate"></td>
-            <td><button class="btnsearch" type="submit" ><i class="fa fa-search"></i></button>
-            </td>
-        </tr>
-      </table>  
-    </form> -->
   <br>
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #00BD9C;">
