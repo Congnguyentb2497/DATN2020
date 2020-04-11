@@ -60,13 +60,6 @@
         <td>
          <select class="dep" name="dep" class="form-control">
           <option value="{{$user->department_id}}">{{$user->department->department_name}}</option>
-      @if(isset($deps))
-      @foreach($deps as $row)
-      @if($row->id != $user->department_id)
-      <option value="{{$row->id}}">{{$row->department_name}}</option>
-      @endif
-      @endforeach
-      @endif
     </select></td>
       </tr>
       <tr>
