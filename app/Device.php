@@ -10,16 +10,16 @@ class Device extends Model
     protected $table = "device";
     public $timestamp = false;
     public function dv_type(){
-    	return $this->belongsTo('App\Device_type','dv_type_id','id');
+    	return $this->belongsTo('App\Device_type','dv_type_id');
     }
     public function accessory(){
     	return $this->belongsToMany('App\Accessory','Device_accessory','dv_id','acc_id');
     }
     public function provider(){
-    	return $this->hasOne('App\Provider','provider_id');
+    	return $this->belongsTo('App\Provider','provider_id');
     }
     public function department(){
-    	return $this->hasOne('App\Department', 'department_id');
+    	return $this->belongsTo('App\Department','department_id');
     }
     
 }
