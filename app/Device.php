@@ -16,10 +16,10 @@ class Device extends Model
     	return $this->belongsToMany('App\Accessory','Device_accessory','dv_id','acc_id');
     }
     public function provider(){
-    	return $this->belongsTo('App\Provider','provider_id','id');
+    	return $this->hasOne('App\Provider','provider_id');
     }
     public function department(){
-    	return $this->belongsTo('App\Department', 'id', 'department_id');
+    	return $this->hasOne('App\Department', 'department_id');
     }
     
 }
