@@ -16,7 +16,7 @@ class CreateDeviceAccessoryTable extends Migration
         Schema::create('device_accessory', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('acc_id');
-            $table->integer('dvSS_id');
+            $table->integer('dv_id');
             $table->integer('amount')->nullable();
             $table->date('export_date')->nullable();
             $table->timestamps();
