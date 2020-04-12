@@ -394,8 +394,7 @@ public function moveDevice(Request $request, $id)
     $device->department_id = $request->select_dept;
     $device->handover_date = date('Y-m-d H:i:s');
     $device->save();
-    $devices = Device::find($id);
-    return redirect()->route('device.show0')->with('message','Đã bàn giao thiết bị cho khoa '.$devices->department->department_name);
+    return redirect()->route('device.show0')->with('message','Đã bàn giao thiết bị thành công');
 }
     //getEditDevice
 public function getEditDevice($id){
