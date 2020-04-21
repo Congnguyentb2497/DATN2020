@@ -39,7 +39,7 @@ input[type=text], input[type=date], select[type=text] {
     color: white;
     padding: 7px 7px;
     margin-top: 5px;
-    margin-left:380px;
+    margin-left:352px;
     margin-bottom: 5px;
     border: none;
     border-radius: 4px;
