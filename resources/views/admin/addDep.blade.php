@@ -53,13 +53,13 @@
   box-sizing: border-box;
 }
 .btn {
-  width: 300px;
+  width: 100%px;
   background-color: green;
   color: white;
   padding: 7px 7px;
   margin: 5px 0;
-  margin-left: 230px;
-  border: none;
+/*  margin-left: 230px;
+*/  border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 20px;
@@ -71,14 +71,14 @@
   color: black;
 }
   .canl{
-    width: 300px;
+    width: 100%;
     text-align: center;
     background-color: black;
     color: white;
     padding: 7px 7px;
     margin-top: 5px;
-    margin-left:230px;
-    margin-bottom: 5px;
+/*    margin-left:230px;
+*/    margin-bottom: 5px;
     border: none;
     border-radius: 4px;
     font-size: 20px;

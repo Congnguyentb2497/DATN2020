@@ -78,7 +78,7 @@
       </tr>
       <tr><td colspan="2" style="text-align: right;"><button type="submit" class="btn ">Lưu</button></div></td></tr>
       </table>
-          <div class="canl"><a href="{{route('add.user')}}" style="text-decoration: none;color: white;">Xóa</a></div>         
+          <div class="canl"><a href="{{route('show.user')}}" style="text-decoration: none;color: white;">Hủy</a></div>         
 </form>
 </hr>
   </div>
