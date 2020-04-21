@@ -36,12 +36,14 @@
         <td> <input type="text"  name="address" class="form-control"></td>
       </tr>
       <tr>
-        <td colspan="2" style="text-align: center;">
+        <td></td>
+        <td style="text-align: center;">
           <button type="submit" class="btn">Lưu</button>
         </td>
       </tr>
       <tr>
-        <td colspan="2" style="text-align: center;"><div class="canl"><a style="text-decoration: none; color: white;" href="{{route('show.department')}}" >Hủy</a></div></td>
+        <td></td>
+        <td style="text-align: center;"><div class="canl"><a style="text-decoration: none; color: white;" href="{{route('show.department')}}" >Hủy</a></div></td>
       </tr>
     </table>
     <br>
