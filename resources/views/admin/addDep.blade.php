@@ -27,21 +27,25 @@
         <td width="30%">
           <label><b>Tên khoa phòng</b></label>
         </td>
+        <td width="5%"></td>
         <td>
            <input type="text"  name="depName"  required class="form-control">
         </td>
       </tr>
       <tr>
         <td><label><b>Địa chỉ</b></label></td>
+        <td></td>
         <td> <input type="text"  name="address" class="form-control"></td>
       </tr>
       <tr>
+        <td></td>
         <td></td>
         <td style="text-align: center;">
           <button type="submit" class="btn">Lưu</button>
         </td>
       </tr>
       <tr>
+        <td></td>
         <td></td>
         <td style="text-align: center;"><div class="canl"><a style="text-decoration: none; color: white;" href="{{route('show.department')}}" >Hủy</a></div></td>
       </tr>
@@ -55,7 +59,7 @@
   box-sizing: border-box;
 }
 .btn {
-  width: 100%px;
+  width: 100%;
   background-color: green;
   color: white;
   padding: 7px 7px;
