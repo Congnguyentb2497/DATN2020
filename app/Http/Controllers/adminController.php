@@ -46,13 +46,13 @@ class adminController extends Controller
     public function postUser(Request $request){
       $this->validate($request,
         [
-            'email'=>'required|email',
+            'email'=>'required|email|unique:users,email',
             'psw'=>'required|min:5|max:20',
             'psw-repeat' => 'required|same:psw',
             'rule'=>'required'
         ],
-        [
-            'email.unique'=>'Email đã có người sủ dụng!',
+        [   'email.required' => 'Bạn chưa nhập email',
+            'email.unique'=>'Email đã có người sử dụng!',
             'psw.min'=>'Mật khẩu ít nhất 5 kí tự!',
             'psw.max'=>'Mật khẩu tối đa 20 kí tự!',
             'psw.required'=>'Bạn chưa nhập password',

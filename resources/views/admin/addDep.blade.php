@@ -25,14 +25,14 @@
     <table border="0">
       <tr>
         <td width="30%">
-          <label for="email"><b>Tên khoa phòng</b></label>
+          <label><b>Tên khoa phòng</b></label>
         </td>
         <td>
            <input type="text"  name="depName"  required class="form-control">
         </td>
       </tr>
       <tr>
-        <td><label for="email"><b>Địa chỉ</b></label></td>
+        <td><label><b>Địa chỉ</b></label></td>
         <td> <input type="text"  name="address" class="form-control"></td>
       </tr>
       <tr>

@@ -9,13 +9,14 @@ use App\Notification;
 use App\Device;
 use DB;
 use Device_type;
+use History_ktv;
 
 
 class DoctorController extends Controller
 {
     //
     public function index(){
-        $notice = Notification::where('status','=',4)->orWhere('status',6)->orWhere('status',8)->paginate(10);
+        $notice = Notification::where('status','=',4)->orWhere('status',6)->orWhere('status',8)->orWhere('status',12)->paginate(10);
     	return view('doctor.home',['notices'=>$notice]);
     }
 
@@ -25,7 +26,7 @@ class DoctorController extends Controller
         if($request->dv_name){
             $devices = $devices->where('dv_name','like','%'.$request->dv_name.'%');
         }
-        $devices = $devices->paginate(5);
+        $devices = $devices->paginate(8);
     	return view('doctor.listDevice',['devices'=>$devices,'user'=>$user]);
     }
 
@@ -103,9 +104,9 @@ class DoctorController extends Controller
     }
 
     //lịch sử điều chuyển thiết bị
-     public function historyMoveDev(){
-     	return view('doctor.historyMoveDevice');
-    }
+    //  public function historyMoveDev(){
+    //  	return view('doctor.historyMoveDevice');
+    // }
     //edit, reset Password,
      public function editDoctor($id){
      	$user = User::find($id);

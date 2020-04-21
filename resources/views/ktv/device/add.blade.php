@@ -151,7 +151,8 @@ label {
       <tr>
         <td><label>Số lưu hành</label></td>
         <td><input type="text"  name="license_number" ></td>
-        <td colspan="2"></td>
+        <td><label>Ngày cấp</label></td>
+        <td><input type="date"  name="license_number_date" ></td>
       </tr>
       <tr>
        <td></td>

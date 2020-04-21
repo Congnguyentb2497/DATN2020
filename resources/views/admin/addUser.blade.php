@@ -2,7 +2,7 @@
 @section('content')
 <!-- -->
 <style type="text/css">
-  input[type=text], input[type=password], select {
+  input[type=text], input[type=password],input[type=email], select {
     width: 300px;
     height: 40px;
   }
@@ -41,12 +41,12 @@
       </tr>
       <tr>
         <td><label for="email"><b>Email:</b></label></td>
-        <td><input type="text"  name="email" required class="form-control"></td>
+        <td><input type="email"  name="email" required class="form-control"></td>
       </tr>
       <tr>
         <td><label><b>Phân quyền:</b></label></td>
         <td>
-          <select class="rule" name="rule" class="form-control">
+          <select class="rule" name="rule" class="form-control" required>
             <option value="">Lựa chọn chức năng</option>
          @if($levels)
          
@@ -59,7 +59,7 @@
       </tr>
       <tr>
         <td><label><b>Khoa:</b></label></td>
-        <td><select class="dep" name="dep" class="form-control">
+        <td><select class="dep" name="dep" required class="form-control">
           <option value="">Lựa chọn khoa phòng</option>
           @if($dep)
           @foreach ($dep as $dep)
@@ -78,10 +78,7 @@
       </tr>
       <tr><td colspan="2" style="text-align: right;"><button type="submit" class="btn ">Lưu</button></div></td></tr>
       </table>
-          <div class="canl"><a href="{{route('add.user')}}" style="text-decoration: none;color: white;">Xóa</a></div>
-     
-  
-    
+          <div class="canl"><a href="{{route('add.user')}}" style="text-decoration: none;color: white;">Xóa</a></div>         
 </form>
 </hr>
   </div>

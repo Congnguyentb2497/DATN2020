@@ -394,6 +394,12 @@ public function moveDevice(Request $request, $id)
     $device->department_id = $request->select_dept;
     $device->handover_date = date('Y-m-d H:i:s');
     $device->save();
+    $notice = new Notification;
+    $notice->req_content = "Bàn giao thiết bị";
+    $notice->dv_id = $id;
+    $notice->dept_now = $request->select_dept;
+    $notice->status = 12;
+    $notice->save();
     return redirect()->route('device.show0')->with('message','Đã bàn giao thiết bị thành công');
 }
     //getEditDevice

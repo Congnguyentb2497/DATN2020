@@ -55,56 +55,21 @@ hr{
 </style>
 
 <div class="moveDev">
-	<div style="font-size: 35px;font-weight: bold;"> Phiếu điều chuyển thiết bị</div>
+	<div style="font-size: 35px;font-weight: bold;">Lịch sử điều chuyển thiết bị</div>
 	<hr>
-	<div>
-		<form action="{{ route('doctor.postMoveDev',['id' =>Auth::id() ]) }}" method="post">
-		@csrf
-		<table border="0" class="tab">
-			<tr style="padding: 5px;">
-				<td colspan="2">
-					<select type="text" name="dv_name" required>
-						<option value="">Lựa chọn thiết bị cần điều chuyển</option>
-						@if(isset($devices))
-						@foreach($devices as $row)
-						<option value="{{$row->id}}">{{$row->dv_name}}</option>
-						@endforeach
-						@endif
-					</select>
-				</td>
-			</tr>
-			
-			<tr>
-				<td colspan="2"><div style="padding: 20px;padding-left: 0px;  font-size: 20px;font-weight: bold;">Lý do cần điều chuyển</div></td>
-			</tr>
-			<tr>
-				<td><input type="text" name="reason"></td>
-			</tr>
-			<tr style="padding: 5px;">
-				<td colspan="2">
-					<div style="margin-top: 20px;"><select type="text" name="dv_name" required>
-						<option value="">Lựa chọn khoa phòng điều chuyển đến</option>
-						@if(isset($depts))
-						@foreach($depts as $row)
-						<option value="{{$row->id}}">{{$row->department_name}}</option>
-						@endforeach
-						@endif
-					</select></div>
-				</td>
-			</tr>
-			<tr>
-				<td><div style="padding: 20px;padding-left: 0px; font-size: 20px;font-weight: bold;">Thời gian điều chuyển</div></td>
-			</tr>
-			<tr>
-				<td><input type="date" name="" required></td>
-			</tr>
-			<tr>
-				<td colspan="2"><div style="padding: 20px;text-align: center;">
-					<button type="submit" name="btn" class="btn">Lưu</button><a class="btn" href="{{route('doctor.home')}}">Hủy</a>
-				</div></td>
-			</tr>
-		</table>
-		</form>
-	</div>
+	<thead>
+		<th>ID</th>
+		<th>Tên thiết bị</th>
+		<th>Thời gian điều chuyển</th>
+		<th>Tới khoa phòng</th>
+		<th>Người tạo phiếu điều chuyển</th>
+	</thead>
+	<tbody>
+		<tr>abc</tr>
+		<tr>a</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+	</tbody>
 </div>
 @endsection

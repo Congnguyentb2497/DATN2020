@@ -42,7 +42,7 @@
 
   }
 </style>
-<h2>Đang có {{$notices->total()}} thông báo</h2>
+<h2>Đang có <span style="color: red">{{$notices->total()}}</span> thông báo</h2>
 <div class="container2">
   <br>
   <table class="table table-condensed table-bordered table-hover">

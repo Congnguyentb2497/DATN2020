@@ -100,7 +100,7 @@ Route::group(['prefix'=>'ktv'],function(){
 		Route::get('/list/device/{id}','DoctorController@showDev')->name('doctor.actDevice');
 		Route::get('/list/fix/{id}','DoctorController@fixDev')->name('doctor.fixDevice');
 		Route::get('/device/move/{id}','DoctorController@moveDev')->name('doctor.moveDevice');
-		Route::get('/device/history/move','DoctorController@historyMoveDev')->name('doctor.historyMoveDev');
+		// Route::get('/device/history/move','DoctorController@historyMoveDev')->name('doctor.historyMoveDev');
 		Route::get('/edit/{id}','DoctorController@editDoctor')->name('doctor.getEdit');
 		Route::post('/edit/{id}','DoctorController@postEdit')->name('doctor.postEdit');
 		Route::get('/password/{id}','DoctorController@getPsw')->name('doctor.getPsw');

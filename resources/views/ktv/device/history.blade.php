@@ -26,9 +26,7 @@
    <table width="95%" border="0">
      <tr >
        <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Tên thiết bị</label></td>
-       @foreach($his as $row)
-       <td width="35%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 20px;height: 90%">{{\App\Device::where(['id' => $row->dv_id])->pluck('dv_name')->first()}}</label></td>
-       @endforeach
+       <td width="35%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 20px;height: 90%">{{$device->dv_name}}</label></td>
        <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Nhà CC</label></td>
        <td colspan="3"><label class="form-control" style="background-color: #D8D8D8; width: 100%;font-size: 20px;height: 90%">{{$device->provider->provider_name}}</label></td>
      </tr>
@@ -52,8 +50,8 @@
         <th>Đơn vị sửa</th>
         <th>Thông tin liên hệ</th>
         <th width="15%">Tình trạng sử dụng</th>
-        <th width="10%">Điều khiển</th>
-      </tr>
+<!--         <th width="10%">Điều khiển</th>
+ -->      </tr>
     </thead>
     <tbody>
       @foreach($his as $row)
@@ -70,8 +68,8 @@
         @else
         <td>Đã hỏng ngưng sử dụng</td>
         @endif
-        <td></td>
-      </tr>
+<!--         <td></td>
+ -->      </tr>
       @endforeach
     </tbody>
   </table>

@@ -124,10 +124,10 @@
                             
                             <li><a href="{{route('doctor.moveDevice',['id' => Auth::id()]) }}">Phiếu điều chuyển thiết bị</a></li>
                             <li class="divider"></li>
-                            <li><a href="{{route('doctor.historyMoveDev')}}">Lịch sử điều chuyển thiết bị</a></li>
+                            <!-- <li><a href="{{route('doctor.historyMoveDev')}}">Lịch sử điều chuyển thiết bị</a></li> -->
                             </ul>
-                            </li>
-                        </ul>
+                        </li>
+                    </ul>
                     
             </div>
         </div>
