@@ -40,7 +40,7 @@
         <td><input type="text"  name="phone" class="form-control"></td>
       </tr>
       <tr>
-        <td><label for="email"><b>Email:</b></label></td>
+        <td><label><b>Email:</b></label></td>
         <td><input type="email"  name="email" required class="form-control"></td>
       </tr>
       <tr>
