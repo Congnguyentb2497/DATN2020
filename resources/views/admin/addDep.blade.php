@@ -41,7 +41,7 @@
         </td>
       </tr>
       <tr>
-        <td colspan="2"><div class="canl"><a style="text-decoration: none; color: white;" href="{{route('show.department')}}" >Hủy</a></div></td>
+        <td colspan="2" style="text-align: center;"><div class="canl"><a style="text-decoration: none; color: white;" href="{{route('show.department')}}" >Hủy</a></div></td>
       </tr>
     </table>
     <br>
