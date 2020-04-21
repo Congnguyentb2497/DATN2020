@@ -41,7 +41,7 @@
       </tr>
       <tr>
         <td><label><b>Email:</b></label></td>
-        <td><input type="email"  name="email" required class="form-control"></td>
+        <td><input type="text"  name="email" required class="form-control"></td>
       </tr>
       <tr>
         <td><label><b>Phân quyền:</b></label></td>

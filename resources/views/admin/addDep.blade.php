@@ -40,8 +40,10 @@
           <button type="submit" class="btn">Lưu</button>
         </td>
       </tr>
+      <tr>
+        <td><div class="canl"><a style="text-decoration: none; color: white;" href="{{route('show.department')}}" >Hủy</a></div></td>
+      </tr>
     </table>
-     <div class="canl"><a style="text-decoration: none; color: white;" href="{{route('show.department')}}" >Hủy</a></div>
     <br>
 </form>
 </hr>
@@ -75,7 +77,7 @@
     color: white;
     padding: 7px 7px;
     margin-top: 5px;
-    margin-left:360px;
+    margin-left:230px;
     margin-bottom: 5px;
     border: none;
     border-radius: 4px;
