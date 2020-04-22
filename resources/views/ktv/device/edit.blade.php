@@ -228,7 +228,7 @@ label {
         <td><label>Số lưu hành</label></td>
         <td><input type="text"  name="license_number" value="{{$dev->license_number}}" ></td>
         <td><label>Ngày cấp</label></td>
-        <td><input type="text"  name="license_number_date" value="{{$dev->license_number_date}}" ></td>
+        <td><input type="date"  name="license_number_date" value="{{$dev->license_number_date}}" ></td>
       </tr>
        <tr>
         <td><label>Ngày bảo dưỡng ĐK</label></td>
