@@ -382,6 +382,8 @@ public function postAddDevice(Request $request){
     $device->country = $request->country;
     $device->provider_id = $request->provider;
     $device->license_number = $request->license_number;
+    $device->license_number_date = $request->license_number_date;
+    $device->maintain_date = $request->maintain_date;
     $device->status = 0;
     $device->save();
     return redirect()->route('device.show0')->with('message','Thêm thiết bị thành công');
