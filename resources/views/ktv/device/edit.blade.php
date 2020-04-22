@@ -230,6 +230,11 @@ label {
         <td><label>Ngày cấp</label></td>
         <td><input type="text"  name="license_number_date" value="{{$dev->license_number_date}}" ></td>
       </tr>
+       <tr>
+        <td><label>Ngày bảo dưỡng ĐK</label></td>
+        <td><input type="date"  name="maintain_date" value="{{$dev->maintain_date}}"></td>
+       <td colspan="2"></td>
+      </tr>
       <tr>
        <td></td>
        <td></td>
