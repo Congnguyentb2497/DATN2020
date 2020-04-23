@@ -391,13 +391,15 @@ public function postAddDevice(Request $request){
     // move device
 public function moveDevice(Request $request, $id)
 {  
+    $dep = $request->select_dept
     $device = Device::find($id);
+    $name = $device->dv_name;
     $device->status = 1;
     $device->department_id = $request->select_dept;
     $device->handover_date = date('Y-m-d H:i:s');
     $device->save();
     $notice = new Notification;
-    $notice->req_content = "Bàn giao thiết bị";
+    $notice->req_content = "Phòng vật tư xác nhận điều chuyển thiết bị ".$name."cho khoa ".$dep;
     $notice->dv_id = $id;
     $notice->dept_now = $request->select_dept;
     $notice->status = 12;
@@ -415,7 +417,6 @@ public function getEditDevice($id){
 }
 
 public function postEditDevice(Request $request,$id){
-    $this->validate($request,[],[]);
     $device = Device::find($id);
     $device->dv_name = $request->name_device;
     $device->dv_model = $request->model;
@@ -430,6 +431,8 @@ public function postEditDevice(Request $request,$id){
     $device->country = $request->country;
     $device->provider_id = $request->provider;
     $device->license_number = $request->license_number;
+    $device->license_number_date = $request->license_number_date;
+    $device->maintain_date = $request->maintain_date;
     $device->save();
     return redirect()->route('device.show0')->with('message','Cập nhật thông tin thiết bị thành công');
 }
