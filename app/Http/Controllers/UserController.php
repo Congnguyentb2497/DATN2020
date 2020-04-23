@@ -391,7 +391,7 @@ public function postAddDevice(Request $request){
     // move device
 public function moveDevice(Request $request, $id)
 {  
-    $dep = $request->select_dept
+    $dep = $request->select_dept;
     $device = Device::find($id);
     $name = $device->dv_name;
     $device->status = 1;

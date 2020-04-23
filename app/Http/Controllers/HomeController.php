@@ -47,4 +47,6 @@ class HomeController extends Controller
             Auth::logout();
             return view('login');
     }
+
+    
 }
