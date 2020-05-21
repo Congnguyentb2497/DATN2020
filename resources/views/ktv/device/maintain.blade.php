@@ -63,7 +63,7 @@
         <td>{{ $row->id }}</td>
         <td>{{$row->dv_name}}</td>
         <td>{{$row->dv_model}}</td>
-        <td>{{ \App\Department::where(['id' => $row->department])->pluck('department_name')->first() }}</td>
+        <td>{{ \App\Department::where(['id' => $row->department_id])->pluck('department_name')->first() }}</td>
         <td>{{ \App\Provider::where(['id' => $row->provider_id])->pluck('provider_name')->first() }}</td>
         <td>{{ $row->handover_date }}</td>
         <td>{{ $row->maintain_date }}</td>
