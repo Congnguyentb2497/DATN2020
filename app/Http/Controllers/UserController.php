@@ -685,7 +685,7 @@ public function fileDevice($id){
 
 //lịch bảo dưỡng
 public function showmaintain(Request $request){
-    $device = DB::table('device')->get();
+    $device = DB::table('device');
     $sl = $request->time_maintain;
     $today = now();
     $now = Carbon::now();//y-m-d h:m:s
