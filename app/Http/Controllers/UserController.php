@@ -702,7 +702,7 @@ public function showmaintain(Request $request){
     if($sl == '3m'){
         $device = $device->where('maintain_date','<=',$today)->where('maintain_date','>=',$now->subMonths(3));
     }
-    return view('ktv.device.maintain')->with(['$dev'=>$device]);
+    return view('ktv.device.maintain')->with('dev'=>$device);
 
 }
 
