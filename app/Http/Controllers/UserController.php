@@ -107,16 +107,16 @@ public function acceptNotice( $user_id, $id, $dv_id, $status){
         $response->dv_id = $dv_id;
         $response->annunciator_id = $user_id;
         $response->save();
-
+        
         // tạo thông báo gửi phòng nhận điều chuyển
-        $receive = new Notification;
-        $receive->req_date = $notice->res_date;
-        $dept_new = Department::where(['id' =>$dept_next])->pluck('department_name')->first();
-        $receive->req_content = 'Thiết thiết bị '.$device->dv_name.' sẽ được điều chuyển từ khoa '.$dep_now.' tới khoa '.$dep_new;
-        $receive->annunciator_id = $user_id;
-        $receive->dv_id = $dv_id;
-        $receive->status = 8;
-        $receive->save();
+        // $receive = new Notification;
+        // $receive->req_date = $notice->res_date;
+        // $dept_new = Department::where(['id' =>$dept_next])->pluck('department_name')->first();
+        // $receive->req_content = 'Thiết thiết bị '.$device->dv_name.' sẽ được điều chuyển từ khoa '.$dep_now.' tới khoa '.$dep_new;
+        // $receive->annunciator_id = $user_id;
+        // $receive->dv_id = $dv_id;
+        // $receive->status = 8;
+        // $receive->save();
 
         //điều chuyển thiết bị về trang thái chưa bàn giao
          Device::where('id','=',$dv_id)->update(['status'=>0]);

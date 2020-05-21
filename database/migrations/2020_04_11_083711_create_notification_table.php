@@ -24,6 +24,7 @@ class CreateNotificationTable extends Migration
             $table->integer('annunciator_id')->nullable();
             $table->datetime('req_date')->nullable();
             $table->datetime('res_date')->nullable();
+            $table->string('receiver')->nullable();
             $table->timestamps();
         });
     }
