@@ -35,15 +35,41 @@
             </select>
           </td>
           <td>
-            <button class="btnsearch" type="submit" style="width: 100px;padding: 4px;margin-left: -2px;"><i class="fa fa-search">&nbsp;Tìm kiếm</i></button>
+            <button class="btnsearch" type="submit" style="width: 100px;"><i class="fa fa-search">&nbsp;Tìm kiếm</i></button>
           </td>
-          <td width="5%" style="text-align: left;font-size: 18px;">Tất cả: </td>
+          <td width="5%" style="text-align: left;font-size: 18px;">Tất cả: {{ $dev->total() }}</td>
         </tr>
       </table>  
     </form>
   </div><br><br><br>
+  @if(isset($dev))
+  <table class="table table-condensed table-bordered table-hover">
+    <thead style="background-color: #81BEF7;">
+      <tr style="font-size: 18px;">
+        <th>ID</th>
+        <th>Tên thiết bị</th>
+        <th>Model</th>
+        <th>Khoa phòng</th>
+        <th>Nhà cung cấp</th>
+        <th>Hạn sử dụng</th>
+        <th>Ngày bảo dưỡng định kì</th>
+        <th width="10%">Điều khiển</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach($dev as $row)
+      <tr style="font-size: 15px;">
+        <td>{{ $row->id }}</td>
+        <td>{{$row->dv_name}}</td>
+        <td>{{$row->dv_model}}</td>
+        <td>{{ \App\Provider::where(['id' => $row->provider_id])->pluck('provider_name')->first() }}</td>
+        <td>{{ $row->handover_date }}</td>
+        <td>{{ $row->maintain_date }}</td>
+        <td></td>
+      </tr>
+      @endforeach
+  @endif
   
- 
 </div>
 @endsection
 
