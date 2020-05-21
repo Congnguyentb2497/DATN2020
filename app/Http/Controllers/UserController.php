@@ -690,9 +690,9 @@ public function showmaintain(Request $request){
     // $sl = strtotime($sl);
     $today = date('Y-m-d');
     // $today = strtotime($today);
-    $w1 = Carbon::now()->addDays(7)->toDateString();
+    $w1 = Carbon::now()->addDays(7);
     // $w1 = strtotime($w1);
-    $m1 = Carbon::now()->addMonth()->toDateString();
+    $m1 = Carbon::now()->addMonth();
     // $m1 = strtotime($m1);
     $m2 = Carbon::now()->addMonth(2)->toDateString();
     // $m2 = strtotime($m2);
