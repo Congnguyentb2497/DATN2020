@@ -680,7 +680,7 @@ public function delAcc($id){
 public function fileDevice($id){
     $file = History_ktv::where('dv_id',$id)->get();
     $dv = $id;
-    return view('ktv.device.file')->with('file'=>$file,'dv'=>$dv);
+    return view('ktv.device.file')->with(['file'=>$file,'dv'=>$dv]);
 }
 
 }
