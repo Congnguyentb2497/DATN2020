@@ -699,10 +699,10 @@ public function showmaintain(Request $request){
     $m3 = Carbon::now()->addMonth(3)->toDateString();
     // $m3 = strtotime($m3);
     if($sl == '1w'){
-        $devices = $devices->whereDate('maintain_date','>=',$today)->whereDate('maintain_date','<=',$w1);
+        $devices = $devices->whereDate('maintain_date','>=',$today)->whereDate('maintain_date','<=',$w1->toDateString());
     }
     if($sl == '1m'){
-         $devices = $devices->whereDate('maintain_date','>=',$today)->whereDate('maintain_date','<=',$m1);
+         $devices = $devices->whereDate('maintain_date','>=',$today)->whereDate('maintain_date','<=',$m1->toDateString());
     }
     if($sl == '2m'){
         $devices = $devices->whereDate('maintain_date','>=',$today)->whereDate('maintain_date','<=',$m2);
