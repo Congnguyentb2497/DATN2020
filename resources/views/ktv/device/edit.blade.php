@@ -238,14 +238,16 @@ label {
       <tr>
        <td></td>
        <td></td>
-       <td> </td>
-        <td>
+        <td colspan="2">
           <div>
             @if($dev->status == 2)
             <div style="float: left;" class="rgt1"><a class="rgt" id="2" onclick="openForm()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Xem lịch sử thiết bị</a></div>
             @else
           <div style="float: left;" class="rgt1"><a class="rgt"  onclick="openForm()" data-deviceid="{{ $dev->status}}" style="color: black;; text-decoration: none;font-weight: bold;">Xem vật tư kèm theo</a></div>
           @endif
+          <div style="float: left;" class="rgt1">
+              <a style="text-decoration: none;font-weight: bold;font-size: 20px;color: black;" href="{{ route('device.view',['id'=>$dev->id]) }}">Hồ sơ TB</a>
+          </div>
           <div style="float: left; margin-top: 2px;"><input value="Lưu" class="btn" type="submit" ></div>
           @if($dev->status == 0)
           <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" href="{{route('device.show0')}}">Hủy</a></div> 

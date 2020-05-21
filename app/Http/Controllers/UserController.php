@@ -111,7 +111,8 @@ public function acceptNotice( $user_id, $id, $dv_id, $status){
         // tạo thông báo gửi phòng nhận điều chuyển
         $receive = new Notification;
         $receive->req_date = $notice->res_date;
-        $receive->req_content = 'Thiết thiết bị '.$device->dv_name.' sẽ được điều chuyển từ khoa '.$dep_now.' tới khoa '.$dep_next;
+        $dept_new = Department::where(['id' =>$dept_next])->pluck('department_name')->first();
+        $receive->req_content = 'Thiết thiết bị '.$device->dv_name.' sẽ được điều chuyển từ khoa '.$dep_now.' tới khoa '.$dep_new;
         $receive->annunciator_id = $user_id;
         $receive->dv_id = $dv_id;
         $receive->status = 8;
@@ -289,6 +290,14 @@ public function scheduleRepair(Request $request, $id){
     $schedule->information = $request->infor_repair;
     $schedule->status = 0;
     $schedule->save();
+    //code them ngay 20-5 lich su thiet bi
+    $his = new History_ktv;
+    $his->time = $request->fix_date;
+    $his->action = 'Tạo lịch sửa chữa';
+    $his->dv_id = $id;
+    $his->status = 'of';//of = order-fix
+    $his->implementer = 'Phòng vật tư';
+    $his->save();
     return redirect()->route('device.show2')->with('message', 'Đã tạo lịch sửa chữa thành công cho thiết bị '.$device->dv_name);
 }
     // edit schedule
@@ -309,12 +318,19 @@ public function editSchedule(Request $request, $id){
     //update status device
 public function updateStatus(Request $request, $id){
     $device = Device::find($id);
+    $his = new History_ktv;
+    $his->dv_id = $id;
+    $his->time = $request->update_time;
     if($request->status == '0'){
         $device->status = 1;
         $history = Maintenance_schedule::where('status',0)->where('dv_id',$id)->first();
         $history->status = 1;
         $history->proceed_date = $request->update_time;
         $history->note = $request->note;
+        //tạo lịch sử tb
+        $his->action = 'Đã sửa chữa thành công';
+        $his->status = 'sf';//sf = success fix
+
     }
     if($request->status == '4'){
         $device->status = 4;
@@ -322,13 +338,14 @@ public function updateStatus(Request $request, $id){
         $history->status = 2;
         $history->proceed_date = $request->update_time;
         $history->note = $request->note;
-
-
+        $his->action = 'Không thể sửa chữa, chuyển vào kho thanh lý';
+        $his->status = 'ff';//ff = faile fix
+        $his->implementer = 'Phòng vật tư';
     }
     $device->save();
     $history->save();
+    $his->save();
     return redirect()->route('device.show3')->with('message','Cập nhật trạng thái thiết bị thành công');
-
 }
 
     // device stop used
@@ -386,24 +403,43 @@ public function postAddDevice(Request $request){
     $device->maintain_date = $request->maintain_date;
     $device->status = 0;
     $device->save();
+    $dv = Device::where('dv_name','=',$request->name_device)->get();
+    //tạo lịch sử nhập mới thiết bị
+    $his = new History_ktv;
+    $his->status = 'sadv'; //sadv = success add DV
+    $his->action = 'Nhập mới thiết bị '.$request->name_device;
+    $his->dv_id =  $dv->id;
+    $his->time = date('Y-m-d');
+    $his->implementer = 'Phòng vật tư';
+    $his->save();
     return redirect()->route('device.show0')->with('message','Thêm thiết bị thành công');
 }
     // move device
 public function moveDevice(Request $request, $id)
 {  
     $dep = $request->select_dept;
+    $dep_name = Department::where(['id' => $dep])->pluck('department_name')->first()
     $device = Device::find($id);
+    $dep_now = Department::where(['id' => $device->department_id])->pluck('department_name')->first();
     $name = $device->dv_name;
     $device->status = 1;
     $device->department_id = $request->select_dept;
     $device->handover_date = date('Y-m-d H:i:s');
     $device->save();
     $notice = new Notification;
-    $notice->req_content = "Phòng vật tư xác nhận điều chuyển thiết bị ".$name."cho khoa ".$dep;
+    $notice->req_content = "Phòng vật tư xác nhận điều chuyển thiết bị ".$name."cho khoa ".$dep_name;
     $notice->dv_id = $id;
     $notice->dept_now = $request->select_dept;
     $notice->status = 12;
     $notice->save();
+    //tạo lịch sử điều chuyển
+    $his =new History_ktv;
+    $his->status = 'mdv'; //mdv = move device
+    $his->action = 'Thiết bị được điều chuyển từ khoa '.$dep_now.' sang khoa '.$dep_name;
+    $his->time = date('Y-m-d');
+    $his->dv_id = $id;
+    $his->implementer = 'Phòng vật tư';
+    $his->save();
     return redirect()->route('device.show0')->with('message','Đã bàn giao thiết bị thành công');
 }
     //getEditDevice
@@ -473,6 +509,14 @@ public function accessoryDevice(Request $request, $id){
         $dv_acc->amount = $request->amount;
         $dv_acc->export_date = $request->export_date;
         $dv_acc->save();
+        //tạo lịch sử tb
+        $his = new History_ktv;
+        $his->action = 'Bàn giao vật tư '.$acc->acc_name.' cho thiết bị ';
+        $his->status = 'gacc';//gacc = give accessory
+        $his->time = $request->export_date;
+        $his->dv_id = $request->dv_id;
+        $his->implementer = 'Phòng vật tư';
+        $his->save();
         return redirect()->route('accessory.show')->with(['message'=>'Bàn giao vật tư thành công!']);
     }
 }
@@ -631,6 +675,12 @@ public function delAcc($id){
     $acc->delete();
     return redirect()->route('accessory.show')->with('Đã xóa thành công một vật tư');
 
+}
+//xem hồ sơ thiết bị
+public function fileDevice($id){
+    $file = History_ktv::where('dv_id',$id)->get();
+    $dv = $id;
+    return view('ktv.device.file')->compact('file','dv');
 }
 
 }
