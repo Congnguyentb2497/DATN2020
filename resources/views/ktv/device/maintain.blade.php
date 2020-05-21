@@ -37,7 +37,7 @@
           <td>
             <button class="btnsearch" type="submit" style="width: 100px;"><i class="fa fa-search">&nbsp;Tìm kiếm</i></button>
           </td>
-          <td width="5%" style="text-align: left;font-size: 18px;">Tất cả: {{ $dev->total() }}</td>
+          <td width="5%" style="text-align: left;font-size: 18px;">Tất cả: {{ $devices->total() }}</td>
         </tr>
       </table>  
     </form>
@@ -57,7 +57,7 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($dev as $row)
+      @foreach($devices as $row)
       <tr style="font-size: 15px;">
         <td>{{ $row->id }}</td>
         <td>{{$row->dv_name}}</td>
