@@ -37,12 +37,12 @@
           <td>
             <button class="btnsearch" type="submit" style="width: 100px;"><i class="fa fa-search">&nbsp;Tìm kiếm</i></button>
           </td>
-          <td width="5%" style="text-align: left;font-size: 18px;">Tất cả: {{ $devices->total() }}</td>
+          <td width="5%" style="text-align: left;font-size: 18px;">Tất cả: {{$devices->total()}}</td>
         </tr>
       </table>  
     </form>
   </div><br><br><br>
-  @if(isset($dev))
+  @if(isset($devices))
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #81BEF7;">
       <tr style="font-size: 18px;">

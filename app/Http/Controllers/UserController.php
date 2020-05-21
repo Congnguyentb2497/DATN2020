@@ -685,24 +685,24 @@ public function fileDevice($id){
 
 //lịch bảo dưỡng
 public function showmaintain(Request $request){
-    $device = DB::table('device');
+    $devices = Device::where('status', 1)->orderBy('id','desc');
     $sl = $request->time_maintain;
     $today = now();
     $now = Carbon::now();//y-m-d h:m:s
     if($sl == '1w'){
-        $device = $device->where('maintain_date','<=',$today)->where('maintain_date','>=',$now->subDays(7));
+        $devices = $devices->where('maintain_date','<=',$today)->where('maintain_date','>=',$now->subDays(7));
         
     }
     if($sl == '1m'){
-         $device = $device->where('maintain_date','<=',$today)->where('maintain_date','>=',$now->subMonth());
+         $devices = $devices->where('maintain_date','<=',$today)->where('maintain_date','>=',$now->subMonth());
     }
     if($sl == '2m'){
-        $device = $device->where('maintain_date','<=',$today)->where('maintain_date','>=',$now->subMonths(2));
+        $devices = $devices->where('maintain_date','<=',$today)->where('maintain_date','>=',$now->subMonths(2));
     }
     if($sl == '3m'){
-        $device = $device->where('maintain_date','<=',$today)->where('maintain_date','>=',$now->subMonths(3));
+        $devices = $devices->where('maintain_date','<=',$today)->where('maintain_date','>=',$now->subMonths(3));
     }
-    return view('ktv.device.maintain')->with(['devices'=>$device]);
+    return view('ktv.device.maintain')->with(['devices'=>$devices]);
 
 }
 
