@@ -43,40 +43,7 @@
     </form>
   </div><br><br><br>
   
-  <!-- <table class="table table-condensed table-bordered table-hover">
-    <thead style="background-color: #81BEF7;">
-      <tr style="font-size: 20px;">
-        <th>ID</th>
-        <th>Tên thiết bị</th>
-        <th>Model</th>
-        <th>Nhà cung cấp</th>
-        <th>Hạn sử dụng</th>
-        <th>Ngày bảo dưỡng định kì</th>
-        <th width="7%">Điều khiển</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($providers as $provider)
-      <tr style="font-size: 15px;">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td style="text-align: center;">
-          <a href="{{route('provider.getEdit',['id'=>$provider->id])}}"><i class="fa fa-pencil-square-o " style="font-size: 18px;" title="Sửa" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a onclick="return confirm('Bạn có chắc chắn xóa?')" href="{{route('provider.del',['id'=>$provider->id])}}"><i class="fa fa-trash" style="font-size: 18px;" title="Xóa" aria-hidden="true"></i></a>
-        </td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
-  <div class="page-nav text-right">
-    <nav aria-label="Page navigation">
-      {{$providers->links()}}
-    </nav>
-  </div> -->
+ 
 </div>
 @endsection
 
