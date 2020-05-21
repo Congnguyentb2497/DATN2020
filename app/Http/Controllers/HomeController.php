@@ -48,5 +48,7 @@ class HomeController extends Controller
             return view('login');
     }
 
+    //hàm thông báo bảo dưỡng thiết bị
+    // public function notify()
     
 }

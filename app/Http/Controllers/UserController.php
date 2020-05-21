@@ -403,7 +403,7 @@ public function postAddDevice(Request $request){
     $device->maintain_date = $request->maintain_date;
     $device->status = 0;
     $device->save();
-    $dv = Device::where('dv_name','=',$request->name_device)->get();
+    $dv = DB::table('device')->where('dv_name',$request->name_device)->get();
     //tạo lịch sử nhập mới thiết bị
     $his = new History_ktv;
     $his->status = 'sadv'; //sadv = success add DV
