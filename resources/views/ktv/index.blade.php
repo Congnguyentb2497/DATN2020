@@ -137,6 +137,8 @@
                             </li>
                             <li class="divider"></li>
                             <li><a href="{{route('device.getAdd')}}">Thêm mới thiết bị</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{route('device.maintain')}}">Lịch bảo dưỡng</a></li>
                         </ul>
                     </li>
                     <li>

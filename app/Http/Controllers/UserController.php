@@ -107,7 +107,7 @@ public function acceptNotice( $user_id, $id, $dv_id, $status){
         $response->dv_id = $dv_id;
         $response->annunciator_id = $user_id;
         $response->save();
-        
+
         // tạo thông báo gửi phòng nhận điều chuyển
         // $receive = new Notification;
         // $receive->req_date = $notice->res_date;
@@ -408,7 +408,7 @@ public function postAddDevice(Request $request){
     $his = new History_ktv;
     $his->status = 'sadv'; //sadv = success add DV
     $his->action = 'Nhập mới thiết bị '.$request->name_device;
-    $his->dv_id =  $dv->id;
+    
     $his->time = date('Y-m-d');
     $his->implementer = 'Phòng vật tư';
     $his->save();
@@ -682,5 +682,10 @@ public function fileDevice($id){
     $dv = $id;
     return view('ktv.device.file')->with(['file'=>$file,'dv'=>$dv]);
 }
+
+}
+//lịch bảo dưỡng
+public function showmaintain(){
+    return view('ktv.device.maintain');
 
 }
