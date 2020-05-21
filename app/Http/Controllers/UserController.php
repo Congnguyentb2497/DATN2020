@@ -687,8 +687,18 @@ public function fileDevice($id){
 public function showmaintain(Request $request){
     $devices = Device::where('status', 1)->orderBy('id','desc');
     $sl = $request->time_maintain;
-    $today = now();
-    $now = Carbon::now();//y-m-d h:m:s
+    $sl = strtotime($sl);
+    $today = date('Y-m-d');
+    $today = strtotime($today);
+    // $w1 = Carbon::now()->subDays(7)->toDateString();
+    // $w1 = strtotime($w1);
+    // $m1 = Carbon::now()->subMonth()->toDateString();
+    // $m1 = strtotime($m1);
+    // $m2 = Carbon::now()->subMonth(2)->toDateString();
+    // $m2 = strtotime($m2);
+    // $m3 = Carbon::now()->subMonth(3)->toDateString();
+    // $m3 = strtotime($m3);
+
     if($sl == '1w'){
         $devices = $devices->where('maintain_date','<=',$today)->where('maintain_date','>=',$now->subDays(7));
         

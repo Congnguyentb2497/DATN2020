@@ -36,7 +36,7 @@
             </select>
           </td>
           <td>
-            <button class="btnsearch" type="submit" style="width: 100px; margin-left: 5px;padding: 2px;"><i class="fa fa-search">&nbsp;Tìm kiếm</i></button>
+            <button class="btnsearch" type="submit" style="width: 100px; margin-left: 5px;padding: 4px;"><i class="fa fa-search">&nbsp;Tìm kiếm</i></button>
           </td>
           
         </tr>
