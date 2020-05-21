@@ -683,9 +683,12 @@ public function fileDevice($id){
     return view('ktv.device.file')->with(['file'=>$file,'dv'=>$dv]);
 }
 
-}
 //lịch bảo dưỡng
 public function showmaintain(){
     return view('ktv.device.maintain');
 
 }
+
+}
+
+
