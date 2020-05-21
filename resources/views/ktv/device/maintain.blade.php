@@ -37,7 +37,7 @@
           <td>
             <button class="btnsearch" type="submit" style="width: 100px;"><i class="fa fa-search">&nbsp;Tìm kiếm</i></button>
           </td>
-          <td width="5%" style="text-align: left;font-size: 18px;">Tất cả: {{$devices->total()}}</td>
+          
         </tr>
       </table>  
     </form>
