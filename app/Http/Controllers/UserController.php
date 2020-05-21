@@ -418,7 +418,7 @@ public function postAddDevice(Request $request){
 public function moveDevice(Request $request, $id)
 {  
     $dep = $request->select_dept;
-    $dep_name = Department::where(['id' => $dep])->pluck('department_name')->first()
+    $dep_name = Department::where(['id' => $dep])->pluck('department_name')->first();
     $device = Device::find($id);
     $dep_now = Department::where(['id' => $device->department_id])->pluck('department_name')->first();
     $name = $device->dv_name;
