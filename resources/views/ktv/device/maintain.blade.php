@@ -28,6 +28,7 @@
         <tr>
           <td>
             <select style="width: 600px;" name="time_maintain" class="form-control">
+              <option value="">Lựa chọn thời gian</option>
               <option value="1w">Trong 1 tuần tới</option>
               <option value="1m">Trong 1 tháng tới</option>
               <option value="2m">Trong 2 tháng tới</option>
@@ -35,7 +36,7 @@
             </select>
           </td>
           <td>
-            <button class="btnsearch" type="submit" style="width: 100px;"><i class="fa fa-search">&nbsp;Tìm kiếm</i></button>
+            <button class="btnsearch" type="submit" style="width: 100px; margin-left: 5px;"><i class="fa fa-search">&nbsp;Tìm kiếm</i></button>
           </td>
           
         </tr>
