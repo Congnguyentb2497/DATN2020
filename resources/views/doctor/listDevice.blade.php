@@ -187,7 +187,7 @@
           </td>
         </tr>
         <tr>
-          <td colspan="2"><button type="submit" class="btn" onclick="return confirm('Bạn có chắc chắn báo hỏng thiết bị?')">Lưu
+          <td colspan="2" style="text-align: center;"><button type="submit" class="btn" onclick="return confirm('Bạn có chắc chắn báo hỏng thiết bị?')">Lưu
           </button>
           <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
         </tr>

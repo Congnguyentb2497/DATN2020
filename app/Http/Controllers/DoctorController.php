@@ -64,7 +64,7 @@ class DoctorController extends Controller
 
     }
     //báo hỏng thiết bị
-    public function noticeDev($id){
+    public function noticeDev(Request $request,$id){
        
         $notice = new Notification;
         $notice->req_date = Carbon::now('Asia/Ho_Chi_Minh');
