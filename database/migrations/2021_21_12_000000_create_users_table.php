@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
          //tao bang nguoi dung
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('user_id')->unique();
             $table->string('fullname');
             $table->string('email')->unique();
             $table->string('mobile')->nullable();

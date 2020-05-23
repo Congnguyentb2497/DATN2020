@@ -49,16 +49,19 @@ class adminController extends Controller
             'email'=>'required|email|unique:users,email',
             'psw'=>'required|min:5|max:20',
             'psw-repeat' => 'required|same:psw',
-            'rule'=>'required'
+            'rule'=>'required',
+            'user_id'=>'unique:users,user_id'
         ],
         [   'email.required' => 'Bạn chưa nhập email',
             'email.unique'=>'Email đã có người sử dụng!',
             'psw.min'=>'Mật khẩu ít nhất 5 kí tự!',
             'psw.max'=>'Mật khẩu tối đa 20 kí tự!',
             'psw.required'=>'Bạn chưa nhập password',
-            'psw_repeat.same'=>'Mật khẩu xác nhận không đúng'
+            'psw_repeat.same'=>'Mật khẩu xác nhận không đúng',
+            'user_id.unique'=>'Mã người dùng đã tồn tại.'
         ]);
       $user = new User;
+      $user->user_id = $request->user_id;
       $user ->fullname = $request->fullname;
       $user ->password = Hash::make($request->psw);
       $user ->mobile = $request->phone;

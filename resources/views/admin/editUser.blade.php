@@ -26,6 +26,14 @@
     <table>
       <tr>
         <td width="45%">
+          <label for="email"><b>Mã người dùng:</b></label>
+        </td>
+        <td>
+           <input type="text"  name="user_id" value="{{$user->user_id}}" class="form-control" disabled>
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
           <label for="email"><b>Họ và tên:</b></label>
         </td>
         <td>

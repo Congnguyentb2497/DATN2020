@@ -175,6 +175,18 @@
           <td><input type="text" name="user_id"></td>
         </tr>
         <tr>
+          <td><label>Chuyển TB tới khoa</label></td>
+          <td>
+            <select type="text" name="select_dept" style="font-style: 17px;">
+              @if(isset($depts))
+              @foreach($depts as $rows)
+              <option value="{{$rows->id}}">{{$rows->department_name}}</option>
+              @endforeach
+              @endif
+            </select>
+          </td>
+        </tr>
+        <tr>
           <td colspan="2"><button type="submit" class="btn" onclick="return confirm('Bạn có chắc chắn báo hỏng thiết bị?')">Lưu
           </button>
           <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>

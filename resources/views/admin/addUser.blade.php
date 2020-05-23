@@ -28,6 +28,10 @@
 	@csrf
     <table class="addUser" border="0" width="600px;">
       <tr>
+        <td width="40%"><label ><b>Mã người dùng:</b></label></td>
+        <td><input type="text"  name="user_id" required class="form-control"></td>
+      </tr>
+      <tr>
         <td width="40%"><label ><b>Họ và tên:</b></label></td>
         <td><input type="text"  name="fullname" required class="form-control"></td>
       </tr>
