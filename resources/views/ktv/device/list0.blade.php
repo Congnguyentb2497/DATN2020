@@ -145,7 +145,7 @@
 		<tbody>
 			@foreach($devices as $device)
 			<tr style="font-size: 15px;">
-				<td>{{$device->id}}</td>
+				<td>{{$device->dv_id}}</td>
 				<td>{{$device->dv_name}}</td>
 				<td>{{$device->dv_model}}</td>
 				<td>{{$device->dv_type->dv_type_name}}</td>

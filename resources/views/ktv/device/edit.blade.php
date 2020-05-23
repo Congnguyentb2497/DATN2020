@@ -231,9 +231,10 @@ label {
         <td><input type="date"  name="license_number_date" value="{{$dev->license_number_date}}" ></td>
       </tr>
        <tr>
-        <td><label>Ngày bảo dưỡng ĐK</label></td>
+        <td><label>Ngày bảo dưỡng</label></td>
         <td><input type="date"  name="maintain_date" value="{{$dev->maintain_date}}"></td>
-       <td colspan="2"></td>
+       <td><label>Mã thiết bị</label></td>
+        <td><input type="text"  name="dv_id" value="{{$dev->dv_id}}" disabled></td>
       </tr>
       <tr>
        <td></td>

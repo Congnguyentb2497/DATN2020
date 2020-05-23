@@ -7,6 +7,7 @@
   }
 </style>
 <h2>Hồ Sơ Thiết Bị {{ \App\Device::where(['id' => $dv])->pluck('dv_name')->first()}}</h2>
+<h3>Mã thiết bị {{ \App\Device::where(['id' => $dv])->pluck('dv_id')->first()}}</h3>
 <div class="container2">
   <br>
   <table class="table table-condensed table-bordered table-hover">

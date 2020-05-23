@@ -51,6 +51,61 @@
     padding: 3px;
 
   }
+  .form-popup {
+    display: none;
+    position: fixed;
+    top: 250px;
+    bottom: 200px;
+    left: 400px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+
+  /* Add styles to the form container */
+  .form-container {
+    width: 600px;
+    padding: 10px;
+    background-color: #BDBDBD;
+    height: 370px;
+    border-radius: 5px;
+  }
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password], .form-container input[type=date] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus,.form-container select[type=text]:focus {
+    background-color: #F2FBEF;
+    outline: none;
+  }
+
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #4CAF50;
+    font-size: 20px;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    margin-left:10px;
+    opacity: 0.7;
+  }
+
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
 </style>
 <h2>Danh sách thiết bị của khoa {{$user->department->department_name}}</h2>
 <div class="container2">
@@ -90,7 +145,7 @@
         <td>{{$row->handover_date}}</td>
         <td>{{ $row->expire_date }}</td>
         <td style="text-align: center;">
-          <a href="{{ route('doctor.noticeDev',['id'=>$row->id,'user_id'=>Auth::id()]) }}" onclick="return confirm('Bạn có chắc chắn báo hỏng thiết bị này? Thông báo sẽ được gửi đến phòng vật tư!')"><i style="font-size: 20px;" class="fa fa-exclamation-circle " title="Báo hỏng" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="ban_giao" data-deviceid="{{$row->id}}"><i style="font-size: 20px;" class="fa fa-exclamation-circle " title="Báo hỏng" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
       </tr>
       @endforeach
@@ -102,5 +157,55 @@
     </nav>
   </div>
 </div>
+<!-- form báo hỏng thiết bị -->
+<div class="form-popup" id="myForm">
+    <form action="{{ route('doctor.noticeDev', 'id') }}" class="form-container form1" method="post">
+      @csrf
+      <table style="font-size: 17px;" border="0">
+        <tr>
+          <td><label>Mã thiết bị</label></td>
+          <td><input type="text" name="dv_id" value="{{$row->dv_id}}"></td>
+        </tr>
+        <tr>
+          <td><label>Lý do hỏng</label></td>
+          <td><textarea cols="7" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td>Mã người báo hỏng</td>
+          <td><input type="text" name="user_id"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button type="submit" class="btn" onclick="return confirm('Bạn có chắc chắn báo hỏng thiết bị?')">Lưu
+          </button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+<!-- code popup form -->
+  <script>
+  function openForm() {
+    
+    // document.getElementById("myForm").style.display = "block";
+  }
 
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+
+  $(document).on('click', '.ba0_hong', function(){
+    // Lấy id của data
+    var id = $(this).attr('data-deviceid');
+    // Lấy action hiện tại của form theo class
+    var action = $('.form1').attr('action');
+    // Thay thế id data vào đoạn action của form
+    var actions= $('.form1').attr('action', action.replace('id',id));
+    // Hiện form
+    document.getElementById("myForm").style.display = "block";
+  });
+
+</script>
 @endsection
+<!-- 
+ href="{{ route('doctor.noticeDev',['id'=>$row->id,'user_id'=>Auth::id()]) }}" onclick="return confirm('Bạn có chắc chắn báo hỏng thiết bị này? Thông báo sẽ được gửi đến phòng vật tư!')"
+ -->

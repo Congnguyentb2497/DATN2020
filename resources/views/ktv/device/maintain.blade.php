@@ -60,7 +60,7 @@
     <tbody>
       @foreach($devices as $row)
       <tr style="font-size: 15px;">
-        <td>{{ $row->id }}</td>
+        <td>{{ $row->dv_id }}</td>
         <td>{{$row->dv_name}}</td>
         <td>{{$row->dv_model}}</td>
         <td>{{ \App\Department::where(['id' => $row->department_id])->pluck('department_name')->first() }}</td>

@@ -379,11 +379,13 @@ public function getAddDevice(){
 public function postAddDevice(Request $request){
     $this->validate($request,[
         'name_device' => 'required|unique:device,dv_name',
-        'amount' => 'numeric'
+        'amount' => 'numeric',
+        'dv_id' => 'unique:device,dv_id'
     ],[
         'name_device.required' => 'Bạn phải nhập tên thiết bị',
         'name_device.unique' => 'Thiết bị đã tồn tại, vui lòng kiểm tra lại danh sách thiết bị',
-        'amount.numeric'=>'Số lượng phải là số tự nhiên'
+        'amount.numeric'=>'Số lượng phải là số tự nhiên',
+        'dv_id.unique' => 'Mã thiết bị này đã tồn tại vui lòng nhập mã khác'
     ]);
     $device = new Device;
     $device->dv_name = $request->name_device;
@@ -401,6 +403,7 @@ public function postAddDevice(Request $request){
     $device->license_number = $request->license_number;
     $device->license_number_date = $request->license_number_date;
     $device->maintain_date = $request->maintain_date;
+    $device->dv_id = $request->dv_id;
     $device->status = 0;
     $device->save();
     $dv = DB::table('device')->where('dv_name',$request->name_device)->get();
@@ -408,7 +411,7 @@ public function postAddDevice(Request $request){
     $his = new History_ktv;
     $his->status = 'sadv'; //sadv = success add DV
     $his->action = 'Nhập mới thiết bị '.$request->name_device;
-    
+    $his->dv_id = $request->dv_id;
     $his->time = date('Y-m-d');
     $his->implementer = 'Phòng vật tư';
     $his->save();
