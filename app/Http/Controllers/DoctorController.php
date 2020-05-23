@@ -64,17 +64,18 @@ class DoctorController extends Controller
 
     }
     //báo hỏng thiết bị
-    public function noticeDev($user_id,$id){
+    public function noticeDev($id){
        
         $notice = new Notification;
         $notice->req_date = Carbon::now('Asia/Ho_Chi_Minh');
-        $notice->req_content = 'Báo hỏng thiết bị';
-        $notice->dv_id = $id;
+        $notice->req_content = $request->reason;
+        $notice->dv_id = $request->dv_id;
         $notice->status = 0;
-        $notice->annunciator_id = $user_id;
+        $notice->annunciator_id = $request->user_id;
         $notice->save();
         $dev = Device::find($id);
         $dev->status = 2;
+        $dev->department_id = $request->select_dept;
         $dev->save();
         return redirect()->route('doctor.actDevice',['id'=>$user_id])->with('message','Đã báo hỏng thiết bị thành công.');
     }

@@ -106,7 +106,7 @@ Route::group(['prefix'=>'ktv'],function(){
 		Route::post('/edit/{id}','DoctorController@postEdit')->name('doctor.postEdit');
 		Route::get('/password/{id}','DoctorController@getPsw')->name('doctor.getPsw');
 		Route::post('/password/{id}','DoctorController@postPsw')->name('doctor.postPsw');
-		Route::get('/notification/device/brocken/{user_id}/{id}','DoctorController@noticeDev')->name('doctor.noticeDev');
+		Route::get('/notification/device/brocken/{id}','DoctorController@noticeDev')->name('doctor.noticeDev');
 		Route::get('/notification/accept/{id}','DoctorController@acceptNotice')->name('doctor.acceptNoitce');
 		Route::post('/transformer/device/{id}','DoctorController@postMoveDev')->name('doctor.postMoveDev');
 	});

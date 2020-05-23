@@ -168,7 +168,7 @@
         </tr>
         <tr>
           <td><label>Lý do hỏng</label></td>
-          <td><textarea cols="7" rows="2"></textarea></td>
+          <td><textarea cols="7" rows="2" name="reason"></textarea></td>
         </tr>
         <tr>
           <td>Mã người báo hỏng</td>
