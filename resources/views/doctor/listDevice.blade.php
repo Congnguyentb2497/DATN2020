@@ -66,7 +66,7 @@
     width: 600px;
     padding: 10px;
     background-color: #BDBDBD;
-    height: 370px;
+    max-height: 500px;
     border-radius: 5px;
   }
   /* Full-width input fields */
@@ -138,14 +138,14 @@
     <tbody>
         @foreach($devices as $row)
       <tr style="font-size: 15px;">
-        <td>{{$row->id}}</td>
+        <td>{{$row->dv_id}}</td>
         <td>{{$row->dv_name}}</td>
         <td>{{ $row->dv_model}}</td>
         <td>{{ \App\Device_type::where(['id'=>$row->dv_type_id])->pluck('dv_type_name')->first() }}</td>
         <td>{{$row->handover_date}}</td>
         <td>{{ $row->expire_date }}</td>
         <td style="text-align: center;">
-          <a class="ban_giao" data-deviceid="{{$row->id}}"><i style="font-size: 20px;" class="fa fa-exclamation-circle " title="Báo hỏng" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="bao_hong" data-deviceid="{{$row->id}}"><i style="font-size: 20px;" class="fa fa-exclamation-circle " title="Báo hỏng" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
       </tr>
       @endforeach
@@ -205,7 +205,7 @@
     document.getElementById("myForm").style.display = "none";
   }
 
-  $(document).on('click', '.ba0_hong', function(){
+  $(document).on('click', '.bao_hong', function(){
     // Lấy id của data
     var id = $(this).attr('data-deviceid');
     // Lấy action hiện tại của form theo class
