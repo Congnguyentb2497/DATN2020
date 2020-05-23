@@ -121,6 +121,7 @@ background:#3594D2;
 <div><input style="width: 300px;" type="password" name="password" placeholder="password" class="form-control" /></div>
   
 <div><button type="submit" class="btn btn-primary" style="font-size: 20px; padding: 5px;height: 50px;">Sign In</button></div><!-- End Btn -->
+<div style="font-size: 14;margin-top: 7px;">WEBSITE QUẢN LÝ THIẾT BỊ Y TẾ</div>
  <a style="font-size: 11;color: black;font-weight: bold;">&copy;Copy right by SET-BME 2020</a>
 </div> <!-- End Box -->
 </form>
