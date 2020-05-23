@@ -18,7 +18,7 @@ class CreateMaintenScheduleTable extends Migration
             $table->string('repair_responsible')->nullable();
             $table->string('information')->nullable();
             $table->string('note')->nullable();
-            $table->integer('dv_id')->nullable();
+            $table->string('dv_id')->nullable();
             $table->integer('status')->nullable();
             $table->date('schedule_date')->nullable();
             $table->date('proceed_date')->nullable();
