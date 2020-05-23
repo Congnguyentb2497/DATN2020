@@ -70,7 +70,7 @@
     border-radius: 5px;
   }
   /* Full-width input fields */
-  .form-container input[type=text], .form-container input[type=password], .form-container input[type=date] {
+  .form-container input[type=text], .form-container input[type=password], .form-container input[type=date],.form-container select[type=text]  {
     width: 100%;
     padding: 10px;
     margin: 5px 0 22px 0;
@@ -131,7 +131,7 @@
         <th>Model</th>
         <th>Loại thiết bị</th>
         <th>Ngày bàn giao</th>
-        <th>Hạn sử dụng</th>
+        <th>Ngày bảo dưỡng</th>
         <th width="10%">Điều khiển</th>
       </tr>
     </thead>
@@ -143,9 +143,9 @@
         <td>{{ $row->dv_model}}</td>
         <td>{{ \App\Device_type::where(['id'=>$row->dv_type_id])->pluck('dv_type_name')->first() }}</td>
         <td>{{$row->handover_date}}</td>
-        <td>{{ $row->expire_date }}</td>
+        <td>{{ $row->maintain_date }}</td>
         <td style="text-align: center;">
-          <a class="bao_hong" data-deviceid="{{$row->id}}"><i style="font-size: 20px;" class="fa fa-exclamation-circle " title="Báo hỏng" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="bao_hong" data-deviceid="{{$row->id}}"><i style="font-size: 25px;" class="fa fa-exclamation-circle " title="Báo hỏng" aria-hidden="true"></i></a>
         </td>
       </tr>
       @endforeach
@@ -161,17 +161,17 @@
 <div class="form-popup" id="myForm">
     <form action="{{ route('doctor.noticeDev', 'id') }}" class="form-container form1" method="post">
       @csrf
-      <table style="font-size: 17px;" border="0">
+      <table style="font-size: 17px;" border="0" width="100%">
         <tr>
           <td><label>Mã thiết bị</label></td>
-          <td><input type="text" name="dv_id" value="{{$row->dv_id}}"></td>
+          <td width="70%"><input type="text" name="dv_id" value="{{$row->dv_id}}"></td>
         </tr>
         <tr>
           <td><label>Lý do hỏng</label></td>
           <td><textarea cols="7" rows="2" name="reason"></textarea></td>
         </tr>
         <tr>
-          <td>Mã người báo hỏng</td>
+          <td><label>Mã người báo hỏng</label></td>
           <td><input type="text" name="user_id"></td>
         </tr>
         <tr>

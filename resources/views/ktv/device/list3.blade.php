@@ -192,7 +192,7 @@
           </td>
         </tr>
         <tr>
-          <td>Lý do hỏng</td>
+          <td>Tình trạng hỏng</td>
           <td><input type="text" name="note"></td>
         </tr>
         <tr>
