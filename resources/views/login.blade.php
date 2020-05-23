@@ -7,7 +7,7 @@
 <style type="text/css">
 	body{
   font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
-  background-image: url(../public/images/nen.png);
+  background-image: url(./public/images/nen.png);
   margin: 0 auto 0 auto;  
   width:100%; 
   text-align:center;

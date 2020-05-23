@@ -699,16 +699,16 @@ public function showmaintain(Request $request){
     $m3 = Carbon::now()->addMonth(3)->toDateString();
     // $m3 = strtotime($m3);
     if($sl == '1w'){
-        $devices = $devices->where('maintain_date','<=',$w1->toDateString());
+        $devices = $devices->whereDate('maintain_date','<=',$w1->toDateString());
     }
     if($sl == '1m'){
-         $devices = $devices->where('maintain_date','<=',$m1->toDateString());
+         $devices = $devices->whereDate('maintain_date','<=',$m1->toDateString());
     }
     if($sl == '2m'){
-        $devices = $devices->where('maintain_date','<=',$m2);
+        $devices = $devices->whereDate('maintain_date','<=',$m2);
     }
     if($sl == '3m'){
-        $devices = $devices->where('maintain_date','<=',$m3);
+        $devices = $devices->whereDate('maintain_date','<=',$m3);
     }
     $devices = $devices->paginate(10);
     return view('ktv.device.maintain')->with(['devices'=>$devices]);
