@@ -21,7 +21,7 @@ class CreateNotificationTable extends Migration
             $table->integer('dept_next')->nullable();
             $table->string('dv_id')->nullable();
             $table->integer('status')->nullable();
-            $table->integer('annunciator_id')->nullable();
+            $table->string('annunciator_id')->nullable();
             $table->datetime('req_date')->nullable();
             $table->datetime('res_date')->nullable();
             $table->string('receiver')->nullable();

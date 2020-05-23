@@ -18,7 +18,7 @@ class CreateDeviceAccessoryTable extends Migration
             $table->integer('acc_id');
             $table->string('dv_id');
             $table->integer('amount')->nullable();
-            $table->date('export_date')->nullable();
+            $table->datetime('export_date')->nullable();
             $table->timestamps();
         });
     }
