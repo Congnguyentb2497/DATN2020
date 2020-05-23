@@ -70,7 +70,7 @@
     border-radius: 5px;
   }
   /* Full-width input fields */
-  .form-container input[type=text], .form-container input[type=password], .form-container input[type=date],.form-container select[type=text]  {
+  .form-container input[type=text], .form-container input[type=password], .form-container input[type=date],.form-container select[type=text] , .form-container textarea {
     width: 100%;
     padding: 10px;
     margin: 5px 0 22px 0;
@@ -177,7 +177,7 @@
         <tr>
           <td><label>Chuyển TB tới khoa</label></td>
           <td>
-            <select type="text" name="select_dept" style="font-style: 17px;">
+            <select type="text" name="select_dept" style="font-style: 17px;border-radius: 5px;" >
               @if(isset($depts))
               @foreach($depts as $rows)
               <option value="{{$rows->id}}">{{$rows->department_name}}</option>
