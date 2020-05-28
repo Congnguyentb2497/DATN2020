@@ -690,9 +690,9 @@ public function postEditAcc(Request $request, $id){
     $acc = Accessory::find($id);
     $acc->acc_name    = $request->accName;
     $acc->provider_id = $request->provider_id;
-    $acc->amount      = $request->amount;
-    $acc->used      = $request->used;
-    $acc->broken      = $request->broken;
+    // $acc->amount      = $request->amount;
+    // $acc->used      = $request->used;
+    // $acc->broken      = $request->broken;
     $acc->import_date = $request->importDate;
     $acc->unit        = $request->unit;
     $acc->save();
