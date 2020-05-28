@@ -438,7 +438,7 @@ public function saveAcc(Request $request, $id){
     $dv_acc->acc_id = $acc->id;
     $dv_acc->amount = $request->accNumber;
     $dv_acc->save();
-    return redirect()->route('device.getAcc')->with(['message'=>'Đã lưu vật tư kèm theo.','dv'=>]);
+    return redirect()->route('device.getAcc')->with(['message'=>'Đã lưu vật tư kèm theo.','dv'=>$dv]);
 
 }
 // move device
