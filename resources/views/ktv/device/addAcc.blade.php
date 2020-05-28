@@ -54,12 +54,12 @@
             <option value="vttt">Vật tư thay thế</option>
           </select>
     </div>
-    <div class="input-append date form_datetime" style="margin-top: 10px;margin-left: 100px;">
+    <div class="input-append date form_datetime" style="margin-top: 10px;>
       <span class="input-group-text">Hạn sử dụng</span><br>
       <input style="width: 400px;" type="date"  name="expire_date" required="">
     </div>
     <br>
-    <div style="margin-top: 10px;">
+    <div style="margin-top: 10px;margin-left: 100px;">
       <input style="width: 100px;" type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <button style="width: 100px;" class="btn btn-danger" type="reset">Reset</button>
     </div>
