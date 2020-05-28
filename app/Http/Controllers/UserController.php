@@ -420,7 +420,7 @@ public function postAddDevice(Request $request){
 //Add Acc
 public function addAccessory($id){
     $dv = Device::find($id);
-    return view('ktv.device.addAcc')->compact('dv');
+    return view('ktv.device.addAcc')->with(['dv'=>$dv]);
     
 }
 //save Acc
