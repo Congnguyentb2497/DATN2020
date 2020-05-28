@@ -54,13 +54,13 @@
           </select>
     </div>
     <div class="input-append date form_datetime">
-      <input size="16" type="text" name="expire_date" value="" readonly>
-      <span class="add-on"><i class="icon-th"></i></span>
+      <label>Hạn sử dụng</label><br>
+      <input type="date"  name="expire_date">
     </div>
     <br>
     <div>
-      <button style="width: 40px;" type="button" class="btn btn-primary">Lưu</button>
-      <button style="width: 40px; class="btn btn-danger" type="reset">Reset</button>
+      <input style="width: 40px;" type="submit" class="btn btn-primary">Lưu</input>
+      <button style="width: 40px;" class="btn btn-danger" type="reset">Reset</button>
     </div>
     
     </form>
