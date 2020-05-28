@@ -48,14 +48,14 @@
       <input style="width: 400px;" type="text" value="1" name="accNumber" class="form-control" id="basic-url">
     </div>
     <div class="form-group" style="margin-top: 20px;">
-          <select required="" name="typeAcc" class="form-control" id="sel1" style="width: 400px;background-color: #E6E6E6">
-            <option value="0">Chọn loại vật tư</option>
+          <select required="" name="typeAcc" class="form-control" style="width: 400px;background-color: #E6E6E6">
+            <option value=""> Chọn loại vật tư </option>
             <option value="vtth">Vật tư tiêu hao</option>
-            <option value="vttt">Vật tư thay thế</option>
+            <option value="vttt">Vật tư thay thế </option>
           </select>
     </div>
-    <div class="input-append date form_datetime" style="margin-top: 10px;>
-      <span class="input-group-text">Hạn sử dụng</span><br>
+    <div class="input-append date form_datetime" style="margin-top: 10px;">
+      <span class="input-group-text"> Hạn sử dụng</span><br>
       <input style="width: 400px;" type="date"  name="expire_date" required="">
     </div>
     <br>
