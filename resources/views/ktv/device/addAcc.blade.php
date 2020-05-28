@@ -29,33 +29,34 @@
 
   }
 </style>
-<div style="margin-left: 20px;">
+<div>
   <h1>Nhập vật tư kèm theo cho thiết bị {{$dv->dv_name}}</h1>
   <hr>
-  <div style="margin-left: 30px;font-size: 20px;">
+  <div style="margin-left: 30px;font-size: 22px;">
     <form action="{{route('device.saveAcc',['id'=>$dv->id] )}}" method="post">
+      @csrf
     <div class="input-group mb-3">
       <div class="input-group-prepend">
        <span class="input-group-text" id="basic-addon3"><b>Tên vật tư </b></span>
       </div>
-      <input style="width: 400px;" type="text" name="accName" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      <input style="width: 400px;" type="text" name="accName" class="form-control" id="basic-url" required="">
     </div>
     <div class="input-group mb-3" style="margin-top: 10px;">
       <div class="input-group-prepend">
        <span class="input-group-text" id="basic-addon3"><b>Số lượng </b></span>
       </div>
-      <input style="width: 400px;" type="text" name="accNumber" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      <input style="width: 400px;" type="text" value="1" name="accNumber" class="form-control" id="basic-url">
     </div>
-    <div class="form-group" style="margin-top: 10px;">
-          <select name="typeAcc" class="form-control" id="sel1" style="width: 400px;">
-            <option value="">Chọn loại vật tư</option>
+    <div class="form-group" style="margin-top: 20px;">
+          <select required="" name="typeAcc" class="form-control" id="sel1" style="width: 400px;background-color: #E6E6E6">
+            <option value="0">Chọn loại vật tư</option>
             <option value="vtth">Vật tư tiêu hao</option>
             <option value="vttt">Vật tư thay thế</option>
           </select>
     </div>
-    <div class="input-append date form_datetime" style="margin-top: 10px;">
-      <label>Hạn sử dụng</label><br>
-      <input style="width: 400px;" type="date"  name="expire_date">
+    <div class="input-append date form_datetime" style="margin-top: 10px;margin-left: 100px;">
+      <span class="input-group-text">Hạn sử dụng</span><br>
+      <input style="width: 400px;" type="date"  name="expire_date" required="">
     </div>
     <br>
     <div style="margin-top: 10px;">
