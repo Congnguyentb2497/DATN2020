@@ -209,8 +209,10 @@ label {
        <tr>
         <td><label>Ngày sản xuất</label></td>
         <td><input type="date"  name="produce_date" value="{{$dev->produce_date}}" ></td>
-        <td><label>Hạn sử dụng</label></td>
-        <td><input type="date"  name="expire_date" value="{{$dev->expire_date}}" ></td>
+        <td><label>Mã thiết bị</label></td>
+        <td><input type="text"  name="dv_id" value="{{$dev->dv_id}}" disabled></td>
+        <!-- <td><label>Hạn sử dụng</label></td>
+        <td><input type="date"  name="expire_date" value="{{$dev->expire_date}}" ></td> -->
       </tr>
        <tr>
         <td><label>Ngày nhập kho</label></td>
@@ -233,8 +235,8 @@ label {
        <tr>
         <td><label>Ngày bảo dưỡng</label></td>
         <td><input type="date"  name="maintain_date" value="{{$dev->maintain_date}}"></td>
-       <td><label>Mã thiết bị</label></td>
-        <td><input type="text"  name="dv_id" value="{{$dev->dv_id}}" disabled></td>
+       <td></td>
+        <td></td>
       </tr>
       <tr>
        <td></td>
