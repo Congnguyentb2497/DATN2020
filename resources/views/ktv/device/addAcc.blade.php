@@ -38,29 +38,29 @@
       <div class="input-group-prepend">
        <span class="input-group-text" id="basic-addon3"><b>Tên vật tư </b></span>
       </div>
-      <input style="width: 200px;" type="text" name="accName" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      <input style="width: 400px;" type="text" name="accName" class="form-control" id="basic-url" aria-describedby="basic-addon3">
     </div>
-    <div class="input-group mb-3">
+    <div class="input-group mb-3" style="margin-top: 10px;">
       <div class="input-group-prepend">
        <span class="input-group-text" id="basic-addon3"><b>Số lượng </b></span>
       </div>
-      <input style="width: 200px;" type="text" name="accNumber" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      <input style="width: 400px;" type="text" name="accNumber" class="form-control" id="basic-url" aria-describedby="basic-addon3">
     </div>
-    <div class="form-group">
-          <select name="typeAcc" class="form-control" id="sel1" style="width: 200px;">
+    <div class="form-group" style="margin-top: 10px;">
+          <select name="typeAcc" class="form-control" id="sel1" style="width: 400px;">
             <option value="">Chọn loại vật tư</option>
             <option value="vtth">Vật tư tiêu hao</option>
             <option value="vttt">Vật tư thay thế</option>
           </select>
     </div>
-    <div class="input-append date form_datetime">
+    <div class="input-append date form_datetime" style="margin-top: 10px;">
       <label>Hạn sử dụng</label><br>
-      <input type="date"  name="expire_date">
+      <input style="width: 400px;" type="date"  name="expire_date">
     </div>
     <br>
-    <div>
-      <input style="width: 40px;" type="submit" class="btn btn-primary">Lưu</input>
-      <button style="width: 40px;" class="btn btn-danger" type="reset">Reset</button>
+    <div style="margin-top: 10px;">
+      <input style="width: 100px;" type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button style="width: 100px;" class="btn btn-danger" type="reset">Reset</button>
     </div>
     
     </form>
