@@ -25,6 +25,7 @@ class CreateAccessoryTable extends Migration
             $table->integer('broken')->nullable();
             $table->integer('status')->nullable();
             $table->datetime('import_date')->nullable();
+            $table->string('expire_date')->nullable();
             
             $table->timestamps();
         });

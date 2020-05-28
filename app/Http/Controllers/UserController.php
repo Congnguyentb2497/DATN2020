@@ -417,7 +417,30 @@ public function postAddDevice(Request $request){
     $his->save();
     return redirect()->route('device.show0')->with('message','Thêm thiết bị thành công');
 }
-    // move device
+//Add Acc
+public function addAcc($id){
+    $dv = Device::find($id);
+    return view('ktv.device.addAcc')->compact('dv');
+    
+}
+//save Acc
+public function saveAcc(Request $request, $id){
+    $acc = new Accessory;
+    $acc->acc_name = $request->accName;
+    $acc->amount = $request->accNumber;
+    $acc->type = $request->typeAcc;
+    $acc->expire_date = $request->expire_date;
+    $acc->import_date = Carbon::now();
+    $acc->save();
+    $dv_acc = new Device_accessory;
+    $dv_acc->dv_id = $id;
+    $dv_acc->acc_id = $acc->id;
+    $dv_acc->amount = $request->accNumber;
+    $dv_acc->save();
+    return redirect()->route('device.getAcc')->with('message','Đã lưu vật tư kèm theo.');
+
+}
+// move device
 public function moveDevice(Request $request, $id)
 {  
     $dep = $request->select_dept;

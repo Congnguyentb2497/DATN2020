@@ -25,9 +25,9 @@
 		border-radius: 4px;
 		background-color: yellow;
 	}
-	.fa-trash:hover{
+	.fa-medkit:hover{
 		border-radius: 4px;
-		color: red;
+		color: #FA8258;
 	}
 
 	/* The popup form - hidden by default */
@@ -152,6 +152,7 @@
 				<td>{{$device->provider->provider_name}}</td>
 				<td>{{$device->import_date}}</td>
 				<td style="text-align: center;">
+					<a href="{{route('device.getAcc',['id'=>$device->id])}}"><i class="fa fa-medkit" style="font-size: 22px;" title="Nhập vật tư kèm theo" aria-hidden="true"></i></a>
 					<a class="ban_giao" data-deviceid="{{$device->id}}"><i class="fa fa-arrow-circle-o-up" style="font-size: 22px;cursor: pointer;" title="Bàn giao" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="{{route('device.getEdit',['id'=>$device->id])}}"><i class="fa fa-pencil-square-o" style="font-size: 22px;" title="Sửa" aria-hidden="true"></i></a>
 					<!-- <a onclick="return confirm('Bạn có chắc chắn xóa?')" href="{{route('device.del',['id'=>$device->id])}}"><i class="fa fa-trash" style="font-size: 22px;" title="Xóa" aria-hidden="true"></i></a> -->
@@ -178,6 +179,10 @@
 							@endif
 						</select>
 					</td>
+				</tr>
+				<tr>
+					<td>Người phụ trách</td>
+					<td><input type="text" name="receiver"></td>
 				</tr>
 				<tr>
 					<td colspan="2"><button type="submit" class="btn" onclick="return confirm('Bạn có chắc chắn bàn giao thiết bị?')">Lưu
