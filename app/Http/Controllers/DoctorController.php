@@ -21,7 +21,7 @@ class DoctorController extends Controller
     }
 
     public function showDev(Request $request, $id){
-        $user = User::where('user_id',$id)->get();
+        $user = User::where('id',$id)->get();
         $dept = DB::table('department')->get();
         $devices = Device::where('status',1)->where('department_id','=',$user->department_id)->orderBy('id','desc');
         if($request->dv_name){
