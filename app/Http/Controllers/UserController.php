@@ -425,6 +425,7 @@ public function addAcc($id){
 }
 //save Acc
 public function saveAcc(Request $request, $id){
+    $dv = Device::find($id);
     $acc = new Accessory;
     $acc->acc_name = $request->accName;
     $acc->amount = $request->accNumber;
@@ -437,7 +438,7 @@ public function saveAcc(Request $request, $id){
     $dv_acc->acc_id = $acc->id;
     $dv_acc->amount = $request->accNumber;
     $dv_acc->save();
-    return redirect()->route('device.getAcc')->with('message','Đã lưu vật tư kèm theo.');
+    return redirect()->route('device.getAcc')->with(['message'=>'Đã lưu vật tư kèm theo.','dv'=>]);
 
 }
 // move device
