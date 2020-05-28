@@ -55,7 +55,7 @@
           </select>
     </div>
     <div class="input-append date form_datetime" style="margin-top: 10px;">
-      <span class="input-group-text"> Hạn sử dụng</span><br>
+      <span class="input-group-text"> <b>Hạn sử dụng</b></span><br>
       <input style="width: 400px;" type="date"  name="expire_date" required="">
     </div>
     <br>
@@ -68,12 +68,5 @@
   </div>
 </div>
 @endsection
-<script type="text/javascript">
-    $(".form_datetime").datetimepicker({
-        format: "dd MM yyyy - hh:ii",
-        autoclose: true,
-        todayBtn: true,
-        pickerPosition: "bottom-left"
-    });
-</script> 
+
 
