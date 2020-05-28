@@ -46,7 +46,7 @@ select[type=text]{
   width: 100px;
   background-color: green;
   color: white;
-  margin-left: 50px;
+  margin-left: 7px;
   margin-top: 10px;
   padding: 10px;
   border: none;
