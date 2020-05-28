@@ -33,7 +33,7 @@
   <h1>Nhập vật tư kèm theo cho thiết bị {{$dv->dv_name}}</h1>
   <hr>
   <div>
-    <form action="{{route('device.saveAcc',['id'=>$dv->id)]}}" method="post">
+    <form action="{{route('device.saveAcc',['id'=>$dv->id] )}}" method="post">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
        <span class="input-group-text" id="basic-addon3">Tên vật tư </span>

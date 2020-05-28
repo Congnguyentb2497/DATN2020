@@ -152,7 +152,7 @@
 				<td>{{$device->provider->provider_name}}</td>
 				<td>{{$device->import_date}}</td>
 				<td style="text-align: center;">
-					<a href="{{route('device.getAcc',['id'=>$device->id])}}"><i class="fa fa-medkit" style="font-size: 22px;" title="Nhập vật tư kèm theo" aria-hidden="true"></i></a>
+					<a href="{{route('device.getAcc',['id'=>$device->id])}}"><i class="fa fa-medkit" style="font-size: 22px;" title="Nhập vật tư kèm theo" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
 					<a class="ban_giao" data-deviceid="{{$device->id}}"><i class="fa fa-arrow-circle-o-up" style="font-size: 22px;cursor: pointer;" title="Bàn giao" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="{{route('device.getEdit',['id'=>$device->id])}}"><i class="fa fa-pencil-square-o" style="font-size: 22px;" title="Sửa" aria-hidden="true"></i></a>
 					<!-- <a onclick="return confirm('Bạn có chắc chắn xóa?')" href="{{route('device.del',['id'=>$device->id])}}"><i class="fa fa-trash" style="font-size: 22px;" title="Xóa" aria-hidden="true"></i></a> -->
