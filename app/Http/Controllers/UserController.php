@@ -418,7 +418,7 @@ public function postAddDevice(Request $request){
     return redirect()->route('device.show0')->with('message','Thêm thiết bị thành công');
 }
 //Add Acc
-public function addAcc($id){
+public function addAccessory($id){
     $dv = Device::find($id);
     return view('ktv.device.addAcc')->compact('dv');
     

@@ -63,7 +63,7 @@ Route::group(['prefix'=>'ktv'],function(){
 		Route::get('device/list/die','UserController@showDevice4')->name('device.show4');
 		Route::post('device/repair/schedule/{id}','UserController@scheduleRepair')->name('device.scheduleRepair');
 		Route::get('device/maintain','UserController@showMaintain')->name('device.maintain');
-		Route::get('device/add/accessory/{id}','UserController@addAcc')->name('device.getAcc');
+		Route::get('device/add/accessory/{id}','UserController@addAccessory')->name('device.getAcc');
 		Route::post('device/save/accessory/{id}','UserController@saveAcc')->name('device.saveAcc');
 		Route::get('device/edit/{id}','UserController@getEditDevice')->name('device.getEdit');
 		Route::post('device/edit/{id}','UserController@postEditDevice')->name('device.postEdit');
