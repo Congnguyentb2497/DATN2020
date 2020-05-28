@@ -22,14 +22,15 @@ class DoctorController extends Controller
 
     public function showDev(Request $request, $id){
         //$user = User::find($id);
-        $user = DB::table('users')->where('user_id','=',$id);
-        $dept = DB::table('department')->get();
-        $devices = Device::where('status',1)->where('department_id','=',$user->department_id)->orderBy('id','desc');
-        if($request->dv_name){
-            $devices = $devices->where('dv_name','like','%'.$request->dv_name.'%');
-        }
-        $devices = $devices->paginate(8);
-    	return view('doctor.listDevice',['devices'=>$devices,'user'=>$user,'depts'=>$dept]);
+        $user = DB::table('users')->where('user_id','=',$id)->get();
+        dd($user);
+     //    $dept = DB::table('department')->get();
+     //    $devices = Device::where('status',1)->where('department_id','=',$user->department_id)->orderBy('id','desc');
+     //    if($request->dv_name){
+     //        $devices = $devices->where('dv_name','like','%'.$request->dv_name.'%');
+     //    }
+     //    $devices = $devices->paginate(8);
+    	// return view('doctor.listDevice',['devices'=>$devices,'user'=>$user,'depts'=>$dept]);
     }
 
      public function fixDev(Request $request, $id){
