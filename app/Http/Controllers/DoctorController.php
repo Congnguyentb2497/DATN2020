@@ -21,11 +21,11 @@ class DoctorController extends Controller
     }
 
     public function showDev(Request $request, $id){
-        //$user = User::find($id);
-        $user = DB::table('users')->where('user_id','=',$id)->get();
-        
+        $user = User::find($id);
+        // $user = DB::table('users')->where('user_id','=',$id)->get();
+
         $dept = DB::table('department')->get();
-        $devices = Device::where('status',1)->where('department_id','=',$user->department_id)->orderBy('id','desc');
+        $devices = Device::where('status',1)->where('department_id',$user->department_id)->orderBy('id','desc');
         if($request->dv_name){
             $devices = $devices->where('dv_name','like','%'.$request->dv_name.'%');
         }
@@ -76,10 +76,11 @@ class DoctorController extends Controller
         $notice->annunciator_id = $request->user_id;
         $notice->save();
         $dev = Device::find($id);
+        $dvname = $dev->dv_name;
         $dev->status = 2;
         $dev->department_id = $request->select_dept;
         $dev->save();
-        return redirect()->route('doctor.actDevice',['id'=>$d])->with('message','Đã báo hỏng thiết bị thành công.');
+        return redirect()->route('doctor.home')->with('message','Đã báo hỏng thiết bị'.$dvname.' thành công.');
     }
 
     //accept notice from ktv
