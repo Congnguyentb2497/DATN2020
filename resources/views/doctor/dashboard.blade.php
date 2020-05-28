@@ -98,7 +98,7 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li><a  class="dropdown-toggle" data-toggle="dropdown">Danh sách thiết bị</a>
                         <ul class="dropdown-menu multi-level">
-                            <li><a href="{{route('doctor.actDevice',['id'=>Auth::user()->user_id])}}">Thiết bị đang hoạt động</a></li>
+                            <li><a href="{{route('doctor.actDevice',['id'=>Auth::id()])}}">Thiết bị đang hoạt động</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ route('doctor.fixDevice',['id'=>Auth::id()]) }}">Thiết bị đang báo hỏng</a></li>
                         </ul></li>
