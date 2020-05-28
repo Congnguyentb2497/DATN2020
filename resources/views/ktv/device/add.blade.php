@@ -168,6 +168,7 @@ label {
        <td> </td>
         <td>
           <div>
+            <div class="btn" style="float: left; margin-top: 2px;">Nhập vật tư kèm theo</div>
           <div style="float: left; margin-top: 2px;"><input value="Lưu" class="btn" type="submit" style="margin-left: 100px;color: black;" ></div>
           <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" href="{{route('get.home')}}" style="color: black; text-decoration: none;font-weight: bold;">Hủy</a></div>
           </div>

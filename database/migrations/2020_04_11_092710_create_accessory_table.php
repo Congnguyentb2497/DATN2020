@@ -19,6 +19,7 @@ class CreateAccessoryTable extends Migration
             $table->string('unit')->nullable();
             $table->string('size')->nullable();
             $table->integer('provider_id')->nullable();
+            $table->string('type')->nullable();
             $table->integer('amount')->nullable();
             $table->integer('used')->nullable();
             $table->integer('broken')->nullable();
