@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('rule');
             // $table->foreigns('rule')->references('level_id')->on('levels')->onDelete('cascade');
-            $table->string('department_id');
+            $table->integer('department_id');
             $table->rememberToken();
             $table->timestamps();
         });
