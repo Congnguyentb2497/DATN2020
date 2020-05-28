@@ -29,26 +29,26 @@
 
   }
 </style>
-<div>
+<div style="margin-left: 20px;">
   <h1>Nhập vật tư kèm theo cho thiết bị {{$dv->dv_name}}</h1>
   <hr>
-  <div>
+  <div style="margin-left: 30px;font-size: 20px;">
     <form action="{{route('device.saveAcc',['id'=>$dv->id] )}}" method="post">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-       <span class="input-group-text" id="basic-addon3">Tên vật tư </span>
+       <span class="input-group-text" id="basic-addon3"><b>Tên vật tư </b></span>
       </div>
-      <input type="text" name="accName" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      <input style="width: 200px;" type="text" name="accName" class="form-control" id="basic-url" aria-describedby="basic-addon3">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-       <span class="input-group-text" id="basic-addon3">Số lượng </span>
+       <span class="input-group-text" id="basic-addon3"><b>Số lượng </b></span>
       </div>
-      <input type="text" name="accNumber" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      <input style="width: 200px;" type="text" name="accNumber" class="form-control" id="basic-url" aria-describedby="basic-addon3">
     </div>
     <div class="form-group">
-        <label for="sel1">Chọn loại vật tư</label>
-          <select name="typeAcc" class="form-control" id="sel1">
+          <select name="typeAcc" class="form-control" id="sel1" style="width: 200px;">
+            <option value="">Chọn loại vật tư</option>
             <option value="vtth">Vật tư tiêu hao</option>
             <option value="vttt">Vật tư thay thế</option>
           </select>
@@ -57,9 +57,12 @@
       <input size="16" type="text" name="expire_date" value="" readonly>
       <span class="add-on"><i class="icon-th"></i></span>
     </div>
- 
-    <button type="button" class="btn btn-primary">Lưu</button>
-    <button class="btn btn-danger" type="reset">Reset</button>
+    <br>
+    <div>
+      <button style="width: 40px;" type="button" class="btn btn-primary">Lưu</button>
+      <button style="width: 40px; class="btn btn-danger" type="reset">Reset</button>
+    </div>
+    
     </form>
   </div>
 </div>
