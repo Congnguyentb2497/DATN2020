@@ -235,8 +235,8 @@ label {
        <tr>
         <td><label>Ngày bảo dưỡng</label></td>
         <td><input type="date"  name="maintain_date" value="{{$dev->maintain_date}}"></td>
-       <td></td>
-        <td></td>
+       <td><label>Khoa</label></td>
+        <td><input type="text"  name="department" value="{{\App\Department::where(['id' =>$dev->department_id])->pluck('department_name')->first() }}"></td>
       </tr>
       <tr>
        <td></td>
