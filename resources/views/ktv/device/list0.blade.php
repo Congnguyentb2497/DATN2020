@@ -165,7 +165,7 @@
 	<div class="form-popup" id="myForm">
 		<form action="{{ route('device.move', 'id') }}" class="form-container form1" method="post">
 			@csrf
-			<table style="font-size: 17px;" border="0">
+			<table style="font-size: 17px;" border="0" >
 				<tr>
 					<td colspan="2"><label for="email" style="text-align: center; font-size: 22px;"><b>Chọn khoa phòng bàn giao</b></label></td>
 				</tr>
@@ -182,7 +182,7 @@
 				</tr>
 				<tr>
 					<td>Người phụ trách</td>
-					<td><input type="text" name="receiver"></td>
+					<td><input style="margin-left: 3px;" type="text" name="receiver"></td>
 				</tr>
 				<tr>
 					<td colspan="2"><button type="submit" class="btn" onclick="return confirm('Bạn có chắc chắn bàn giao thiết bị?')">Lưu

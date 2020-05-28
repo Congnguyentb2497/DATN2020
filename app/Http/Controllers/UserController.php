@@ -458,6 +458,7 @@ public function moveDevice(Request $request, $id)
     $notice->dv_id = $id;
     $notice->dept_now = $request->select_dept;
     $notice->status = 12;
+    $notice->receiver = $request->receiver;
     $notice->save();
     //tạo lịch sử điều chuyển
     $his =new History_ktv;
