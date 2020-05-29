@@ -119,11 +119,11 @@ label {
        <tr>
         <td><label>Loại thiết bị</label></td>
         <td>
-        	<select type="text" name="device_type" required>
+        	<select id="sl_dvt" type="text" name="device_type" required>
         		<option value="">Loại thiết bị</option>
         		@isset($dv_types)
         		@foreach($dv_types as $rows)
-        		<option value="{{$rows->id}}">{{$rows->dv_type_name}}</option>
+        		<option class="dvt" value="{{$rows->id}}">{{$rows->dv_type_name}}</option>
         		@endforeach
         		@endif
         	</select>
@@ -159,7 +159,7 @@ label {
         <td><label>Bảo dưỡng ĐK</label></td>
         <td><input type="date"  name="maintain_date" ></td>
         <td><label>Mã thiết bị</label></td>
-        <td><input type="text"  name="dv_id" ></td>
+        <td><input type="text" id="dv_id"  name="dv_id" ></td>
       </tr>
       <tr>
         <td><label>Ghi chú</label></td>
@@ -178,3 +178,9 @@ label {
   </form>
 </div>
 @endsection
+<!-- <script type="text/javascript">
+  $(document).ready(function(){
+    var id = $('#sl_dvt').val();
+    $('#dv_id').val(id);
+  })
+</script> -->
