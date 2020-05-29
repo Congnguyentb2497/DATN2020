@@ -53,7 +53,7 @@ select[type=text]{
   opacity: 0.6;
   margin-left: 5px;
   text-align: center;
-  padding: 4px;
+  padding: 5px;
 }
 
 .rgt1:hover{
