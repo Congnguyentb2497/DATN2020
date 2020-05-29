@@ -13,7 +13,8 @@
   	width: 500px;
   }
   .form{
-
+  	margin-left: 50px;
+  	font-size: 20px;
   }
 </style>
 
@@ -30,9 +31,8 @@
  			@endforeach
  			@endif
  		</select>
- 		
-
  	</div>
+ 	<br>
  	<form class="form">
   <div class="form-group">
     <label for="exampleInputEmail1">Hoạt động bảo dưỡng</label>
