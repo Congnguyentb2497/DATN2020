@@ -1,7 +1,7 @@
 @extends('ktv.index')
 @section('content')
 <style type="text/css">
-  h2{
+  h2, h3{
     margin-left: 40px;
     font-weight: bold;
   }

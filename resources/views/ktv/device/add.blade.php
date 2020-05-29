@@ -162,9 +162,9 @@ label {
         <td><input type="text"  name="dv_id" disabled=""></td>
       </tr>
       <tr>
-       <td></td>
-       <td></td>
-       <td> </td>
+        <td><label>Ghi chú</label></td>
+        <td><input type="text"  name="note"></td>
+        <td></td>
         <td>
           <div>
           <div style="float: left; margin-top: 2px;"><input value="Lưu" class="btn" type="submit" style="margin-left: 50px;color: black;" ></div>
