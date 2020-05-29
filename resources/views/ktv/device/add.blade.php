@@ -133,10 +133,9 @@ label {
       </tr>
        <tr>
         <td><label>Ngày sản xuất</label></td>
-        <td><input type="date"  name="produce_date" ></td>
-         
-        <!-- <td><label>Nhóm thiết bị</label></td>
-        <td><input type="text"  name="group" value="X"></td> -->
+        <td><input type="date"  name="produce_date" ></td>  
+        <td><label>Nhóm thiết bị</label></td>
+        <td><input type="text"  name="group" value="X"></td>
       </tr>
        <tr>
         <td><label>Ngày nhập kho</label></td>
@@ -168,8 +167,8 @@ label {
        <td> </td>
         <td>
           <div>
-          <div style="float: left; margin-top: 2px;"><input value="Lưu" class="btn" type="submit" style="margin-left: 100px;color: black;" ></div>
-          <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" style="color: black; text-decoration: none;font-weight: bold;">Hoàn Thành</a></div>
+          <div style="float: left; margin-top: 2px;"><input value="Lưu" class="btn" type="submit" style="margin-left: 50px;color: black;" ></div>
+          <div style="float: left;margin-left: 5px;background-color:green " class="rgt1"><a  class="rgt_canl" style="color: black; text-decoration: none;font-weight: bold;">Hoàn Thành</a></div>
           </div>
           <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" href="{{route('get.home')}}" style="color: black; text-decoration: none;font-weight: bold;">Hủy</a></div>
           </div>

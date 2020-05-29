@@ -138,7 +138,14 @@
                             <li class="divider"></li>
                             <li><a href="{{route('device.getAdd')}}">Thêm mới thiết bị</a></li>
                             <li class="divider"></li>
-                            <li><a href="{{route('device.maintain')}}">Lịch bảo dưỡng</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-toggle" data-toggle="dropdown">Bảo dưỡng thiết bị</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{route('device.maintain')}}">Hồ sơ bảo dưỡng</a></li>
+                                    <li><a href="{{route('device.schedule')}}">Tạo lịch bảo dưỡng</a></li>
+                                </ul>
+                            </li>
+                            
                         </ul>
                     </li>
                     <li>

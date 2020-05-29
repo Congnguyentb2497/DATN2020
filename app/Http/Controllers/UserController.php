@@ -741,6 +741,9 @@ public function showmaintain(Request $request){
     $devices = $devices->paginate(10);
     return view('ktv.device.maintain')->with(['devices'=>$devices]);
 }
+    public function createSchedule(){
+        return view('ktv.device.schedule');
+    }
 
 }
 
