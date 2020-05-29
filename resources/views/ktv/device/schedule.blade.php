@@ -8,9 +8,11 @@
   hr{
   	height: 2px;
   	background-color: green;
+  	margin-left: 40px;
   }
   #sl_dv{
   	width: 500px;
+  	margin-left: 40px;
   }
   .form{
   	margin-left: 50px;
@@ -36,12 +38,12 @@
  	<form class="form">
   <div class="form-group">
     <label for="exampleInputEmail1">Hoạt động bảo dưỡng</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập hoạt động cần bảo dưỡng">
+    <input style="width: 80%" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập hoạt động cần bảo dưỡng">
     <small id="emailHelp" class="form-text text-muted">VD: Kiểm tra buồng kính chiếu tia X</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Tần suất thực hiện</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" >
+    <input style="width: 80%" type="password" class="form-control" id="exampleInputPassword1" >
     <small id="emailHelp" class="form-text text-muted">VD: hàng tuần, hàng tháng,... </small>
   </div>
   <button type="submit" class="btn btn-primary">Lưu</button>
