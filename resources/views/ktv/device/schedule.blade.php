@@ -12,23 +12,28 @@
   #sl_dv{
   	width: 500px;
   }
+  .form{
+
+  }
 </style>
-<h2>Tạo Quy Trình Bảo Dưỡng Cho Thiết Bị</h2>
-<hr>
+
 <div class="container2">
-  <br>
+	<h2>Tạo Quy Trình Bảo Dưỡng Cho Thiết Bị</h2>
+	<hr>
  	<div>
- 		@if(isset($devices))
+ 		
  		<select name="sl_dv" id="sl_dv" class="form-control" required="">
  			<option value="">Lựa chọn thiết bị cần tạo lịch</option>
+ 			@if(isset($devices))
  			@foreach($devices as $row)
  			<option value="{{$row->id}}">{{$row->dv_name}}</option>
  			@endforeach
+ 			@endif
  		</select>
- 		@endif
+ 		
 
  	</div>
- 	<form>
+ 	<form class="form">
   <div class="form-group">
     <label for="exampleInputEmail1">Hoạt động bảo dưỡng</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập hoạt động cần bảo dưỡng">
