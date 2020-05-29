@@ -377,13 +377,17 @@ public function getAddDevice(){
 }
 
 public function postAddDevice(Request $request){
+    // $pdate = strtotime($request->produce_date);
+    // $idate = strtotime($request->import_date);
+    // if($pdate > $idate){
+    //     return
+    // }
     $this->validate($request,[
-        'name_device' => 'required|unique:device,dv_name',
+        'name_device' => 'required',
         'amount' => 'numeric',
         'dv_id' => 'unique:device,dv_id'
     ],[
         'name_device.required' => 'Bạn phải nhập tên thiết bị',
-        'name_device.unique' => 'Thiết bị đã tồn tại, vui lòng kiểm tra lại danh sách thiết bị',
         'amount.numeric'=>'Số lượng phải là số tự nhiên',
         'dv_id.unique' => 'Mã thiết bị này đã tồn tại vui lòng nhập mã khác'
     ]);
@@ -580,15 +584,17 @@ public function getAddDvType(){
 
 public function postAddDvType(Request $request){
     $this->validate($request,[
-        'nameDvt' => 'required|unique:device_type,dv_type_name',
-        'dv_group' => 'required'
+        'nameDvt' => 'required',
+        'dv_group' => 'required',
+        'idDvt' => 'required|unique:device_type,dv_type_id'
     ],[
         'nameDvt.required' => 'Bạn chưa nhập tên loại thiết bị',
-        'nameDvt.unique' => 'Tên thiết bị đã tồn tại, vui lòng kiểm tra lại',
-        'dv_group.required' => 'Bạn chưa phân loại nhóm thiết bị'
+        'dv_group.required' => 'Bạn chưa phân loại nhóm thiết bị',
+        'idDvt.unique' => 'Mã loại thiết bị đã tồn tại.'
     ]);
     $dv_types = new Device_type;
     $dv_types->dv_type_name = $request->nameDvt;
+    $dv_types->dv_type_id = $request->idDvt;
     $dv_types->dv_group = $request->dv_group;
     $dv_types->dv_code = $request->dv_code;
     $dv_types->save();
@@ -602,11 +608,13 @@ public function getEditDvType($id){
 
 public function postEditDvType(Request $request, $id){
     $this->validate($request,[
-        'dv_group' => 'required'
+        'dv_group' => 'required',
+        'idDvt' =>'unique|dv_type,dv_type_id'
     ],[
         'dv_group.required' => 'Bạn chưa phân loại nhóm thiết bị.'
     ]);
     $dv_types = Device_type::find($id);
+    $dv_types->dv_type_id = $request->idDvt;
     $dv_types->dv_type_name = $request->nameDvt;
     $dv_types->dv_group = $request->dv_group;
     $dv_types->save();

@@ -76,6 +76,10 @@
         <td><input type="text"  name="nameDvt" placeholder="Nhập tên loại thiết bị"><br></td>
       </tr>
       <tr>
+        <td width="50%"><label>Mã loại thiết bị</label></td>
+        <td><input type="text"  name="idDvt" placeholder="Nhập mã loại thiết bị"><br></td>
+      </tr>
+      <tr>
         <td><label>Nhóm thiết bị</label></td>
         <td><select title="dv_group" name="dv_group" style="background-color: #BDBDBD">
           <option value="">Phân loại theo nhóm</option>

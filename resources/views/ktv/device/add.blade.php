@@ -159,7 +159,7 @@ label {
         <td><label>Bảo dưỡng ĐK</label></td>
         <td><input type="date"  name="maintain_date" ></td>
         <td><label>Mã thiết bị</label></td>
-        <td><input type="text"  name="dv_id" disabled=""></td>
+        <td><input type="text"  name="dv_id" ></td>
       </tr>
       <tr>
         <td><label>Ghi chú</label></td>
