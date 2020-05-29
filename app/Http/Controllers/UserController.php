@@ -396,7 +396,8 @@ public function postAddDevice(Request $request){
     $device->produce_date = $request->produce_date;
     $device->import_id = $request->import_id;
     $device->import_date = $request->import_date;
-    // $device->expire_date = $request->handover_date;
+    $device->group = $request->group;
+    $device->note = $request->note;
     $device->price = $request->price;
     $device->country = $request->country;
     $device->provider_id = $request->provider;
@@ -492,6 +493,8 @@ public function postEditDevice(Request $request,$id){
     $device->import_date = $request->import_date;
     $device->expire_date = $request->expire_date;
     $device->price = $request->price;
+    $device->note = $request->note;
+    $device->group = $request->group;
     $device->country = $request->country;
     $device->provider_id = $request->provider;
     $device->license_number = $request->license_number;

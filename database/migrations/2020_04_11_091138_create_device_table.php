@@ -25,6 +25,7 @@ class CreateDeviceTable extends Migration
             $table->string('license_number_date')->nullable();
             $table->date('maintain_date')->nullable();
             $table->string('note')->nullable();
+            $table->string('group')->nullable();
             $table->string('import_id')->nullable();
             $table->integer('dv_type_id')->nullable();
             $table->integer('provider_id')->nullable();

@@ -209,9 +209,8 @@ label {
        <tr>
         <td><label>Ngày sản xuất</label></td>
         <td><input type="date"  name="produce_date" value="{{$dev->produce_date}}" ></td>
-        
         <td><label>Nhóm thiết bị</label></td>
-        <td><input type="text"  name="group" value="" ></td>
+        <td><input type="text"  name="group" value="{{$dev->group}}" ></td>
       </tr>
        <tr>
         <td><label>Ngày nhập kho</label></td>
@@ -238,8 +237,15 @@ label {
         <td><input type="text"  name="department" value="{{\App\Department::where(['id' =>$dev->department_id])->pluck('department_name')->first() }}"></td>
       </tr>
       <tr>
-       <td><label>Mã thiết bị</label></td>
+        <td><label>Ghi chú</label></td>
+        <td><input type="text"  name="note" value="{{$dev->note}}" ></td>
+        <td><label>Mã thiết bị</label></td>
         <td><input type="text"  name="dv_id" value="{{$dev->dv_id}}" disabled></td>
+        
+      </tr>
+      <tr>
+       <td></td>
+       <td></td>
         <td colspan="2">
           <div>
             @if($dev->status == 2)

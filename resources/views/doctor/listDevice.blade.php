@@ -122,7 +122,7 @@
       </table>  
     </form>
   </div><br><br><br>
-  
+  @if(isset($devices))
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #81BEF7;">
       <tr style="font-size: 20px;">
@@ -136,6 +136,7 @@
       </tr>
     </thead>
     <tbody>
+      
         @foreach($devices as $row)
       <tr style="font-size: 15px;">
         <td>{{$row->dv_id}}</td>
@@ -149,6 +150,7 @@
         </td>
       </tr>
       @endforeach
+
     </tbody>
   </table>
   <div class="page-nav text-right">
@@ -194,6 +196,7 @@
       </table>
     </form>
   </div>
+  @endif
 <!-- code popup form -->
   <script>
   function openForm() {
