@@ -194,7 +194,7 @@ public function deleteProvider($id){
     //list device not used status=0
 public function showDevice0(Request $request){
     $devices = Device::where('status', 0)->orderBy('id','desc');
-    $dv_types = Device::where('status', 0)->select('dv_type_id')->groupBy('dv_type_id')->get();
+    $dv_types = DB::table('device_type')->get();
     $dept = DB::table('department')->get();
     $provider = DB::table('provider')->get();
     if($request->dv_name)

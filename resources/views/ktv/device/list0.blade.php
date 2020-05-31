@@ -113,7 +113,7 @@
 							<option value="">Tất cả loại thiết bị</option>
 							@if(isset($dv_types))
 							@foreach($dv_types as $rows)
-							<option value="{{ $rows->dv_type->id }}" {{ (request()->dv_type_id == $rows->dv_type->id) ? 'selected' : "" }}> {{ $rows->dv_type->dv_type_name }}
+							<option value="{{ $rows->dv_type_id }}" > {{ $rows->dv_type_name }}
 							</option>
 							@endforeach
 							@endif
