@@ -189,7 +189,7 @@ label {
   var g;
   var dvt;
   var text;
-  var time
+  var time;
   $(document).ready(function(){
       time = $('#import_date').val();
       time = time.replace('-','');
