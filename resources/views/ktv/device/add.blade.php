@@ -192,8 +192,8 @@ label {
       var t = $('#import_date').val();
       var ltb = $( "#sl_dvt option:selected" ).val();
       var text = g + ltb +t;
-      console.log(text);
-      $('#dv_id').html(text);
+      // console.log(text);
+      $('#dv_id').val(text);
     });
     
   });

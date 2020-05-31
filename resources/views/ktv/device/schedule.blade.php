@@ -33,6 +33,7 @@
  			@endif
  		</select>
  	</div>
+ 	@if($row)
  	<form class="form" action="{{ route('device.postScheduleAct',['id'=>$row->dv_id]) }}" method="post">
  		@csrf
  		
@@ -56,6 +57,7 @@
   	</div>
   		
 	</form>
+	@endif
 <br><br>
 	<div style="margin-left: 50px;">
 	<table class="table table-condensed table-bordered table-hover ">
