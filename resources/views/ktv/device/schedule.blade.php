@@ -59,7 +59,7 @@
 	</form>
 	@endif
 <br><br>
-	<div style="margin-left: 50px;">
+	<div style="margin-left: 50px; width: 95%">
 	<table class="table table-condensed table-bordered table-hover ">
 		<thead>
 			<th>Hạng mục công việc</th>
