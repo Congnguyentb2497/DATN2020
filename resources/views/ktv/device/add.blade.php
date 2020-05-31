@@ -189,9 +189,10 @@ label {
   var g;
   var dvt;
   var text;
-  var time = $('#import_date').val();
-  time = time.replace('-','');
+  var time
   $(document).ready(function(){
+      time = $('#import_date').val();
+      time = time.replace('-','');
       $('#group').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
