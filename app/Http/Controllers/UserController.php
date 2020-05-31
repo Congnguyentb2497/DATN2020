@@ -759,8 +759,9 @@ public function showmaintain(Request $request){
     }
     public function createScheduled($id){
         $dv = DB::table('device')->where('dv_id',$id)->get();
-        $schedule = ScheduleAction::where('dv_id','=',$id)->orderBy('id','desc');
-        return view('ktv.device.scheduled')->with(['device'=>$dv,'schedules'=>$schedule]);
+        dd($dv);
+        // $schedule = ScheduleAction::where('dv_id','=',$id)->orderBy('id','desc');
+        // return view('ktv.device.scheduled')->with(['device'=>$dv,'schedules'=>$schedule]);
     }
     public function postScheduleAct(Request $request){
         $id = $request->sl_dv;
