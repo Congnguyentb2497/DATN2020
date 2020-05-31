@@ -191,17 +191,17 @@ label {
       console.log(t);
       var g = $("#group").val();;
       var ltb = $("#sl_dvt").val();
-      // $('#group').on('change',function(){
-      //   //var optionValue = $(this).val();
-      //   //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-      //   g = $("#group option:selected").val();
-      //   });
+      $('#group').on('change',function(){
+        //var optionValue = $(this).val();
+        //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
+        g = $("#group option:selected").val();
+        });
       console.log(g);
-        // $('#sl_dvt').on('change',function(){
-        // //var optionValue = $(this).val();
-        // //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-        // ltb = $("#sl_dvt option:selected").val();
-        // });
+        $('#sl_dvt').on('change',function(){
+        //var optionValue = $(this).val();
+        //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
+        ltb = $("#sl_dvt option:selected").val();
+        });
         console.log(ltb);
         var text = g+ltb+t;
         console.log(text);
