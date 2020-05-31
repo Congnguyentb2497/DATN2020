@@ -188,16 +188,18 @@ label {
 <script >
   $(document).ready(function(){
       var g = $('#group').val(); 
+      console.log(g);
       var t = $('#import_date').val();
+      console.log(t);
       var ltb = $( "#sl_dvt option:selected" ).val();
       var text = g + ltb +t;
       console.log(text);
       function luu(){
         $('#dv_id').val(text);
       }
-    $('#luu').click(function(){
-      $('#dv_id').val(text);
-    });
+    // $('#luu').click(function(){
+    //   $('#dv_id').val(text);
+    // });
     
   });
 </script>
