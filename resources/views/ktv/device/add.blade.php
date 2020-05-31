@@ -181,11 +181,10 @@ label {
 <script type="text/javascript">
   $(document).ready(function(){
     $('#luu').click(function(){
-      var ltb = $('#sl_dvt').val();
       var g = $('#group').val(); 
       var t = $('#import_date').val();
-      <?php $ltbs = DB::table('device_type')->where('dv_type_name','=',$('#sl_dvt').val())->get() ?>
-      var text = g + $ltbs->dv_type_id +t;
+      var ltb = $( "#sl_dvt option:selected" ).val();
+      var text = g + ltb +t;
       $('#dv_id').html(text);
     });
     
