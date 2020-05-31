@@ -142,7 +142,7 @@
         <td>{{$row->dv_id}}</td>
         <td>{{$row->dv_name}}</td>
         <td>{{ $row->dv_model}}</td>
-        <td>{{ \App\Device_type::where(['id'=>$row->dv_type_id])->pluck('dv_type_name')->first() }}</td>
+        <td>{{ \App\Device_type::where(['dv_type_id'=>$row->dv_type_id])->pluck('dv_type_name')->first() }}</td>
         <td>{{$row->handover_date}}</td>
         <td>{{ $row->maintain_date }}</td>
         <td style="text-align: center;">
