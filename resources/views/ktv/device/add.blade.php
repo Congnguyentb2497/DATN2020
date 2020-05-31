@@ -190,21 +190,21 @@ label {
       var t = $('#import_date').val();
       var g;
       var ltb;
-      function luu(){
+      $('#luu').click(function(){
         $('#group').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-        var g= $("#group option:selected").val();
+        g = $("#group option:selected").val();
         });
         $('#sl_dvt').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-        var ltb = $("#sl_dvt option:selected").val();
+        ltb = $("#sl_dvt option:selected").val();
         });
         var text = g+ltb+t;
         console.log(text);
         $('#dv_id').val(text);
-      }
+      });
     // $('#luu').click(function(){
     //   $('#dv_id').val(text);
     // });
