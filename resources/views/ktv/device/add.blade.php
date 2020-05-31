@@ -188,14 +188,14 @@ label {
 <script>
   var g;
   var dvt;
-    $(document).ready(function(){
+  var text;
+  $(document).ready(function(){
       $('#group').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
         var g = $("#group option:selected").val();
         //  alert("Selected Option Text: "+optionText);  
     });
-      $(document).ready(function(){
       $('#sl_dvt').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
@@ -208,7 +208,7 @@ label {
         var text = g+dvt+$('#import_date').val();
         $('#dv_id').val(text);
       });
-    
+    console.log(text);
   });
 </script>
 @endsection
