@@ -160,6 +160,7 @@
       </tr>
     </thead>
     <tbody>
+        @if(isset($devices))
         @foreach($devices as $row)
       <tr style="font-size: 15px;">
         <td>{{$row->id}}</td>
@@ -171,6 +172,7 @@
         <td>{{ \App\Notification::where(['dv_id'=>$row->id,'status'=>1])->pluck('req_date')->first() }}</td>
       </tr>
       @endforeach
+      @endif
     </tbody>
   </table>
   <div class="page-nav text-right">

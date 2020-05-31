@@ -136,7 +136,7 @@
       </tr>
     </thead>
     <tbody>
-      
+        @if(isset($devices))
         @foreach($devices as $row)
       <tr style="font-size: 15px;">
         <td>{{$row->dv_id}}</td>
@@ -150,7 +150,7 @@
         </td>
       </tr>
       @endforeach
-
+      @endif
     </tbody>
   </table>
   <div class="page-nav text-right">
