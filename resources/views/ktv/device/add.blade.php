@@ -186,9 +186,7 @@ label {
       var t = $('#import_date').val();
       <?php $ltbs = DB::table('device_type')->where('dv_type_name','=',$('#sl_dvt').val())->get() ?>
       var text = g + $ltbs->dv_type_id +t;
-      if(isset($ltbs)){
-        $('#dv_id').innerHTML(text);
-      }
+      $('#dv_id').html(text);
     });
     
   })
