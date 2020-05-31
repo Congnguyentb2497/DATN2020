@@ -123,7 +123,7 @@ label {
         		<option value="">Loại thiết bị</option>
         		@isset($dv_types)
         		@foreach($dv_types as $rows)
-        		<option class="dvt" value="{{$rows->id}}">{{$rows->dv_type_name}}</option>
+        		<option class="dvt" value="{{$rows->dv_type_id}}">{{$rows->dv_type_name}}</option>
         		@endforeach
         		@endif
         	</select>
@@ -188,6 +188,7 @@ label {
 <script >
   $(document).ready(function(){
       var t = $('#import_date').val();
+      console.log(t);
       var g = $("#group option:selected").val();;
       var ltb = $("#sl_dvt option:selected").val();
       // $('#group').on('change',function(){

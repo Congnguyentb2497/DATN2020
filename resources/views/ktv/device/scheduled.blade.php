@@ -23,17 +23,17 @@
 <div class="container2">
 	<h2>Tạo Quy Trình Bảo Dưỡng Cho Thiết Bị</h2>
 	<hr>
-	<div>
- 		<select name="sl_dv" id="sl_dv" class="form-control" required="">
- 			<option value="">Lựa chọn thiết bị cần tạo lịch</option>
- 			@if(isset($device))
- 			<option value="{{$device->id}}">{{$device->dv_name}}</option>
- 			@endif
- 		</select>
- 	</div>
+	
  	<form class="form" action="{{ route('device.postScheduleAct',['id'=>$device->dv_id]) }}" method="post">
  		@csrf
- 		
+ 		<div>
+    <select name="sl_dv" id="sl_dv" class="form-control" required="">
+      <option value="">Lựa chọn thiết bị cần tạo lịch</option>
+      @if(isset($device))
+      <option value="{{$device->dv_id}}">{{$device->dv_name}}</option>
+      @endif
+    </select>
+  </div><br>
   	<div class="form-group">
     <label for="exampleInputEmail1">Hoạt động bảo dưỡng</label>
     <input style="width: 90%" type="email" name="nameAct" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập hoạt động cần bảo dưỡng">

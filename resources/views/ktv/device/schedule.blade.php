@@ -35,7 +35,7 @@
  			@endforeach
  			@endif
  		</select>
- 	</div>
+ 	</div><br>
   	<div class="form-group">
     <label for="exampleInputEmail1">Hoạt động bảo dưỡng</label>
     <input style="width: 90%" type="email" name="nameAct" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập hoạt động cần bảo dưỡng">
