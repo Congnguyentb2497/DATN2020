@@ -167,7 +167,7 @@ label {
         <td><label>Bảo dưỡng ĐK</label></td>
         <td><input type="date"  name="maintain_date" ></td>
         <td><label>Mã thiết bị</label></td>
-        <td><input type="text" id="dv_id"  name="dv_id" required=""></td>
+        <td><input type="text" id="dvId"  name="dv_id" required=""></td>
       </tr>
       <tr>
         <td><label>Ghi chú</label></td>
@@ -193,20 +193,20 @@ label {
       $('#group').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-        var g = $("#group option:selected").val();
+        g = $("#group option:selected").val();
         //  alert("Selected Option Text: "+optionText);  
     });
       $('#sl_dvt').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-        var dvt = $("#sl_dvt option:selected").val();
+        dvt = $("#sl_dvt option:selected").val();
         //  alert("Selected Option Text: "+optionText);
         
     });
       // + $("#import_date").val()
       $('#luu').click(function(){
-        var text = g+dvt+$('#import_date').val();
-        $('#dv_id').val(text);
+        text = g+dvt+$('#import_date').val();
+        $('#dvId').val(text);
       });
     console.log(text);
   });
