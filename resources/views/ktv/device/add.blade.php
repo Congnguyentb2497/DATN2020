@@ -135,11 +135,11 @@ label {
         <td><label>Ngày sản xuất</label></td>
         <td><input type="date"  name="produce_date" ></td>  
         <td><label>Nhóm thiết bị</label></td>
-        <td><input type="text"  name="group" value="X"></td>
+        <td><input type="text" id="group" name="group" value="X"></td>
       </tr>
        <tr>
         <td><label>Ngày nhập kho</label></td>
-        <td><input type="date"  name="import_date" ></td>
+        <td><input type="date" id="import_date" name="import_date" ></td>
         <td><label>Mã phiếu nhập</label></td>
         <td><input type="text"  name="import_id" ></td>
       </tr>
@@ -182,9 +182,12 @@ label {
   $(document).ready(function(){
     $('#luu').click(function(){
       var ltb = $('#sl_dvt').val();
+      var g = $('#group').val(); 
+      var t = $('#import_date').val();
       <?php $ltbs = DB::table('device_type')->where('dv_type_name','=',$ltb)->get() ?>
+      var text = g + $ltbs->dv_type_id +t;
       if(isset(ltbs)){
-        $('#dv_id').innerHTML($ltbs->dv_type_id);
+        $('#dv_id').innerHTML(text);
       }
     });
     
