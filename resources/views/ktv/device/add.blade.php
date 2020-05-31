@@ -136,7 +136,7 @@ label {
         <td><input type="date"  name="produce_date" ></td>  
         <td><label>Nhóm thiết bị</label></td>
         <td>
-            <select type="text" id="group" name="group" value="X" >
+            <select type="text" id="group" name="group" >
               <option value="X">X</option>
               <option value="A">A</option>
               <option value="B">B</option>

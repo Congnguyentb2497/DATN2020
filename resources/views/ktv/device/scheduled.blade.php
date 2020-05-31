@@ -68,7 +68,7 @@
 				<td>{{$row->scheduleAct}}</td>
 				<td>{{$row->scheduleTime}}</td>
 				<td>{{$row->note}}</td>
-				<td>	</td>
+				<td></td>
 			</tr>
 			@endforeach
       @endif
