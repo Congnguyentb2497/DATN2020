@@ -23,16 +23,16 @@
 <div class="container2">
 	<h2>Tạo Quy Trình Bảo Dưỡng Cho Thiết Bị</h2>
 	<hr>
-	
- 	<form class="form" action="{{ route('device.postScheduleAct',['id'=>$device->dv_id]) }}" method="post">
- 		@csrf
- 		<div>
+	<div>
     <select name="sl_dv" id="sl_dv" class="form-control" required="">
       <option value="">Lựa chọn thiết bị cần tạo lịch</option>
-      @if(isset($device))
-      <option value="{{$device->dv_id}}">{{$device->dv_name}}</option>
-      @endif
+      $foreach($device as $dv)
+      <option value="{{$dv->dv_id}}">{{$dv->dv_name}}</option>
+      @endforeach
     </select>
+ 	<form class="form" action="{{ route('device.postScheduleAct',['id'=>$dv->dv_id]) }}" method="post">
+ 		@csrf
+ 		
   </div><br>
   	<div class="form-group">
     <label for="exampleInputEmail1">Hoạt động bảo dưỡng</label>
