@@ -186,6 +186,8 @@ label {
   </form>
 </div>
 <script>
+  var g;
+  var dvt;
     $(document).ready(function(){
       $('#group').on('change',function(){
         //var optionValue = $(this).val();
@@ -202,8 +204,11 @@ label {
         
     });
       // + $("#import_date").val()
-    var text = g+dvt;
+      $('#luu').click(function(){
+        var text = g+dvt+$('#import_date').val();
         $('#dv_id').val(text);
+      });
+    
   });
 </script>
 @endsection
