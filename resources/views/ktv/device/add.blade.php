@@ -189,10 +189,7 @@ label {
   var g;
   var dvt;
   var text;
-  var time;
-  $(document).ready(function(){
-      time = $('#import_date').val();
-      time = time.replace('-','');
+    $(document).ready(function(){
       $('#group').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
@@ -208,7 +205,7 @@ label {
     });
       // + $("#import_date").val()
       $('#luu').click(function(){
-        text = g+dvt+time;
+        text = g+dvt+$('#import_date').val();
         $('#dvId').val(text);
       });
     console.log(text);
