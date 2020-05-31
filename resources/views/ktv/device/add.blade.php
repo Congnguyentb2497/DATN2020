@@ -185,38 +185,25 @@ label {
     </table> 
   </form>
 </div>
-<script >
-      var t ;
-      var g ;
-      var ltb ;
+<script>
     $(document).ready(function(){
-      t = $('#import_date').val();
-      console.log(t);
-     // g = $("#group").val();
-      //ltb = $("#sl_dvt").val();
       $('#group').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-        g = $("#group option:selected").val();
-        });
-      console.log(g);
-        $('#sl_dvt').on('change',function(){
+        var g = $("#group option:selected").val();
+        //  alert("Selected Option Text: "+optionText);  
+    });
+      $(document).ready(function(){
+      $('#sl_dvt').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-        ltb = $("#sl_dvt option:selected").val();
-        console.log(ltb);
-        });
-        console.log(ltb);
-        var text = g+ltb+t;
-        console.log(text);
-      $('#luu').click(function(){
+        var dvt = $("#sl_dvt option:selected").val();
+        //  alert("Selected Option Text: "+optionText);
         
+    });
+      // + $("#import_date").val()
+    var text = g+dvt;
         $('#dv_id').val(text);
-      });
-    // $('#luu').click(function(){
-    //   $('#dv_id').val(text);
-    // });
-    
   });
 </script>
 @endsection
