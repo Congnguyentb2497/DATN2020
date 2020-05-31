@@ -27,15 +27,14 @@ class CreateDeviceTable extends Migration
             $table->string('note')->nullable();
             $table->string('group')->nullable();
             $table->string('import_id')->nullable();
-            $table->integer('dv_type_id')->nullable();
-            $table->integer('provider_id')->nullable();
+            $table->string('dv_type_id')->nullable();
+            $table->string('provider_id')->nullable();
             $table->integer('department_id')->nullable();
             $table->integer('status')->nullable();
             $table->integer('price')->nullable();
             $table->date('produce_date')->nullable();
             $table->date('import_date')->nullable();
             $table->date('handover_date')->nullable();
-            $table->date('expire_date')->nullable();
             $table->timestamps();
         });
     }
