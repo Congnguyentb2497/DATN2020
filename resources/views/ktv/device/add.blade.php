@@ -159,7 +159,7 @@ label {
         <td><label>Bảo dưỡng ĐK</label></td>
         <td><input type="date"  name="maintain_date" ></td>
         <td><label>Mã thiết bị</label></td>
-        <td><input type="text" id="dv_id"  name="dv_id" ></td>
+        <td><input type="text" id="dv_id"  name="dv_id" required=""></td>
       </tr>
       <tr>
         <td><label>Ghi chú</label></td>
@@ -167,8 +167,8 @@ label {
         <td></td>
         <td>
           <div>
-          <div style="float: left; margin-top: 2px;"><input value="Lưu" class="btn" type="submit" style="margin-left: 50px;color: black;" ></div>
-          <div style="float: left;margin-left: 5px;background-color:green " class="rgt1"><a  class="rgt_canl" style="color: black; text-decoration: none;font-weight: bold;">Hoàn Thành</a></div>
+          <div style="float: left; margin-top: 2px;"><input value="Hoàn thành" class="btn" type="submit" style="margin-left: 50px;color: black;" ></div>
+          <div style="float: left;margin-left: 5px;background-color:green " class="rgt1"><a id="luu"  class="rgt_canl" style="color: black; text-decoration: none;font-weight: bold;">Lưu</a></div>
           </div>
           <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" href="{{route('get.home')}}" style="color: black; text-decoration: none;font-weight: bold;">Hủy</a></div>
           </div>
@@ -178,9 +178,15 @@ label {
   </form>
 </div>
 @endsection
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   $(document).ready(function(){
-    var id = $('#sl_dvt').val();
-    $('#dv_id').val(id);
+    $('#luu').click(function(){
+      var ltb = $('#sl_dvt').val();
+      <?php $ltbs = DB::table('device_type')->where('dv_type_name','=',$ltb)->get() ?>
+      if(isset(ltbs)){
+        $('#dv_id').innerHTML($ltbs->dv_type_id);
+      }
+    });
+    
   })
-</script> -->
+</script>

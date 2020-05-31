@@ -77,6 +77,8 @@ Route::group(['prefix'=>'ktv'],function(){
 		Route::post('device/accessory/{id}','UserController@accessoryDevice')->name('device.accessory');
 		Route::get('device/file/{id}','UserController@fileDevice')->name('device.view');
 		Route::get('device/create/schedule','UserController@createSchedule')->name('device.schedule');
+		Route::get('device/create/schedule/{id}','UserController@createScheduled')->name('device.scheduled');
+		Route::post('device/creare/schedule/{id}''UserController@postScheduleAct')->name('device.postScheduleAct');
 
 		//device_type
 		Route::get('device_type/list','UserController@showDvType')->name('dvtype.show');

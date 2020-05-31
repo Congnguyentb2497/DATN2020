@@ -26,14 +26,12 @@
 	<div>
  		<select name="sl_dv" id="sl_dv" class="form-control" required="">
  			<option value="">Lựa chọn thiết bị cần tạo lịch</option>
- 			@if(isset($devices))
- 			@foreach($devices as $row)
- 			<option value="{{$row->id}}">{{$row->dv_name}}</option>
- 			@endforeach
+ 			@if(isset($device))
+ 			<option value="{{$device->id}}">{{$device->dv_name}}</option>
  			@endif
  		</select>
  	</div>
- 	<form class="form" action="{{route('device.postScheduleAct',['id'=>$row->dv_id]}}" method="post">
+ 	<form class="form" action="{{route('device.postScheduleAct',['id'=>$device->dv_id]}}" method="post">
  		@csrf
  		
   	<div class="form-group">
@@ -50,11 +48,10 @@
     	<label for="exampleInputEmail1">Ghi chú</label>
     	<input style="width: 90%" type="email" name="note" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   	</div>
-  	<div>
-  		<button style="width: 70px; float: left;" id="luu" type="submit" class="btn btn-primary">Lưu</button>
-  		<div style="float: left;"><a class="btn btn-primary" href="{{route('device.schedule')}}">Hoàn tất</a></div>
-  	</div>
-  		
+  		<div>
+      <button style="width: 70px; float: left;" id="luu" type="submit" class="btn btn-primary">Lưu</button>
+      <div style="float: left;"><a class="btn btn-primary" href="{{route('device.schedule')}}">Hoàn tất</a></div>
+    </div>
 	</form>
 <br><br>
 	<div style="margin-left: 50px;">
@@ -72,8 +69,7 @@
 				<td>$row->scheduleAct</td>
 				<td>$row->scheduleTime</td>
 				<td>$row->note</td>
-				<td>
-					
+				<td>	
 				</td>
 			</tr>
 			@endforeach

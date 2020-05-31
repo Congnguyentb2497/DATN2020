@@ -16,6 +16,7 @@ use App\Accessory;
 use App\Device_accessory;
 use App\Department;
 use App\History_ktv;
+use App\ScheduleAction;
 class UserController extends Controller
 {
     //ktv
@@ -755,7 +756,21 @@ public function showmaintain(Request $request){
     public function createSchedule(){
         return view('ktv.device.schedule');
     }
+    public function createScheduled($id){
+        $dv = Device::where('dv_id',$id)->get();
+        $schedule = ScheduleAction::where('dv_id','=',$id)->orderBy('id','desc');
+        return view('ktv.device.scheduled')->with(['device'=>$dv,'schedules'=>$schedule]);
+    }
+    public function postScheduleAct(Request $request ,$id){
+        $schedules = new ScheduleAction;
+        $schedules->dv_id = $request->sl_dv;
+        $schedules->scheduleAct = $request->nameAct;
+        $schedules->scheduleTime = $request->timeAct;
+        $schedules->note = $request->note;
+        $schedules->save();
 
+        return redirect()->route('device.scheduled',['id'=>$id]);
+    }
 }
 
 
