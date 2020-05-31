@@ -61,19 +61,19 @@
 			<th>Ghi chú</th>
 			<th></th>
 		</thead>
-		@if(isset($schedules))
 		<tbody>
+      @if(isset($schedules))
 			@foreach($schedules as $row)
 			<tr>
-				<td>$row->scheduleAct</td>
-				<td>$row->scheduleTime</td>
-				<td>$row->note</td>
-				<td>	
-				</td>
+				<td>{{$row->scheduleAct}}</td>
+				<td>{{$row->scheduleTime}}</td>
+				<td>{{$row->note}}</td>
+				<td>	</td>
 			</tr>
 			@endforeach
+      @endif
 		</tbody>
-		@endif
+		
 	</table>
 </div>
 </div>
