@@ -33,8 +33,8 @@
  			@endif
  		</select>
  	</div>
- 	@if($row)
- 	<form class="form" action="{{ route('device.postScheduleAct',['id'=>$row->dv_id]) }}" method="post">
+ 	@if(isset($row))
+ 	<form class="form" action="{{ route('device.postScheduleAct'}}" method="post">
  		@csrf
  		
   	<div class="form-group">

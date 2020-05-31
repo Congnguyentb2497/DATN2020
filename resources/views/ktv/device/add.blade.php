@@ -178,7 +178,7 @@ label {
           <div style="float: left; margin-top: 2px;"><input value="Hoàn thành" class="btn" type="submit" style="margin-left: 50px;color: black;" ></div>
           <div style="float: left;margin-left: 5px;background-color:green " class="rgt1"><a id="luu"  class="rgt_canl" style="color: black; text-decoration: none;font-weight: bold;">Lưu</a></div>
           </div>
-          <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" href="{{route('get.home')}}" style="color: black; text-decoration: none;font-weight: bold;">Hủy</a></div>
+          <div style="float: left;margin-left: 5px;" class="rgt1"><a onclick="return luu()" class="rgt_canl" href="{{route('get.home')}}" style="color: black; text-decoration: none;font-weight: bold;">Hủy</a></div>
           </div>
         </td>
       </tr>
@@ -187,12 +187,15 @@ label {
 </div>
 <script >
   $(document).ready(function(){
-    $('#luu').click(function(){
       var g = $('#group').val(); 
       var t = $('#import_date').val();
       var ltb = $( "#sl_dvt option:selected" ).val();
       var text = g + ltb +t;
-      // console.log(text);
+      console.log(text);
+      function luu(){
+        $('#dv_id').val(text);
+      }
+    $('#luu').click(function(){
       $('#dv_id').val(text);
     });
     
