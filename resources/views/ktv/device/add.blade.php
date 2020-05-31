@@ -189,8 +189,8 @@ label {
   $(document).ready(function(){
       var t = $('#import_date').val();
       console.log(t);
-      var g = $("#group option:selected").val();;
-      var ltb = $("#sl_dvt option:selected").val();
+      var g = $("#group").val();;
+      var ltb = $("#sl_dvt").val();
       // $('#group').on('change',function(){
       //   //var optionValue = $(this).val();
       //   //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
