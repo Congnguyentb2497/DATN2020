@@ -190,8 +190,7 @@ label {
       var t = $('#import_date').val();
       var g;
       var ltb;
-      $('#luu').click(function(){
-        $('#group').on('change',function(){
+      $('#group').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
         g = $("#group option:selected").val();
@@ -203,6 +202,8 @@ label {
         });
         var text = g+ltb+t;
         console.log(text);
+      $('#luu').click(function(){
+        
         $('#dv_id').val(text);
       });
     // $('#luu').click(function(){

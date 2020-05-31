@@ -28,12 +28,11 @@
  			<option value="">Lựa chọn thiết bị cần tạo lịch</option>
  			@if(isset($devices))
  			@foreach($devices as $row)
- 			<option value="{{$row->id}}">{{$row->dv_name}}</option>
+ 			<option value="{{$row->dv_id}}">{{$row->dv_name}}</option>
  			@endforeach
  			@endif
  		</select>
  	</div>
- 	@if(isset($row))
  	<form class="form" action="{{ route('device.postScheduleAct')}}" method="post">
  		@csrf
  		
@@ -57,7 +56,6 @@
   	</div>
   		
 	</form>
-	@endif
 <br><br>
 	<div style="margin-left: 50px; width: 95%">
 	<table class="table table-condensed table-bordered table-hover ">
