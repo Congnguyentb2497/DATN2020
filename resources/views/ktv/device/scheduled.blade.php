@@ -29,7 +29,7 @@
  		<div>
     <select name="sl_dv" id="sl_dv" class="form-control" required="">
       <option value="">Lựa chọn thiết bị cần tạo lịch</option>
-      $foreach($device as $dv)
+      @foreach($device as $dv)
       <option value="{{$dv->dv_id}}">{{$dv->dv_name}}</option>
       @endforeach
     </select>
