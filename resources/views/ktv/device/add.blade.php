@@ -135,7 +135,15 @@ label {
         <td><label>Ngày sản xuất</label></td>
         <td><input type="date"  name="produce_date" ></td>  
         <td><label>Nhóm thiết bị</label></td>
-        <td><input type="text" id="group" name="group" value="X"></td>
+        <td>
+            <select type="text" id="group" name="group" value="X" >
+              <option value="X">X</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+            </select>
+        </td>
       </tr>
        <tr>
         <td><label>Ngày nhập kho</label></td>
@@ -177,8 +185,7 @@ label {
     </table> 
   </form>
 </div>
-@endsection
-<script type="text/javascript">
+<script >
   $(document).ready(function(){
     $('#luu').click(function(){
       var g = $('#group').val(); 
@@ -189,5 +196,7 @@ label {
       $('#dv_id').html(text);
     });
     
-  })
+  });
 </script>
+@endsection
+

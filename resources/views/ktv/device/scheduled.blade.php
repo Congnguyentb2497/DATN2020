@@ -31,7 +31,7 @@
  			@endif
  		</select>
  	</div>
- 	<form class="form" action="{{route('device.postScheduleAct',['id'=>$device->dv_id]}}" method="post">
+ 	<form class="form" action="{{ route('device.postScheduleAct',['id'=>$device->dv_id]) }}" method="post">
  		@csrf
  		
   	<div class="form-group">
