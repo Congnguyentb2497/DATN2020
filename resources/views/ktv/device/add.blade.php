@@ -128,13 +128,7 @@ label {
         		@endif
         	</select>
         </td>
-        <td><label>Hãng sản xuất</label></td>
-        <td><input type="text"  name="produce" ></td>
-      </tr>
-       <tr>
-        <td><label>Ngày sản xuất</label></td>
-        <td><input type="date"  name="produce_date" ></td>  
-        <td><label>Nhóm thiết bị</label></td>
+          <td><label>Nhóm thiết bị</label></td>
         <td>
             <select type="text" id="group" name="group" >
               <option value="X">X</option>
@@ -146,8 +140,15 @@ label {
         </td>
       </tr>
        <tr>
+        <td><label>Ngày sản xuất</label></td>
+        <td><input type="date"  name="produce_date" ></td>  
+        
+        <td><label>Hãng sản xuất</label></td>
+        <td><input type="text"  name="produce" ></td>
+      </tr>
+       <tr>
         <td><label>Ngày nhập kho</label></td>
-        <td><input type="date" id="import_date" name="import_date" ></td>
+        <td><input type="date" id="import_date" name="import_date" value="{{ date('Y-m-d') }}" ></td>
         <td><label>Mã phiếu nhập</label></td>
         <td><input type="text"  name="import_id" ></td>
       </tr>
@@ -187,7 +188,7 @@ label {
 </div>
 <script>
   var g='X';
-  var dvt;
+  var dvt='XXX';
   var text;
     $(document).ready(function(){
       $('#group').on('change',function(){
