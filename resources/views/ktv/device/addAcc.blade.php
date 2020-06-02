@@ -1,7 +1,16 @@
 @extends('ktv.index')
 @section('content')
 <style type="text/css">
-  
+  label {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 2px;
+  background-color: #81DAF5;
+  border: solid 0px;
+  border-radius: 4px;
+  width: 150px;
+  text-align: center;
+}
   .container2{
     margin: 40px;
     margin-top: 40px;
@@ -42,10 +51,10 @@ select[type=text]{
 
   }
 </style>
-<div>
-  <h1>Nhập vật tư kèm theo cho thiết bị {{$dv->dv_name}}</h1>
+<div> 
+  <h1 style="margin-left: 5px;">Nhập vật tư kèm theo cho thiết bị {{$dv->dv_name}}</h1>
   <hr>
-  <div class="editKtv">
+  <div class="container2">
   <form action="{{route('device.saveAcc',['id'=>$dv->id] )}}" method="post">
          @csrf
     <table border="0" width="100%" >

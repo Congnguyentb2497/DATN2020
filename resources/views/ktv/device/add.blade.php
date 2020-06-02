@@ -86,9 +86,9 @@ label {
   padding: 2px;
   background-color: #81DAF5;
   border: solid 0px;
-    border-radius: 4px;
-    width: 150px;
-    text-align: center;
+  border-radius: 4px;
+  width: 150px;
+  text-align: center;
 }
 </style>
 <div style="font-size: 30px;padding-left: 50px;padding-top: 10px;font-weight: bold; ">Nhập thông tin thiết bị</div>
