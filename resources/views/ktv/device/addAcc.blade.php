@@ -1,19 +1,32 @@
 @extends('ktv.index')
 @section('content')
 <style type="text/css">
-  input[type=date]{
-    margin-left: : 0px;
-    font-size: 16px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    height: 30px;
-  }
+  
   .container2{
     margin: 40px;
     margin-top: 40px;
   }
+  input[type=text], input[type=date]{
+  width: 450px;
+  padding: 5px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+select[type=text]{
+  width: 450px;
+  padding: 5px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
+  background-color: #D8D8D8;
+}
   hr{
     height: 2px;
     background-color: #2EFE64;
