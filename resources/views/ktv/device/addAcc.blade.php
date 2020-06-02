@@ -32,40 +32,67 @@
 <div>
   <h1>Nhập vật tư kèm theo cho thiết bị {{$dv->dv_name}}</h1>
   <hr>
-  <div style="margin-left: 30px;font-size: 22px;">
-    <form action="{{route('device.saveAcc',['id'=>$dv->id] )}}" method="post">
-      @csrf
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-       <span class="input-group-text" id="basic-addon3"><b>Tên vật tư </b></span>
-      </div>
-      <input style="width: 400px;" type="text" name="accName" class="form-control" id="basic-url" required="">
-    </div>
-    <div class="input-group mb-3" style="margin-top: 10px;">
-      <div class="input-group-prepend">
-       <span class="input-group-text" id="basic-addon3"><b>Số lượng </b></span>
-      </div>
-      <input style="width: 400px;" type="text" value="1" name="accNumber" class="form-control" id="basic-url">
-    </div>
-    <div class="form-group" style="margin-top: 20px;">
-          <select required="" name="typeAcc" class="form-control" style="width: 400px;background-color: #E6E6E6">
-            <option value=""> Chọn loại vật tư </option>
+  <div class="editKtv">
+  <form action="{{route('device.saveAcc',['id'=>$dv->id] )}}" method="post">
+         @csrf
+    <table border="0" width="100%" >
+      <tr>
+        <td><label>Tên vật tư</label></td>
+        <td><input type="text"  name="name_device" required></td>
+        <td><label>Nhà cung cấp</label></td>
+        <td><select type="text" name="provider" required>
+            <option value="">Nhà cung cấp</option>
+            @isset($providers)
+            @foreach($providers as $rows)
+            <option name="provider" value="{{$rows->id}}">{{$rows->provider_name}}</option>
+            @endforeach
+            @endif
+          </select></td>
+      </tr>
+       <tr>
+        <td><label>Model</label></td>
+        <td><input type="text"  name="model" required></td>
+        <td><label>Serial</label></td>
+        <td><input type="text"  name="serial" ></td>
+      </tr>
+       <tr>
+        <td><label>Loại vật tư</label></td>
+        <td>
+          <select id="sl_dvt" type="text" name="device_type" required>
+            <option value="">Chọn loại vật tư</option>
             <option value="vtth">Vật tư tiêu hao</option>
-            <option value="vttt">Vật tư thay thế </option>
+            <option value="vttt">Vật tư thay thế</option>
           </select>
-    </div>
-    <div class="input-append date form_datetime" style="margin-top: 10px;">
-      <span class="input-group-text"> <b>Hạn sử dụng</b></span><br>
-      <input style="width: 400px;" type="date"  name="expire_date" required="">
-    </div>
-    <br>
-    <div style="margin-top: 10px;margin-left: 100px;">
-      <input style="width: 100px;" type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <button style="width: 100px;" class="btn btn-danger" type="reset">Reset</button>
-    </div>
-    
-    </form>
-  </div>
+        </td>
+        <td><label>Ngày sản xuất</label></td>
+        <td><input type="date"  name="produce_date" ></td>
+      </tr>
+       <tr>
+        <td><label>Ngày nhập kho</label></td>
+        <td><input type="date" id="import_date" name="import_date" value="{{ date('Y-m-d') }}" ></td>  
+        <td><label>Hãng sản xuất</label></td>
+        <td><input type="text"  name="produce" ></td>
+      </tr>    
+       <tr>
+        <td><label>Hạn sử dụng</label></td>
+        <td><input type="date"  name="expire_date" ></td>
+        <td><label>Mã thiết bị đi kèm</label></td>
+        <td><input type="text" id="dvId"  name="dv_id" value="{{$dv->dv_id}}"></td>
+      </tr>
+      <tr>
+        <td><label>Ghi chú</label></td>
+        <td><input type="text"  name="note"></td>
+        <td></td>
+        <td>
+          <div>
+          <input style="width: 100px;" type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button style="width: 100px;" class="btn btn-danger" type="reset">Reset</button>
+          </div>
+        </td>
+      </tr>
+    </table> 
+  </form>
+</div>
 </div>
 @endsection
 
