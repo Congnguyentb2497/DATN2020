@@ -186,7 +186,7 @@ label {
   </form>
 </div>
 <script>
-  var g;
+  var g='X';
   var dvt;
   var text;
     $(document).ready(function(){
