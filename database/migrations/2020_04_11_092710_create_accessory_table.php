@@ -26,6 +26,11 @@ class CreateAccessoryTable extends Migration
             $table->integer('status')->nullable();
             $table->datetime('import_date')->nullable();
             $table->string('expire_date')->nullable();
+            $table->string('factory')->nullable();
+            $table->string('produce_date')->nullable();
+            $table->string('model')->nullable();
+            $table->string('serial')->nullable();
+            $table->string('note')->nullable();
             
             $table->timestamps();
         });

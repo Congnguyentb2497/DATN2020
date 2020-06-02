@@ -14,6 +14,7 @@
   .container2{
     margin: 40px;
     margin-top: 40px;
+    font-size: 20px;
   }
   input[type=text], input[type=date]{
   width: 450px;
@@ -60,7 +61,7 @@ select[type=text]{
     <table border="0" width="100%" >
       <tr>
         <td><label>Tên vật tư</label></td>
-        <td><input type="text"  name="name_device" required></td>
+        <td><input type="text"  name="accName" required></td>
         <td><label>Nhà cung cấp</label></td>
         <td><select type="text" name="provider" required>
             <option value="">Nhà cung cấp</option>
@@ -73,14 +74,14 @@ select[type=text]{
       </tr>
        <tr>
         <td><label>Model</label></td>
-        <td><input type="text"  name="model" required></td>
+        <td><input type="text"  name="model" ></td>
         <td><label>Serial</label></td>
         <td><input type="text"  name="serial" ></td>
       </tr>
        <tr>
         <td><label>Loại vật tư</label></td>
         <td>
-          <select id="sl_dvt" type="text" name="device_type" required>
+          <select id="sl_dvt" type="text" name="typeAcc" required>
             <option value="">Chọn loại vật tư</option>
             <option value="vtth">Vật tư tiêu hao</option>
             <option value="vttt">Vật tư thay thế</option>
@@ -104,11 +105,17 @@ select[type=text]{
       <tr>
         <td><label>Ghi chú</label></td>
         <td><input type="text"  name="note"></td>
+        <td><label>Số lượng</label></td>
+        <td><input type="text"  name="accNumber" value="1"></td>
+      </tr>
+      <tr>
+        <td><label>Đơn vị tính</label></td>
+        <td><input type="text"  name="unit"></td>
         <td></td>
         <td>
           <div>
           <input style="width: 100px;" type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button style="width: 100px;" class="btn btn-danger" type="reset">Reset</button>
+          <button style="width: 100px;" class="btn btn-danger" type="reset">Tạo lại</button>
           </div>
         </td>
       </tr>

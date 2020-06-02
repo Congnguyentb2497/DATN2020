@@ -426,7 +426,8 @@ public function postAddDevice(Request $request){
 //Add Acc
 public function addAccessory($id){
     $dv = Device::find($id);
-    return view('ktv.device.addAcc')->with(['dv'=>$dv]);
+    $provide = DB::table('provider')->get();
+    return view('ktv.device.addAcc')->with(['dv'=>$dv,'providers'=>$provider]);
     
 }
 //save Acc
@@ -434,17 +435,22 @@ public function saveAcc(Request $request, $id){
     $dv = Device::find($id);
     $acc = new Accessory;
     $acc->acc_name = $request->accName;
+    $acc->unit = $request->unit;
+    $acc->provider_id = $request->provider;
+    $acc->model = $request->model;
+    $acc->serial = $request->serial;
     $acc->amount = $request->accNumber;
     $acc->type = $request->typeAcc;
     $acc->expire_date = $request->expire_date;
     $acc->import_date = Carbon::now();
+    $acc->note = $request->note;
     $acc->save();
     $dv_acc = new Device_accessory;
     $dv_acc->dv_id = $id;
     $dv_acc->acc_id = $acc->id;
     $dv_acc->amount = $request->accNumber;
     $dv_acc->save();
-    return redirect()->route('device.getAcc',['id'=>$dv->id])->with(['message'=>'Đã lưu vật tư kèm theo.','dv'=>$dv]);
+    return redirect()->route('device.getAcc',['id'=>$dv->id])->with(['message'=>'Đã lưu vật tư kèm theo.']);
 
 }
 // move device
