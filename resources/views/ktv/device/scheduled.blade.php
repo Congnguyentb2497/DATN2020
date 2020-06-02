@@ -49,7 +49,7 @@
   	</div>
   		<div>
       <button style="width: 70px; float: left;" id="luu" type="submit" class="btn btn-primary">Lưu</button>
-      <div style="float: left;"><a class="btn btn-primary" href="{{route('device.schedule')}}">Hoàn tất</a></div>
+      <div style="float: left;margin-left: 10px;"><a class="btn btn-primary" href="{{route('device.schedule')}}">Hoàn tất</a></div>
     </div>
 	</form>
 <br><br>
