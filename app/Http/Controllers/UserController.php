@@ -426,7 +426,7 @@ public function postAddDevice(Request $request){
 //Add Acc
 public function addAccessory($id){
     $dv = Device::find($id);
-    $provide = DB::table('provider')->get();
+    $provider = DB::table('provider')->get();
     return view('ktv.device.addAcc')->with(['dv'=>$dv,'providers'=>$provider]);
     
 }
@@ -443,7 +443,9 @@ public function saveAcc(Request $request, $id){
     $acc->type = $request->typeAcc;
     $acc->expire_date = $request->expire_date;
     $acc->import_date = Carbon::now();
+    $acc->note = $request->note; 
     $acc->note = $request->note;
+
     $acc->save();
     $dv_acc = new Device_accessory;
     $dv_acc->dv_id = $id;
