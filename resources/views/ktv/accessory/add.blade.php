@@ -79,6 +79,22 @@ label {
         <td><input type="text"  name="accName" required></td>
       </tr>
        <tr>
+        <td width="50%"><label>Model</label></td>
+        <td><input type="text"  name="model" ></td>
+      </tr>
+       <tr>
+        <td width="50%"><label>Serial</label></td>
+        <td><input type="text"  name="serial" ></td>
+      </tr>
+       <tr>
+        <td width="50%"><label>Loại vật tư</label></td>
+        <td><select id="sl_dvt" type="text" name="typeAcc" required>
+            <option value="">Chọn loại vật tư</option>
+            <option value="vtth">Vật tư tiêu hao</option>
+            <option value="vttt">Vật tư thay thế</option>
+          </select></td>
+      </tr>
+       <tr>
         <td><label>Nhà cung cấp</label></td>
         <td> <select name="provider_id" type="text" required>
               <option value="">Mọi nhà cung cấp</option>
@@ -93,7 +109,7 @@ label {
       </tr> 
       <tr>
         <td><label>Số lượng</label></td>
-        <td><input type="text"  name="amount" required><br></td>
+        <td><input type="text"  name="amount" value="1"><br></td>
       </tr>
       <tr>
         <td><label>Đơn vị tính</label></td>
@@ -102,6 +118,14 @@ label {
        <tr>
         <td><label>Ngày nhập kho</label></td>
         <td><input type="date"  name="importDate" ><br></td>
+      </tr>
+      <tr>
+        <td width="50%"><label>Hạn sử dụng</label></td>
+        <td><input type="date"  name="expire_date" ></td>
+      </tr>
+      <tr>
+        <td><label>Ghi chú</label></td>
+        <td><input type="text"  name="note" ><br></td>
       </tr>
       <tr>
         <td></td>

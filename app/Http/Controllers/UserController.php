@@ -444,7 +444,7 @@ public function saveAcc(Request $request, $id){
     $acc->expire_date = $request->expire_date;
     $acc->import_date = Carbon::now();
     $acc->note = $request->note; 
-    $acc->note = $request->note;
+    $acc->status = 1;
 
     $acc->save();
     $dv_acc = new Device_accessory;
@@ -688,6 +688,13 @@ public function postAddAcc(Request $request){
     $acc->amount      = $request->amount;
     $acc->import_date = $request->importDate;
     $acc->unit        = $request->unit;
+    $acc->model       = $request->model;
+    $acc->serial      = $request->serial;
+    $acc->expire_date = $request->expire_date;
+    $acc->type        = $request->typeAcc;
+    $acc->status      = 0;
+    $acc->note        = $request->note;
+
     $acc->save();
     return redirect()->route('accessory.show')->with('Thêm mới vật tư thành công');
 }

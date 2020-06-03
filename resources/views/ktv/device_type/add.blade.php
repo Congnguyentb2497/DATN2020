@@ -25,19 +25,16 @@
     font-size: 20px;
   }
   .canl{
-    position: absolute;
-    width: 520px;
-    text-align: center;
+    width: 100%;
     background-color: black;
     color: white;
     padding: 10px 20px;
     margin-top: 10px;
-    margin-left:380px;
     margin-bottom: 5px;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
     font-size: 20px;
-    opacity: 0.6;
   }
   .btn:hover {
     background-color: #45a049;
@@ -95,8 +92,14 @@
           <input class="btn" type="submit" value="Lưu loại thiết bị" ></input>
         </td>
       </tr>
+      <tr>
+        <td></td>
+        <td>
+          <div class="canl" s><a href="{{route('dvtype.show')}}" style="color: white; text-decoration: none;">Hủy bỏ</a></div>
+        </td>
+      </tr>
     </table> 
-    <div class="canl"><a href="{{route('dvtype.show')}}" style="color: white; text-decoration: none;">Hủy bỏ</a></div>
+    
   </form>
 </div>
 @endsection
