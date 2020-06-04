@@ -795,6 +795,12 @@ public function showmaintain(Request $request){
 
         return redirect()->route('device.scheduled',['id'=>$id]);
     }
+
+    public function maintainCheck($id){
+        $dv = DB::table('ScheduleAction')->where('dv_id',$id)->groupBy('id','decs');
+        dd($dv);
+        //return view('ktv.device.maintain_check');
+    }
 }
 
 

@@ -27,7 +27,7 @@
       <table width="100%" border="0">
         <tr>
           <td>
-            <select style="width: 600px;" name="time_maintain" class="form-control">
+            <select style="width: 600px;" name="time_maintain" id="searchT">
               <option value="">Lựa chọn thời gian</option>
               <option value="1w">Trong 1 tuần tới</option>
               <option value="1m">Trong 1 tháng tới</option>
@@ -59,7 +59,7 @@
     </thead>
     <tbody>
       @foreach($devices as $row)
-      <tr style="font-size: 15px;">
+      <tr style="font-size: 15px;" ondblclick='location.href=("{{ route('device.maintainCheck', ['id' => $row->dv_id]) }}")' >
         <td>{{ $row->dv_id }}</td>
         <td>{{$row->dv_name}}</td>
         <td>{{$row->dv_model}}</td>
@@ -74,4 +74,9 @@
   
 </div>
 @endsection
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#searchT').select2({});
+  })
+</script>
 
