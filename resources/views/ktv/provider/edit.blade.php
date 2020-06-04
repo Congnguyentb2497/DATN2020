@@ -98,8 +98,13 @@ label {
           <input class="btn" type="submit" value="Cập nhật thông tin" style="margin-left: 50px" ></input>
         </td>
       </tr>
+      <tr>
+        <td></td>
+        <td>
+    <div class="canl" style="margin-left: 50px"><a href="{{route('show.provider')}}" style="color: white; text-decoration: none;">Hủy</a></div>
+        </td>
+      </tr>
     </table>
-    <div class="canl"><a href="{{route('show.provider')}}" style="color: white; text-decoration: none;">Hủy</a></div>
   </form>
 </div>
 @endsection

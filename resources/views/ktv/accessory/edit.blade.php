@@ -118,7 +118,7 @@ label {
       <tr>
         <td></td>
         <td>
-          <div class="canl"><a href="{{route('accessory.show')}}" style="color: white; text-decoration: none;">Hủy</a></div>
+          <div class="canl" style="margin-left: 50px><a href="{{route('accessory.show')}}" style="color: white; text-decoration: none;">Hủy</a></div>
         </td>
       </tr>
     </table> 
