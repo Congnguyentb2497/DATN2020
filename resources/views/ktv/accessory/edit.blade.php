@@ -33,17 +33,15 @@ input[type=text], input[type=date], select[type=text] {
 }
 .canl{
     width: 520px;
-    text-align: center;
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 10px;
-    margin-left:380px;
-    margin-bottom: 5px;
-    border: none;
-    border-radius: 4px;
-    font-size: 20px;
-    opacity: 0.6;
+  background-color: black;
+  color: white;
+  padding: 10px 12px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0.6;
   }
   .canl:hover{
     opacity: 1;
@@ -117,8 +115,14 @@ label {
           <input class="btn" type="submit" value="Lưu" style="margin-left: 50px" ></input>
         </td>
       </tr>
+      <tr>
+        <td></td>
+        <td>
+          <div class="canl"><a href="{{route('accessory.show')}}" style="color: white; text-decoration: none;">Hủy</a></div>
+        </td>
+      </tr>
     </table> 
-        <div class="canl"><a href="{{route('accessory.show')}}" style="color: white; text-decoration: none;">Hủy</a></div>
+        
 
   </form>
 </div>

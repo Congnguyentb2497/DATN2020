@@ -26,16 +26,15 @@
     opacity: 0.6;
   }
   .canl{
-    width: 520px;
-    text-align: center;
+    width: 100%;
     background-color: black;
     color: white;
     padding: 10px 20px;
     margin-top: 10px;
-    margin-left:400px;
     margin-bottom: 5px;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
     font-size: 20px;
     opacity: 0.6;
   }
@@ -90,8 +89,13 @@
           <input class="btn" type="submit" value="Cập nhật thông tin" ></input>
         </td>
       </tr>
-    </table> 
+      <tr>
+        <td></td>
+        <td>
     <div class="canl"><a href="{{route('dvtype.show')}}" style="color: white; text-decoration: none;">Hủy cập nhật thiết bị</a></div>
+        </td>
+      </tr>
+    </table> 
   </form>
 </div>
 @endsection
