@@ -85,7 +85,7 @@
 @endsection
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#sl_dv').select2({});
+    $('#sl_dv').select2();
   })
 </script>
 
