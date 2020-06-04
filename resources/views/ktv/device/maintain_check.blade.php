@@ -19,7 +19,7 @@
   }
   
 </style>
-<h2>Thống Kê Kế Hoạch Kiểm Tra - Bảo Trì - Kiểm Kê Thiết Bị Trong Năm 2020 </h2>
+<h2>Thống Kê Kế Hoạch Kiểm Tra - Bảo Trì - Kiểm Kê Thiết Bị Trong Năm {{ date('Y') }} </h2>
 <div class="container2">
   <table border="1" style="font-size: 20px;">
     <thead style="background-color: #FFBF00">
