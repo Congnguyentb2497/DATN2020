@@ -225,6 +225,3 @@
 
 </script>
 @endsection
-<!-- 
- href="{{ route('doctor.noticeDev',['id'=>$row->id,'user_id'=>Auth::id()]) }}" onclick="return confirm('Bạn có chắc chắn báo hỏng thiết bị này? Thông báo sẽ được gửi đến phòng vật tư!')"
- -->
