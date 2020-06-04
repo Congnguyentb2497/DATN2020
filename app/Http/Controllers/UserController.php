@@ -374,7 +374,9 @@ public function showDevice4(Request $request) {
 public function getAddDevice(){
     $dv_types = DB::table('device_type')->get();
     $provider = DB::table('provider')->get();
-    return view('ktv.device.add',['dv_types'=>$dv_types,'providers'=>$provider]);
+    $dv = DB::table('device')->get();
+    $dvnum = count($dv)+1;
+    return view('ktv.device.add',['dv_types'=>$dv_types,'providers'=>$provider,'dvn'=>$dvnum]);
 }
 
 public function postAddDevice(Request $request){

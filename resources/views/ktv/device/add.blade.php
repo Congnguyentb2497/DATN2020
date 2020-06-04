@@ -190,6 +190,8 @@ label {
   var g='X';
   var dvt='XXX';
   var text;
+  var dv = '{{ $dvn }}';
+  console.log(dv);
     $(document).ready(function(){
       $('#group').on('change',function(){
         //var optionValue = $(this).val();
@@ -206,7 +208,7 @@ label {
     });
       // + $("#import_date").val()
       $('#luu').click(function(){
-        text = g+dvt+$('#import_date').val();
+        text = g+dvt+$('#import_date').val()+dv;
         $('#dvId').val(text);
       });
     console.log(text);
