@@ -17,8 +17,12 @@
     margin-left: 20px;
     font-weight: bold;
   }
-  table {
+  table, tr, td {
     border: 1px solid black;
+  }
+  .months{
+    text-align: center;
+    font-weight: bold;
   }
 </style>
 <h2>Thống Kê Kế Hoạch Kiểm Tra - Bảo Trì - Kiểm Kê Thiết Bị Trong Năm {{ date('Y') }} </h2>
@@ -27,19 +31,19 @@
     <thead >
       <table  style="background-color: #FFBF00">
         <tr rowspan="2">
-          <td>Hạng mục công việc</td>
-          <td>Tháng 1</td>
-          <td>Tháng 2</td>
-          <td>Tháng 3</td>
-          <td>Tháng 4</td>
-          <td>Tháng 5</td>
-          <td>Tháng 6</td>
-          <td>Tháng 7</td>
-          <td>Tháng 8</td>
-          <td>Tháng 9</td>
-          <td>Tháng 10</td>
-          <td>Tháng 11</td>
-          <td>Tháng 12</td>
+          <td><b>Hạng mục công việc</b></td>
+          <td class="months">Tháng 1</td>
+          <td class="months">Tháng 2</td>
+          <td class="months">Tháng 3</td>
+          <td class="months">Tháng 4</td>
+          <td class="months">Tháng 5</td>
+          <td class="months">Tháng 6</td>
+          <td class="months">Tháng 7</td>
+          <td class="months">Tháng 8</td>
+          <td class="months">Tháng 9</td>
+          <td class="months">Tháng 10</td>
+          <td class="months">Tháng 11</td>
+          <td class="months">Tháng 12</td>
         </tr>
         <tr>
           <td style="background-color:#01A9DB; "><b>{{ $device->dv_name }}</b></td>
