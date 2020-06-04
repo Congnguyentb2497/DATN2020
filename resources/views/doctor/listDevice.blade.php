@@ -166,7 +166,11 @@
       <table style="font-size: 17px;" border="0" width="100%">
         <tr>
           <td><label>Mã thiết bị</label></td>
+          @if(isset($row))
           <td width="70%"><input type="text" name="dv_id" value="{{$row->dv_id}}"></td>
+          @else
+          <td width="70%"><input type="text" name="dv_id" value=""></td>
+          @endif
         </tr>
         <tr>
           <td><label>Lý do hỏng</label></td>
