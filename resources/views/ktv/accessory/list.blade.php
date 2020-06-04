@@ -175,7 +175,7 @@
         <tr><td colspan="2"><hr style="height: 3px;background-color: green;"></td></tr>
         <tr>
           <td colspan="2">
-            <select type="text" id="searchDv" name="dv_id" style="height: 50px;" class="form-control" required>
+            <select type="text" id="searchDv" name="dv_id" style="height: 50px;width: 100%" class="form-control" required>
               <option  value="" >Chọn thiết bị</option>
               @if(isset($devs))
               @foreach($devs as $row)
