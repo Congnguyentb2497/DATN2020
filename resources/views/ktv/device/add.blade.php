@@ -130,7 +130,7 @@ label {
         </td>
           <td><label>Nhóm thiết bị</label></td>
         <td>
-            <select type="text" id="group" name="group" >
+            <select type="text" id="group" name="group" required="">
               <option value="X">X</option>
               <option value="A">A</option>
               <option value="B">B</option>
@@ -141,10 +141,10 @@ label {
       </tr>
        <tr>
         <td><label>Ngày sản xuất</label></td>
-        <td><input type="date"  name="produce_date" ></td>  
+        <td><input type="date"  name="produce_date" required=""></td>  
         
         <td><label>Hãng sản xuất</label></td>
-        <td><input type="text"  name="produce" ></td>
+        <td><input type="text"  name="produce" required=""></td>
       </tr>
        <tr>
         <td><label>Ngày nhập kho</label></td>
@@ -156,7 +156,7 @@ label {
         <td><label>Giá nhập</label></td>
         <td><input type="text"  name="price" ></td>
         <td><label>Xuất xứ</label></td>
-        <td><input type="text"  name="country" ></td>
+        <td><input type="text"  name="country" required=""></td>
       </tr>
       <tr>
         <td><label>Số lưu hành</label></td>
