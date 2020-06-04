@@ -17,13 +17,15 @@
     margin-left: 20px;
     font-weight: bold;
   }
-  
+  table {
+    border: 1px solid black;
+  }
 </style>
 <h2>Thống Kê Kế Hoạch Kiểm Tra - Bảo Trì - Kiểm Kê Thiết Bị Trong Năm {{ date('Y') }} </h2>
 <div class="container2">
   <table border="1" style="font-size: 20px;">
-    <thead style="background-color: #FFBF00">
-      <table>
+    <thead >
+      <table  style="background-color: #FFBF00">
         <tr rowspan="2">
           <td>Hạng mục công việc</td>
           <td>Tháng 1</td>
@@ -90,29 +92,30 @@
                 <td>T20</td>
                 <td>T21</td>
                 <td>T22</td>
-                <td>T23</td>                
+                               
               </tr>
             </table>
           </td>
           <td>
             <table>
               <tr>
+                <td>T23</td> 
                 <td>T24</td>
                 <td>T25</td>
                 <td>T26</td>                
-                <td>T27</td>
-                <td>T28</td>
+                
               </tr>
             </table>
           </td>
           <td>
             <table>
               <tr>
+                <td>T27</td>
+                <td>T28</td>
                 <td>T29</td>
                 <td>T30</td>
                 <td>T31</td>
-                <td>T32</td>
-                <td>T33</td>
+                
                                 
               </tr>
             </table>
@@ -120,23 +123,24 @@
           <td>
             <table>
               <tr>
+                <td>T32</td>
+                <td>T33</td>
                 <td>T34</td>
                 <td>T35</td>
+                
+                                
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tr>
                 <td>T36</td>
                 <td>T37</td>
                 <td>T38</td>
-                                
-              </tr>
-            </table>
-          </td>
-          <td>
-            <table>
-              <tr>
                 <td>T39</td>
                 <td>T40</td>
-                <td>T41</td>
-                <td>T342</td>
-                <td>T43</td>
+                
                                 
               </tr>
             </table>
@@ -144,12 +148,23 @@
           <td>
             <table>
               <tr>
+                <td>T41</td>
+                <td>T42</td>
+                <td>T43</td>
                 <td>T44</td>
+                
+                                
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tr>
                 <td>T45</td>
                 <td>T46</td>
                 <td>T47</td>
                 <td>T48</td>
-                                
+                           
               </tr>
             </table>
           </td>
