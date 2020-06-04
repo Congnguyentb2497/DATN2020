@@ -27,7 +27,7 @@
       <table width="100%" border="0">
         <tr>
           <td>
-            <select style="width: 600px;" name="time_maintain" id="searchT">
+            <select style="width: 600px;" name="time_maintain" id="searchT" class="form-control">
               <option value="">Lựa chọn thời gian</option>
               <option value="1w">Trong 1 tuần tới</option>
               <option value="1m">Trong 1 tháng tới</option>
@@ -52,7 +52,6 @@
         <th>Model</th>
         <th>Khoa phòng</th>
         <th>Nhà cung cấp</th>
-        <th>Hạn sử dụng</th>
         <th>Ngày bảo dưỡng định kì</th>
         <th width="10%">Điều khiển</th>
       </tr>
@@ -65,7 +64,6 @@
         <td>{{$row->dv_model}}</td>
         <td>{{ \App\Department::where(['id' => $row->department_id])->pluck('department_name')->first() }}</td>
         <td>{{ \App\Provider::where(['id' => $row->provider_id])->pluck('provider_name')->first() }}</td>
-        <td>{{ $row->handover_date }}</td>
         <td>{{ $row->maintain_date }}</td>
         <td></td>
       </tr>

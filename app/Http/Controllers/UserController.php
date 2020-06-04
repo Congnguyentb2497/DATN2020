@@ -506,7 +506,7 @@ public function postEditDevice(Request $request,$id){
     $device->produce_date = $request->produce_date;
     $device->import_id = $request->import_id;
     $device->import_date = $request->import_date;
-    $device->expire_date = $request->expire_date;
+    // $device->expire_date = $request->expire_date;
     $device->price = $request->price;
     $device->note = $request->note;
     $device->group = $request->group;
