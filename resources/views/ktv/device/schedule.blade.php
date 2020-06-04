@@ -27,7 +27,7 @@
  	<form class="form" action="{{ route('device.postScheduleAct')}}" method="post">
  		@csrf
  		<div>
- 		<select name="sl_dv" id="searchDv" class="form-control" required="">
+ 		<select name="sl_dv" id="searchDv" style="width: 90%" class="form-control" required="">
  			<option value="">Lựa chọn thiết bị cần tạo lịch</option>
  			@if(isset($devices))
  			@foreach($devices as $row)
@@ -85,7 +85,7 @@
 @endsection
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#searchDv').select2();
+    $('#searchDv').select2({});
   })
 </script>
 

@@ -119,7 +119,7 @@ label {
        <tr>
         <td><label>Loại thiết bị</label></td>
         <td>
-        	<select id="sl_dvt" type="text" name="device_type" required>
+        	<select id="searchDvt" type="text" name="device_type" required>
         		<option value="">Loại thiết bị</option>
         		@isset($dv_types)
         		@foreach($dv_types as $rows)
@@ -194,17 +194,17 @@ label {
   console.log(dv);
     $(document).ready(function(){
       $('#searchDvt').select2({});
-      
+
       $('#group').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
         g = $("#group option:selected").val();
         //  alert("Selected Option Text: "+optionText);  
     });
-      $('#sl_dvt').on('change',function(){
+      $('#searchDvt').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-        dvt = $("#sl_dvt option:selected").val();
+        dvt = $("#searchDvt option:selected").val();
         //  alert("Selected Option Text: "+optionText);
         
     });
@@ -213,7 +213,6 @@ label {
         text = g+dvt+$('#import_date').val()+dv;
         $('#dvId').val(text);
       });
-    console.log(text);
   });
     
       
