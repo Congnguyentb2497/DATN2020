@@ -10,6 +10,7 @@
     background-color: #BDBDBD;
   }
   .container2{
+    width: 95%;
     margin: 20px;
     margin-top: 60px;
   }
@@ -24,6 +25,9 @@
     text-align: center;
     font-weight: bold;
   }
+  .week{
+    font-size: 15px;
+  }
 </style>
 <h2>Thống Kê Kế Hoạch Kiểm Tra - Bảo Trì - Kiểm Kê Thiết Bị Trong Năm {{ date('Y') }} </h2>
 <div class="container2">
@@ -31,7 +35,7 @@
     <thead >
       <table  style="background-color: #FFBF00">
         <tr rowspan="2">
-          <td><b>Hạng mục công việc</b></td>
+          <td width="22%"><b>Hạng mục công việc</b></td>
           <td class="months">Tháng 1</td>
           <td class="months">Tháng 2</td>
           <td class="months">Tháng 3</td>
@@ -50,52 +54,52 @@
           <td>
             <table>
               <tr>
-                <td>T1</td>
-                <td>T2</td>
-                <td>T3</td>
-                <td>T4</td>
-                <td>T5</td>                
+                <td class="week">T1</td>
+                <td class="week">T2</td>
+                <td class="week">T3</td>
+                <td class="week">T4</td>
+                <td class="week">T5</td>                
               </tr>
             </table>
           </td>
           <td>
             <table>
               <tr>
-                <td>T6</td>
-                <td>T7</td>
-                <td>T8</td>
-                <td>T9</td>                
+                <td class="week">T6</td>
+                <td class="week">T7</td>
+                <td class="week">T8</td>
+                <td class="week">T9</td>                
               </tr>
             </table>
           </td>
           <td>
             <table>
               <tr>
-                <td>T10</td>
-                <td>T11</td>
-                <td>T12</td>
-                <td>T13</td>
+                <td class="week">T10</td>
+                <td class="week">T11</td>
+                <td class="week">T12</td>
+                <td class="week">T13</td>
               </tr>
             </table>
           </td>
           <td>
             <table>
               <tr>
-                <td>T14</td>
-                <td>T15</td>
-                <td>T16</td>
-                <td>T17</td>
-                <td>T18</td>                
+                <td class="week">T14</td>
+                <td class="week">T15</td>
+                <td class="week">T16</td>
+                <td class="week">T17</td>
+                <td class="week">T18</td>                
               </tr>
             </table>
           </td>
           <td>
             <table>
               <tr>
-                <td>T19</td>
-                <td>T20</td>
-                <td>T21</td>
-                <td>T22</td>
+                <td class="week">T19</td>
+                <td class="week">T20</td>
+                <td class="week">T21</td>
+                <td class="week">T22</td>
                                
               </tr>
             </table>
@@ -103,10 +107,10 @@
           <td>
             <table>
               <tr>
-                <td>T23</td> 
-                <td>T24</td>
-                <td>T25</td>
-                <td>T26</td>                
+                <td class="week">T23</td> 
+                <td class="week">T24</td>
+                <td class="week">T25</td>
+                <td class="week">T26</td>                
                 
               </tr>
             </table>
@@ -114,23 +118,11 @@
           <td>
             <table>
               <tr>
-                <td>T27</td>
-                <td>T28</td>
-                <td>T29</td>
-                <td>T30</td>
-                <td>T31</td>
-                
-                                
-              </tr>
-            </table>
-          </td>
-          <td>
-            <table>
-              <tr>
-                <td>T32</td>
-                <td>T33</td>
-                <td>T34</td>
-                <td>T35</td>
+                <td class="week">T27</td>
+                <td class="week">T28</td>
+                <td class="week">T29</td>
+                <td class="week">T30</td>
+                <td class="week">T31</td>
                 
                                 
               </tr>
@@ -139,11 +131,10 @@
           <td>
             <table>
               <tr>
-                <td>T36</td>
-                <td>T37</td>
-                <td>T38</td>
-                <td>T39</td>
-                <td>T40</td>
+                <td class="week">T32</td>
+                <td class="week">T33</td>
+                <td class="week">T34</td>
+                <td class="week">T35</td>
                 
                                 
               </tr>
@@ -152,10 +143,11 @@
           <td>
             <table>
               <tr>
-                <td>T41</td>
-                <td>T42</td>
-                <td>T43</td>
-                <td>T44</td>
+                <td class="week">T36</td>
+                <td class="week">T37</td>
+                <td class="week">T38</td>
+                <td class="week">T39</td>
+                <td class="week">T40</td>
                 
                                 
               </tr>
@@ -164,10 +156,22 @@
           <td>
             <table>
               <tr>
-                <td>T45</td>
-                <td>T46</td>
-                <td>T47</td>
-                <td>T48</td>
+                <td class="week">T41</td>
+                <td class="week">T42</td>
+                <td class="week">T43</td>
+                <td class="week">T44</td>
+                
+                                
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td class="week">T45</td>
+                <td class="week">T46</td>
+                <td class="week">T47</td>
+                <td class="week">T48</td>
                            
               </tr>
             </table>
@@ -175,11 +179,11 @@
           <td>
             <table>
               <tr>
-                <td>T49</td>
-                <td>T50</td>
-                <td>T51</td>
-                <td>T52</td>
-                <td>T53</td>                
+                <td class="week">T49</td>
+                <td class="week">T50</td>
+                <td class="week">T51</td>
+                <td class="week">T52</td>
+                <td class="week">T53</td>                
               </tr>
             </table>
           </td>
