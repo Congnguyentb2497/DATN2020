@@ -193,6 +193,8 @@ label {
   var dv = '{{ $dvn }}';
   console.log(dv);
     $(document).ready(function(){
+      $('#searchDvt').select2({});
+      
       $('#group').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
@@ -213,6 +215,9 @@ label {
       });
     console.log(text);
   });
+    
+      
+    
 </script>
 @endsection
 
