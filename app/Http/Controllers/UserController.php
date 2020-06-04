@@ -820,10 +820,9 @@ public function showmaintain(Request $request){
     }
 
     public function maintainCheck($id){
-        $dev = DB::table('device')->where('dv_id',$id)->get();
-        dd($dev);
-        // $dv = DB::table('ScheduleAction')->where('dv_id',$id)->groupBy('id','decs');
-        // return view('ktv.device.maintain_check')->with(['device'=>$dev,'maintainAct'=>$dv]);
+        $dev = DB::table('device')->where('dv_id',$id)->first();
+        $dv = DB::table('ScheduleAction')->where('dv_id',$id)->groupBy('id','decs');
+        return view('ktv.device.maintain_check')->with(['device'=>$dev,'maintainAct'=>$dv]);
     }
 }
 
