@@ -719,11 +719,14 @@ public function postEditAcc(Request $request, $id){
     $acc = Accessory::find($id);
     $acc->acc_name    = $request->accName;
     $acc->provider_id = $request->provider_id;
-    // $acc->amount      = $request->amount;
-    // $acc->used      = $request->used;
-    // $acc->broken      = $request->broken;
+    $acc->amount      = $request->amount;
+    $acc->model       = $request->model;
+    $acc->serial      = $request->serial;
     $acc->import_date = $request->importDate;
     $acc->unit        = $request->unit;
+    $acc->expire_date = $request->expire_date;
+    $acc->note        = $request->note;
+
     $acc->save();
     return redirect()->route('accessory.show')->with('message','Cập nhật thành công thông tin vật tư ');
 }

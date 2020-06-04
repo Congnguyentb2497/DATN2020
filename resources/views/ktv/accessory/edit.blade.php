@@ -88,7 +88,8 @@ label {
       </tr>
        <tr>
         <td width="50%"><label>Loại vật tư</label></td>
-        <td><select id="sl_dvt" type="text" name="typeAcc" value="{{$acc->type}}" disabled="">
+        <td><select id="sl_dvt" type="text" name="typeAcc"  disabled="">
+          <option>{{$acc->type}}</option>
           </select></td>
       </tr>
        <tr>
