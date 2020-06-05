@@ -171,9 +171,9 @@ label {
         <td><input type="text" id="dvId"  name="dv_id" required=""></td>
       </tr>
       <tr>
-        <td><label>Khấu hao ban đầu</label></td>
+        <td><label>Khấu hao bđ</label></td>
         <td><input type="text"  name="khbd" ></td>
-        <td><label>Khấu hao hàng năm</label></td>
+        <td><label>Khấu hao năm</label></td>
         <td><input type="text"  name="khhn" ></td>
       </tr>
       <tr>

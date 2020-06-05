@@ -23,7 +23,7 @@ class CreateDeviceTable extends Migration
             $table->string('manufacturer')->nullable();
             $table->string('license_number')->nullable();
             $table->string('license_number_date')->nullable();
-            $table->date('maintain_date')->nullable();
+            $table->string('maintain_date')->nullable();
             $table->string('note')->nullable();
             $table->string('group')->nullable();
             $table->string('import_id')->nullable();
@@ -34,7 +34,7 @@ class CreateDeviceTable extends Migration
             $table->string('price')->nullable();
             $table->string('khbd')->nullable();
             $table->string('khhn')->nullable();
-            $table->date('produce_date')->nullable();
+            $table->string('produce_date')->nullable();
             $table->date('import_date')->nullable();
             $table->date('handover_date')->nullable();
             $table->timestamps();
