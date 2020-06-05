@@ -190,9 +190,10 @@
         </tr>
 
       </table>
-      
     </thead>
-    <tbody></tbody>
+    <tbody>
+      
+    </tbody>
   </table>
   
 </div>

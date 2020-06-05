@@ -58,7 +58,7 @@
     </thead>
     <tbody>
       @foreach($devices as $row)
-      <tr style="font-size: 15px;" ondblclick='location.href=("{{ route('device.maintainCheck', ['id' => $row->dv_id]) }}")' >
+      <tr style="font-size: 15px;cursor: pointer;" ondblclick='location.href=("{{ route('device.maintainCheck', ['id' => $row->dv_id]) }}")' >
         <td>{{ $row->dv_id }}</td>
         <td>{{$row->dv_name}}</td>
         <td>{{$row->dv_model}}</td>
