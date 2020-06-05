@@ -206,8 +206,6 @@ label {
     mm='0'+mm;
   } 
   today = dd+mm+yyyy;
-  console.log(today);
-
   var g='X';
   var dvt='XXX';
   var text;
@@ -231,7 +229,7 @@ label {
     });
       // + $("#import_date").val()
       $('#luu').click(function(){
-        text = g+dvt+today+dv;
+        text = g+dvt+'-'+today+'-'+dv;
         $('#dvId').val(text);
       });
   });

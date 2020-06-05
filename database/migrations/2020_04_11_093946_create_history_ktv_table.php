@@ -20,7 +20,8 @@ class CreateHistoryKtvTable extends Migration
             $table->string('status')->nullable();
             $table->string('implementer')->nullable();
             $table->string('dv_id')->nullable();
-            $table->integer('acc_id')->nullable();
+            $table->string('acc_id')->nullable();
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

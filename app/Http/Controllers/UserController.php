@@ -319,7 +319,9 @@ public function editSchedule(Request $request, $id){
     //update status device
 public function updateStatus(Request $request, $id){
     $device = Device::find($id);
+    $dvname = $device->dv_name;
     $his = new History_ktv;
+    $notice = new Notification;
     $his->dv_id = $id;
     $his->time = $request->update_time;
     if($request->status == '0'){
@@ -331,7 +333,15 @@ public function updateStatus(Request $request, $id){
         //tạo lịch sử tb
         $his->action = 'Đã sửa chữa thành công';
         $his->status = 'sf';//sf = success fix
-
+        $his->note = $request->note;
+        $his->implementer = 'Phòng vật tư';
+        //tạo thông báo cho  khoa
+        $notice->req_content = " Thiết bị ".$dvname." đã được sửa chữa và hoạt động tốt, yêu cầu khoa phụ trách xác nhận tình trạng thiết bị khi nhận bàn giao lại".
+        $notice->status = 4;
+        $notice->annunciator_id = 'Phòng vật tư';
+        $notice->req_date = Carbon::now();
+        $notice->receiver = $device ->department_id;
+        $notice->save();
     }
     if($request->status == '4'){
         $device->status = 4;
@@ -342,7 +352,11 @@ public function updateStatus(Request $request, $id){
         $his->action = 'Không thể sửa chữa, chuyển vào kho thanh lý';
         $his->status = 'ff';//ff = faile fix
         $his->implementer = 'Phòng vật tư';
+        $his->note = $request->note;
+
+
     }
+    
     $device->save();
     $history->save();
     $his->save();

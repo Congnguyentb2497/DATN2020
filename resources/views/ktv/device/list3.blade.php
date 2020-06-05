@@ -186,13 +186,13 @@
         	<td>Tình trạng thiết bị</td>
           <td>
             <select type="text" name="status" style="height: 50px;" class="form-control">
-              <option  value="0" >Đã sửa chữa,chuyển về kho đợi bàn giao lại</option>
+              <option  value="0" >Đã sửa chữa,tình trạng sử dụng tốt</option>
               <option  value="4">Không thể khắc phục, chuyển vào kho thanh lý</option>
             </select>
           </td>
         </tr>
         <tr>
-          <td>Tình trạng hỏng</td>
+          <td>Lý do hỏng</td>
           <td><input type="text" name="note"></td>
         </tr>
         <tr>
