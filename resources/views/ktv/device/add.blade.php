@@ -193,6 +193,21 @@ label {
   </form>
 </div>
 <script>
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; 
+  var yyyy = today.getFullYear();
+  if(dd<10) 
+  {
+    dd='0'+dd;
+  } 
+  if(mm<10) 
+  {
+    mm='0'+mm;
+  } 
+  today = dd+mm+yyyy;
+  console.log(today);
+
   var g='X';
   var dvt='XXX';
   var text;
@@ -216,7 +231,7 @@ label {
     });
       // + $("#import_date").val()
       $('#luu').click(function(){
-        text = g+dvt+$('#import_date').val()+dv;
+        text = g+dvt+today+dv;
         $('#dvId').val(text);
       });
   });
