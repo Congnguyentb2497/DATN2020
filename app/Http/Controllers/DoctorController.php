@@ -78,7 +78,6 @@ class DoctorController extends Controller
         $dev = Device::find($id);
         $dvname = $dev->dv_name;
         $dev->status = 2;
-        $dev->department_id = $request->select_dept;
         $dev->save();
         return redirect()->route('doctor.home')->with('message','Đã báo hỏng thiết bị'.$dvname.' thành công.');
     }

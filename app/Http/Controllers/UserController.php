@@ -481,7 +481,7 @@ public function moveDevice(Request $request, $id)
     $device->handover_date = date('Y-m-d H:i:s');
     $device->save();
     $notice = new Notification;
-    $notice->req_content = "Phòng vật tư xác nhận điều chuyển thiết bị ".$name."cho khoa ".$dep_name;
+    $notice->req_content = "Phòng vật tư xác nhận bàn giao thiết bị ".$name."cho khoa ".$dep_name;
     $notice->dv_id = $id;
     $notice->dept_now = $request->select_dept;
     $notice->status = 12;

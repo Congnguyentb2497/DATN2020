@@ -31,7 +31,9 @@ class CreateDeviceTable extends Migration
             $table->string('provider_id')->nullable();
             $table->integer('department_id')->nullable();
             $table->integer('status')->nullable();
-            $table->integer('price')->nullable();
+            $table->string('price')->nullable();
+            $table->string('khbd')->nullable();
+            $table->string('khhn')->nullable();
             $table->date('produce_date')->nullable();
             $table->date('import_date')->nullable();
             $table->date('handover_date')->nullable();
