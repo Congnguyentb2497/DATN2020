@@ -27,7 +27,7 @@
       <table width="100%" border="0">
         <tr>
           <td>
-            <select style="width: 600px;" name="time_maintain" class="form-control">
+            <select style="width: 600px;" name="time_maintain" id="searchT" class="form-control">
               <option value="">Lựa chọn thời gian</option>
               <option value="1w">Trong 1 tuần tới</option>
               <option value="1m">Trong 1 tháng tới</option>
@@ -52,20 +52,18 @@
         <th>Model</th>
         <th>Khoa phòng</th>
         <th>Nhà cung cấp</th>
-        <th>Hạn sử dụng</th>
         <th>Ngày bảo dưỡng định kì</th>
         <th width="10%">Điều khiển</th>
       </tr>
     </thead>
     <tbody>
       @foreach($devices as $row)
-      <tr style="font-size: 15px;">
+      <tr style="font-size: 15px;cursor: pointer;" ondblclick='location.href=("{{ route('device.maintainCheck', ['id' => $row->dv_id]) }}")' >
         <td>{{ $row->dv_id }}</td>
         <td>{{$row->dv_name}}</td>
         <td>{{$row->dv_model}}</td>
         <td>{{ \App\Department::where(['id' => $row->department_id])->pluck('department_name')->first() }}</td>
         <td>{{ \App\Provider::where(['id' => $row->provider_id])->pluck('provider_name')->first() }}</td>
-        <td>{{ $row->handover_date }}</td>
         <td>{{ $row->maintain_date }}</td>
         <td></td>
       </tr>
@@ -74,4 +72,9 @@
   
 </div>
 @endsection
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#searchT').select2({});
+  })
+</script>
 

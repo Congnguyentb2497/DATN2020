@@ -119,7 +119,7 @@ label {
        <tr>
         <td><label>Loại thiết bị</label></td>
         <td>
-        	<select id="sl_dvt" type="text" name="device_type" required>
+        	<select id="searchDvt" type="text" name="device_type" required>
         		<option value="">Loại thiết bị</option>
         		@isset($dv_types)
         		@foreach($dv_types as $rows)
@@ -130,7 +130,7 @@ label {
         </td>
           <td><label>Nhóm thiết bị</label></td>
         <td>
-            <select type="text" id="group" name="group" >
+            <select type="text" id="group" name="group" required="">
               <option value="X">X</option>
               <option value="A">A</option>
               <option value="B">B</option>
@@ -141,10 +141,10 @@ label {
       </tr>
        <tr>
         <td><label>Ngày sản xuất</label></td>
-        <td><input type="date"  name="produce_date" ></td>  
+        <td><input type="date"  name="produce_date" required=""></td>  
         
         <td><label>Hãng sản xuất</label></td>
-        <td><input type="text"  name="produce" ></td>
+        <td><input type="text"  name="produce" required=""></td>
       </tr>
        <tr>
         <td><label>Ngày nhập kho</label></td>
@@ -156,7 +156,7 @@ label {
         <td><label>Giá nhập</label></td>
         <td><input type="text"  name="price" ></td>
         <td><label>Xuất xứ</label></td>
-        <td><input type="text"  name="country" ></td>
+        <td><input type="text"  name="country" required=""></td>
       </tr>
       <tr>
         <td><label>Số lưu hành</label></td>
@@ -190,27 +190,33 @@ label {
   var g='X';
   var dvt='XXX';
   var text;
+  var dv = '{{ $dvn }}';
+  console.log(dv);
     $(document).ready(function(){
+      $('#searchDvt').select2({});
+
       $('#group').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
         g = $("#group option:selected").val();
         //  alert("Selected Option Text: "+optionText);  
     });
-      $('#sl_dvt').on('change',function(){
+      $('#searchDvt').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-        dvt = $("#sl_dvt option:selected").val();
+        dvt = $("#searchDvt option:selected").val();
         //  alert("Selected Option Text: "+optionText);
         
     });
       // + $("#import_date").val()
       $('#luu').click(function(){
-        text = g+dvt+$('#import_date').val();
+        text = g+dvt+$('#import_date').val()+dv;
         $('#dvId').val(text);
       });
-    console.log(text);
   });
+    
+      
+    
 </script>
 @endsection
 

@@ -35,17 +35,17 @@
   </div><br>
   	<div class="form-group">
     <label for="exampleInputEmail1">Hoạt động bảo dưỡng</label>
-    <input style="width: 90%" type="email" name="nameAct" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập hoạt động cần bảo dưỡng">
+    <input style="width: 90%" type="text" name="nameAct" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập hoạt động cần bảo dưỡng">
     <small id="emailHelp" class="form-text text-muted">VD: Kiểm tra buồng kính chiếu tia X</small>
   	</div>
   	<div class="form-group">
     <label for="exampleInputPassword1">Tần suất thực hiện</label>
-    <input style="width: 90%" type="password" name="timeAct" class="form-control" id="exampleInputPassword1" >
+    <input style="width: 90%" type="text" name="timeAct" class="form-control" id="exampleInputPassword1" >
     <small id="emailHelp" class="form-text text-muted">VD: hàng tuần, hàng tháng,... </small>
   	</div>
   	<div class="form-group">
     	<label for="exampleInputEmail1">Ghi chú</label>
-    	<input style="width: 90%" type="email" name="note" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    	<input style="width: 90%" type="text" name="note" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   	</div>
   		<div>
       <button style="width: 70px; float: left;" id="luu" type="submit" class="btn btn-primary">Lưu</button>

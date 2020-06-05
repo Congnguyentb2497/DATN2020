@@ -374,7 +374,9 @@ public function showDevice4(Request $request) {
 public function getAddDevice(){
     $dv_types = DB::table('device_type')->get();
     $provider = DB::table('provider')->get();
-    return view('ktv.device.add',['dv_types'=>$dv_types,'providers'=>$provider]);
+    $dv = DB::table('device')->get();
+    $dvnum = count($dv)+1;
+    return view('ktv.device.add',['dv_types'=>$dv_types,'providers'=>$provider,'dvn'=>$dvnum]);
 }
 
 public function postAddDevice(Request $request){
@@ -399,15 +401,26 @@ public function postAddDevice(Request $request){
     $device->dv_type_id = $request->device_type;
     $device->manufacturer = $request->produce;
     $device->produce_date = $request->produce_date;
-    $device->import_id = $request->import_id;
+    if($request->import_id){
+            $device->import_id = $request->import_id;
+        }
     $device->import_date = $request->import_date;
     $device->group = $request->group;
     $device->note = $request->note;
+    if($request->price){
     $device->price = $request->price;
+
+    }
     $device->country = $request->country;
     $device->provider_id = $request->provider;
-    $device->license_number = $request->license_number;
-    $device->license_number_date = $request->license_number_date;
+    if($request->license_number){
+        $device->license_number = $request->license_number;
+    }
+    if($request->license_number_date){
+        $device->license_number_date = $request->license_number_date;
+    }
+    
+    
     $device->maintain_date = $request->maintain_date;
     $device->dv_id = $request->dv_id;
     $device->status = 0;
@@ -502,16 +515,28 @@ public function postEditDevice(Request $request,$id){
     $device->dv_type_id = $request->device_type;
     $device->manufacturer = $request->produce;
     $device->produce_date = $request->produce_date;
-    $device->import_id = $request->import_id;
+    if($request->import_id){
+            $device->import_id = $request->import_id;
+
+    }
     $device->import_date = $request->import_date;
-    $device->expire_date = $request->expire_date;
-    $device->price = $request->price;
+    // $device->expire_date = $request->expire_date;
+    if($request->price){
+        $device->price = $request->price;
+    
+    }
     $device->note = $request->note;
     $device->group = $request->group;
     $device->country = $request->country;
     $device->provider_id = $request->provider;
-    $device->license_number = $request->license_number;
+    if($request->license_number){
+     $device->license_number = $request->license_number;
+       
+    }
+    if($request->license_number_date){
     $device->license_number_date = $request->license_number_date;
+       
+    }
     $device->maintain_date = $request->maintain_date;
     $device->save();
     return redirect()->route('device.show0')->with('message','Cập nhật thông tin thiết bị thành công');
@@ -717,11 +742,14 @@ public function postEditAcc(Request $request, $id){
     $acc = Accessory::find($id);
     $acc->acc_name    = $request->accName;
     $acc->provider_id = $request->provider_id;
-    // $acc->amount      = $request->amount;
-    // $acc->used      = $request->used;
-    // $acc->broken      = $request->broken;
+    $acc->amount      = $request->amount;
+    $acc->model       = $request->model;
+    $acc->serial      = $request->serial;
     $acc->import_date = $request->importDate;
     $acc->unit        = $request->unit;
+    $acc->expire_date = $request->expire_date;
+    $acc->note        = $request->note;
+
     $acc->save();
     return redirect()->route('accessory.show')->with('message','Cập nhật thành công thông tin vật tư ');
 }
@@ -789,6 +817,12 @@ public function showmaintain(Request $request){
         $schedules->save();
 
         return redirect()->route('device.scheduled',['id'=>$id]);
+    }
+
+    public function maintainCheck($id){
+        $dev = DB::table('device')->where('dv_id',$id)->first();
+        $dv = DB::table('ScheduleAction')->where('dv_id',$id)->groupBy('id','decs');
+        return view('ktv.device.maintain_check')->with(['device'=>$dev,'maintainAct'=>$dv]);
     }
 }
 

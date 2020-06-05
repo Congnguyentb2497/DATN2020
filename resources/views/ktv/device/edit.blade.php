@@ -192,7 +192,7 @@ label {
        <tr>
         <td><label>Loại thiết bị</label></td>
         <td>
-        	<select type="text" name="device_type" required>
+        	<select type="text" name="device_type" id="searchDvt" required>
         		<option value="{{$dev->dv_type_id}}">{{$dev->dv_type->dv_type_name}}</option>
         		@isset($dv_types)
         		@foreach($dv_types as $rows)
@@ -345,7 +345,9 @@ function openForm(){
           {        document.getElementById("myForm").style.display = "block";
           }
 }
-
+$(document).ready(function(){
+  $('#searchDvt').select2();
+})
   </script>
 @endsection
 
