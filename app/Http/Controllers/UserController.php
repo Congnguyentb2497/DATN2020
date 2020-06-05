@@ -86,7 +86,7 @@ public function acceptNotice( $user_id, $id, $dv_id, $status){
         $notice->save();
         $response = new Notification;
         $response->req_date = Carbon::now('Asia/Ho_Chi_Minh');
-        $response->req_content = "Đã xác nhận thông báo hỏng thiết bị.";
+        $response->req_content = "Đã xác nhận thông báo hỏng thiết bị ".$device->dv_name;
         $response->status = 4;
         $response->dv_id = $dv_id;
         $response->annunciator_id = $user_id;
@@ -97,13 +97,13 @@ public function acceptNotice( $user_id, $id, $dv_id, $status){
         // xác nhận thông báo
         $notice->status = 3;
         $notice->res_date = Carbon::now('Asia/Ho_Chi_Minh');
-        $notice->res_content = "Đã xác nhận điều chuyển thiết bị";
+        $notice->res_content = "Đã xác nhận điều chuyển thiết bị ".$device->dv_name;
         $notice->save();
 
         //tạo thông báo gửi phòng đã điều chuyển
         $response = new Notification;
         $response->req_date =Carbon::now('Asia/Ho_Chi_Minh');
-        $response->req_content = "Đồng ý điều chuyển thiết bị.";
+        $response->req_content = "Đồng ý điều chuyển thiết bị ".$device->dv_name;
         $response->status = 6;
         $response->dv_id = $dv_id;
         $response->annunciator_id = $user_id;
@@ -336,8 +336,8 @@ public function updateStatus(Request $request, $id){
         $his->note = $request->note;
         $his->implementer = 'Phòng vật tư';
         //tạo thông báo cho  khoa
-        $notice->req_content = " Thiết bị ".$dvname." đã được sửa chữa và hoạt động tốt, yêu cầu khoa phụ trách xác nhận tình trạng thiết bị khi nhận bàn giao lại".
-        $notice->status = 4;
+        $notice->req_content = " Thiết bị ".$dvname." đã được sửa chữa và hoạt động tốt, yêu cầu khoa phụ trách xác nhận tình trạng thiết bị khi nhận bàn giao lại";
+        $notice->status = 14;
         $notice->annunciator_id = 'Phòng vật tư';
         $notice->req_date = Carbon::now();
         $notice->receiver = $device ->department_id;
@@ -733,7 +733,8 @@ public function postAddAcc(Request $request){
     $acc->type        = $request->typeAcc;
     $acc->status      = 0;
     $acc->note        = $request->note;
-
+    $acc->produce_date        = $request->produce_date;
+    $acc->factory        = $request->factory;
     $acc->save();
     return redirect()->route('accessory.show')->with('Thêm mới vật tư thành công');
 }

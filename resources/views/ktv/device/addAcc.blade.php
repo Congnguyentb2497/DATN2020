@@ -87,8 +87,8 @@ select[type=text]{
             <option value="vttt">Vật tư thay thế</option>
           </select>
         </td>
-        <td><label>Ngày sản xuất</label></td>
-        <td><input type="date"  name="produce_date" ></td>
+        <td><label>Năm sản xuất</label></td>
+        <td><input type="text"  name="produce_date" ></td>
       </tr>
        <tr>
         <td><label>Ngày nhập kho</label></td>
@@ -98,7 +98,7 @@ select[type=text]{
       </tr>    
        <tr>
         <td><label>Hạn sử dụng</label></td>
-        <td><input type="date"  name="expire_date" ></td>
+        <td><input type="text"  name="expire_date" ></td>
         <td><label>Mã thiết bị đi kèm</label></td>
         <td><input type="text" id="dvId"  name="dv_id" value="{{$dv->dv_id}}"></td>
       </tr>

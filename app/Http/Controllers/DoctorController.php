@@ -109,6 +109,12 @@ class DoctorController extends Controller
         $notice->res_date = Carbon::now('Asia/Ho_Chi_Minh');
         $notice->res_content = "Đã xác nhận.";
         }
+        if($notice->status == '14')
+        {
+        $notice->status = 15;
+        $notice->res_date = Carbon::now('Asia/Ho_Chi_Minh');
+        $notice->res_content = "Đã xác nhận tiếp quản lại thiết bị";
+        }
         $notice->save();
         return redirect()->route('doctor.home');
     }

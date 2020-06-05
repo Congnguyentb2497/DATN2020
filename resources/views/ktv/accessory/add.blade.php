@@ -115,13 +115,21 @@ label {
         <td><label>Đơn vị tính</label></td>
         <td><input type="text"  name="unit" ><br></td>
       </tr>
+      <tr>
+        <td width="50%"><label>Ngày sản xuất</label></td>
+        <td><input type="text"  name="produce_date" ></td>
+      </tr>
+      <tr>
+        <td width="50%"><label>Hãng sản xuất</label></td>
+        <td><input type="text"  name="factory" ></td>
+      </tr>
        <tr>
         <td><label>Ngày nhập kho</label></td>
         <td><input type="date"  name="importDate" ><br></td>
       </tr>
       <tr>
         <td width="50%"><label>Hạn sử dụng</label></td>
-        <td><input type="date"  name="expire_date" ></td>
+        <td><input type="text"  name="expire_date" ></td>
       </tr>
       <tr>
         <td><label>Ghi chú</label></td>
