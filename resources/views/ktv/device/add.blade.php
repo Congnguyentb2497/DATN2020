@@ -140,8 +140,8 @@ label {
         </td>
       </tr>
        <tr>
-        <td><label>Ngày sản xuất</label></td>
-        <td><input type="date"  name="produce_date" required=""></td>  
+        <td><label>Năm sản xuất</label></td>
+        <td><input type="text"  name="produce_date" required=""></td>  
         
         <td><label>Hãng sản xuất</label></td>
         <td><input type="text"  name="produce" required=""></td>
@@ -166,7 +166,7 @@ label {
       </tr>
        <tr>
         <td><label>Bảo dưỡng ĐK</label></td>
-        <td><input type="date"  name="maintain_date" ></td>
+        <td><input type="text"  name="maintain_date" ></td>
         <td><label>Mã thiết bị</label></td>
         <td><input type="text" id="dvId"  name="dv_id" required=""></td>
       </tr>
