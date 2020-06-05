@@ -3,7 +3,7 @@
 <style>
 input[type=text], input[type=date]{
   width: 450px;
-  padding: 5px;
+  padding: 3px;
   margin: 5px 0;
   display: inline-block;
   border: 1px solid #ccc;
@@ -169,6 +169,12 @@ label {
         <td><input type="text"  name="maintain_date" ></td>
         <td><label>Mã thiết bị</label></td>
         <td><input type="text" id="dvId"  name="dv_id" required=""></td>
+      </tr>
+      <tr>
+        <td><label>Khấu hao ban đầu</label></td>
+        <td><input type="text"  name="khbd" ></td>
+        <td><label>Khấu hao hàng năm</label></td>
+        <td><input type="text"  name="khhn" ></td>
       </tr>
       <tr>
         <td><label>Ghi chú</label></td>
