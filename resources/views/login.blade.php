@@ -116,12 +116,12 @@ background:#3594D2;
 @php unset($message) @endphp
 @endif
 
-<h1>PLEASE LOGIN </h1>
+<h1>PLEASE LOGIN !</h1>
 <div style="margin-top: 20px;"><input type="email" name="email" placeholder="email" class="form-control" style="width: 300px;" /></div><br>
 <div><input style="width: 300px;" type="password" name="password" placeholder="password" class="form-control" /></div>
   
 <div><button type="submit" class="btn btn-primary" style="font-size: 20px; padding: 5px;height: 50px;">Sign In</button></div><!-- End Btn -->
-<div style="font-size: 14;margin-top: 10px;font-weight: bold;">WEBSITE QUẢN LÝ THIẾT BỊ Y TẾ</div>
+<div style="font-size: 15;margin-top: 10px;font-weight: bold;">WEBSITE QUẢN LÝ THIẾT BỊ Y TẾ</div>
  <a style="font-size: 11;color: black;font-weight: bold;margin-top: 3px;">&copy;Copy right by SET-BME 2020</a>
 </div> <!-- End Box -->
 </form>
