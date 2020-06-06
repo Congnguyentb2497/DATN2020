@@ -207,8 +207,8 @@ label {
         <td><input type="text"  name="produce" value="{{$dev->manufacturer}}" ></td>
       </tr>
        <tr>
-        <td><label>Ngày sản xuất</label></td>
-        <td><input type="date"  name="produce_date" value="{{$dev->produce_date}}" ></td>
+        <td><label>Năm sản xuất</label></td>
+        <td><input type="text"  name="produce_date" value="{{$dev->produce_date}}" ></td>
         <td><label>Nhóm thiết bị</label></td>
         <td><input type="text"  name="group" value="{{$dev->group}}" ></td>
       </tr>
@@ -231,8 +231,8 @@ label {
         <td><input type="date"  name="license_number_date" value="{{$dev->license_number_date}}" ></td>
       </tr>
        <tr>
-        <td><label>Ngày bảo dưỡng</label></td>
-        <td><input type="date"  name="maintain_date" value="{{$dev->maintain_date}}"></td>
+        <td><label>Bảo dưỡng ĐK</label></td>
+        <td><input type="text"  name="maintain_date" value="{{$dev->maintain_date}}"></td>
        <td><label>Khoa</label></td>
         <td><input type="text"  name="department" value="{{\App\Department::where(['id' =>$dev->department_id])->pluck('department_name')->first() }}"></td>
       </tr>

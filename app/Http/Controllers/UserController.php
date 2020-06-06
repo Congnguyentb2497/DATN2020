@@ -218,14 +218,14 @@ public function showDevice0(Request $request){
 public function showDevice1(Request $request){
     $devices = Device::where('status', 1)->orderBy('id','desc');
     $dept = DB::table('department')->get();
-    $provider = DB::table('provider')->get();
+    $dvt = DB::table('device_type')->get();
     if($request->dv_name)
     {
         $devices = $devices->where('dv_name', 'like', '%'.$request->dv_name.'%');
     }
     if($request->provider_id)
     {
-        $devices = $devices->where('provider_id', '=', $request->provider_id);
+        $devices = $devices->where('dv_type_id', '=', $request->dvt_id);
     }
     if($request->department_id)
     {
@@ -233,7 +233,7 @@ public function showDevice1(Request $request){
     }
 
     $devices = $devices->paginate(8);
-    return view('ktv.device.list1',['devices'=>$devices,'providers'=>$provider,'depts'=>$dept]);
+    return view('ktv.device.list1',['devices'=>$devices,'dvts'=>$dvt,'depts'=>$dept]);
 
 }
     //list device broken status=2

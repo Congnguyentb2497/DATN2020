@@ -64,7 +64,7 @@
         @if($row->status == 0)
         <td>Đang sửa chữa</td>
         @elseif($row->status == 1)
-        <td>Đã sửa thành công</td>
+        <td>Đã sửa và sử dụng tốt</td>
         @else
         <td>Đã hỏng ngưng sử dụng</td>
         @endif

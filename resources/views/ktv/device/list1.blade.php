@@ -37,12 +37,12 @@
             <input style="width: 300px;" type="text" class="form-control" placeholder="Tên thiết bị" name="dv_name" value="{{request()->dv_name}}">
           </td>
           <td width="25%">
-            <select class="form-control" name="provider_id" style="background-color: #D8D8D8;width: 90%">
-              <option value="">Mọi nhà cung cấp</option>
-              @if(isset($providers))
-              @foreach($providers as $rows)
+            <select class="form-control" name="dvt_id" style="background-color: #D8D8D8;width: 90%">
+              <option value="">Mọi loại thiết bị</option>
+              @if(isset($dvts))
+              @foreach($dvts as $rows)
               <option value="{{ $rows->id }}" >
-                {{ $rows->provider_name }}
+                {{ $rows->dv_type_name }}
               </option>
               @endforeach
               @endif

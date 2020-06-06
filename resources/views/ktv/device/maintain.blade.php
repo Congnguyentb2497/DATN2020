@@ -27,12 +27,30 @@
       <table width="100%" border="0">
         <tr>
           <td>
-            <select style="width: 600px;" name="time_maintain" id="searchT" class="form-control">
-              <option value="">Lựa chọn thời gian</option>
-              <option value="1w">Trong 1 tuần tới</option>
-              <option value="1m">Trong 1 tháng tới</option>
-              <option value="2m">Trong 2 tháng tới</option>
-              <option value="3m">Trong 3 tháng tới</option>
+            <input type="text" name="dv_name">  
+          </td>
+          <td>
+            <select class="form-control" id="searchDvt" name="dvt_id" style="background-color: #D8D8D8;width: 90%">
+              <option value="">Loại thiết bị</option>
+              @if(isset($dvts))
+              @foreach($dvts as $rows)
+              <option value="{{ $rows->id }}" >
+                {{ $rows->dv_type_name }}
+              </option>
+              @endforeach
+              @endif
+            </select>
+          </td>
+          <td>
+          <select class="form-control" name="provider" style="background-color: #D8D8D8;width: 90%">
+              <option value="">Nhà cung cấp</option>
+              @if(isset($providers))
+              @foreach($providers as $row)
+              <option value="{{ $row->id }}" >
+                {{ $row->provider_name }}
+              </option>
+              @endforeach
+              @endif
             </select>
           </td>
           <td>
@@ -52,7 +70,8 @@
         <th>Model</th>
         <th>Khoa phòng</th>
         <th>Nhà cung cấp</th>
-        <th>Ngày bảo dưỡng định kì</th>
+        <th>Bảo dưỡng đk</th>
+        <th>Khấu hao bđ</th>
         <th width="10%">Điều khiển</th>
       </tr>
     </thead>
@@ -65,7 +84,10 @@
         <td>{{ \App\Department::where(['id' => $row->department_id])->pluck('department_name')->first() }}</td>
         <td>{{ \App\Provider::where(['id' => $row->provider_id])->pluck('provider_name')->first() }}</td>
         <td>{{ $row->maintain_date }}</td>
-        <td></td>
+        <td>{{ $row->khbd }}</td>
+        <td>
+            <a href="{{ route('device.history',['id'=>$row->id])}}" style="text-decoration: none;"><i class="fa fa-history " style="font-size: 20px" title="Lịch sử sửa chữa" aria-hidden="true"></i></a>
+        </td>
       </tr>
       @endforeach
   @endif
@@ -75,6 +97,9 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $('#searchT').select2({});
+    $('#searchDvt').select2({});
+
+    
   })
 </script>
 
