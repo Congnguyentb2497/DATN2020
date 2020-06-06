@@ -86,7 +86,7 @@
         <td>{{ $row->maintain_date }}</td>
         <td>{{ $row->khbd }}</td>
         <td>
-            <a href="{{ route('device.history',['id'=>$row->id])}}" style="text-decoration: none;"><i class="fa fa-history " style="font-size: 20px" title="Lịch sử sửa chữa" aria-hidden="true"></i></a>
+            <a href="{{ route('device.history',['id'=>$row->id])}}" style="text-decoration: none;"><i class="fa fa-history " style="font-size: 22px" title="Lịch sử sửa chữa" aria-hidden="true"></i></a>
         </td>
       </tr>
       @endforeach
@@ -98,8 +98,6 @@
   $(document).ready(function(){
     $('#searchT').select2({});
     $('#searchDvt').select2({});
-
-    
   })
 </script>
 

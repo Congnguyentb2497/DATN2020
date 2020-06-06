@@ -785,32 +785,19 @@ public function fileDevice($id){
 //lịch bảo dưỡng
 public function showmaintain(Request $request){
     $devices = Device::where('status', 1)->orderBy('id','desc');
-    $sl = $request->time_maintain;
-    // $sl = strtotime($sl);
-    $today = date('Y-m-d');
-    // $today = strtotime($today);
-    $w1 = Carbon::now()->addDays(7);
-    //  
-    $m1 = Carbon::now()->addMonth();
-    // $m1 = strtotime($m1);
-    $m2 = Carbon::now()->addMonth(2)->toDateString();
-    // $m2 = strtotime($m2);
-    $m3 = Carbon::now()->addMonth(3)->toDateString();
-    // $m3 = strtotime($m3);
-    if($sl == '1w'){
-        $devices = $devices->whereDate('maintain_date','<=',$w1->toDateString());
+    $dvt = DB::table('device_type')->get();
+    $provider = DB::table('provider')->get();
+
+    if($request->dv_name){
+        $devices = $devices->where('dv_name','like','%'.$request->dv_name.'%');
     }
-    if($sl == '1m'){
-         $devices = $devices->whereDate('maintain_date','<=',$m1->toDateString());
-    }
-    if($sl == '2m'){
-        $devices = $devices->whereDate('maintain_date','<=',$m2);
-    }
-    if($sl == '3m'){
-        $devices = $devices->whereDate('maintain_date','<=',$m3);
+    if($request->dvt_id){
+        $devices = $devices->where('dv_tye_id','=',$request->dv_name);
+    }if($request->provider){
+        $devices = $devices->where('provider_id','=',$request->provider);
     }
     $devices = $devices->paginate(10);
-    return view('ktv.device.maintain')->with(['devices'=>$devices]);
+    return view('ktv.device.maintain')->with(['devices'=>$devices,'dvts'=>$dvt,'providers'=>$provider]);
 }
     public function createSchedule(){
         $device = DB::table('device')->get();
