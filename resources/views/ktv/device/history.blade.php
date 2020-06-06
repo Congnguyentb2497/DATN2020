@@ -35,8 +35,8 @@
         <td ><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 20px;height: 90%">{{$device->dv_type->dv_type_name}}</label></td>
         <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Ngày nhập kho</label></td>
         <td 20%><label class="form-control" style="background-color: #D8D8D8; width: 95%;font-size: 18px;height: 90%">{{$device->import_date}}</label></td>
-        <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Hạn sử dụng</label></td>
-        <td 20%><label class="form-control" style="background-color: #D8D8D8; width: 100%;font-size: 18px;height: 90%">{{$device->expire_date}}</label></td>
+        <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Năm sản xuất</label></td>
+        <td 20%><label class="form-control" style="background-color: #D8D8D8; width: 100%;font-size: 18px;height: 90%">{{$device->produce_date}}</label></td>
      </tr>
    </table>
   </div>
@@ -48,7 +48,7 @@
         <th>Ngày sự cố</th>
         <th>Ngày xử lý</th>
         <th>Đơn vị sửa</th>
-        <th>Thông tin liên hệ</th>
+        <th>Ghi chú</th>
         <th width="15%">Tình trạng sử dụng</th>
 <!--         <th width="10%">Điều khiển</th>
  -->      </tr>
@@ -60,7 +60,7 @@
         <td>{{$row->schedule_date}}</td>
         <td>{{$row->proceed_date}}</td>
         <td>{{$row->repair_responsible}}</td>
-        <td>{{$row->information}}</td>
+        <td>{{$row->note}}</td>
         @if($row->status == 0)
         <td>Đang sửa chữa</td>
         @elseif($row->status == 1)

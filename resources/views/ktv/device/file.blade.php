@@ -15,7 +15,8 @@
       <tr style="font-size: 18px;">
         <th>Thời gian</th>
         <th>Hoạt động - Tình trạng</th>
-        <th>Thực hiện bởi</th>   
+        <th>Thực hiện bởi</th>
+        <th>Ghi chú</th>   
       </tr>
     </thead>
     <tbody>
@@ -25,6 +26,7 @@
         <td>{{$row->time}}</td>
         <td>{{$row->action}}</td>
         <td>{{$row->implementer}}</td>
+        <td>{{ $row->note }}</td>
       </tr>
       @endforeach
       @endif
