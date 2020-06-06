@@ -17,6 +17,12 @@
     margin-left: 20px;
     font-weight: bold;
   }
+  .fa-cog:hover{
+    background-color: yellow;
+  }
+  .fa-history:hover{
+    background-color: green;
+  }
   
 </style>
 <h2>Xem Lịch Bảo Dưỡng Định Kì Thiết Bị</h2>
@@ -86,7 +92,9 @@
         <td>{{ $row->maintain_date }}</td>
         <td>{{ $row->khbd }}</td>
         <td>
-            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('device.history',['id'=>$row->id])}}" style="text-decoration: none;"><i class="fa fa-history " style="font-size: 22px" title="Lịch sử sửa chữa" aria-hidden="true"></i></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('device.history',['id'=>$row->id])}}" style="text-decoration: none;"><i class="fa fa-history " style="font-size: 22px" title="Lịch sử sửa chữa" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{{ route('device.maintainCheck', ['id' => $row->dv_id]) }}" style="text-decoration: none;"><i class="fa fa-cog"style="font-size: 22px" title="Lịch sử bảo dưỡng" aria-hidden="true"></i></a>
+
         </td>
       </tr>
       @endforeach
