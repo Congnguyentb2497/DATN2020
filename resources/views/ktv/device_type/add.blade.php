@@ -35,6 +35,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 20px;
+    text-align: center;
   }
   .btn:hover {
     background-color: #45a049;
@@ -95,7 +96,7 @@
       <tr>
         <td></td>
         <td>
-          <div class="canl" s><a href="{{route('dvtype.show')}}" style="color: white; text-decoration: none;">Hủy bỏ</a></div>
+          <div class="canl" ><a href="{{route('dvtype.show')}}" style="color: white; text-decoration: none;">Hủy bỏ</a></div>
         </td>
       </tr>
     </table> 
