@@ -67,11 +67,11 @@ label {
   font-weight: bold;
 }
 </style>
-<div style="font-size: 25px;padding-left: 50px;padding-top: 10px;font-weight: bold; ">Nhập thông tin vật tư</div>
+<div style="font-size: 25px;padding-left: 50px;padding-top: 10px;font-weight: bold; ">Sửa thông tin vật tư</div>
 <hr >
   
 <div class="editKtv">
-  <form action="{{route('accessory.postAdd')}}" method="post">
+  <form action="{{route('accessory.postEdit',['id'=>$acc->id])}}" method="post">
          @csrf
     <table border="0">
       <tr>

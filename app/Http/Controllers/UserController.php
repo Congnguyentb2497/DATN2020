@@ -345,6 +345,7 @@ public function updateStatus(Request $request, $id){
     }
     if($request->status == '4'){
         $device->status = 4;
+        $device->department_id = 1;
         $history = Maintenance_schedule::where('status',0)->where('dv_id',$id)->first();
         $history->status = 2;
         $history->proceed_date = $request->update_time;

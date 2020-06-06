@@ -21,7 +21,7 @@
     border-radius: 4px;
     background-color: yellow;
   }
-  .fa-trash:hover{
+  .fa-history:hover{
     border-radius: 4px;
     color: red;
   }
@@ -94,7 +94,7 @@
         <td>{{$device->handover_date}}</td>
         <td style="text-align: center;">
           <a href="{{route('device.getEdit',['id'=>$device->id])}}"><i class="fa fa-pencil-square-o " title="Xem thông tin" style="font-size: 18px" aria-hidden="true"></i></a>
-         <!--  <a onclick="return confirm('Bạn có chắc chắn xóa?')" href="{{route('device.del',['id'=>$device->id])}}"><i class="fa fa-trash " style="font-size: 18px" title="Xóa" aria-hidden="true"></i></a> -->
+          <a href="{{route('device.history',['id'=>$device->id])}}"><i class="fa fa-history " style="font-size: 18px" title="Xóa" aria-hidden="true"></i></a>
         </td>
       </tr>
       @endforeach

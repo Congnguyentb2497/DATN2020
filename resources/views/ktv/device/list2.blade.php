@@ -140,7 +140,7 @@
         <th>Nhà cung cấp</th>
         <th>Năm SX</th>
         <th>Ngày nhập</th>
-        <th width="7%">Điều khiển</th>
+        <th width="10%">Điều khiển</th>
       </tr>
     </thead>
     <tbody>
@@ -154,9 +154,9 @@
         <td>{{$device->produce_date}}</td>
         <td>{{$device->import_date}}</td>
         <td style="text-align: center;">
-          <a class="ban_giao" data-deviceid="{{$device->id}}"><i class="fa fa-wrench" style="font-size: 22px;" title="Tạo lịch sửa chữa" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="{{route('device.getEdit',['id'=>$device->id])}}"><i class="fa fa-pencil-square-o" style="font-size: 22px;" title="Thông tin" aria-hidden="true"></i></a>
-         <!--  <a onclick="return confirm('Bạn có chắc chắn xóa?')" href="{{route('device.del',['id'=>$device->id])}}"><i class="fa fa-trash" style="font-size: 22px;" title="Xóa" aria-hidden="true"></i></a> -->
+          <a class="ban_giao" data-deviceid="{{$device->id}}"><i class="fa fa-wrench" style="font-size: 20px;" title="Tạo lịch sửa chữa" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="{{route('device.getEdit',['id'=>$device->id])}}"><i class="fa fa-pencil-square-o" style="font-size: 20px;" title="Thông tin" aria-hidden="true"></i></a>
+          <a href="{{route('device.history',['id'=>$device->id])}}"><i class="fa fa-history " style="font-size: 20px" title="Xóa" aria-hidden="true"></i></a>
         </td>
       </tr>
       @endforeach
