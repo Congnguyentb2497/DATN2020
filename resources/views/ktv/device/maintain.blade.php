@@ -27,7 +27,7 @@
       <table width="100%" border="0">
         <tr>
           <td>
-            <input type="text" name="dv_name">  
+            <input style="width: 90%" type="text" name="dv_name" placeholder="nhập tên thiết bị">  
           </td>
           <td>
             <select class="form-control" id="searchDvt" name="dvt_id" style="background-color: #D8D8D8;width: 90%">
@@ -86,7 +86,7 @@
         <td>{{ $row->maintain_date }}</td>
         <td>{{ $row->khbd }}</td>
         <td>
-            <a href="{{ route('device.history',['id'=>$row->id])}}" style="text-decoration: none;"><i class="fa fa-history " style="font-size: 22px" title="Lịch sử sửa chữa" aria-hidden="true"></i></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('device.history',['id'=>$row->id])}}" style="text-decoration: none;"><i class="fa fa-history " style="font-size: 22px" title="Lịch sử sửa chữa" aria-hidden="true"></i></a>
         </td>
       </tr>
       @endforeach
