@@ -29,7 +29,7 @@ $month = [
                 $col = 4;
             }
         @endphp
-        <th colspan="{{ $col }}" style="text-align: center; width: 7%">{{ $month[$i] }}</th>
+        <th colspan="{{ $col }}" style="text-align: center; width: 7%;background-color: yellow;">{{ $month[$i] }}</th>
         @endfor
     </tr>
     <tr>
@@ -41,7 +41,7 @@ $month = [
 <tr>
 <td>abcd </td>
 @for($i = 1; $i <= 53; $i++)
-        <td style="text-align: center; width: 1.5%"> <button class="btn1"></button></td>
+        <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button class="btn1" onclick="return <?php alert("hello") ?>"></button></td>
         @endfor
 </tr>
 </table>
