@@ -41,7 +41,7 @@ $month = [
 <tr>
 <td>abcd </td>
 @for($i = 1; $i <= 53; $i++)
-        <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button class="btn1" onclick="return <?php alert("hello") ?>"></button></td>
+        <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button class="btn1" onclick="return alert("hello")"></button></td>
         @endfor
 </tr>
 </table>
