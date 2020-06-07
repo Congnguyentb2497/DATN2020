@@ -18,7 +18,7 @@ $month = [
 @endphp
 <table width="200%" border="1">
     <tr>
-        <th style="width: 16%">Hạng mục công việc</th>
+        <th style="width: 20%;background-color: yellow;">Hạng mục công việc</th>
         @for($i = 0; $i < count($month); $i++)
         @php
             if($i == 0 || $i == 3 || $i == 6 || $i == 8 || $i == 11)
@@ -33,9 +33,9 @@ $month = [
         @endfor
     </tr>
     <tr>
-        <th>Hệ thống khí y tế trung tâm</th>
+        <th style="background-color: blue;">Hệ thống khí y tế trung tâm</th>
         @for($i = 1; $i <= 53; $i++)
-        <td style="text-align: center; width: 1.5%">{{ 'T'.$i }}</td>
+        <td style="text-align: center; width: 1.5%;background-color: yellow;">{{ 'T'.$i }}</td>
         @endfor
     </tr>
 <tr>
