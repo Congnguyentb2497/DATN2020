@@ -39,7 +39,7 @@ $month = [
         @endfor
     </tr>
 <tr>
-<td>{{ trich xuat db }} </td>
+<td>abcd </td>
 @for($i = 1; $i <= 53; $i++)
         <td style="text-align: center; width: 1.5%">
 
