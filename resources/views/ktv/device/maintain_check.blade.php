@@ -41,9 +41,7 @@ $month = [
 <tr>
 <td>abcd </td>
 @for($i = 1; $i <= 53; $i++)
-        <td style="text-align: center; width: 1.5%">
-
-  </td>
+        <td style="text-align: center; width: 1.5%"> <button class="btn1"></button></td>
         @endfor
 </tr>
 </table>
