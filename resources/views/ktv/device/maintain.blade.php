@@ -25,7 +25,7 @@
   }
   
 </style>
-<h2>Xem Lịch Bảo Dưỡng Định Kì Thiết Bị</h2>
+<h2>Lịch Sử Sửa Chữa Và Bảo Dưỡng Định Kì Thiết Bị</h2>
 <div class="container2">
   <div>
     <form action="" method="get" style="float: left;">
@@ -33,7 +33,7 @@
       <table width="100%" border="0">
         <tr>
           <td>
-            <input style="width: 90%" type="text" name="dv_name" placeholder="nhập tên thiết bị">  
+            <input class="form-control" style="width: 90%" type="text" name="dv_name" placeholder="nhập tên thiết bị">  
           </td>
           <td>
             <select class="form-control" id="searchDvt" name="dvt_id" style="background-color: #D8D8D8;width: 90%">

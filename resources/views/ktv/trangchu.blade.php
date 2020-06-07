@@ -50,7 +50,7 @@
         <th>Nội dung thông báo</th>
         <th>Tên thiết bị</th>
         <th>Người báo hỏng</th>
-        <th width="7%">Điều khiển</th>
+        <th width="7%"></th>
       </tr>
     </thead>
     <tbody>

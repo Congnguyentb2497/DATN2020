@@ -139,7 +139,7 @@
 				<th>Loại thiết bị</th>
 				<th>Nhà cung cấp</th>
 				<th>Ngày nhập</th>
-				<th width="7%">Điều khiển</th>
+				<th width="7%"></th>
 			</tr>
 		</thead>
 		<tbody>
