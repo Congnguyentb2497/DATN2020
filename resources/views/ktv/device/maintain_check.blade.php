@@ -39,12 +39,13 @@ $month = [
         @endfor
     </tr>
     @foreach($dv as $row)
-<tr>
-<td>{{ $row -> scheduleAct}}</td>
-@for($i = 1; $i <= 53; $i++)
-        <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button id="{{ $i }}" class="btn1" style="height: 20px;"></button></td>
-        @endfor
-</tr>
+  <tr>
+    <td>{{ $row -> scheduleAct}}</td>
+    @for($i = 1; $i <= 53; $i++)
+    <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button id="{{ $i }}" class="btn1" style="height: 20px;"></button></td>
+    @endfor
+  </tr>
+    @endforeach
 </table>
 @endsection
 
