@@ -72,14 +72,17 @@ $month = [
     'December'
 ];
 @endphp
+
 <div>Thống Kê Lịch Trình Bảo Dưỡng Định Kì Thiết Bị {{$device->dv_name}}</div>
-<select class="form-control" style="width: 100px;">
+<br>
+<select class="form-control" style="width: 200px;">
   <option disabled="" value="">Lựa chọn năm</option>
   @for ($j = 2020; $j<=2030; $j++)
   <option value="{{$j}}">{{ 'Năm '.$j }}</option>
   @endfor
 </select>
-<table width="200%" border="1">
+<br>
+<table width="100%" border="1">
     <tr>
         <th style="width: 20%;background-color: yellow;">Hạng mục công việc</th>
         @for($i = 0; $i < count($month); $i++)
@@ -179,9 +182,10 @@ $month = [
     var id = $(this).attr('data-deviceid');
     // Lấy action hiện tại của form theo class
     console.log(id);
-    document.getElementById('id_check').value = id;
     // Hiện form
     document.getElementById("myForm").style.display = "block";
+        document.getElementById('id_check').value = id;
+
   });
 
 </script>
