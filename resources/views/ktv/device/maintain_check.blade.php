@@ -104,7 +104,7 @@ $month = [
   <tr>
     <td>{{ $row -> scheduleAct}}</td>
     @for($i = 1; $i <= 53; $i++)
-    <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button id="{{ $i.$row->id }}" onmousemove="show()" onclick="openForm()" class="check" style="height: 20px;"></button></td>
+    <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $i.$row->id }}" id="{{ $i.$row->id }}" onmousemove="show()" onclick="openForm()" class="check" style="height: 20px;"></button></td>
     @endfor
   </tr>
     @endforeach
@@ -170,7 +170,7 @@ $month = [
 
   $(document).on('click', '.check', function(){
     // Lấy id của data
-    var id = $(this).attr('id');
+    var id = $(this).attr('data-deviceid');
     // Lấy action hiện tại của form theo class
     $('#id_check').text = id;
     // Hiện form
