@@ -131,11 +131,7 @@ $month = [
           <td width="20%"><label>Mã kiểm tra</label></td>
           <td><input type="text" id="id_check" name="id_check"></td>
         </tr>
-        <tr>
-          <tr>
-          <td width="20%"><label>Mã kiểm</label></td>
-          <td><input type="text" id="id_a" name="id_a"></td>
-        </tr>
+        
         <tr>
           <td ><label>Loại kiểm tra</label></td>
           <td>
