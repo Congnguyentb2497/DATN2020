@@ -5,7 +5,7 @@
   .form-popup {
     display: none;
     position: fixed;
-    top: 300px;
+    top: 250px;
     bottom: 200px;
     left: 500px;
     border: 3px solid #f1f1f1;
@@ -15,7 +15,7 @@
     max-width: 800px;
     padding: 10px;
     background-color: #BDBDBD;
-    max-height: 300px;
+    max-height: 500px;
     border-radius: 5px;
   }
   /* Full-width input fields */
@@ -124,24 +124,25 @@ $month = [
         </tr>
         <tr>
           <td ><label>Loại kiểm tra</label>
-            <select type="text" name="select_check" style="font-style: 17px;">
-            </select>
+            <select id="select_check" type="text" name="select_check" style="font-style: 17px;">
               <option value="C">Kiểm tra</option>
               <option value="M">Bảo trì</option>
               <option value="I">Kiểm định</option>
+            </select>
+              
           </td>
         </tr>
         <tr>
           <td><label>Ngày thực hiện</label></td>
-          <td><input type="date" name="date_check"></td>
+          <td><input id="date_check" type="date" name="date_check"></td>
         </tr>
         <tr>
           <td>Người thực hiện</td>
-          <td><input style="margin-left: 3px;" type="text" name="receiver"></td>
+          <td><input style="margin-left: 3px;" type="text" id="checker" name="checker"></td>
         </tr>
         <tr>
           <td><label>Ghi chú</label></td>
-          <td><input type="text" name="note"></td>
+          <td><input id="note" type="text" name="note"></td>
         </tr>
         <tr>
           <td colspan="2"><button type="submit" class="btn" onclick="luu()">Lưu
@@ -152,10 +153,13 @@ $month = [
     </form>
   </div>
 <script>
+  var arr = [];
 
+  //luu du lieu check
   function luu() {
     
     // document.getElementById("myForm").style.display = "block";
+
   }
   function show(){
 
