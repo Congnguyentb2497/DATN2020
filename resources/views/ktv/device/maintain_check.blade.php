@@ -5,7 +5,7 @@
   .form-popup {
     display: none;
     position: fixed;
-    top: 250px;
+    top: 200px;
     bottom: 200px;
     left: 500px;
     border: 3px solid #f1f1f1;
@@ -119,17 +119,17 @@ $month = [
           <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Thông tin bảo dưỡng thiết bị</b></label></td>
         </tr>
         <tr>
-          <td><label>Mã kiểm tra</label></td>
+          <td width="20%"><label>Mã kiểm tra</label></td>
           <td><input type="text" name="id_check"></td>
         </tr>
         <tr>
-          <td ><label>Loại kiểm tra</label>
+          <td ><label>Loại kiểm tra</label></td>
+          <td>
             <select id="select_check" type="text" name="select_check" style="font-style: 17px;">
               <option value="C">Kiểm tra</option>
               <option value="M">Bảo trì</option>
               <option value="I">Kiểm định</option>
-            </select>
-              
+            </select> 
           </td>
         </tr>
         <tr>
@@ -172,7 +172,7 @@ $month = [
     // Lấy id của data
     var id = $(this).attr('id');
     // Lấy action hiện tại của form theo class
-    $('#id_check').val = id;
+    $('#id_check').html = id;
     // Hiện form
     document.getElementById("myForm").style.display = "block";
   });
