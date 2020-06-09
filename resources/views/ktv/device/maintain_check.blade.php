@@ -129,7 +129,7 @@ $month = [
         </tr>
         <tr>
           <td width="20%"><label>Mã kiểm tra</label></td>
-          <td><input type="text" name="id_check"></td>
+          <td><input type="text" id="id_check" name="id_check"></td>
         </tr>
         <tr>
           <td ><label>Loại kiểm tra</label></td>
@@ -184,7 +184,7 @@ $month = [
     console.log(id);
     // Hiện form
     document.getElementById("myForm").style.display = "block";
-        document.getElementById('id_check').value = id;
+    document.getElementById('id_check').value = id;
 
   });
 
