@@ -141,13 +141,6 @@ $month = [
       </table>
     </form>
   </div>
-
-  <div class="page-nav text-right">
-    <nav aria-label="Page navigation">
-      {{$devices->links()}}
-    </nav>
-  </div>
-</div>
 <script>
 
   function luu() {
