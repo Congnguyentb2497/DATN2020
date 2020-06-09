@@ -1,7 +1,17 @@
 @extends('ktv.index')
 @section('content')
 <style type="text/css">
-  form-container {
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    position: fixed;
+    top: 300px;
+    bottom: 200px;
+    left: 500px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  .form-container {
     max-width: 800px;
     padding: 10px;
     background-color: #BDBDBD;
