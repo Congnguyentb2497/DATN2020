@@ -33,15 +33,16 @@ $month = [
         @endfor
     </tr>
     <tr>
-        <th style="background-color: blue;">Hệ thống khí y tế trung tâm</th>
+        <th style="background-color: blue;">{{$dev ->dv_name}}</th>
         @for($i = 1; $i <= 53; $i++)
         <td style="text-align: center; width: 1.5%;background-color: yellow;">{{ 'T'.$i }}</td>
         @endfor
     </tr>
+    @foreach($dv as $row)
 <tr>
-<td>abcd </td>
+<td>{{ $row -> scheduleAct}}</td>
 @for($i = 1; $i <= 53; $i++)
-        <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button class="btn1" onclick="return alert("hello")"></button></td>
+        <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button id="{{ $i }}" class="btn1" style="height: 20px;"></button></td>
         @endfor
 </tr>
 </table>
