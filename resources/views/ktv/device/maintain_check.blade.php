@@ -99,7 +99,7 @@ $month = [
         @endfor
     </tr>
     <tr>
-        <th>Tuần</th>
+        <th></th>
         @for($i = 1; $i <= 53; $i++)
         <td style="text-align: center; width: 1.5%;background-color: yellow;">{{ 'T'.$i }}</td>
         @endfor
@@ -109,7 +109,7 @@ $month = [
   <tr>
     <td>{{ $row -> scheduleAct}}</td>
     @for($i = 1; $i <= 53; $i++)
-    <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $i.$row->id }}" id="{{ $i.$row->id }}" onmousemove="show()" class="check" style="height: 20px;"></button></td>
+    <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $row->id.$i }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;"></button></td>
     @endfor
   </tr>
     @endforeach
@@ -130,6 +130,7 @@ $month = [
           <td ><label>Loại kiểm tra</label></td>
           <td>
             <select id="select_check" type="text" name="select_check" style="font-style: 17px;">
+              <option value="" disabled="">Chọn loại bảo dưỡng</option>
               <option value="C">Kiểm tra</option>
               <option value="M">Bảo trì</option>
               <option value="I">Kiểm định</option>
