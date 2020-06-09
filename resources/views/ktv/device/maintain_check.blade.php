@@ -104,7 +104,7 @@ $month = [
   <tr>
     <td>{{ $row -> scheduleAct}}</td>
     @for($i = 1; $i <= 53; $i++)
-    <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $i.$row->id }}" id="{{ $i.$row->id }}" onmousemove="show()" onclick="openForm()" class="check" style="height: 20px;"></button></td>
+    <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $i.$row->id }}" id="{{ $i.$row->id }}" onmousemove="show()" class="check" style="height: 20px;"></button></td>
     @endfor
   </tr>
     @endforeach
