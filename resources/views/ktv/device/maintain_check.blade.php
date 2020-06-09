@@ -7,7 +7,7 @@
     position: fixed;
     top: 200px;
     bottom: 200px;
-    left: 500px;
+    left: 400px;
     border: 3px solid #f1f1f1;
     z-index: 9;
   }
