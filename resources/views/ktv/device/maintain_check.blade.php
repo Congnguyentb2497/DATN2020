@@ -43,7 +43,7 @@ $month = [
         <td style="text-align: center; width: 1.5%;background-color: yellow;">{{ 'T'.$i }}</td>
         @endfor
     </tr>
-    if(isset($dv))
+    @if(isset($dv))
     @foreach($dv as $row)
   <tr>
     <td>{{ $row -> scheduleAct}}</td>
