@@ -77,7 +77,7 @@ $month = [
   <option disabled="" value="">Lựa chọn năm</option>
   @for ($j = 2020; $j<=2030; $j++)
   <option value="{{$j}}">{{ 'Năm '.$j }}</option>
-  $endfor
+  @endfor
 </select>
 <table width="200%" border="1">
     <tr>
