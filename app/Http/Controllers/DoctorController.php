@@ -119,6 +119,10 @@ class DoctorController extends Controller
         return redirect()->route('doctor.home');
     }
 
+    public function addDevice(){
+        $dv = DB::table('device')->where('status',0)->get();
+        return view('doctor.addDevice')->with(['devices'=>$dv]);
+    }
     //lịch sử điều chuyển thiết bị
     //  public function historyMoveDev(){
     //  	return view('doctor.historyMoveDevice');

@@ -784,7 +784,7 @@ public function fileDevice($id){
 
 //lịch bảo dưỡng
 public function showmaintain(Request $request){
-    $devices = Device::where('status', 1)->orderBy('id','desc');
+    $devices = Device::where('status','<>' ,4)->orderBy('id','desc');
     $dvt = DB::table('device_type')->get();
     $provider = DB::table('provider')->get();
 
