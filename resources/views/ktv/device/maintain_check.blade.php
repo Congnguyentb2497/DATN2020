@@ -114,9 +114,6 @@ $month = [
             @if($row->id.$i == $ch->check_id)
             <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;">{{$ch->type_check}}</button>
           </td>
-            @else
-              <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;"></button>
-              </td>
             @endif
           @endforeach
         @else
