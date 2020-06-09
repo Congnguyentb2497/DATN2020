@@ -77,7 +77,7 @@ $month = [
 <br>
 <select class="form-control" id="year" style="width: 200px;">
   <option disabled="" value="">Lựa chọn năm</option>
-  @for ($j = 2020; $j<=2030; $j++)
+  @for ($j = 2020; $j<=2040; $j++)
   <option value="{{$j}}">{{ 'Năm '.$j }}</option>
   @endfor
 </select>
@@ -106,12 +106,20 @@ $month = [
     </tr>
     @if(isset($maintainAct))
     @foreach($maintainAct as $row)
+      @foreach($checked as $ch)
   <tr>
-    <td>{{ $row -> scheduleAct}}</td>
-    @for($i = 1; $i <= 53; $i++)
-    <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;"></button></td>
-    @endfor
+        <td>{{ $row -> scheduleAct}}</td>
+        @for($i = 1; $i <= 53; $i++)
+          @if($row->id.$i == $ch->check.id)
+          <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;">{{$ch->type_check}}</button>
+          </td>
+          @else
+          <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;"></button>
+          </td>
+          @endif
+        @endfor
   </tr>
+      @endforeach
     @endforeach
     @endif
 </table>
@@ -188,7 +196,7 @@ $month = [
     var actions= $('.form1').attr('action', action.replace('id',id));
     // Hiện form
     document.getElementById("myForm").style.display = "block";
-    document.getElementById('id_check').value = $('#year').val()+id;
+    document.getElementById('id_check').value = id;
 
   });
 
