@@ -33,8 +33,8 @@ $month = [
         @endfor
     </tr>
     <tr>
-        @if(isset($dev))
-        <th style="background-color: blue;">{{$dev ->dv_name}}</th>
+        @if(isset($device))
+        <th style="background-color: blue;">{{$device ->dv_name}}</th>
         @else
         <th style="background-color: blue;"></th>
         @endif
@@ -43,8 +43,8 @@ $month = [
         <td style="text-align: center; width: 1.5%;background-color: yellow;">{{ 'T'.$i }}</td>
         @endfor
     </tr>
-    @if(isset($dv))
-    @foreach($dv as $row)
+    @if(isset($maintainAct))
+    @foreach($maintainAct as $row)
   <tr>
     <td>{{ $row -> scheduleAct}}</td>
     @for($i = 1; $i <= 53; $i++)
