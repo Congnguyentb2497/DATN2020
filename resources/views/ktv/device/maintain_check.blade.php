@@ -172,7 +172,8 @@ $month = [
     // Lấy id của data
     var id = $(this).attr('data-deviceid');
     // Lấy action hiện tại của form theo class
-    $('#id_check').text = id;
+    console.log(id);
+    $('#id_check').val = id;
     // Hiện form
     document.getElementById("myForm").style.display = "block";
   });
