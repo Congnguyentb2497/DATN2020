@@ -72,6 +72,13 @@ $month = [
     'December'
 ];
 @endphp
+<div>Thống Kê Lịch Trình Bảo Dưỡng Định Kì Thiết Bị {{$device->dv_name}}</div>
+<select class="form-control" style="width: 100px;">
+  <option disabled="" value="">Lựa chọn năm</option>
+  @(for $i = 2020; $i<=2030; $i++)
+  <option value="{{$i}}">{{ 'Năm '.$i }}</option>
+  $endfor
+</select>
 <table width="200%" border="1">
     <tr>
         <th style="width: 20%;background-color: yellow;">Hạng mục công việc</th>
@@ -112,8 +119,7 @@ $month = [
 </table>
 
 <div class="form-popup" id="myForm">
-    <form action="" class="form-container form1" method="get">
-      @csrf
+    <form action="" class="form-container form1" method="">
       <table style="font-size: 17px;" border="0" >
         <tr>
           <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Thông tin bảo dưỡng thiết bị</b></label></td>
@@ -173,7 +179,7 @@ $month = [
     var id = $(this).attr('data-deviceid');
     // Lấy action hiện tại của form theo class
     console.log(id);
-    $('#id_check').text(id);
+    document.getElementById('id_check').value = id;
     // Hiện form
     document.getElementById("myForm").style.display = "block";
   });
