@@ -108,22 +108,22 @@ $month = [
     @foreach($maintainAct as $row)
     <tr>
       <td>{{ $row -> scheduleAct}}</td>
+      @for($i = 1; $i <= 53; $i++)
       @if($checked != null) 
-      @foreach($checked as $ch)
-        @for($i = 1; $i <= 53; $i++)
-            @if($row->id.$i == $ch->check_id)
+        @foreach($checked as $ch)
+            @if($ch->check_id == $row->id.$i)
             <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;font-size: 12px;">{{$ch->type_check}}</button>
-          </td>
+            </td>
             @else
               <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;"></button>
               </td>
             @endif
-        @endfor
-      @endforeach
+        @endforeach
       @else
-          <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;"></button>
+        <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;"></button>
               </td>
       @endif
+      @endfor
     </tr>
     @endforeach
     @endif
