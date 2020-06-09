@@ -75,7 +75,7 @@ $month = [
 
 <div>Thống Kê Lịch Trình Bảo Dưỡng Định Kì Thiết Bị {{$device->dv_name}}</div>
 <br>
-<select class="form-control" style="width: 200px;">
+<select class="form-control" id="year" style="width: 200px;">
   <option disabled="" value="">Lựa chọn năm</option>
   @for ($j = 2020; $j<=2030; $j++)
   <option value="{{$j}}">{{ 'Năm '.$j }}</option>
@@ -99,12 +99,7 @@ $month = [
         @endfor
     </tr>
     <tr>
-        @if(isset($device))
-        <th style="background-color: blue;">{{$device ->dv_name}}</th>
-        @else
-        <th style="background-color: blue;"></th>
-        @endif
-
+        <th>Tuần</th>
         @for($i = 1; $i <= 53; $i++)
         <td style="text-align: center; width: 1.5%;background-color: yellow;">{{ 'T'.$i }}</td>
         @endfor
@@ -143,7 +138,7 @@ $month = [
         </tr>
         <tr>
           <td><label>Ngày thực hiện</label></td>
-          <td><input id="date_check" type="date" name="date_check"></td>
+          <td><input id="date_check" type="date" name="date_check" value="{{date('Y-m-d')}}"></td>
         </tr>
         <tr>
           <td><label>Người thực hiện</label></td>
@@ -184,7 +179,7 @@ $month = [
     console.log(id);
     // Hiện form
     document.getElementById("myForm").style.display = "block";
-    document.getElementById('id_check').value = id;
+    document.getElementById('id_check').value = $('#year').val()+id;
 
   });
 
