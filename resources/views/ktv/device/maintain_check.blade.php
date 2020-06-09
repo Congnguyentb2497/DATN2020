@@ -19,7 +19,7 @@
     border-radius: 5px;
   }
   /* Full-width input fields */
-  .form-container input[type=text], .form-container input[type=password], .form-container select[type=text] {
+  .form-container input[type=text], .form-container input[type=date], .form-container input[type=password], .form-container select[type=text] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 5px 0;
@@ -112,7 +112,7 @@ $month = [
 </table>
 
 <div class="form-popup" id="myForm">
-    <form action="" class="form-container form1" method="post">
+    <form action="" class="form-container form1" method="get">
       @csrf
       <table style="font-size: 17px;" border="0" >
         <tr>
@@ -137,15 +137,15 @@ $month = [
           <td><input id="date_check" type="date" name="date_check"></td>
         </tr>
         <tr>
-          <td>Người thực hiện</td>
-          <td><input style="margin-left: 3px;" type="text" id="checker" name="checker"></td>
+          <td><label>Người thực hiện</label></td>
+          <td><input type="text" id="checker" name="checker" value="{{Auth::user()->fullname}}"></td>
         </tr>
         <tr>
           <td><label>Ghi chú</label></td>
           <td><input id="note" type="text" name="note"></td>
         </tr>
         <tr>
-          <td colspan="2"><button type="submit" class="btn" onclick="luu()">Lưu
+          <td colspan="2" style="text-align: center;"><button type="submit" class="btn" onclick="luu()">Lưu
           </button>
           <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
         </tr>
@@ -172,7 +172,7 @@ $month = [
     // Lấy id của data
     var id = $(this).attr('id');
     // Lấy action hiện tại của form theo class
-    $('#id_check').html = id;
+    $('#id_check').text = id;
     // Hiện form
     document.getElementById("myForm").style.display = "block";
   });
