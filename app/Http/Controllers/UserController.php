@@ -17,6 +17,7 @@ use App\Device_accessory;
 use App\Department;
 use App\History_ktv;
 use App\ScheduleAction;
+use App\CheckMaintain;
 class UserController extends Controller
 {
     //ktv
