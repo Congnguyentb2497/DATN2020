@@ -827,6 +827,31 @@ public function showmaintain(Request $request){
         $dv = DB::table('schedule_action')->where('dv_id',$id)->get();
         return view('ktv.device.maintain_check')->with(['device'=>$dev,'maintainAct'=>$dv]);
     }
+
+    public function checked(Request $request, $id){
+        $time = Carbon::now('Y');
+        $act_id = substr($request->id_check, 0,1);
+        $checked = DB::table('check')->where('check_id',$id)->first();
+        if($checked){
+            $checked->time = $request->date_check;
+            $checked->checker = $request->checker;
+            $checked->note = $request->note;
+            $checked->type_check = $request->select_check;
+            $checked->save();
+        }else{
+            $check = new CheckMaintain;
+            $check->year = $time->year;
+            $check->dv_id = $request->dv_id;
+            $check->act_id = $act_id;
+            $check->check_id = $request->id_check;
+            $check->time = $request->date_check;
+            $check->checker = $request->checker;
+            $check->note = $request->note;
+            $check->type_check = $request->select_check;
+            $check->save();
+        }
+        return redirect()->route('device.maintainCheck',['id'=>$request->dv_id]);
+    }
 }
 
 

@@ -109,7 +109,7 @@ $month = [
   <tr>
     <td>{{ $row -> scheduleAct}}</td>
     @for($i = 1; $i <= 53; $i++)
-    <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ [$row->id.$i,$row->id]  }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;"></button></td>
+    <td style="text-align: center; width: 1.5%;cursor: pointer;"> <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;"></button></td>
     @endfor
   </tr>
     @endforeach
@@ -117,10 +117,15 @@ $month = [
 </table>
 
 <div class="form-popup" id="myForm">
-    <form action="" class="form-container form1" method="">
+    <form action="{{ route('device.check','id')}}" class="form-container form1" method="post">
+      @csrf
       <table style="font-size: 17px;" border="0" >
         <tr>
           <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Thông tin bảo dưỡng thiết bị</b></label></td>
+        </tr>
+        <tr>
+          <td><label>Mã thiết bị</label></td>
+          <td><input type="text" name="dv_id" value="{{$device->dv_id}}"></td>
         </tr>
         <tr>
           <td width="20%"><label>Mã kiểm tra</label></td>
@@ -150,7 +155,7 @@ $month = [
           <td><input id="note" type="text" name="note"></td>
         </tr>
         <tr>
-          <td colspan="2" style="text-align: center;"><button type="submit" class="btn" onclick="luu()">Lưu
+          <td colspan="2" style="text-align: center;"><button type="submit" class="btn">Lưu
           </button>
           <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
         </tr>
@@ -175,11 +180,11 @@ $month = [
 
   $(document).on('click', '.check', function(){
     // Lấy id của data
-    var id = $(this).attr('data-deviceid[0]');
+    var id = $(this).attr('data-deviceid');
     // Lấy action hiện tại của form theo class
-    var i = $(this).attr('data-deviceid[1]');
-
-    console.log(i);
+    var action = $('.form1').attr('action');
+    // Thay thế id data vào đoạn action của form
+    var actions= $('.form1').attr('action', action.replace('id',id));
     // Hiện form
     document.getElementById("myForm").style.display = "block";
     document.getElementById('id_check').value = $('#year').val()+id;
