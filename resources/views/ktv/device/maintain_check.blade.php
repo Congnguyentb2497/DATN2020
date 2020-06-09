@@ -75,8 +75,8 @@ $month = [
 <div>Thống Kê Lịch Trình Bảo Dưỡng Định Kì Thiết Bị {{$device->dv_name}}</div>
 <select class="form-control" style="width: 100px;">
   <option disabled="" value="">Lựa chọn năm</option>
-  @(for $i = 2020; $i<=2030; $i++)
-  <option value="{{$i}}">{{ 'Năm '.$i }}</option>
+  @for ($j = 2020; $j<=2030; $j++)
+  <option value="{{$j}}">{{ 'Năm '.$j }}</option>
   $endfor
 </select>
 <table width="200%" border="1">
