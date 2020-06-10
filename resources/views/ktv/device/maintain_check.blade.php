@@ -186,7 +186,8 @@ $month = [
       @csrf
       @if(isset($checked))
       @foreach($checked as $row)
-      @if($row->id == $_POST['bienphp'])
+      <?php $d = $_POST['bienphp'] ?>
+      @if($row->id == $d)
       <table style="font-size: 17px;" border="0" >
         <tr>
           <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Cập nhật thông tin bảo dưỡng thiết bị</b></label></td>
