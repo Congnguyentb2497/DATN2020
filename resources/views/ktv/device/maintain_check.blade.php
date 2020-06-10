@@ -175,16 +175,18 @@ $month = [
   </div>
 <script>
   var arr = [];
-
+  var v;
   //luu du lieu check
-  function luu() {
-    
-    // document.getElementById("myForm").style.display = "block";
+ $(document).ready(function(){
+   v = $('#select_check').val();
+   if(v == 'C'){
+    $('#select_check').css('background-color','green');
+   }elseif(v == 'M'){
+        $('#select_check').css('background-color','yellow');
+   }else{
+    $('#select_check').css('background-color','violet');
+   }
 
-  }
-  function show(){
-
-  }
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
   }
@@ -201,6 +203,9 @@ $month = [
     document.getElementById('id_check').value = id;
 
   });
+
+ })
+  
 
 </script>
 @endsection
