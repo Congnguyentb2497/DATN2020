@@ -824,15 +824,11 @@ public function showmaintain(Request $request){
     }
 
     public function maintainCheck(Request $request,$id){
-        if($request->year){
-            $y = $request->year;
-            $ch = DB::table('check')->where('year',$y)->where('dv_id',$id)->get();
-        }else{
-            $ch = DB::table('check')->where('dv_id',$id)->get();
-        }
+        
         $dev = DB::table('device')->where('dv_id',$id)->first();
         $dv = DB::table('schedule_action')->where('dv_id',$id)->get();
-        
+        $ch = DB::table('check')->where('dv_id',$id)->get();
+
         //dd($ch);
         return view('ktv.device.maintain_check')->with(['device'=>$dev,'maintainAct'=>$dv,'checked'=>$ch]);
     }
@@ -867,13 +863,11 @@ public function showmaintain(Request $request){
         $check = CheckMaintain::find($id);
             $d = $check->dv_id;
             $check->year = $time->year;
-            $check->dv_id = $request->dv_id;
-            $check->check_id = $request->id_check;
             $check->time = $request->date_check;
             $check->checker = $request->checker;
             $check->note = $request->note;
             $check->save();
-                return redirect()->route('device.maintainCheck',['id'=>$d]);
+            return redirect()->route('device.maintainCheck',['id'=>$d]);
     }
    
 }

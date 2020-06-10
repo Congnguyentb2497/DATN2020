@@ -8,7 +8,7 @@
 		width: 100%;
 	}
 .btn{
-  width: 350px;
+  width: 500px;
   background-color: green;
   color: black;
   padding: 5px;
@@ -18,6 +18,7 @@
   cursor: pointer;
   font-size: 20px;
   opacity: 0.6;
+  margin-left: 100px;
 }
 
 .btn:hover , .canl:hover{
@@ -26,7 +27,7 @@
   font-weight: bold;
 }
 .canl{
-	width: 350px;
+	width: 500px;
   	background-color: black;
   	color: black;
   	padding: 5px;
@@ -36,13 +37,14 @@
   	cursor: pointer;
   	font-size: 20px;
   	opacity: 0.6;
+  	 margin-left: 100px;
 }
 </style>
 <div>
 	<h1 style="margin-left: 70px;">Cập nhật thông tin bảo dưỡng thiết bị</h1>
 	<hr style="background-color: green;height: 1px;width: 95%">
 </div>
-<div style="margin-left: 50px;"  class="form-group">
+<div style="margin-left: 150px;"  class="form-group">
     
     <form action="{{ route('device.editcheck',['id'=>$check->id])}}" class="form-container" method="post">
     	@csrf
@@ -89,7 +91,7 @@
         <tr>
         	<td></td>
           	<td style="text-align: center;width: 100%">
-          		<div class="canl" style="text-align: left;"><a style="color: white; text-decoration: none;" href="{{route('device.maintainCheck',['id'=>$check->dv_id])}}">Hủy</a></div>
+          		<div class="canl" style="text-align: center;"><a style="color: white; text-decoration: none;" href="{{route('device.maintainCheck',['id'=>$check->dv_id])}}">Hủy</a></div>
       		</td>
         </tr>
         
