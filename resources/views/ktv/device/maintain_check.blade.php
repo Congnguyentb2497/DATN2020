@@ -73,7 +73,7 @@ $month = [
 ];
 @endphp
 
-<div>Thống Kê Lịch Trình Bảo Dưỡng Định Kì Thiết Bị {{$device->dv_name}}</div>
+<div><h1>Thống Kê Lịch Trình Bảo Dưỡng Định Kì Thiết Bị {{$device->dv_name}}</h1></div>
 <br>
 <select class="form-control" id="year" style="width: 200px;">
   <option disabled="" value="">Lựa chọn năm</option>
@@ -109,7 +109,7 @@ $month = [
     <tr>
       <td>{{ $row -> scheduleAct}}</td>
        @for($i = 1; $i <= 53; $i++)
-      <td style="text-align: center; width: 1.5%;cursor: pointer;"> 
+      <td style="text-align: center; width: 1.5%;cursor: pointer;" class="check" data-deviceid="{{ $row->id.$i   }}"> 
         @if($checked != null) 
             @foreach($checked as $ch)
                 @if($ch->check_id == $row->id.$i)
@@ -119,12 +119,12 @@ $month = [
                     <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
                     @else($ch->type_check == 'I')
                     <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
+                    @else
+                    <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;font-size: 10px;">
+                    </button>
                     @endif
                 @endif
             @endforeach
-        @else
-        <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;font-size: 10px;">
-        </button>
         @endif
       </td>
       @endfor
