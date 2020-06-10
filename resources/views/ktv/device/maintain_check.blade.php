@@ -114,14 +114,11 @@ $month = [
             @foreach($checked as $ch)
                 @if($ch->check_id == $row->id.$i)
                     @if($ch->type_check == 'C')
-                    <button data-deviceid="{{ $ch->id }}"  onmousemove="show({{ $ch }})" class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->id }}"   class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
                     @elseif($ch->type_check == 'M')
-                    <button data-deviceid="{{ $ch->id }}"  onmousemove="show({{ $ch }})" class="check" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
-                    @elseif($ch->type_check == 'I')
-                    <button data-deviceid="{{ $ch->id }}"  onmousemove="show({{ $ch }})" class="check" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->id }}"   class="editcheck" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
                     @else
-                    <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;font-size: 10px;">
-                    </button>
+                    <button data-deviceid="{{ $ch->id }}"   class="editcheck" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
                     @endif
                 @endif
             @endforeach
@@ -180,6 +177,55 @@ $month = [
       </table>
     </form>
   </div>
+
+<div class="form-popup" id="myForm1">
+    <form action="{{ route('device.editcheck','id')}}" class="form-container form2" method="post">
+      @csrf
+      <table style="font-size: 17px;" border="0" >
+        <tr>
+          <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Thông tin bảo dưỡng thiết bị</b></label></td>
+        </tr>
+        <tr>
+          <td><label>Mã thiết bị</label></td>
+          <td><input type="text" name="dv_id" value="{{$device->dv_id}}"></td>
+        </tr>
+        <tr>
+          <td width="20%"><label>Mã kiểm tra</label></td>
+          <td><input type="text" id="id_check" name="id_check"></td>
+        </tr>
+        
+        <tr>
+          <td ><label>Loại kiểm tra</label></td>
+          <td>
+            <select id="select_check" type="text" name="select_check" style="font-style: 17px;">
+              <option value="" disabled="">Chọn loại bảo dưỡng</option>
+              <option value="C">Kiểm tra</option>
+              <option value="M">Bảo trì</option>
+              <option value="I">Kiểm định</option>
+            </select> 
+          </td>
+        </tr>
+        <tr>
+          <td><label>Ngày thực hiện</label></td>
+          <td><input id="date_check" type="date" name="date_check" value="{{date('Y-m-d')}}"></td>
+        </tr>
+        <tr>
+          <td><label>Người thực hiện</label></td>
+          <td><input type="text" id="checker" name="checker" value="{{Auth::user()->fullname}}"></td>
+        </tr>
+        <tr>
+          <td><label>Ghi chú</label></td>
+          <td><input id="note" type="text" name="note"></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;"><button id="luu" type="submit" class="btn">Lưu
+          </button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
 <script>
   var arr = '{{ $checked }}';
   var v;
