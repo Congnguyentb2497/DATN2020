@@ -187,18 +187,18 @@ $month = [
         </tr>
         <tr>
           <td><label>Mã thiết bị</label></td>
-          <td><input type="text" name="dv_id" value="{{$device->dv_id}}"></td>
+          <td><input type="text" name="dv_id" value="{{$ch->dv_id}}"></td>
         </tr>
         <tr>
           <td width="20%"><label>Mã kiểm tra</label></td>
-          <td><input type="text" id="id_check" name="id_check"></td>
+          <td><input type="text" id="id_check1" name="id_check" value="{{$ch->check_id}}"></td>
         </tr>
         
         <tr>
           <td ><label>Loại kiểm tra</label></td>
           <td>
-            <select id="select_check" type="text" name="select_check" style="font-style: 17px;">
-              <option value="" disabled="">Chọn loại bảo dưỡng</option>
+            <select id="select_check1" type="text" name="select_check" style="font-style: 17px;">
+              <option value="">Chọn loại bảo dưỡng</option>
               <option value="C">Kiểm tra</option>
               <option value="M">Bảo trì</option>
               <option value="I">Kiểm định</option>
@@ -207,18 +207,18 @@ $month = [
         </tr>
         <tr>
           <td><label>Ngày thực hiện</label></td>
-          <td><input id="date_check" type="date" name="date_check" value="{{date('Y-m-d')}}"></td>
+          <td><input id="date_check1" type="date" name="date_check" value="{{$ch->time}}"></td>
         </tr>
         <tr>
           <td><label>Người thực hiện</label></td>
-          <td><input type="text" id="checker" name="checker" value="{{Auth::user()->fullname}}"></td>
+          <td><input type="text" id="checker1" name="checker" value="{{$ch->checker}}"></td>
         </tr>
         <tr>
           <td><label>Ghi chú</label></td>
-          <td><input id="note" type="text" name="note"></td>
+          <td><input id="note1" type="text" name="note" value="{{$ch->note}}"></td>
         </tr>
         <tr>
-          <td colspan="2" style="text-align: center;"><button id="luu" type="submit" class="btn">Lưu
+          <td colspan="2" style="text-align: center;"><button id="luu" type="submit" class="btn">Sửa
           </button>
           <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
         </tr>
@@ -233,8 +233,10 @@ $month = [
 
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
-  }
+        document.getElementById("myForm1").style.display = "none";
 
+  }
+//check
   $(document).on('click', '.check', function(){
     // Lấy id của data
     var id = $(this).attr('data-deviceid');
@@ -259,6 +261,31 @@ $month = [
           $(ch).css('background-color','violet');         
         }
     });
+//editcheck
+    $(document).on('click', '.editcheck', function(){
+    // Lấy id của data
+    var id = $(this).attr('data-deviceid');
+    // Lấy action hiện tại của form theo class
+    var action = $('.form2').attr('action');
+    // Thay thế id data vào đoạn action của form
+    var actions= $('.form2').attr('action', action.replace('id',id));
+    // Hiện form
+    document.getElementById("myForm1").style.display = "block";
+    // document.getElementById('id_check').value = id;
+    // var ch = '#'+id;
+    // $('#select_check').on('change',function(){
+    //     //var optionValue = $(this).val();
+    //     //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
+    //     g = $("#select_check option:selected").val();
+    //     if(g == 'C'){
+    //       $(ch).css('background-color','green');
+    //     }else if(g == 'M')
+    //     {
+    //       $(ch).css('background-color','yellow');
+    //     }else{
+    //       $(ch).css('background-color','violet');         
+    //     }
+    // });
 
   });
 
