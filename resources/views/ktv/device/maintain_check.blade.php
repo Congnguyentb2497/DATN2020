@@ -185,7 +185,7 @@ $month = [
     
     <form action="" class="form-container form2" method="">
       @csrf
-      @if(isset($detail)
+      @if(isset($detail))
       <table style="font-size: 17px;" border="0" >
         <tr>
           <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Cập nhật thông tin bảo dưỡng thiết bị</b></label></td>
