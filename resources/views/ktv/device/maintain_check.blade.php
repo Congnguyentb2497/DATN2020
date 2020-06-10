@@ -114,15 +114,13 @@ $month = [
         @if($checked != null) 
             @foreach($checked as $ch)
                 @if($ch->check_id == $row->id.$i)
-                  <?php $d = $ch->check_id; ?>
-
-
+                  <?php $d = $ch->id; ?>
                     @if($ch->type_check == 'C') 
-                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->id }}"  onclick=" {{route('device.editcheck',['id'=> $d ])}}" class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
                     @elseif($ch->type_check == 'M')
-                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->id }}" onclick=" {{route('device.editcheck',['id'=> $d ])}}" class="editcheck" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
                     @else
-                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->id }}" onclick=" {{route('device.editcheck',['id'=> $d ])}}" class="editcheck" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
                     @endif
 
 
@@ -185,9 +183,9 @@ $month = [
   </div>
 <div class="form-popup" id="myForm1">
     
-    <form action="{{ route('device.editcheck','id')}}" class="form-container form2" method="post">
+    <form action="" class="form-container form2" method="">
       @csrf
-      @if(isset($detail))
+      @if(isset($detail)
       <table style="font-size: 17px;" border="0" >
         <tr>
           <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Cập nhật thông tin bảo dưỡng thiết bị</b></label></td>
@@ -219,7 +217,7 @@ $month = [
         </tr>
         <tr>
           <td><label>Ghi chú</label></td>
-          <td><input id="note1" type="text" name="note1" value="{{$detail->note}}"></td>
+          <td><input id="note1" type="text" name="note1" value="{{$ch->note}}"></td>
         </tr>
         <tr>
           <td colspan="2" style="text-align: center;"><button id="luu" type="submit" class="btn">Sửa
@@ -270,18 +268,10 @@ $month = [
     $(document).on('click', '.editcheck', function(){
     // Lấy id của data
     var id = $(this).attr('data-deviceid');
-    $.ajax({
-      url: "{{ route('device.editcheck',['id'=> id ])}}", 
-      type: "POST", 
-      success:function(dt){
-                    // console.log(dt);
-                    //window.location.href = dt.url;
-                    window.close();
-                    window.location.reload(true)
-                },
-      error:function(err){console.log(err);
-    }
-  });
+    var action = $('.form2').attr('action');
+    // Thay thế id data vào đoạn action của form
+    var actions= $('.form2').attr('action', action.replace('id',id));
+    // Hiện form
     document.getElementById("myForm1").style.display = "block";
   });
 
