@@ -197,7 +197,7 @@ $month = [
         <tr>
           <td ><label>Loại kiểm tra</label></td>
           <td>
-            <select id="select_check1" type="text" name="select_check" style="font-style: 17px;">
+            <select id="select_check1" type="text" name="select_check1" style="font-style: 17px;">
               <option value="">Chọn loại bảo dưỡng</option>
               <option value="C">Kiểm tra</option>
               <option value="M">Bảo trì</option>
@@ -207,15 +207,15 @@ $month = [
         </tr>
         <tr>
           <td><label>Ngày thực hiện</label></td>
-          <td><input id="date_check1" type="date" name="date_check" value="{{$ch->time}}"></td>
+          <td><input id="date_check1" type="date" name="date_check1" value="{{$ch->time}}"></td>
         </tr>
         <tr>
           <td><label>Người thực hiện</label></td>
-          <td><input type="text" id="checker1" name="checker" value="{{$ch->checker}}"></td>
+          <td><input type="text" id="checker1" name="checker1" value="{{$ch->checker}}"></td>
         </tr>
         <tr>
           <td><label>Ghi chú</label></td>
-          <td><input id="note1" type="text" name="note" value="{{$ch->note}}"></td>
+          <td><input id="note1" type="text" name="note1" value="{{$ch->note}}"></td>
         </tr>
         <tr>
           <td colspan="2" style="text-align: center;"><button id="luu" type="submit" class="btn">Sửa

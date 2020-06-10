@@ -834,18 +834,7 @@ public function showmaintain(Request $request){
     public function checked(Request $request, $id){
         $time = Carbon::now('Y');
         $act_id = substr($request->id_check, 0,1);
-        $checked = DB::table('check')->where('check_id',$id)->get();
-        if($checked != 'null'){
-            foreach($checked as $ch) {
-                $ch->time = $request->date_check;
-                $ch->checker = $request->checker;
-                $ch->note = $request->note;
-                $ch->type_check = $request->select_check;
-                $ch->save();
-                }
-            
-        }else{
-            $check = new CheckMaintain;
+        $check = new CheckMaintain;
             $check->year = $time->year;
             $check->dv_id = $request->dv_id;
             $check->act_id = $act_id;
@@ -855,8 +844,15 @@ public function showmaintain(Request $request){
             $check->note = $request->note;
             $check->type_check = $request->select_check;
             $check->save();
-        }
         return redirect()->route('device.maintainCheck',['id'=>$request->dv_id]);
+    }
+    public function editCheck(Request $request, $id){
+        $ch = CheckMaintain::find($id);
+        $ch->time = $request->date_check1;
+        $ch->checker = $request->checker1;
+        $ch->note = $request->note1;
+        $ch->type_check = $request->select_check1;
+        $ch->save();
     }
 }
 
