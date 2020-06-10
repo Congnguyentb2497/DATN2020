@@ -124,7 +124,7 @@ class DoctorController extends Controller
 
     public function addDevice(Request $request){
         $dvt = DB::table('device_type')->get();
-        $dv = DB::table('device')->where('status',0)->get();
+        $dv = DB::table('device')->where('status',0);
         if($request->dvId){
             $dv = $dv->where('dv_id','like','%'.$request->dvId.'%');
         }
