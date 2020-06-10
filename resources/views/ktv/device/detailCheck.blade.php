@@ -3,9 +3,17 @@
 <style type="text/css">
 	input[type=text], select, input[type=date]{
 		padding: 3px;
+		margin: 10px;
 		font-size: 17px;
 		width: 100%;
 	}
+.btn{
+	width: 100%
+}
+.canl{
+	width: 100%;
+	margin-top: 10px;
+}
 </style>
 <div>
 	<h1>Cập nhật thông tin bảo dưỡng thiết bị</h1>
@@ -55,7 +63,7 @@
         </tr>
         <tr>
           <td colspan="2" style="text-align: center;width: 100%">
-        <button class="btn btn-cancle">Hủy</button>
+        	<div class="canl"><a style="width: 100px;text-decoration: none;" href="{{route('device.maintainCheck',['id'=>$check->dv_id])}}">Hủy</a></div>
       		</td>
         </tr>
       </table>
