@@ -119,7 +119,7 @@ $month = [
     
     <form action="{{ route('device.editcheck','id')}}" class="form-container form2" method="post">
       @csrf
-      @if($row->check_id == $d)
+      @if($ch->check_id == $d)
       <input type="hidden" name="bienphp" id="bienphp" value="process" />
       <table style="font-size: 17px;" border="0" >
         <tr>
@@ -163,7 +163,7 @@ $month = [
       @endif
     </form>
   </div>
-  
+
                     @if($ch->type_check == 'C') 
                     <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
                     @elseif($ch->type_check == 'M')
