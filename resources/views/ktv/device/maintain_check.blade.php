@@ -73,14 +73,23 @@ $month = [
 ];
 @endphp
 
-<div><h1>Thống Kê Lịch Trình Bảo Dưỡng Định Kì Thiết Bị {{$device->dv_name}}</h1></div>
+<div><h1>Thống Kê Lịch Trình Bảo Dưỡng Định Kì Thiết Bị {{$device->dv_name}}</h1>
 <br>
-<select class="form-control" id="year" style="width: 200px;">
+<form action="">
+<div>
+  <select class="form-control" id="year" style="width: 200px;">
   <option disabled="" value="">Lựa chọn năm</option>
   @for ($j = 2020; $j<=2040; $j++)
   <option value="{{$j}}">{{ 'Năm '.$j }}</option>
   @endfor
 </select>
+</div>
+<div>
+    <input type="text" name="cid" placeholder="Nhập mã kiểm tra">
+    <button>Thông tin chi tiết</button>
+</div>
+</form>
+</div>
 <br>
 
 <table width="100%" border="1">
@@ -232,21 +241,8 @@ $month = [
     // Hiện form
     document.getElementById("myForm").style.display = "block";
     document.getElementById('id_check').value = id;
-    var ch = '#'+id;
-    $('#select_check').on('change',function(){
-        //var optionValue = $(this).val();
-        //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-        g = $("#select_check option:selected").val();
-        if(g == 'C'){
-          $(ch).css('background-color','green');
-        }else if(g == 'M')
-        {
-          $(ch).css('background-color','yellow');
-        }else{
-          $(ch).css('background-color','violet');         
-        }
-    });
-  })
+    
+  });
 //editcheck
     $(document).on('click', '.editcheck', function(){
     // Lấy id của data
