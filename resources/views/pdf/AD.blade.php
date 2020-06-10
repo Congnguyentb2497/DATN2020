@@ -98,9 +98,10 @@
 		<table class="table table-condensed table-bordered table-hover">
 			<thead>
 				<th width="30%">Tên vật tư</th>
-				<th width="15%">Model</th>
+				<th width="10%">Model</th>
 				<th width="10%">Số lượng</th>
-				<th width="15%">Năm sản xuất</th>
+				<th width="10%">Đơn vị tính</th>
+				<th width="10%">Năm sản xuất</th>
 				<th width="20%">Tình trạng sử dụng</th>
 			</thead>
 			<tbody>
@@ -110,6 +111,7 @@
 					<td> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('acc_name')->first() }}</td>
 					<td> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('model')->first() }}</td>
 					<td> {{$r->amount}}</td>
+					<td> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('unit')->first()}}</td>
 					<td> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('produce_date')->first() }}</td>
 					<td> Chưa sử dụng</td>
 				</tr>
