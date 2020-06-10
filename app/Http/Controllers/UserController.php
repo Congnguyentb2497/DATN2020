@@ -836,7 +836,7 @@ public function showmaintain(Request $request){
         $act_id = substr($request->id_check, 0,1);
         $checked = DB::table('check')->where('check_id',$id)->get();
         if($checked != 'null'){
-            foreach ($checked as $ch) {
+            foreach($checked as $ch) {
                 $ch->time = $request->date_check;
                 $ch->checker = $request->checker;
                 $ch->note = $request->note;
