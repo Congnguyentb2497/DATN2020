@@ -847,14 +847,25 @@ public function showmaintain(Request $request){
         return redirect()->route('device.maintainCheck',['id'=>$request->dv_id]);
     }
     public function editCheck(Request $request, $id){
-        $ch = CheckMaintain::find($id);
+        $check = CheckMaintain::find($id);
         $d = $ch->dv_id;
-        $detail = CheckMaintain::find($id);
-        $dev = DB::table('device')->where('dv_id',$d)->first();
-        $dv = DB::table('schedule_action')->where('dv_id',$d)->get();
-        $ch = DB::table('check')->where('dv_id',$d)->get();
+            $check->year = $time->year;
+            $check->dv_id = $request->dv_id;
+            $check->act_id = $act_id;
+            $check->check_id = $request->id_check;
+            $check->time = $request->date_check;
+            $check->checker = $request->checker;
+            $check->note = $request->note;
+            $check->type_check = $request->select_check;
+            $check->save();
+        
         //dd($ch);
         return view('ktv.device.maintain_check')->with(['device'=>$dev,'maintainAct'=>$dv,'checked'=>$ch,'detail'=>$detail]);
+    }
+    public function detailCheck(Request $request){
+        $detail = DB::table('')->where('check_id',$request->cid)->first();
+        return view('device.detailCheck')->with('check',$detail);
+
     }
 }
 

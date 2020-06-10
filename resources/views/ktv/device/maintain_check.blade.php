@@ -89,7 +89,7 @@ $month = [
 
 <div style="float: left;margin-left: 30px">
   <form action="{{route('device.detailCheck'}}" method="post">
-    <input type="text" name="cid" placeholder="Nhập mã kiểm tra" class="form-control">
+    <input type="text" required="" name="cid" placeholder="Nhập mã kiểm tra" class="form-control">
     <button class="btn btn-primary" style="margin-left: 30px;">Thông tin chi tiết</button>
 </form>
 </div>
