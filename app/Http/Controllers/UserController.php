@@ -824,9 +824,15 @@ public function showmaintain(Request $request){
     }
 
     public function maintainCheck(Request $request,$id){
+        if($request->year){
+            $y = $request->year;
+            $ch = DB::table('check')->where('year',$y)->where('dv_id',$id)->get();
+        }else{
+            $ch = DB::table('check')->where('dv_id',$id)->get();
+        }
         $dev = DB::table('device')->where('dv_id',$id)->first();
         $dv = DB::table('schedule_action')->where('dv_id',$id)->get();
-        $ch = DB::table('check')->->where('year',$request->year)->where('dv_id',$id)->get();
+        
         //dd($ch);
         return view('ktv.device.maintain_check')->with(['device'=>$dev,'maintainAct'=>$dv,'checked'=>$ch]);
     }
