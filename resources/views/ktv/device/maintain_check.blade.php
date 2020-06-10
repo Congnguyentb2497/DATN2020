@@ -192,17 +192,18 @@ $month = [
     // Hiện form
     document.getElementById("myForm").style.display = "block";
     document.getElementById('id_check').value = id;
+    var ch = '#'+id;
     $('#select_check').on('change',function(){
         //var optionValue = $(this).val();
         //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
         g = $("#select_check option:selected").val();
         if(g == 'C'){
-          $('#select_check').css('background-color','green');
+          $(ch).css('background-color','green');
         }else if(g == 'M')
         {
-          $('#select_check').css('background-color','yellow');
+          $(ch).css('background-color','yellow');
         }else{
-          $('#select_check').css('background-color','violet');         
+          $(ch).css('background-color','violet');         
         }
     });
 
