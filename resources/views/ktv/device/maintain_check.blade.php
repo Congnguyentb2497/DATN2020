@@ -173,7 +173,7 @@ $month = [
       @csrf
       <table style="font-size: 17px;" border="0" >
         <tr>
-          <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Thông tin bảo dưỡng thiết bị</b></label></td>
+          <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Cập nhật thông tin bảo dưỡng thiết bị</b></label></td>
         </tr>
         <tr>
           <td><label>Mã thiết bị</label></td>
@@ -188,7 +188,7 @@ $month = [
           <td ><label>Loại kiểm tra</label></td>
           <td>
             <select disabled="" id="select_check1" type="text" name="select_check1" style="font-style: 17px;">
-              <option value="{$ch->type_check}}">{$ch->type_check}}</option>
+              <option value="{$ch->type_check}}">{{$ch->type_check}}</option>
             </select> 
           </td>
         </tr>
