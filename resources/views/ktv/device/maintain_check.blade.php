@@ -109,16 +109,16 @@ $month = [
     <tr>
       <td>{{ $row -> scheduleAct}}</td>
        @for($i = 1; $i <= 53; $i++)
-      <td style="text-align: center; width: 1.5%;cursor: pointer;" class="check" data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}"> 
+      <td style="text-align: center; width: 1.5%;cursor: pointer;" class="check" data-deviceid="{{ $row->id.$i }}" id="{{ $row->id.$i }}"> 
         @if($checked != null) 
             @foreach($checked as $ch)
                 @if($ch->check_id == $row->id.$i)
                     @if($ch->type_check == 'C')
-                    <button data-deviceid="{{ $ch->id }}"   class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
                     @elseif($ch->type_check == 'M')
-                    <button data-deviceid="{{ $ch->id }}"   class="editcheck" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
                     @else
-                    <button data-deviceid="{{ $ch->id }}"   class="editcheck" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
                     @endif
                 @endif
             @endforeach
@@ -232,7 +232,7 @@ $month = [
   //luu du lieu check
 
   function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+        document.getElementById("myForm").style.display = "none";
         document.getElementById("myForm1").style.display = "none";
 
   }
@@ -261,6 +261,7 @@ $month = [
           $(ch).css('background-color','violet');         
         }
     });
+  })
 //editcheck
     $(document).on('click', '.editcheck', function(){
     // Lấy id của data
