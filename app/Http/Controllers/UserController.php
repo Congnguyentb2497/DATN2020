@@ -856,7 +856,7 @@ public function showmaintain(Request $request){
 
      //edit checked view
     public function detailCheck(Request $request){
-        $detail = DB::table('')->where('check_id',$request->cid)->first();
+        $detail = DB::table('check')->where('check_id',$request->cid)->first();
         return view('device.detailCheck')->with('check',$detail);
 
     }
