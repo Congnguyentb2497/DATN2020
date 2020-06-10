@@ -52,7 +52,7 @@
       <tr>
         <td>{{ $r->dv_id }}</td>
         <td>{{ $r->dv_name }}</td>
-        <td>{{ $r->model }}</td>
+        <td>{{ $r->dv_model }}</td>
         <td>{{ $r->produce_date }}</td>
         <td>{{ $r->provider->provider_name}}<td>
         <td>{{ $r->import_date }}</td>
