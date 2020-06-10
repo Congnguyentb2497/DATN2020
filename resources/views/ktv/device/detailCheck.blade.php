@@ -3,16 +3,18 @@
 <style type="text/css">
 	input[type=text], select, input[type=date]{
 		padding: 3px;
-		margin: 70px;
+		margin: 7px;
 		font-size: 17px;
 		width: 100%;
 	}
 .btn{
 	width: 100%
+	margin: 7px;
 }
 .canl{
 	width: 100%;
 	margin-top: 10px;
+	margin-left:7px;
 	border-color: black;
 }
 </style>

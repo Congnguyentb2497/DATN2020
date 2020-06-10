@@ -88,14 +88,14 @@ $month = [
 
 <div style="float: left;margin-left: 30px">
   <form action="{{ route('device.detailCheck') }}" method="get">
-    <input style="float: left;" type="text" required="" name="cid" placeholder="Nhập mã kiểm tra" class="form-control">
-    <button class="btn btn-primary" style="margin-left: 30px; float: left;">Thông tin chi tiết</button>
+    <div style="float: left;"><input type="text" required="" name="cid" placeholder="Nhập mã kiểm tra" class="form-control"></div>
+    <div style="float: left;"><button class="btn btn-primary" style="margin-left: 30px;">Thông tin chi tiết</button></div>
 </form>
 </div>
 </div>
 <br>
-
-<table width="100%" border="1">
+<div>
+  <table width="100%" border="1">
     <tr>
         <th style="width: 20%;background-color: yellow;">Hạng mục công việc</th>
         @for($i = 0; $i < count($month); $i++)
@@ -142,6 +142,8 @@ $month = [
     @endforeach
     @endif
 </table>
+</div>
+
 <div class="form-popup" id="myForm">
     <form action="{{ route('device.check','id')}}" class="form-container form1" method="post">
       @csrf
