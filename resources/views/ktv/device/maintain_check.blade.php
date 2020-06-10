@@ -114,7 +114,7 @@ $month = [
         @if($checked != null) 
             @foreach($checked as $ch)
                 @if($ch->check_id == $row->id.$i)
-                  <?php var d = $ch->check_id; ?>
+                  <?php $d = $ch->check_id; ?>
 <div class="form-popup" id="myForm1">
     
     <form action="{{ route('device.editcheck','id')}}" class="form-container form2" method="post">
