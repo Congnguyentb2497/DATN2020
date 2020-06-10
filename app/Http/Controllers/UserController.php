@@ -848,11 +848,13 @@ public function showmaintain(Request $request){
     }
     public function editCheck(Request $request, $id){
         $ch = CheckMaintain::find($id);
+        $id = $ch->dv_id;
         $ch->time = $request->date_check1;
         $ch->checker = $request->checker1;
         $ch->note = $request->note1;
         $ch->type_check = $request->select_check1;
         $ch->save();
+        return redirect()->route('device.maintainCheck',['id'=>$id]);
     }
 }
 
