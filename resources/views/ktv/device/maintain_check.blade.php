@@ -77,17 +77,17 @@ $month = [
 <br>
 <div style="float: left;">
 <form action="{{ route('device.maintainCheck',['id'=>$device->dv_id]) }}" method="get">
-  <select name="year" class="form-control" id="year" style="width: 200px;">
-  <option disabled="" value="">Lựa chọn năm</option>
-  @for ($j = 2020; $j<=2040; $j++)
-  <option value="{{$j}}">{{ 'Năm '.$j }}</option>
-  @endfor
-</select>
+  <select name="year" class="form-control" onchange="location = this.value">
+              <option selected value="">Lựa chọn năm</option>
+              @for ($j = 2020; $j<=2040; $j++)
+                <option value="{{$j}}">{{ 'Năm '.$j }}</option>
+              @endfor
+  </select>
 </form>
 </div>
 
 <div style="float: left;margin-left: 30px">
-  <form action="{{ route('device.detailCheck') }}" method="post">
+  <form action="{{ route('device.detailCheck') }}" method="get">
     <input type="text" required="" name="cid" placeholder="Nhập mã kiểm tra" class="form-control">
     <button class="btn btn-primary" style="margin-left: 30px;">Thông tin chi tiết</button>
 </form>
