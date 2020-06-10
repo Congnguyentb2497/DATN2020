@@ -93,7 +93,7 @@ $month = [
 </form>
 </div>
 </div>
-<br><br>
+<br><br><br><br>
 <div>
   <table width="100%" border="1">
     <tr>
@@ -127,11 +127,11 @@ $month = [
             @foreach($checked as $ch)
                 @if($ch->check_id == $row->id.$i)
                     @if($ch->type_check == 'C') 
-                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 11px;background-color: green">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 9px;background-color: green">{{$ch->type_check}} </button>
                     @elseif($ch->type_check == 'M')
-                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 11px;background-color: yellow">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 9px;background-color: yellow">{{$ch->type_check}} </button>
                     @else
-                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 11px;background-color: violet">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 9px;background-color: violet">{{$ch->type_check}} </button>
                     @endif
                 @endif
             @endforeach

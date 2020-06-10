@@ -63,7 +63,7 @@
         <tr>
           <td ><label>Loại kiểm tra</label></td>
           <td>
-            <select disabled="" id="select_check" type="text" class="form-container" name="select_check" style="font-style: 17px;">
+            <select id="select_check" type="text" class="form-container" name="select_check" style="font-style: 17px;">
               <option value="{$check->type_check}}">{{$check->type_check}}</option>
             </select> 
           </td>
@@ -83,8 +83,8 @@
         <tr>
         	<td></td>
           	<td style="text-align: center;width: 100%">
-          		<button type="submit" class="btn btn-primary" >Lưu</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          		<div class="canl"><a style="color: white; text-decoration: none;" href="{{route('device.maintainCheck',['id'=>$check->dv_id])}}">Hủy</a></div>
+          		<div style="float: left;"><button type="submit" class="btn btn-primary" >Lưu</button></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          		<div class="canl" style="float: left;"><a style="color: white; text-decoration: none;" href="{{route('device.maintainCheck',['id'=>$check->dv_id])}}">Hủy</a></div>
       		</td>
         </tr>
         
