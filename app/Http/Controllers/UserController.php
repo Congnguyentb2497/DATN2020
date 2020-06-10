@@ -843,7 +843,7 @@ public function showmaintain(Request $request){
                 $ch->type_check = $request->select_check;
                 $ch->save();
                 }
-            endforeach   
+            
         }else{
             $check = new CheckMaintain;
             $check->year = $time->year;
