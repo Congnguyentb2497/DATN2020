@@ -256,7 +256,7 @@ $month = [
     var actions= $('.form1').attr('action', action.replace('id',id));
     // Hiện form
     document.getElementById("myForm").style.display = "block";
-    document.getElementById('id_check').value = id+$('#year').val();
+    document.getElementById('id_check').value = id;
   });
 
 //editcheck
@@ -269,6 +269,7 @@ $month = [
     var actions= $('.form2').attr('action', action.replace('id',id));
     // Hiện form
     document.getElementById("myForm1").style.display = "block";
+    document.getElementById('id_check1').value = id;
   });
 
  
