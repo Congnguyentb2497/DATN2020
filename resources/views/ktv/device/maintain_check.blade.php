@@ -184,25 +184,24 @@ $month = [
 <div class="form-popup" id="myForm1">
     
     <form action="" class="form-container form2" method="">
-      <input type="hidden" name="bienphp" id="bienphp" value="process" />
       <table style="font-size: 17px;" border="0" >
         <tr>
           <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Cập nhật thông tin bảo dưỡng thiết bị</b></label></td>
         </tr>
         <tr>
           <td><label>Mã thiết bị</label></td>
-          <td><input type="text" name="dv_id" value="{{$ch->dv_id}}" disabled=""></td>
+          <td><input type="text" name="dv_id" value="" disabled=""></td>
         </tr>
         <tr>
           <td width="20%"><label>Mã kiểm tra</label></td>
-          <td><input type="text" id="id_check1" name="id_check" value="{{$ch->check_id}}" disabled=""></td>
+          <td><input type="text" id="id_check1" name="id_check" value="" disabled=""></td>
         </tr>
         
         <tr>
           <td ><label>Loại kiểm tra</label></td>
           <td>
             <select disabled="" id="select_check1" type="text" name="select_check1" style="font-style: 17px;">
-              <option value="{$ch->type_check}}">{{$ch->type_check}}</option>
+              <option value=""></option>
             </select> 
           </td>
         </tr>

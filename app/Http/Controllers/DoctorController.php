@@ -10,6 +10,9 @@ use App\Device;
 use DB;
 use Device_type;
 use History_ktv;
+use Device_accessory;
+use PDF;
+use Dompdf\Dompdf;
 
 
 class DoctorController extends Controller
@@ -119,14 +122,22 @@ class DoctorController extends Controller
         return redirect()->route('doctor.home');
     }
 
-    public function addDevice(){
+    public function addDevice(Request $request){
+        $dvt = DB::table('device_type')->get();
         $dv = DB::table('device')->where('status',0)->get();
-        return view('doctor.addDevice')->with(['devices'=>$dv]);
+        if($request->dvId){
+            $dv = $dv->where('dv_id','like','%'.$request->dvId.'%');
+        }
+        if($request->dvName){
+            $dv = $dv->where('dv_name','like','%'.$request->dvName.'%');
+        }
+        if($request->dvt){
+            $dv = $dv->where('dv_type_id','=', $request->dvt);
+        }
+        $dv = $dv->paginate(10);
+        return view('doctor.addDevice')->with(['dvs'=>$dv,'dvts'=>$dvt]);
     }
-    //lịch sử điều chuyển thiết bị
-    //  public function historyMoveDev(){
-    //  	return view('doctor.historyMoveDevice');
-    // }
+   
     //edit, reset Password,
      public function editDoctor($id){
      	$user = User::find($id);
@@ -170,4 +181,23 @@ class DoctorController extends Controller
          return redirect()->route('doctor.home')->with('message','Cập nhật mật khẩu thành công!');
         
     }
+
+    public function print_device($id){
+        $dv = MedicalBill::findOrFail($id);
+        $ac = DB::table('device_accessory')->where('dv_id',$id)->get();
+        $datetime = now();
+        $datetime = str_replace(" ", "", $datetime);
+        $datetime = str_replace("-", "", $datetime);
+        $datetime = str_replace(":", "", $datetime);
+
+        $name = $id. '_' . $datetime;
+
+        $pdf = PDF::loadView("pdf.AD", ['device' => $dv,'acc'=>$ac])->setPaper('A4', 'Portrait');
+        
+        
+        $pdf->save(public_path("pdf_export/".$name.".pdf"));
+        // return $pdf->stream($name.'.pdf');
+        return response()->file(public_path("pdf_export/".$name.".pdf"));
+    }
+
 }
