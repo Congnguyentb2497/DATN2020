@@ -834,13 +834,16 @@ public function showmaintain(Request $request){
     public function checked(Request $request, $id){
         $time = Carbon::now('Y');
         $act_id = substr($request->id_check, 0,1);
-        $checked = DB::table('check')->where('check_id',$id)->first();
+        $checked = DB::table('check')->where('check_id',$id)->get();
         if($checked){
-            $checked->time = $request->date_check;
-            $checked->checker = $request->checker;
-            $checked->note = $request->note;
-            $checked->type_check = $request->select_check;
-            $checked->save();
+            foreach ($checked as $ch) {
+                $ch->time = $request->date_check;
+                $ch->checker = $request->checker;
+                $ch->note = $request->note;
+                $ch->type_check = $request->select_check;
+                $ch->save();
+                }
+            endforeach   
         }else{
             $check = new CheckMaintain;
             $check->year = $time->year;
