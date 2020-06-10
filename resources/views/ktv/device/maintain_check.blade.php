@@ -166,7 +166,7 @@ $month = [
           <td><input id="note" type="text" name="note"></td>
         </tr>
         <tr>
-          <td colspan="2" style="text-align: center;"><button type="submit" class="btn">Lưu
+          <td colspan="2" style="text-align: center;"><button id="luu" type="submit" class="btn">Lưu
           </button>
           <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
         </tr>
@@ -174,18 +174,9 @@ $month = [
     </form>
   </div>
 <script>
-  var arr = [];
+  var arr = '{{ $checked }}';
   var v;
   //luu du lieu check
- $(document).ready(function(){
-   v = $('#select_check').val();
-   if(v == 'C'){
-    $('#select_check').css('background-color','green');
-   }elseif(v == 'M'){
-        $('#select_check').css('background-color','yellow');
-   }else{
-    $('#select_check').css('background-color','violet');
-   }
 
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
@@ -201,10 +192,23 @@ $month = [
     // Hiện form
     document.getElementById("myForm").style.display = "block";
     document.getElementById('id_check').value = id;
+    $('#select_check').on('change',function(){
+        //var optionValue = $(this).val();
+        //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
+        g = $("#select_check option:selected").val();
+        if(g == 'C'){
+          $('#select_check').css('background-color','green');
+        }else if(g == 'M')
+        {
+          $('#select_check').css('background-color','yellow');
+        }else{
+          $('#select_check').css('background-color','violet');         
+        }
+    });
 
   });
 
- })
+ 
   
 
 </script>
