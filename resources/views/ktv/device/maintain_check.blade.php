@@ -82,54 +82,6 @@ $month = [
   @endfor
 </select>
 <br>
-<table width="100%" border="1">
-    <tr>
-        <th style="width: 20%;background-color: yellow;">Hạng mục công việc</th>
-        @for($i = 0; $i < count($month); $i++)
-        @php
-            if($i == 0 || $i == 3 || $i == 6 || $i == 8 || $i == 11)
-            {
-                $col = 5;
-            }
-            else{
-                $col = 4;
-            }
-        @endphp
-        <th colspan="{{ $col }}" style="text-align: center; width: 7%;background-color: yellow;">{{ $month[$i] }}</th>
-        @endfor
-    </tr>
-    <tr>
-        <th></th>
-        @for($i = 1; $i <= 53; $i++)
-        <td style="text-align: center; width: 1.5%;background-color: yellow;">{{ 'T'.$i }}</td>
-        @endfor
-    </tr>
-    @if(isset($maintainAct))
-    @foreach($maintainAct as $row)
-    <tr>
-      <td>{{ $row -> scheduleAct}}</td>
-       @for($i = 1; $i <= 53; $i++)
-      <td style="text-align: center; width: 1.5%;cursor: pointer;" class="check" data-deviceid="{{ $row->id.$i }}" id="{{ $row->id.$i }}"> 
-        @if($checked != null) 
-            @foreach($checked as $ch)
-                @if($ch->check_id == $row->id.$i)
-                    @if($ch->type_check == 'C')
-                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
-                    @elseif($ch->type_check == 'M')
-                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
-                    @else
-                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
-                    @endif
-                @endif
-            @endforeach
-        @endif
-      </td>
-      @endfor
-    </tr>
-    @endforeach
-    @endif
-</table>
-
 <div class="form-popup" id="myForm">
     <form action="{{ route('device.check','id')}}" class="form-container form1" method="post">
       @csrf
@@ -177,6 +129,44 @@ $month = [
       </table>
     </form>
   </div>
+<table width="100%" border="1">
+    <tr>
+        <th style="width: 20%;background-color: yellow;">Hạng mục công việc</th>
+        @for($i = 0; $i < count($month); $i++)
+        @php
+            if($i == 0 || $i == 3 || $i == 6 || $i == 8 || $i == 11)
+            {
+                $col = 5;
+            }
+            else{
+                $col = 4;
+            }
+        @endphp
+        <th colspan="{{ $col }}" style="text-align: center; width: 7%;background-color: yellow;">{{ $month[$i] }}</th>
+        @endfor
+    </tr>
+    <tr>
+        <th></th>
+        @for($i = 1; $i <= 53; $i++)
+        <td style="text-align: center; width: 1.5%;background-color: yellow;">{{ 'T'.$i }}</td>
+        @endfor
+    </tr>
+    @if(isset($maintainAct))
+    @foreach($maintainAct as $row)
+    <tr>
+      <td>{{ $row -> scheduleAct}}</td>
+       @for($i = 1; $i <= 53; $i++)
+      <td style="text-align: center; width: 1.5%;cursor: pointer;" class="check" data-deviceid="{{ $row->id.$i }}" id="{{ $row->id.$i }}"> 
+        @if($checked != null) 
+            @foreach($checked as $ch)
+                @if($ch->check_id == $row->id.$i)
+                    @if($ch->type_check == 'C')
+                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
+                    @elseif($ch->type_check == 'M')
+                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
+                    @else
+                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
+                    @endif
 
 <div class="form-popup" id="myForm1">
     <form action="{{ route('device.editcheck','id')}}" class="form-container form2" method="post">
@@ -187,11 +177,11 @@ $month = [
         </tr>
         <tr>
           <td><label>Mã thiết bị</label></td>
-          <td><input type="text" name="dv_id" value="{{$ch->dv_id}}"></td>
+          <td><input type="text" name="dv_id" value="{{$row->dv_id}}"></td>
         </tr>
         <tr>
           <td width="20%"><label>Mã kiểm tra</label></td>
-          <td><input type="text" id="id_check1" name="id_check" value="{{$ch->check_id}}"></td>
+          <td><input type="text" id="id_check1" name="id_check" value="{{$row->check_id}}"></td>
         </tr>
         
         <tr>
@@ -207,15 +197,15 @@ $month = [
         </tr>
         <tr>
           <td><label>Ngày thực hiện</label></td>
-          <td><input id="date_check1" type="date" name="date_check1" value="{{$ch->time}}"></td>
+          <td><input id="date_check1" type="date" name="date_check1" value="{{$row->time}}"></td>
         </tr>
         <tr>
           <td><label>Người thực hiện</label></td>
-          <td><input type="text" id="checker1" name="checker1" value="{{$ch->checker}}"></td>
+          <td><input type="text" id="checker1" name="checker1" value="{{$row->checker}}"></td>
         </tr>
         <tr>
           <td><label>Ghi chú</label></td>
-          <td><input id="note1" type="text" name="note1" value="{{$ch->note}}"></td>
+          <td><input id="note1" type="text" name="note1" value="{{$row->note}}"></td>
         </tr>
         <tr>
           <td colspan="2" style="text-align: center;"><button id="luu" type="submit" class="btn">Sửa
@@ -225,6 +215,17 @@ $month = [
       </table>
     </form>
   </div>
+
+                @endif
+            @endforeach
+        @endif
+      </td>
+      @endfor
+    </tr>
+    @endforeach
+    @endif
+</table>
+
 
 <script>
   var arr = '{{ $checked }}';
@@ -272,21 +273,6 @@ $month = [
     var actions= $('.form2').attr('action', action.replace('id',id));
     // Hiện form
     document.getElementById("myForm1").style.display = "block";
-    // document.getElementById('id_check').value = id;
-    // var ch = '#'+id;
-    // $('#select_check').on('change',function(){
-    //     //var optionValue = $(this).val();
-    //     //var optionText = $('#dropdownList option[value="'+optionValue+'"]').text();
-    //     g = $("#select_check option:selected").val();
-    //     if(g == 'C'){
-    //       $(ch).css('background-color','green');
-    //     }else if(g == 'M')
-    //     {
-    //       $(ch).css('background-color','yellow');
-    //     }else{
-    //       $(ch).css('background-color','violet');         
-    //     }
-    // });
 
   });
 
