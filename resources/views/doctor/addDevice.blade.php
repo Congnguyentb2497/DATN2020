@@ -35,7 +35,7 @@
   </form>
 </div>
 <br>
-if(isset($dvs))
+@if(isset($dvs))
 @foreach($dvs as $r)
 <div>
   <table class="table table-condensed table-bordered table-hover">
