@@ -8,14 +8,34 @@
 		width: 100%;
 	}
 .btn{
-	width: 100%
-	margin: 7px;
+  width: 150px;
+  background-color: green;
+  color: black;
+  padding: 5px;
+  margin: 7px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+.btn:hover , .canl:hover{
+  opacity: 1;
+  color: white;
+  font-weight: bold;
 }
 .canl{
-	width: 100%;
-	margin-top: 10px;
-	margin-left:7px;
-	border-color: black;
+	width: 150px;
+  	background-color: black;
+  	color: black;
+  	padding: 5px;
+  	margin: 7px 0;
+  	border: none;
+  	border-radius: 4px;
+  	cursor: pointer;
+  	font-size: 20px;
+  	opacity: 0.6;
 }
 </style>
 <div>
@@ -69,7 +89,7 @@
         <tr>
         	<td></td>
           <td  style="text-align: center;width: 100%">
-        	<div class="canl"><a style="width: 100px;text-decoration: none;" href="{{route('device.maintainCheck',['id'=>$check->dv_id])}}">Hủy</a></div>
+        	<div class="canl"><a style="color: white; text-decoration: none;" href="{{route('device.maintainCheck',['id'=>$check->dv_id])}}">Hủy</a></div>
       		</td>
         </tr>
       </table>
