@@ -75,9 +75,8 @@ $month = [
 
 <div><h1>Thống Kê Lịch Trình Bảo Dưỡng Định Kì Thiết Bị {{$device->dv_name}}</h1>
 <br>
-
 <div style="float: left;">
-<form action="{{route('device.maintainCheck',['id'=>$device->dv_id]}}" method="get">
+<form action="{{ route('device.maintainCheck',['id'=>$device->dv_id]) }}" method="get">
   <select name="year" class="form-control" id="year" style="width: 200px;">
   <option disabled="" value="">Lựa chọn năm</option>
   @for ($j = 2020; $j<=2040; $j++)
