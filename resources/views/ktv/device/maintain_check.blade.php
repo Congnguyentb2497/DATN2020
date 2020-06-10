@@ -115,54 +115,7 @@ $month = [
             @foreach($checked as $ch)
                 @if($ch->check_id == $row->id.$i)
                   <?php $d = $ch->check_id; ?>
-<div class="form-popup" id="myForm1">
-    
-    <form action="{{ route('device.editcheck','id')}}" class="form-container form2" method="post">
-      @csrf
-      @if($ch->check_id == $d)
-      <input type="hidden" name="bienphp" id="bienphp" value="process" />
-      <table style="font-size: 17px;" border="0" >
-        <tr>
-          <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Cập nhật thông tin bảo dưỡng thiết bị</b></label></td>
-        </tr>
-        <tr>
-          <td><label>Mã thiết bị</label></td>
-          <td><input type="text" name="dv_id" value="{{$ch->dv_id}}" disabled=""></td>
-        </tr>
-        <tr>
-          <td width="20%"><label>Mã kiểm tra</label></td>
-          <td><input type="text" id="id_check1" name="id_check" value="{{$ch->check_id}}" disabled=""></td>
-        </tr>
-        
-        <tr>
-          <td ><label>Loại kiểm tra</label></td>
-          <td>
-            <select disabled="" id="select_check1" type="text" name="select_check1" style="font-style: 17px;">
-              <option value="{$ch->type_check}}">{{$ch->type_check}}</option>
-            </select> 
-          </td>
-        </tr>
-        <tr>
-          <td><label>Ngày thực hiện</label></td>
-          <td><input id="date_check1" type="date" name="date_check1" value="{{$ch->time}}"></td>
-        </tr>
-        <tr>
-          <td><label>Người thực hiện</label></td>
-          <td><input type="text" id="checker1" name="checker1" value="{{$ch->checker}}"></td>
-        </tr>
-        <tr>
-          <td><label>Ghi chú</label></td>
-          <td><input id="note1" type="text" name="note1" value="{{$ch->note}}"></td>
-        </tr>
-        <tr>
-          <td colspan="2" style="text-align: center;"><button id="luu" type="submit" class="btn">Sửa
-          </button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
-        </tr>
-      </table>
-      @endif
-    </form>
-  </div>
+
 
                     @if($ch->type_check == 'C') 
                     <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
@@ -230,7 +183,53 @@ $month = [
       </table>
     </form>
   </div>
-
+<div class="form-popup" id="myForm1">
+    
+    <form action="{{ route('device.editcheck','id')}}" class="form-container form2" method="post">
+      @csrf
+      @if(isset($detail))
+      <table style="font-size: 17px;" border="0" >
+        <tr>
+          <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Cập nhật thông tin bảo dưỡng thiết bị</b></label></td>
+        </tr>
+        <tr>
+          <td><label>Mã thiết bị</label></td>
+          <td><input type="text" name="dv_id" value="{{$detail->dv_id}}" disabled=""></td>
+        </tr>
+        <tr>
+          <td width="20%"><label>Mã kiểm tra</label></td>
+          <td><input type="text" id="id_check1" name="id_check" value="{{$detail->check_id}}" disabled=""></td>
+        </tr>
+        
+        <tr>
+          <td ><label>Loại kiểm tra</label></td>
+          <td>
+            <select disabled="" id="select_check1" type="text" name="select_check1" style="font-style: 17px;">
+              <option value="{$detail->type_check}}">{{$detail->type_check}}</option>
+            </select> 
+          </td>
+        </tr>
+        <tr>
+          <td><label>Ngày thực hiện</label></td>
+          <td><input id="date_check1" type="date" name="date_check1" value="{{$detail->time}}"></td>
+        </tr>
+        <tr>
+          <td><label>Người thực hiện</label></td>
+          <td><input type="text" id="checker1" name="checker1" value="{{$detail->checker}}"></td>
+        </tr>
+        <tr>
+          <td><label>Ghi chú</label></td>
+          <td><input id="note1" type="text" name="note1" value="{{$detail->note}}"></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;"><button id="luu" type="submit" class="btn">Sửa
+          </button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
+        </tr>
+      </table>
+      @endif
+    </form>
+  </div>
 <script>
   var arr = '{{ $checked }}';
   var v;
@@ -271,13 +270,19 @@ $month = [
     $(document).on('click', '.editcheck', function(){
     // Lấy id của data
     var id = $(this).attr('data-deviceid');
-    // Lấy action hiện tại của form theo class
-    var action = $('.form2').attr('action');
-    // Thay thế id data vào đoạn action của form
-    var actions= $('.form2').attr('action', action.replace('id',id));
-    // Hiện form
+    $.ajax({
+      url: "{{ route('device.editcheck',['id'=> id ])}}", 
+      type: "POST", 
+      success:function(dt){
+                    // console.log(dt);
+                    //window.location.href = dt.url;
+                    window.close();
+                    window.location.reload(true)
+                },
+      error:function(err){console.log(err);
+    }
+  });
     document.getElementById("myForm1").style.display = "block";
-    document.getElementById('bienphp').value= id;
   });
 
  
