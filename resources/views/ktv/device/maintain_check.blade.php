@@ -177,35 +177,32 @@ $month = [
         </tr>
         <tr>
           <td><label>Mã thiết bị</label></td>
-          <td><input type="text" name="dv_id" value="{{$row->dv_id}}"></td>
+          <td><input type="text" name="dv_id" value="{{$ch->dv_id}}" disabled=""></td>
         </tr>
         <tr>
           <td width="20%"><label>Mã kiểm tra</label></td>
-          <td><input type="text" id="id_check1" name="id_check" value="{{$row->check_id}}"></td>
+          <td><input type="text" id="id_check1" name="id_check" value="{{$ch->check_id}}" disabled=""></td>
         </tr>
         
         <tr>
           <td ><label>Loại kiểm tra</label></td>
           <td>
-            <select id="select_check1" type="text" name="select_check1" style="font-style: 17px;">
-              <option value="">Chọn loại bảo dưỡng</option>
-              <option value="C">Kiểm tra</option>
-              <option value="M">Bảo trì</option>
-              <option value="I">Kiểm định</option>
+            <select disabled="" id="select_check1" type="text" name="select_check1" style="font-style: 17px;">
+              <option value="{$ch->type_check}}">{$ch->type_check}}</option>
             </select> 
           </td>
         </tr>
         <tr>
           <td><label>Ngày thực hiện</label></td>
-          <td><input id="date_check1" type="date" name="date_check1" value="{{$row->time}}"></td>
+          <td><input id="date_check1" type="date" name="date_check1" value="{{$ch->time}}"></td>
         </tr>
         <tr>
           <td><label>Người thực hiện</label></td>
-          <td><input type="text" id="checker1" name="checker1" value="{{$row->checker}}"></td>
+          <td><input type="text" id="checker1" name="checker1" value="{{$ch->checker}}"></td>
         </tr>
         <tr>
           <td><label>Ghi chú</label></td>
-          <td><input id="note1" type="text" name="note1" value="{{$row->note}}"></td>
+          <td><input id="note1" type="text" name="note1" value="{{$ch->note}}"></td>
         </tr>
         <tr>
           <td colspan="2" style="text-align: center;"><button id="luu" type="submit" class="btn">Sửa
