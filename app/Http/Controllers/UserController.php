@@ -872,7 +872,6 @@ public function showmaintain(Request $request){
             $check->time = $request->date_check;
             $check->checker = $request->checker;
             $check->note = $request->note;
-            $check->type_check = $request->select_check;
             $check->save();
                 return redirect()->route('device.maintainCheck',['id'=>$d]);
     }

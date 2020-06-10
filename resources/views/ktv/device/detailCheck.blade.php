@@ -8,7 +8,7 @@
 		width: 100%;
 	}
 .btn{
-  width: 150px;
+  width: 350px;
   background-color: green;
   color: black;
   padding: 5px;
@@ -26,7 +26,7 @@
   font-weight: bold;
 }
 .canl{
-	width: 150px;
+	width: 350px;
   	background-color: black;
   	color: black;
   	padding: 5px;
@@ -63,7 +63,7 @@
         <tr>
           <td ><label>Loại kiểm tra</label></td>
           <td>
-            <select id="select_check" type="text" class="form-container" name="select_check" style="font-style: 17px;">
+            <select id="select_check" disabled="" type="text" class="form-container" name="select_check" style="font-style: 17px;">
               <option value="{$check->type_check}}">{{$check->type_check}}</option>
             </select> 
           </td>
@@ -83,8 +83,13 @@
         <tr>
         	<td></td>
           	<td style="text-align: center;width: 100%">
-          		<div style="float: left;"><button type="submit" class="btn btn-primary" >Lưu</button></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          		<div class="canl" style="float: left;"><a style="color: white; text-decoration: none;" href="{{route('device.maintainCheck',['id'=>$check->dv_id])}}">Hủy</a></div>
+          		<div style="text-align: left;"><button type="submit" class="btn btn-primary" >Lưu</button></div>
+      		</td>
+        </tr>
+        <tr>
+        	<td></td>
+          	<td style="text-align: center;width: 100%">
+          		<div class="canl" style="text-align: left;"><a style="color: white; text-decoration: none;" href="{{route('device.maintainCheck',['id'=>$check->dv_id])}}">Hủy</a></div>
       		</td>
         </tr>
         
