@@ -120,6 +120,7 @@ $month = [
             @endif
         </button>
       </td>
+      @endfor
     </tr>
     @endforeach
     @endif
