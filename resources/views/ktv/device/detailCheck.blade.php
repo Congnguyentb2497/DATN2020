@@ -25,7 +25,7 @@
         <tr>
           <td ><label>Loại kiểm tra</label></td>
           <td>
-            <select disabled="" id="select_check" type="text" name="select_check1" style="font-style: 17px;">
+            <select disabled="" id="select_check" type="text" name="select_check" style="font-style: 17px;">
               <option value="{$check->type_check}}">{{$check->type_check}}</option>
             </select> 
           </td>
