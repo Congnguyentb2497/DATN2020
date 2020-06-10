@@ -75,20 +75,24 @@ $month = [
 
 <div><h1>Thống Kê Lịch Trình Bảo Dưỡng Định Kì Thiết Bị {{$device->dv_name}}</h1>
 <br>
-<form action="">
-<div>
-  <select class="form-control" id="year" style="width: 200px;">
+
+<div style="float: left;">
+<form action="{{route('device.maintainCheck',['id'=>$device->dv_id]}}" method="get">
+  <select name="year" class="form-control" id="year" style="width: 200px;">
   <option disabled="" value="">Lựa chọn năm</option>
   @for ($j = 2020; $j<=2040; $j++)
   <option value="{{$j}}">{{ 'Năm '.$j }}</option>
   @endfor
 </select>
-</div>
-<div>
-    <input type="text" name="cid" placeholder="Nhập mã kiểm tra">
-    <button>Thông tin chi tiết</button>
-</div>
 </form>
+</div>
+
+<div style="float: left;margin-left: 30px">
+  <form action="{{route('device.detailCheck'}}" method="post">
+    <input type="text" name="cid" placeholder="Nhập mã kiểm tra" class="form-control">
+    <button class="btn btn-primary" style="margin-left: 30px;">Thông tin chi tiết</button>
+</form>
+</div>
 </div>
 <br>
 
@@ -124,11 +128,11 @@ $month = [
             @foreach($checked as $ch)
                 @if($ch->check_id == $row->id.$i)
                     @if($ch->type_check == 'C') 
-                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 11px;background-color: green">{{$ch->type_check}} </button>
                     @elseif($ch->type_check == 'M')
-                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 11px;background-color: yellow">{{$ch->type_check}} </button>
                     @else
-                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
+                    <button data-deviceid="{{ $ch->check_id }}" class="editcheck" style="height: 20px;font-size: 11px;background-color: violet">{{$ch->type_check}} </button>
                     @endif
                 @endif
             @endforeach
@@ -213,8 +217,20 @@ $month = [
           </td>
         </tr>
         <tr>
+          <td><label>Ngày thực hiện</label></td>
+          <td><input id="date_check" type="date" name="date_check" ></td>
+        </tr>
+        <tr>
+          <td><label>Người thực hiện</label></td>
+          <td><input type="text" id="checker" name="checker" ></td>
+        </tr>
+        <tr>
+          <td><label>Ghi chú</label></td>
+          <td><input id="note" type="text" name="note"></td>
+        </tr>
+        <tr>
           <td colspan="2" style="text-align: center;">
-          <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
+          <button type="button" class="btn cancel" onclick="closeForm()">Đóng</button></td>
         </tr>
       </table>
     </form>
@@ -223,6 +239,7 @@ $month = [
 <script>
   var arr = '{{ $checked }}';
   var v;
+
   //luu du lieu check
 
   function closeForm() {
@@ -240,9 +257,9 @@ $month = [
     var actions= $('.form1').attr('action', action.replace('id',id));
     // Hiện form
     document.getElementById("myForm").style.display = "block";
-    document.getElementById('id_check').value = id;
-    
+    document.getElementById('id_check').value = id+$('#year').val();
   });
+
 //editcheck
     $(document).on('click', '.editcheck', function(){
     // Lấy id của data
