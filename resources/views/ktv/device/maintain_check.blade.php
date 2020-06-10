@@ -82,6 +82,57 @@ $month = [
   @endfor
 </select>
 <br>
+
+<table width="100%" border="1">
+    <tr>
+        <th style="width: 20%;background-color: yellow;">Hạng mục công việc</th>
+        @for($i = 0; $i < count($month); $i++)
+        @php
+            if($i == 0 || $i == 3 || $i == 6 || $i == 8 || $i == 11)
+            {
+                $col = 5;
+            }
+            else{
+                $col = 4;
+            }
+        @endphp
+        <th colspan="{{ $col }}" style="text-align: center; width: 7%;background-color: yellow;">{{ $month[$i] }}</th>
+        @endfor
+    </tr>
+    <tr>
+        <th></th>
+        @for($i = 1; $i <= 53; $i++)
+        <td style="text-align: center; width: 1.5%;background-color: yellow;">{{ 'T'.$i }}</td>
+        @endfor
+    </tr>
+    @if(isset($maintainAct))
+    @foreach($maintainAct as $row)
+    <tr>
+      <td>{{ $row -> scheduleAct}}</td>
+       @for($i = 1; $i <= 53; $i++)
+      <td style="text-align: center; width: 1.5%;cursor: pointer;" class="check" data-deviceid="{{ $row->id.$i }}" id="{{ $row->id.$i }}"> 
+        @if($checked != null) 
+            @foreach($checked as $ch)
+                @if($ch->check_id == $row->id.$i)
+                    @if($ch->type_check == 'C')
+                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
+                    @elseif($ch->type_check == 'M')
+                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
+                    @else
+                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
+                    @endif
+
+
+
+                @endif
+            @endforeach
+        @endif
+      </td>
+      @endfor
+    </tr>
+    @endforeach
+    @endif
+</table>
 <div class="form-popup" id="myForm">
     <form action="{{ route('device.check','id')}}" class="form-container form1" method="post">
       @csrf
@@ -129,48 +180,13 @@ $month = [
       </table>
     </form>
   </div>
-<table width="100%" border="1">
-    <tr>
-        <th style="width: 20%;background-color: yellow;">Hạng mục công việc</th>
-        @for($i = 0; $i < count($month); $i++)
-        @php
-            if($i == 0 || $i == 3 || $i == 6 || $i == 8 || $i == 11)
-            {
-                $col = 5;
-            }
-            else{
-                $col = 4;
-            }
-        @endphp
-        <th colspan="{{ $col }}" style="text-align: center; width: 7%;background-color: yellow;">{{ $month[$i] }}</th>
-        @endfor
-    </tr>
-    <tr>
-        <th></th>
-        @for($i = 1; $i <= 53; $i++)
-        <td style="text-align: center; width: 1.5%;background-color: yellow;">{{ 'T'.$i }}</td>
-        @endfor
-    </tr>
-    @if(isset($maintainAct))
-    @foreach($maintainAct as $row)
-    <tr>
-      <td>{{ $row -> scheduleAct}}</td>
-       @for($i = 1; $i <= 53; $i++)
-      <td style="text-align: center; width: 1.5%;cursor: pointer;" class="check" data-deviceid="{{ $row->id.$i }}" id="{{ $row->id.$i }}"> 
-        @if($checked != null) 
-            @foreach($checked as $ch)
-                @if($ch->check_id == $row->id.$i)
-                    @if($ch->type_check == 'C')
-                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: green">{{$ch->type_check}} </button>
-                    @elseif($ch->type_check == 'M')
-                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: yellow">{{$ch->type_check}} </button>
-                    @else
-                    <button data-deviceid="{{ $ch->id }}" class="editcheck" style="height: 20px;font-size: 10px;background-color: violet">{{$ch->type_check}} </button>
-                    @endif
-
 <div class="form-popup" id="myForm1">
+    <input type="hidden" name="bienphp" id="bienphp" value="process" />
     <form action="{{ route('device.editcheck','id')}}" class="form-container form2" method="post">
       @csrf
+      @if(isset($checked))
+      @foreach($checked as $row)
+      @if($row->id == $_POST['bienphp'])
       <table style="font-size: 17px;" border="0" >
         <tr>
           <td colspan="2"><label style="text-align: center; font-size: 22px;"><b>Cập nhật thông tin bảo dưỡng thiết bị</b></label></td>
@@ -210,20 +226,11 @@ $month = [
           <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
         </tr>
       </table>
+      @endif
+      @endforeach
+      @endif
     </form>
   </div>
-
-                @endif
-            @endforeach
-        @endif
-      </td>
-      @endfor
-    </tr>
-    @endforeach
-    @endif
-</table>
-
-
 <script>
   var arr = '{{ $checked }}';
   var v;
@@ -270,7 +277,7 @@ $month = [
     var actions= $('.form2').attr('action', action.replace('id',id));
     // Hiện form
     document.getElementById("myForm1").style.display = "block";
-
+    document.getElementById('bienphp').value= id;
   });
 
  
