@@ -110,7 +110,7 @@ $month = [
       <td>{{ $row -> scheduleAct}}</td>
        @for($i = 1; $i <= 53; $i++)
       <td style="text-align: center; width: 1.5%;cursor: pointer;"> 
-        <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;font-size: 12px;">
+        <button data-deviceid="{{ $row->id.$i   }}" id="{{ $row->id.$i }}" onmousemove="show()" class="check" style="height: 20px;font-size: 10px;">
            @if($checked != null) 
             @foreach($checked as $ch)
                 @if($ch->check_id == $row->id.$i)
