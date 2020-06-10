@@ -83,15 +83,11 @@
         <tr>
         	<td></td>
           	<td style="text-align: center;width: 100%">
-          		<button type="submit" class="btn btn-primary" >Lưu</button>
+          		<button type="submit" class="btn btn-primary" >Lưu</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          		<div class="canl"><a style="color: white; text-decoration: none;" href="{{route('device.maintainCheck',['id'=>$check->dv_id])}}">Hủy</a></div>
       		</td>
         </tr>
-        <tr>
-        	<td></td>
-          <td  style="text-align: center;width: 100%">
-        	<div class="canl"><a style="color: white; text-decoration: none;" href="{{route('device.maintainCheck',['id'=>$check->dv_id])}}">Hủy</a></div>
-      		</td>
-        </tr>
+        
       </table>
     </form>
   </div>

@@ -839,7 +839,7 @@ public function showmaintain(Request $request){
 
     //maintain check device
     public function checked(Request $request, $id){
-        $time = Carbon::now('Y');
+        $time = Carbon::now();
         $act_id = substr($request->id_check, 0,1);
         $check = new CheckMaintain;
             $check->year = $time->year;
@@ -863,6 +863,7 @@ public function showmaintain(Request $request){
 
     //save edit check
     public function editCheck(Request $request, $id){
+        $time = Carbon::now();
         $check = CheckMaintain::find($id);
             $d = $check->dv_id;
             $check->year = $time->year;
