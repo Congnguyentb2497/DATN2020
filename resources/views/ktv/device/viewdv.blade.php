@@ -3,8 +3,8 @@
 <style type="text/css">
 	.fa-history{
 		font-size: 20px;
-		background-color: green;
 		opacity: 0.7;
+		color: green;
 	}
 	.fa-history:hover{
 		opacity: 1;
@@ -48,7 +48,7 @@
 				<td width="20%">
 					<div style="margin-left: 5px;"> <button class="btn btn-primary">Tìm kiếm </button></div>
 				</td>
-				<td>
+				<td width="10%">
 					<div style="margin-left: 5px;">Tổng: {{ $devices->total() }}</div>
 				</td>
 			</tr>

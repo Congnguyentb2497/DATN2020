@@ -6,9 +6,8 @@
     border-radius: 3px;
   }
 .fa-print{
-  background-color: green;
   opacity: 0.7;
-  font-size: 22px;
+  font-size: 25px;
 }
 .fa-print:hover{
   opacity: 1;
@@ -20,7 +19,7 @@
       <tr>
         <td><div><input type="text" name="dvId" class="form-control" placeholder="nhập mã thiết bị"></div></td>
         <td><div style="margin-left: 10px;"><input type="text" name="dvName" class="form-control" placeholder="nhập tên thiết bị"></div></td>
-        <td width="20%"><div style="margin-left: 10px;">
+        <td width="20%"><div style="margin-left: 10px;width: 30px;">
           <select id="dvt" class="form-control" name="dvt">
             <option  value="">Chọn loại thiết bị</option>
           @foreach($dvts as $dvt)
@@ -29,7 +28,7 @@
         </select></div>
         </td>
         <td width="20%">
-          <div ><button class="btn btn-primary">Tìm kiếm</button></div>
+          <div style="margin-left: 10px;"><button class="btn btn-primary">Tìm kiếm</button></div>
         </td>
       </tr>
     </table>
@@ -58,8 +57,8 @@
         <td>{{ $r->produce_date }}</td>
         <td>{{ $r->provider->provider_name}}<td>
         <td>{{ $r->import_date }}</td>
-        <td>
-          <a href="{{ route('doctor.print.device',['id'=>$r->id]) }}" style="text-decoration: none;"><i class="fa fa-print" title="In phiếu bàn giao" aria-hidden="true"></i></a>
+        <td style="text-align: center;">
+          <a href="{{ route('doctor.print.device',['id'=>$r->id]) }}" style="text-decoration: none;color: green;"><i class="fa fa-print" title="In phiếu bàn giao" aria-hidden="true"></i></a>
         </td>
       </tr>
       @endforeach
