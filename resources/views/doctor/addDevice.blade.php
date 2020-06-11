@@ -16,11 +16,11 @@
 </style>
 <div class="form-group">
   <form>
-    <table width="100%" border="1">
+    <table width="100%" >
       <tr>
         <td><div><input type="text" name="dvId" class="form-control" placeholder="nhập mã thiết bị"></div></td>
         <td><div style="margin-left: 10px;"><input type="text" name="dvName" class="form-control" placeholder="nhập tên thiết bị"></div></td>
-        <td><div style="margin-left: 10px;">
+        <td width="20%"><div style="margin-left: 10px;">
           <select id="dvt" class="form-control" name="dvt">
             <option  value="">Chọn loại thiết bị</option>
           @foreach($dvts as $dvt)
@@ -28,8 +28,8 @@
           @endforeach
         </select></div>
         </td>
-        <td>
-          <div style="margin-left: 10px;"><button class="btn btn-primary">Tìm kiếm</button></div>
+        <td width="20%">
+          <div ><button class="btn btn-primary">Tìm kiếm</button></div>
         </td>
       </tr>
     </table>
