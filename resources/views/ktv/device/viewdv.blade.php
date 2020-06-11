@@ -17,6 +17,7 @@
 <div>
 	<div>
 	<form class="form-group" action="" method="get">
+		@csrf
 		<table border="">
 			<tr>
 				<td width="20%">
