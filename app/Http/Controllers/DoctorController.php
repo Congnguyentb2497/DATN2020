@@ -115,7 +115,7 @@ class DoctorController extends Controller
         if($notice->status == '14')
         {
             $i = $notice->dv_id;
-            $dv = Device::find($i);
+            $dv = DB::table('device')->where('id',$i)->first();
             $dvname = $dv->dv_name;
             $notice->status = 15;
             $notice->res_date = Carbon::now('Asia/Ho_Chi_Minh');
