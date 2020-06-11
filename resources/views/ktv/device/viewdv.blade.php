@@ -17,17 +17,17 @@
 <div>
 	<div>
 	<form class="form-group" action="" method="get">
-		<table>
+		<table border="1">
 			<tr>
 				<td width="20%">
-					<div><input type="text" name="dvId" placeholder="Nhập mã thiết bị "> </div>
+					<div><input type="text" name="dvId" class="form-control" placeholder="Nhập mã thiết bị "> </div>
 				</td>
 				<td width="20%">
-					<div style="margin-left: 5px;"><input type="text" name="dvname" placeholder="Nhập tên thiết bị "> </div>
+					<div style="margin-left: 5px;"><input class="form-control" type="text" name="dvname" placeholder="Nhập tên thiết bị "> </div>
 				</td>
 				<td width="20%">
 					<div style="margin-left: 5px;"><select name="dept" class="form-control">
-						<option>Chọn khoa phòng</option>
+						<option value="">Chọn khoa phòng</option>
 						@foreach($depts as $d)
 						<option value="{{ $d->id }}">{{ $d->department_name }}</option>
 						@endforeach
@@ -37,7 +37,7 @@
 				<td width="20%">
 					<div style="margin-left: 5px;">
 						<select name="dvt" class="form-control">
-						<option>Chọn loại thiết bị</option>
+						<option value="">Chọn loại thiết bị</option>
 						@foreach($dvts as $dvt)
 						<option value="{{ $dvt->id }}">{{ $dvt->dv_type_name }}</option>
 						@endforeach
@@ -53,14 +53,14 @@
 	</div><br><br>
 	<div>
 		<table class="table table-condensed table-bordered table-hover">
-			<thead>
+			<thead style="background-color: #D8D8D8">
 				<th width="10%">Mã thiết bị</th>
 				<th width="25%">Tên thiết bị</th>
 				<th width="10%">Model</th>
 				<th width="20%">Nhà cung cấp</th>
-				<th width="5%">Năm sản xuất</th>
+				<th width="7%">Năm SX</th>
 				<th width="20%">Khoa phòng</th>
-				<th width="10%">Chi tiết</th>
+				<th width="8%">Chi tiết</th>
 			</thead>
 			<tbody>
 				@if(isset($devices))
