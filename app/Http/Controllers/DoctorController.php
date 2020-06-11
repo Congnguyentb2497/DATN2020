@@ -118,8 +118,8 @@ class DoctorController extends Controller
             $dv = DB::table('device')->where('id',$i)->first();
             $dvname = $dv->dv_name;
             $notice->status = 15;
-            $notice->res_date = Carbon::now('Asia/Ho_Chi_Minh');
-            $notice->res_content = "Đã xác nhận thiết bị ".$dvname." sử dụng tốt";
+            $notice->req_date = Carbon::now('Asia/Ho_Chi_Minh');
+            $notice->req_content = "Đã xác nhận thiết bị ".$dvname." sử dụng tốt";
         }
 
         $notice->save();
