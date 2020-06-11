@@ -198,10 +198,10 @@ class DoctorController extends Controller
         $name = $id. '_' . $datetime;
 
         $pdf = PDF::loadView("pdf.AD", ['device' => $dv,'acc'=>$ac])->setPaper('A4', 'Portrait');
-        return $pdf->download('AD.pdf');
+        //return $pdf->download('AD.pdf');
         
         // $pdf->save(public_path("pdf_export/".$name.".pdf"));
-        // return $pdf->stream($name.'.pdf');
+        return $pdf->stream('AD.pdf');
         //return response()->file(public_path("pdf_export/".$name.".pdf"));
     }
 
