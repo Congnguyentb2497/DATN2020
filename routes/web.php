@@ -80,7 +80,7 @@ Route::group(['prefix'=>'ktv'],function(){
 		Route::get('device/create/schedule/{id}','UserController@createScheduled')->name('device.scheduled');
 		Route::post('device/create/schedule','UserController@postScheduleAct')->name('device.postScheduleAct');
 		Route::get('device/delete/scheduleAct/{id}','UserController@delScheduleAct')->name('device.delScheduleAct');
-		Route::get('device/view/','UserController@viewDevice')->name('device.view');
+		Route::get('device/view/','UserController@viewDevice')->name('device.viewdv');
 		Route::get('device/maintain/check/{id}','UserController@maintainCheck')->name('device.maintainCheck');
 		Route::post('device/check/{id}','UserController@checked')->name('device.check');
 		Route::post('device/edit/check/{id}','UserController@editCheck')->name('device.editcheck');

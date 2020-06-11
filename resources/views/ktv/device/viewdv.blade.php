@@ -1,5 +1,15 @@
 @extends('ktv.index')
 @section('content')
+<style type="text/css">
+	.fa-history{
+		font-size: 20px;
+		background-color: green;
+		opacity: 0.7;
+	}
+	.fa-history:hover{
+		opacity: 1;
+	}
+</style>
 <div>
 	<div>
 	<form class="form-group">
@@ -55,7 +65,9 @@
 					<td>{{ $r->dv_model }</td>
 					<td>{{ $r->provider->provider_name}}</td>
 					<td>{{ $r->produce_date }}</td>
-					<td></td>
+					<td>
+						<a href="{{ route('device.view',['id'=>$r->dv_id]) }}"><i  title="Xem hồ sơ" class="fa fa-history" aria-hidden="true"></i></a>
+					</td>
 					
 				</tr>
 				@endforeach

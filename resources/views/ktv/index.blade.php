@@ -148,7 +148,7 @@
                             <li class="dropdown-submenu">
                                 <a class="dropdown-toggle" data-toggle="dropdown">Hồ sơ thiết bị</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{route('device.view')}}">Xem hồ sơ thiết bị</a></li><li class="divider"></li>
+                                    <li><a href="{{route('device.viewdv')}}">Xem hồ sơ thiết bị</a></li><li class="divider"></li>
                                     <li><a href="{{route('device.maintain')}}">Sửa chữa - bảo dưỡng</a></li>
                                     <li class="divider"></li>
                                     <li><a href="{{route('device.schedule')}}">Tạo lịch bảo dưỡng</a></li>
