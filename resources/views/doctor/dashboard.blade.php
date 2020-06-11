@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>Quản Lý Trang Thiết Bị Y Tế</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

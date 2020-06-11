@@ -2,7 +2,6 @@
 @section('content')
 <style type="text/css">
   input, select{
-    width: 80%;
     font-size: 15px;
     border-radius: 3px;
   }
