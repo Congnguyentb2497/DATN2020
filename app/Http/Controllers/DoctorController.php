@@ -187,9 +187,17 @@ class DoctorController extends Controller
         
     }
 
-    public function print_device($id){
+    public function print_device($id,$user_id){
         $dv = Device::findOrFail($id);
         $ac = DB::table('device_accessory')->where('dv_id',$id)->get();
+
+        $notice = new Notification;
+        $notice->req_content = "Xin bàn giao thiết bị";
+        $notice->req_date = Carbon::now();
+        $notice->dv_id = $dv->dv_id;
+        $notice->annunciator_id = $user_id;
+        $notice->status = 0;
+        $notice->save();
         $datetime = now();
         $datetime = str_replace(" ", "", $datetime);
         $datetime = str_replace("-", "", $datetime);

@@ -58,7 +58,7 @@
         <td>{{ $r->provider->provider_name }}</td>
         <td>{{ $r->import_date }}</td>
         <td style="text-align: center;">
-          <a href="{{ route('doctor.print.device',['id'=>$r->id]) }}" style="text-decoration: none;color: green;"><i class="fa fa-print" title="In phiếu bàn giao" aria-hidden="true"></i></a>
+          <a href="{{ route('doctor.print.device',['id'=>$r->id,'user_id'=>Auth::id()]) }}" style="text-decoration: none;color: green;"><i class="fa fa-print" title="In phiếu bàn giao" aria-hidden="true"></i></a>
         </td>
       </tr>
       @endforeach
