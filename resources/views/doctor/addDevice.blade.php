@@ -16,7 +16,7 @@
 </style>
 <div class="form-group">
   <form>
-    <table width="100%">
+    <table width="100%" border="1">
       <tr>
         <td><div><input type="text" name="dvId" class="form-control" placeholder="nhập mã thiết bị"></div></td>
         <td><div style="margin-left: 10px;"><input type="text" name="dvName" class="form-control" placeholder="nhập tên thiết bị"></div></td>

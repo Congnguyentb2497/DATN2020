@@ -72,54 +72,55 @@
 	</div>
 	<div>
 		<h3 class="font-bold">I. Thông tin về thiết bị </h3><br>
-		<table border="1" width="100%">
-			<tr>
-				<td>Mã thiết bị</td>
-				<td>Tên thiết bị</td>
-				<td>Model</td>
-				<td>Số lượng</td>
-				<td>Tình trạng</td>
-				<td>Năm SX</td>
+		<table width="100%">
+			<tr class="font-bold">
+				<td style="border: 1px;">Mã thiết bị</td>
+				<td style="border: 1px;">Tên thiết bị</td>
+				<td style="border: 1px;">Model</td>
+				<td style="border: 1px;">Số lượng</td>
+				<td style="border: 1px;">Tình trạng</td>
+				<td style="border: 1px;">Năm SX</td>
 			</tr>
 				<tr>
-					<td> {{$device-> dv_id}}</td>
-					<td> {{$device->dv_name}}</td>
-					<td> {{$device->model}}</td>
-					<td> 1 </td>
-					<td> Chưa được bàn giao</td>
-					<td> {{$device->produce_date}}</td>
+					<td style="border: 1px;"> {{$device-> dv_id}}</td>
+					<td style="border: 1px;"> {{$device->dv_name}}</td>
+					<td style="border: 1px;"> {{$device->model}}</td>
+					<td style="border: 1px;"> 1 </td>
+					<td style="border: 1px;"> Chưa được bàn giao</td>
+					<td style="border: 1px;"> {{$device->produce_date}}</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	<div>
 		<h3 class="font-bold">II. Thông tin vật tư kèm theo</h3><br>
-		<table border="1px" width="100%">
-			<tr>
-				<td width="30%">Tên vật tư</td>
-				<td width="10%">Model</td>
-				<td width="10%">Số lượng</td>
-				<td width="10%">Đơn vị tính</td>
-				<td width="10%">Năm sản xuất</td>
-				<td width="20%">Tình trạng sử dụng</td>
+		<table  width="100%">
+			<tr class="font-bold">
+				<td style="border: 1px;" width="30%">Tên vật tư</td>
+				<td style="border: 1px;" width="10%">Model</td>
+				<td style="border: 1px;" width="10%">Số lượng</td>
+				<td style="border: 1px;" width="10%">ĐVT</td>
+				<td style="border: 1px;" width="10%">Năm SX</td>
+				<td style="border: 1px;" width="20%">Tình trạng</td>
 			</tr>
 				@if(isset($acc))
 				@foreach($acc as $r)
 			<tr>
-					<td> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('acc_name')->first() }}</td>
-					<td> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('model')->first() }}</td>
-					<td> {{$r->amount}}</td>
-					<td> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('unit')->first()}}</td>
-					<td> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('produce_date')->first() }}</td>
-					<td> Chưa sử dụng</td>
+					<td style="border: 1px;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('acc_name')->first() }}</td>
+					<td style="border: 1px;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('model')->first() }}</td>
+					<td style="border: 1px;"> {{$r->amount}}</td>
+					<td style="border: 1px;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('unit')->first()}}</td>
+					<td style="border: 1px;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('produce_date')->first() }}</td>
+					<td style="border: 1px;"> Chưa sử dụng</td>
 			</tr>
 				@endforeach
 				@endif
 
 		</table>
 	</div>
+	<br><br>
 	<div>
-		<table width="100%" border="1">
+		<table width="100%" >
 			<tr>
 				<td width="50%"></td>
 				<td style="text-align: center;">Ngày {{ date('d') }} tháng {{ date('m') }} năm {{ date('Y') }}</td>

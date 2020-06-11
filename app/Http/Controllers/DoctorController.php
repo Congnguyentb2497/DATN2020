@@ -131,7 +131,7 @@ class DoctorController extends Controller
         $dvt = DB::table('device_type')->get();
         $dv = Device::where('status',0)->orderBy('id','desc');
         if($request->dvId){
-            $dv = $dv->where('dv_id','like','%'.$request->dvId.'%');
+            $dv = $dv->where('dv_id','=',$request->dvId);
         }
         if($request->dvName){
             $dv = $dv->where('dv_name','like','%'.$request->dvName.'%');
