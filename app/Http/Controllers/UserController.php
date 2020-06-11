@@ -881,8 +881,22 @@ public function showmaintain(Request $request){
     
     public function viewDevice(Request $request){
         $dv = Device::all();
-        dd($dv);
-        return view('ktv.device.viewdv')->with(['dvs'=>$dv]);
+        $dvt = DB::table('device_type')->get();
+        $dept = DB::table('department')->get();
+        if($request->dvId){
+            $dv = $dv->where('dv_id','=',$request->dvId);
+        }
+        if($request->dvname){
+            $dv = $dv->where('dv_id','like','%'.$request->name.'%');
+        }
+        if($request->dept){
+            $dv = $dv->where('department_id','=',$request->dept);
+        }
+        if($request->dvt){
+            $dv = $dv->where('dv_type_id','=',$request->dvt);
+        }
+        $dv = $dv->paginate(10);
+        return view('ktv.device.viewdv')->with(['dvs'=>$dv,'dvts'=>$dvt,'depts'=>$dept]);
     }
 }
 

@@ -174,11 +174,11 @@
         </tr>
         <tr>
           <td><label>Lý do hỏng</label></td>
-          <td><textarea cols="7" rows="2" name="reason"></textarea></td>
+          <td><textarea cols="7" rows="2" name="reason" required=""></textarea></td>
         </tr>
         <tr>
           <td><label>Mã người báo hỏng</label></td>
-          <td><input type="text" name="user_id"></td>
+          <td><input type="text" name="user_id" required=""></td>
         </tr>
         <tr>
           <td colspan="2" style="text-align: center;"><button type="submit" class="btn" onclick="return confirm('Bạn có chắc chắn báo hỏng thiết bị?')">Lưu

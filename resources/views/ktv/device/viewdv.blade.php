@@ -9,20 +9,24 @@
 	.fa-history:hover{
 		opacity: 1;
 	}
+	table{
+		width: 100%;
+		font-size: 17px;
+	}
 </style>
 <div>
 	<div>
-	<form class="form-group">
+	<form class="form-group" action="" method="get">
 		<table>
 			<tr>
 				<td width="20%">
 					<div><input type="text" name="dvId" placeholder="Nhập mã thiết bị "> </div>
 				</td>
 				<td width="20%">
-					<div><input type="text" name="dvId" placeholder="Nhập tên thiết bị "> </div>
+					<div style="margin-left: 5px;"><input type="text" name="dvname" placeholder="Nhập tên thiết bị "> </div>
 				</td>
 				<td width="20%">
-					<div><select>
+					<div style="margin-left: 5px;"><select name="dept" class="form-control">
 						<option>Chọn khoa phòng</option>
 						@foreach($depts as $d)
 						<option value="{{ $d->id }}">{{ $d->department_name }}</option>
@@ -31,8 +35,8 @@
 					</div>
 				</td>
 				<td width="20%">
-					<div>
-						<select>
+					<div style="margin-left: 5px;">
+						<select name="dvt" class="form-control">
 						<option>Chọn loại thiết bị</option>
 						@foreach($dvts as $dvt)
 						<option value="{{ $dvt->id }}">{{ $d->dv_type_name }}</option>
@@ -41,11 +45,12 @@
 					</div>
 				</td>
 				<td width="20%">
-					<div> <button class="btn btn-primary">Tìm kiếm </button></div>
+					<div style="margin-left: 5px;"> <button class="btn btn-primary">Tìm kiếm </button></div>
 				</td>
 			</tr>
 		</table>
-	</form></div><br>br
+	</form>
+	</div><br><br>
 	<div>
 		<table class="table table-condensed table-bordered table-hover">
 			<thead>
