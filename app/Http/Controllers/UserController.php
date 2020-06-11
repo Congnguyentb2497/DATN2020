@@ -26,7 +26,7 @@ class UserController extends Controller
     }
 
     public function notice(Request $request){
-        $notices = DB::table('notification')->where('status',0)->orWhere('status',2)->paginate(8);
+        $notices = DB::table('notification')->where('status',0)->orWhere('status',2)->orWhere('status',15)->paginate(8);
         return view('ktv.trangchu',['notices'=>$notices]);
     }
     public function getEditKTV($id){
@@ -85,6 +85,8 @@ public function acceptNotice( $user_id, $id, $dv_id, $status){
         $notice->res_date = Carbon::now('Asia/Ho_Chi_Minh');
         $notice->res_content = "Đã xác nhận thông báo hỏng";
         $notice->save();
+        $device->status = 2;
+        $device->save();
         $response = new Notification;
         $response->req_date = Carbon::now('Asia/Ho_Chi_Minh');
         $response->req_content = "Đã xác nhận thông báo hỏng thiết bị ".$device->dv_name;
@@ -121,8 +123,11 @@ public function acceptNotice( $user_id, $id, $dv_id, $status){
         // $receive->save();
 
         //điều chuyển thiết bị về trang thái chưa bàn giao
-         Device::where('id','=',$dv_id)->update(['status'=>0]);
-        
+         Device::where('id','=',$dv_id)->update(['status'=>0]);  
+    }
+    if((int)$status == 15){
+        $notice->status = 16;
+        $notice->save();
     }
     return redirect()->route('get.home');
 }
@@ -339,6 +344,7 @@ public function updateStatus(Request $request, $id){
         //tạo thông báo cho  khoa
         $notice->req_content = " Thiết bị ".$dvname." đã được sửa chữa và hoạt động tốt, yêu cầu khoa phụ trách xác nhận tình trạng thiết bị khi nhận bàn giao lại";
         $notice->status = 14;
+        $notice->dv_id = $id;
         $notice->annunciator_id = 'Phòng vật tư';
         $notice->req_date = Carbon::now();
         $notice->receiver = $device ->department_id;

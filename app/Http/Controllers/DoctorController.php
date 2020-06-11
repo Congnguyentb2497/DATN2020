@@ -19,7 +19,7 @@ class DoctorController extends Controller
 {
     //
     public function index(){
-        $notice = Notification::where('status','=',4)->orWhere('status',6)->orWhere('status',8)->orWhere('status',12)->paginate(10);
+        $notice = Notification::where('status','=',4)->orWhere('status',6)->orWhere('status',8)->orWhere('status',12)->orWhere('status',14)->paginate(10);
     	return view('doctor.home',['notices'=>$notice]);
     }
 
@@ -80,8 +80,6 @@ class DoctorController extends Controller
         $notice->save();
         $dev = Device::find($id);
         $dvname = $dev->dv_name;
-        $dev->status = 2;
-        $dev->save();
         return redirect()->route('doctor.home')->with('message','Đã báo hỏng thiết bị'.$dvname.' thành công.');
     }
 
@@ -114,11 +112,16 @@ class DoctorController extends Controller
         }
         if($notice->status == '14')
         {
-        $notice->status = 15;
-        $notice->res_date = Carbon::now('Asia/Ho_Chi_Minh');
-        $notice->res_content = "Đã xác nhận tiếp quản lại thiết bị";
+            $id = $notice->dv_id;
+            $dv = Device::find($id);
+            $dvname = $dv->dv_name;
+            $notice->status = 15;
+            $notice->res_date = Carbon::now('Asia/Ho_Chi_Minh');
+            $notice->res_content = "Đã xác nhận thiết bị ".$dvname." sử dụng tốt";
         }
+
         $notice->save();
+
         return redirect()->route('doctor.home');
     }
 

@@ -239,10 +239,10 @@ label {
       <tr>
         <td><label>Khấu hao bđ</label></td>
         <td><input type="text"  name="khbd" value="{{$dev->khbd}}" ><br>
-          <small>đơn vị %</small></td>
+          <small>đơn vị khấu hao%</small></td>
         <td><label>Khấu hao năm</label></td>
         <td><input type="text"  name="khhn" value="{{$dev->khhn}}"><br>
-        <small>đơn vị %</small></td>
+        <small>đơn vị khấu hao %</small></td>
       </tr>
       <tr>
         <td><label>Ghi chú</label></td>
