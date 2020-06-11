@@ -5,6 +5,7 @@
     width: 80%;
     font-size: 15px;
     border-radius: 3px;
+    margin-left: 10px;
   }
 .fa-print{
   background-color: green;
@@ -17,7 +18,7 @@
 </style>
 <div class="form-group">
   <form>
-    <table>
+    <table width="100%">
       <tr>
         <td><input type="text" name="dvId" class="form-control"></td>
         <td><input type="text" name="dvName" class="form-control"></td>

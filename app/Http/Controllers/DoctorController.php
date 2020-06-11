@@ -183,7 +183,7 @@ class DoctorController extends Controller
     }
 
     public function print_device($id){
-        $dv = MedicalBill::findOrFail($id);
+        $dv = Device::findOrFail($id);
         $ac = DB::table('device_accessory')->where('dv_id',$id)->get();
         $datetime = now();
         $datetime = str_replace(" ", "", $datetime);
