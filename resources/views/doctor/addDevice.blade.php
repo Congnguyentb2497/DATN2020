@@ -5,7 +5,6 @@
     width: 80%;
     font-size: 15px;
     border-radius: 3px;
-    margin-left: 10px;
   }
 .fa-print{
   background-color: green;
@@ -20,16 +19,18 @@
   <form>
     <table width="100%">
       <tr>
-        <td><input type="text" name="dvId" class="form-control"></td>
-        <td><input type="text" name="dvName" class="form-control"></td>
-        <td><select id="dvt" class="form-control" name="dvt">
-          <option disabled="" value="">Chọn loại thiết bị</option>
+        <td><div><input type="text" name="dvId" class="form-control" placeholder="nhập mã thiết bị"></div></td>
+        <td><div style="margin-left: 10px;"><input type="text" name="dvName" class="form-control" placeholder="nhập tên thiết bị"></div></td>
+        <td><div style="margin-left: 10px;">
+          <select id="dvt" class="form-control" name="dvt">
+            <option disabled="" value="">Chọn loại thiết bị</option>
           @foreach($dvts as $dvt)
             <option value="{{$dvt->id}}">{{$dvt->dv_type_name}}</option>
           @endforeach
-        </select></td>
+        </select></div>
+        </td>
         <td>
-          <button class="btn btn-primary">Tìm kiếm</button>
+          <div style="margin-left: 10px;"><button class="btn btn-primary">Tìm kiếm</button></div>
         </td>
       </tr>
     </table>
