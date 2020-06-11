@@ -45,11 +45,11 @@
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #00BD9C;">
       <tr style="font-size: 18px;">
-        <th>ID</th>
-        <th>Thời gian</th>
+        <th width="3%">ID</th>
+        <th width="15%">Thời gian</th>
         <th>Nội dung thông báo</th>
         <th>Tên thiết bị</th>
-        <th>Người báo hỏng</th>
+        <th>Người tạo</th>
         <th width="7%"></th>
       </tr>
     </thead>

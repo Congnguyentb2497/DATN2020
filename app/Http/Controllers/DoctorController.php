@@ -201,8 +201,8 @@ class DoctorController extends Controller
         
         
         $pdf->save(public_path("pdf_export/".$name.".pdf"));
-        // return $pdf->stream($name.'.pdf');
-        return response()->file(public_path("pdf_export/".$name.".pdf"));
+        return $pdf->stream($name.'.pdf');
+        //return response()->file(public_path("pdf_export/".$name.".pdf"));
     }
 
 }
