@@ -288,7 +288,7 @@ label {
       <tr style="font-size: 17px;">
         <th>Tên vật tư</th>
         <th>Số lượng</th>
-        <th>Ngày cấp vật tư</th>
+        <th>Ghi chú</th>
       </tr>
      </thead>
      <tbody>
@@ -297,7 +297,7 @@ label {
        <tr style="font-size: 15px;">
         <td>{{\App\Accessory::where(['id' =>$acc->acc_id])->pluck('acc_name')->first() }}</td>
         <td>{{ $acc->amount}} </td>
-        <td> {{$acc->export_date}}</td>
+        <td> {{$acc->note}}</td>
       </tr>
       @endforeach
       @endif

@@ -22,11 +22,9 @@
 			<tr>
 				<td width="20%">
 					<div><input type="text" name="dvId" class="form-control" placeholder="Nhập mã thiết bị "></div>
-					<small>nhập chính xác mã thiết bị</small>
 				</td>
 				<td width="20%">
 					<div style="margin-left: 5px;"><input class="form-control" type="text" name="dvname" placeholder="Nhập tên thiết bị "> </div>
-					<small>ví dụ:dao mổ cao tần, máy chụp xquang...</small>
 				</td>
 				<td width="20%">
 					<div style="margin-left: 5px;"><select name="dept" class="form-control">
@@ -50,7 +48,6 @@
 				<td width="20%">
 					<div style="margin-left: 5px;"> <button class="btn btn-primary">Tìm kiếm </button></div>
 				</td>
-
 				<td>
 					<div style="margin-left: 5px;">Tổng: {{ $devices->total() }}</div>
 				</td>
@@ -61,12 +58,12 @@
 	<div>
 		<table class="table table-condensed table-bordered table-hover">
 			<thead style="background-color: #D8D8D8">
-				<th width="10%">Mã thiết bị</th>
-				<th width="25%">Tên thiết bị</th>
+				<th width="20%">Mã thiết bị</th>
+				<th width="30%">Tên thiết bị</th>
 				<th width="10%">Model</th>
 				<th width="20%">Nhà cung cấp</th>
-				<th width="7%">Năm SX</th>
-				<th width="8%">Chi tiết</th>
+				<th width="5%">Năm SX</th>
+				<th width="5%">Chi tiết</th>
 			</thead>
 			<tbody>
 				@if(isset($devices))

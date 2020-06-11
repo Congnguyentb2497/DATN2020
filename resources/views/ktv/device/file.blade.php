@@ -33,7 +33,7 @@
         @endif
       </tr>
       @endforeach
-      @enif
+      @endif
         @if(isset($file))
         @foreach($file as $row)
       <tr style="font-size: 15px;">

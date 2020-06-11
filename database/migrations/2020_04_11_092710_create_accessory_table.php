@@ -31,7 +31,7 @@ class CreateAccessoryTable extends Migration
             $table->string('model')->nullable();
             $table->string('serial')->nullable();
             $table->string('note')->nullable();
-            
+
             $table->timestamps();
         });
     }
