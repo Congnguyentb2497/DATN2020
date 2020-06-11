@@ -787,7 +787,7 @@ public function fileDevice($id){
     $his = History_ktv::where('dv_id',$dv_id)->get();
     $file = History_ktv::where('dv_id',$id)->get();
     
-    return view('ktv.device.file')->with(['file'=>$file,'hiss'=>$his,'dv'=>$id]);
+    return view('ktv.device.file')->with(['file'=>$file,'hiss'=>$his,'dv'=>$id,'dv_id'=>$dv_id]);
 }
 
 //lịch bảo dưỡng

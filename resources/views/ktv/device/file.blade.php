@@ -8,6 +8,7 @@
 </style>
 <h2>Hồ Sơ Thiết Bị {{ \App\Device::where(['id' => $dv])->pluck('dv_name')->first()}}</h2>
 <h3>Mã thiết bị {{ \App\Device::where(['id' => $dv])->pluck('dv_id')->first()}}</h3>
+<div style="width: 100px;background-color: green;text-align: center;" ><a style="text-decoration: none;" href="{{ route('device.check',['id'=>$dv_id])}}">Xem lịch xử bảo dưỡng thiết bị</a></div>
 <div class="container2">
   <br>
   <table class="table table-condensed table-bordered table-hover">
