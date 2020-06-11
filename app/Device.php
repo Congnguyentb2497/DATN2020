@@ -19,7 +19,7 @@ class Device extends Model
     	return $this->belongsTo('App\Provider','provider_id');
     }
     public function department(){
-    	return $this->belongsTo('App\Department','department_id');
+    	return $this->belongsTo('App\Department','id','department_id');
     }
     
 }

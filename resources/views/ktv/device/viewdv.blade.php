@@ -18,13 +18,15 @@
 	<div>
 	<form class="form-group" action="" method="get">
 		@csrf
-		<table border="">
+		<table>
 			<tr>
 				<td width="20%">
-					<div><input type="text" name="dvId" class="form-control" placeholder="Nhập mã thiết bị "> </div>
+					<div><input type="text" name="dvId" class="form-control" placeholder="Nhập mã thiết bị "></div>
+					<small>nhập chính xác mã thiết bị</small>
 				</td>
 				<td width="20%">
 					<div style="margin-left: 5px;"><input class="form-control" type="text" name="dvname" placeholder="Nhập tên thiết bị "> </div>
+					<small>ví dụ:dao mổ cao tần, máy chụp xquang...</small>
 				</td>
 				<td width="20%">
 					<div style="margin-left: 5px;"><select name="dept" class="form-control">
@@ -48,6 +50,10 @@
 				<td width="20%">
 					<div style="margin-left: 5px;"> <button class="btn btn-primary">Tìm kiếm </button></div>
 				</td>
+
+				<td>
+					<div style="margin-left: 5px;">Tổng: {{ $devices->total() }}</div>
+				</td>
 			</tr>
 		</table>
 	</form>
@@ -60,7 +66,6 @@
 				<th width="10%">Model</th>
 				<th width="20%">Nhà cung cấp</th>
 				<th width="7%">Năm SX</th>
-				<th width="20%">Khoa phòng</th>
 				<th width="8%">Chi tiết</th>
 			</thead>
 			<tbody>
@@ -72,7 +77,6 @@
 					<td>{{ $r->dv_model }}</td>
 					<td>{{ $r->provider->provider_name }}</td>
 					<td>{{ $r->produce_date }}</td>
-					<td>{{ $r->department->department_name }}</td>
 					<td>
 						<a href="{{ route('device.view',['id'=>$r->dv_id]) }}"><i  title="Xem hồ sơ" class="fa fa-history" aria-hidden="true"></i></a>
 					</td>
