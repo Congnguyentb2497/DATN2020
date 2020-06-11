@@ -166,15 +166,26 @@ label {
       </tr>
        <tr>
         <td><label>Bảo dưỡng ĐK</label></td>
-        <td><input type="text"  name="maintain_date" ></td>
+        <td>
+            <select type="text"  name="maintain_date">
+              <option disabled="" value=""></option>
+              <option value="d">hàng ngày</option>
+              <option value="w">hàng tuần</option>
+              <option value="m1">hàng tháng</option>
+              <option value="3m">hàng quý</option>
+              <option value="1y">hàng năm</option>
+            </select>
+        </td>
         <td><label>Mã thiết bị</label></td>
         <td><input type="text" id="dvId"  name="dv_id" required=""></td>
       </tr>
       <tr>
         <td><label>Khấu hao bđ</label></td>
-        <td><input type="text"  name="khbd" ></td>
+        <td><input type="text"  name="khbd" >
+          <small>đơn vị %</small></td>
         <td><label>Khấu hao năm</label></td>
-        <td><input type="text"  name="khhn" ></td>
+        <td><input type="text"  name="khhn" >
+        <small>đơn vị %</small></td>
       </tr>
       <tr>
         <td><label>Ghi chú</label></td>
