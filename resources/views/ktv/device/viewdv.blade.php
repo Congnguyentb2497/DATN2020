@@ -54,22 +54,24 @@
 	<div>
 		<table class="table table-condensed table-bordered table-hover">
 			<thead>
-				<th>Mã thiết bị</th>
-				<th>Tên thiết bị</th>
-				<th>Model</th>
-				<th>Nhà cung cấp</th>
-				<th>Năm sản xuất</th>
-				<th>Chi tiết</th>
+				<th width="10%">Mã thiết bị</th>
+				<th width="25%">Tên thiết bị</th>
+				<th width="10%">Model</th>
+				<th width="20%">Nhà cung cấp</th>
+				<th width="5%">Năm sản xuất</th>
+				<th width="20%">Khoa phòng</th>
+				<th width="10%">Chi tiết</th>
 			</thead>
 			<tbody>
 				@if(isset($devices))
 				@foreach($devices as $r)
 				<tr>
 					<td>{{ $r->dv_id }}</td>
-					<td>{{ $r->dv_name}}</td>
-					<td>{{ $r->dv_model }</td>
-					<td>{{ $r->provider->provider_name}}</td>
+					<td>{{ $r->dv_name }}</td>
+					<td>{{ $r->dv_model }}</td>
+					<td>{{ $r->provider->provider_name }}</td>
 					<td>{{ $r->produce_date }}</td>
+					<td>{{ $r->department->department_name }}</td>
 					<td>
 						<a href="{{ route('device.view',['id'=>$r->dv_id]) }}"><i  title="Xem hồ sơ" class="fa fa-history" aria-hidden="true"></i></a>
 					</td>
