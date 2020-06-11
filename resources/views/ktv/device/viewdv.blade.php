@@ -26,7 +26,8 @@
 					<div style="margin-left: 5px;"><input class="form-control" type="text" name="dvname" placeholder="Nhập tên thiết bị "> </div>
 				</td>
 				<td width="15%">
-					<div style="margin-left: 5px;"><select name="dept" class="form-control">
+					<div style="margin-left: 5px;">
+						<select name="dept" class="form-control">
 						<option value="">Chọn khoa phòng</option>
 						@foreach($depts as $d)
 						<option value="{{ $d->id }}">{{ $d->department_name }}</option>
@@ -38,8 +39,8 @@
 					<div style="margin-left: 5px;">
 						<select name="dvt" class="form-control">
 						<option value="">Chọn loại thiết bị</option>
-						@foreach($dvts as $dvt)
-						<option value="{{ $dvt->id }}">{{ $dvt->dv_type_name }}</option>
+						@foreach($dvts as $r1)
+						<option value="{{ $r1->id }}">{{ $r1->dv_type_name }}</option>
 						@endforeach
 					</select>
 					</div>
