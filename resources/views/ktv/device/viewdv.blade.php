@@ -17,7 +17,7 @@
 <div>
 	<div>
 	<form class="form-group" action="" method="get">
-		<table border="1">
+		<table border="">
 			<tr>
 				<td width="20%">
 					<div><input type="text" name="dvId" class="form-control" placeholder="Nhập mã thiết bị "> </div>
