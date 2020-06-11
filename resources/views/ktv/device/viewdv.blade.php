@@ -26,7 +26,7 @@
 				<td width="20%">
 					<div style="margin-left: 5px;"><input class="form-control" type="text" name="dvname" placeholder="Nhập tên thiết bị "> </div>
 				</td>
-				<td width="20%">
+				<td width="15%">
 					<div style="margin-left: 5px;"><select name="dept" class="form-control">
 						<option value="">Chọn khoa phòng</option>
 						@foreach($depts as $d)
@@ -35,7 +35,7 @@
 					</select>
 					</div>
 				</td>
-				<td width="20%">
+				<td width="15%">
 					<div style="margin-left: 5px;">
 						<select name="dvt" class="form-control">
 						<option value="">Chọn loại thiết bị</option>

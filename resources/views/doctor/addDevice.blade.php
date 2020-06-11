@@ -55,7 +55,7 @@
         <td>{{ $r->dv_name }}</td>
         <td>{{ $r->dv_model }}</td>
         <td>{{ $r->produce_date }}</td>
-        <td>{{ $r->provider->provider_name}}<td>
+        <td>{{ $r->provider->provider_name }}</td>
         <td>{{ $r->import_date }}</td>
         <td style="text-align: center;">
           <a href="{{ route('doctor.print.device',['id'=>$r->id]) }}" style="text-decoration: none;color: green;"><i class="fa fa-print" title="In phiếu bàn giao" aria-hidden="true"></i></a>

@@ -6,9 +6,9 @@
     font-weight: bold;
   }
 </style>
-<h2>Hồ Sơ Thiết Bị {{ \App\Device::where(['id' => $dv])->pluck('dv_name')->first()}}</h2>
-<h3>Mã thiết bị {{ \App\Device::where(['id' => $dv])->pluck('dv_id')->first()}}</h3>
-<div style="width: 150px;background-color: green;text-align: center; margin-left: 40px;border-radius: 5px;" ><a style="text-decoration: none;color: black;" href="{{ route('device.maintainCheck',['id'=>$dv_id])}}">Xem lịch xử bảo dưỡng thiết bị</a></div>
+<h2>Hồ Sơ Thiết Bị: {{ \App\Device::where(['id' => $dv])->pluck('dv_name')->first()}}</h2>
+<h3>Mã thiết bị: {{ \App\Device::where(['id' => $dv])->pluck('dv_id')->first()}}</h3>
+<div style="width: 300px;background-color: green;text-align: center; margin-left: 40px;border-radius: 5px;" ><a style="text-decoration: none;color: black;" href="{{ route('device.maintainCheck',['id'=>$dv_id])}}">Xem lịch xử bảo dưỡng thiết bị</a></div>
 <div class="container2">
   <br>
   <table class="table table-condensed table-bordered table-hover">
