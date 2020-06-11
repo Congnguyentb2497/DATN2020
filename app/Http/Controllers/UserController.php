@@ -782,9 +782,12 @@ public function delAcc($id){
 }
 //xem hồ sơ thiết bị
 public function fileDevice($id){
+    $device = Device::find($id);
+    $dv_id = $device->dv_id;
+    $his = History_ktv::where('dv_id',$dv_id)->get();
     $file = History_ktv::where('dv_id',$id)->get();
-    $dv = $id;
-    return view('ktv.device.file')->with(['file'=>$file,'dv'=>$dv]);
+    
+    return view('ktv.device.file')->with(['file'=>$file,'hiss'=>$his'dv'=>$id]);
 }
 
 //lịch bảo dưỡng

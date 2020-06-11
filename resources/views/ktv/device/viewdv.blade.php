@@ -75,7 +75,7 @@
 					<td>{{ $r->provider->provider_name }}</td>
 					<td>{{ $r->produce_date }}</td>
 					<td>
-						<a href="{{ route('device.view',['id'=>$r->dv_id]) }}"><i  title="Xem hồ sơ" class="fa fa-history" aria-hidden="true"></i></a>
+						<a href="{{ route('device.view',['id'=>$r->id]) }}"><i  title="Xem hồ sơ" class="fa fa-history" aria-hidden="true"></i></a>
 					</td>
 					
 				</tr>
