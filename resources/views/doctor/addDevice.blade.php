@@ -35,8 +35,7 @@
   </form>
 </div>
 <br>
-@if(isset($dvs))
-@foreach($dvs as $r)
+
 <div>
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #81BEF7;">
@@ -49,6 +48,8 @@
       <th></th>
     </thead>
     <tbody>
+      @if(isset($dvs))
+      @foreach($dvs as $r)
       <tr>
         <td>{{ $r->dv_id }}</td>
         <td>{{ $r->dv_name }}</td>
@@ -60,11 +61,12 @@
           <a href="{{ route('doctor.print.device',['id'=>$r->id]) }}" style="text-decoration: none;"><i class="fa fa-print" title="In phiếu bàn giao" aria-hidden="true"></i></a>
         </td>
       </tr>
+      @endforeach
+      @endif
     </tbody>
   </table>
 </div>
-@endforeach
-@endif
+
 <script type="text/javascript">
   $(document).ready(function(){
     $('#dvt').select2({});
