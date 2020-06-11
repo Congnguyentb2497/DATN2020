@@ -39,10 +39,10 @@
  			@endif
  		</select>
  	</div>
-  
+  <br>
   <br>
   	<div class="form-group">
-    <label for="exampleInputEmail1">Hoạt động bảo dưỡng</label>
+    <label >Hoạt động bảo dưỡng</label>
     <input style="width: 50%" type="text" name="nameAct" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập hoạt động cần bảo dưỡng">
     <small id="emailHelp" class="form-text text-muted">VD: Kiểm tra buồng kính chiếu tia X</small>
   	</div>
@@ -76,7 +76,7 @@
 			<th>Hạng mục công việc</th>
 			<th>Tần suất bảo dưỡng</th>
 			<th>Ghi chú</th>
-			<th></th>
+			<th width="10%"></th>
 		</thead>
 		@if(isset($schedules))
 		<tbody>
