@@ -22,7 +22,7 @@
         <td><div style="margin-left: 10px;"><input type="text" name="dvName" class="form-control" placeholder="nhập tên thiết bị"></div></td>
         <td><div style="margin-left: 10px;">
           <select id="dvt" class="form-control" name="dvt">
-            <option disabled="" value="">Chọn loại thiết bị</option>
+            <option  value="">Chọn loại thiết bị</option>
           @foreach($dvts as $dvt)
             <option value="{{$dvt->id}}">{{$dvt->dv_type_name}}</option>
           @endforeach

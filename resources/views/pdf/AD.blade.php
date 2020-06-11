@@ -44,7 +44,7 @@
 </style>
 <body>
 	<div>
-		<table style="font-size: 22px;" width="100%">
+		<table style="font-size: 20px;" width="100%">
 			<tr>
 				<td class="font-bold" style="text-align: center;">Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam</td>
 			</tr>
@@ -53,13 +53,13 @@
 			</tr>
 			<tr>
 				<td>
-					<div style="margin-top: 50px;font-size: 24px;text-align: center; " class="font-bold">Phiếu Xin Bàn Giao Thiết Bị</div>
+					<div style="margin-top: 50px;font-size: 22px;text-align: center; " class="font-bold">PHIẾU XIN BÀN GIAO THIẾT BỊ</div>
 				</td>
 			</tr>
 		</table>
 	</div>
 	<div>
-		<table style="font-size: 20px;">
+		<table style="font-size: 17px;">
 			<tr>
 				<td class="font-bold">Kính gửi: </td>
 				<td>Trưởng Phòng Quản Lý Vật Tư Trang Thiết Bị</td>
@@ -72,46 +72,46 @@
 	</div>
 	<div>
 		<h3 class="font-bold">I. Thông tin về thiết bị </h3><br>
-		<table width="100%">
+		<table width="100%" style="font-size: 17px;">
 			<tr class="font-bold">
-				<td style="border: 1px;">Mã thiết bị</td>
-				<td style="border: 1px;">Tên thiết bị</td>
-				<td style="border: 1px;">Model</td>
-				<td style="border: 1px;">Số lượng</td>
-				<td style="border: 1px;">Tình trạng</td>
-				<td style="border: 1px;">Năm SX</td>
+				<td style="border: 1px solid black;">Mã thiết bị</td>
+				<td style="border: 1px solid black;">Tên thiết bị</td>
+				<td style="border: 1px solid black;">Model</td>
+				<td style="border: 1px solid black;">Số lượng</td>
+				<td style="border: 1px solid black;">Tình trạng</td>
+				<td style="border: 1px solid black;">Năm SX</td>
 			</tr>
 				<tr>
-					<td style="border: 1px;"> {{$device-> dv_id}}</td>
-					<td style="border: 1px;"> {{$device->dv_name}}</td>
-					<td style="border: 1px;"> {{$device->model}}</td>
-					<td style="border: 1px;"> 1 </td>
-					<td style="border: 1px;"> Chưa được bàn giao</td>
-					<td style="border: 1px;"> {{$device->produce_date}}</td>
+					<td style="border: 1px solid black;"> {{$device-> dv_id}}</td>
+					<td style="border: 1px solid black;"> {{$device->dv_name}}</td>
+					<td style="border: 1px solid black;"> {{$device->model}}</td>
+					<td style="border: 1px solid black;"> 1 </td>
+					<td style="border: 1px solid black;"> Chưa bàn giao</td>
+					<td style="border: 1px solid black;"> {{$device->produce_date}}</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	<div>
 		<h3 class="font-bold">II. Thông tin vật tư kèm theo</h3><br>
-		<table  width="100%">
+		<table  width="100%" style="font-size: 17px;">
 			<tr class="font-bold">
-				<td style="border: 1px;" width="30%">Tên vật tư</td>
-				<td style="border: 1px;" width="10%">Model</td>
-				<td style="border: 1px;" width="10%">Số lượng</td>
-				<td style="border: 1px;" width="10%">ĐVT</td>
-				<td style="border: 1px;" width="10%">Năm SX</td>
-				<td style="border: 1px;" width="20%">Tình trạng</td>
+				<td style="border: 1px solid black;" width="30%">Tên vật tư</td>
+				<td style="border: 1px solid black;" width="10%">Model</td>
+				<td style="border: 1px solid black;" width="10%">Số lượng</td>
+				<td style="border: 1px solid black;" width="10%">ĐVT</td>
+				<td style="border: 1px solid black;" width="10%">Năm SX</td>
+				<td style="border: 1px solid black;" width="20%">Tình trạng</td>
 			</tr>
 				@if(isset($acc))
 				@foreach($acc as $r)
 			<tr>
-					<td style="border: 1px;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('acc_name')->first() }}</td>
-					<td style="border: 1px;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('model')->first() }}</td>
-					<td style="border: 1px;"> {{$r->amount}}</td>
-					<td style="border: 1px;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('unit')->first()}}</td>
-					<td style="border: 1px;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('produce_date')->first() }}</td>
-					<td style="border: 1px;"> Chưa sử dụng</td>
+					<td style="border: 1px solid black;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('acc_name')->first() }}</td>
+					<td style="border: 1px solid black;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('model')->first() }}</td>
+					<td style="border: 1px solid black;"> {{$r->amount}}</td>
+					<td style="border: 1px solid black;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('unit')->first()}}</td>
+					<td style="border: 1px solid black;"> {{\App\Accessory::where(['id' => $r->acc_id])->pluck('produce_date')->first() }}</td>
+					<td style="border: 1px solid black;"> Chưa sử dụng</td>
 			</tr>
 				@endforeach
 				@endif
@@ -120,7 +120,7 @@
 	</div>
 	<br><br>
 	<div>
-		<table width="100%" >
+		<table width="100%" style="font-size: 18px;">
 			<tr>
 				<td width="50%"></td>
 				<td style="text-align: center;">Ngày {{ date('d') }} tháng {{ date('m') }} năm {{ date('Y') }}</td>
