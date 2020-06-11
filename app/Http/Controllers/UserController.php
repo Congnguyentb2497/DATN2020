@@ -881,10 +881,8 @@ public function showmaintain(Request $request){
     
     public function viewDevice(Request $request){
         $dv = Device::all();
-        if($request->dvId){
-
-        }
-        return view('ktv.device.view')->with('dvs'=>$dv)
+        
+        return view('ktv.device.viewdv')->with('dvs'=>$dv)
     }
 }
 
