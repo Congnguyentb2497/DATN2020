@@ -804,11 +804,9 @@ public function showmaintain(Request $request){
         $device = DB::table('device')->get();
         return view('ktv.device.schedule')->with('devices',$device);
     }
-    public function createScheduled($id){
+    public function createScheduled(Request $request, $id){
         $dv = DB::table('device')->where('dv_id',$id)->get();
-        //dd($dv);
         $schedule = DB::table('schedule_action')->where('dv_id',$id)->get();
-        //dd($schedule);
         return view('ktv.device.scheduled')->with(['device'=>$dv,'schedules'=>$schedule]);
     }
     public function postScheduleAct(Request $request){
@@ -820,6 +818,13 @@ public function showmaintain(Request $request){
         $schedules->note = $request->note;
         $schedules->save();
 
+        return redirect()->route('device.scheduled',['id'=>$id]);
+    }
+
+    public function delScheduleAct($id){
+        $sch = ScheduleAction::findOrFail($id);
+        $id = $sch->dv_id;
+        $sch->delete();
         return redirect()->route('device.scheduled',['id'=>$id]);
     }
 

@@ -237,11 +237,18 @@ label {
         <td><input type="text"  name="department" value="{{\App\Department::where(['id' =>$dev->department_id])->pluck('department_name')->first() }}"></td>
       </tr>
       <tr>
+        <td><label>Khấu hao bđ</label></td>
+        <td><input type="text"  name="khbd" value="{{$dev->khbd}}" ><br>
+          <small>đơn vị %</small></td>
+        <td><label>Khấu hao năm</label></td>
+        <td><input type="text"  name="khhn" value="{{$dev->khhn}}"><br>
+        <small>đơn vị %</small></td>
+      </tr>
+      <tr>
         <td><label>Ghi chú</label></td>
         <td><input type="text"  name="note" value="{{$dev->note}}" ></td>
         <td><label>Mã thiết bị</label></td>
         <td><input type="text"  name="dv_id" value="{{$dev->dv_id}}" disabled></td>
-        
       </tr>
       <tr>
        <td></td>

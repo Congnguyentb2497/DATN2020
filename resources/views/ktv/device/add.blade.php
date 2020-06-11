@@ -169,11 +169,13 @@ label {
         <td>
             <select type="text"  name="maintain_date">
               <option disabled="" value=""></option>
-              <option value="d">hàng ngày</option>
-              <option value="w">hàng tuần</option>
-              <option value="m1">hàng tháng</option>
-              <option value="3m">hàng quý</option>
-              <option value="1y">hàng năm</option>
+              <option value="hàng ngày">hàng ngày</option>
+              <option value="1 tuần">1 tuần</option>
+              <option value="1 tháng">1 tháng</option>
+              <option value="2 tháng">2 tháng</option>
+              <option value="3 tháng">3 tháng</option>
+              <option value="6 tháng">6 tháng</option>
+              <option value="12 tháng">12 tháng</option>
             </select>
         </td>
         <td><label>Mã thiết bị</label></td>
@@ -181,10 +183,10 @@ label {
       </tr>
       <tr>
         <td><label>Khấu hao bđ</label></td>
-        <td><input type="text"  name="khbd" >
+        <td><input type="text"  name="khbd" ><br>
           <small>đơn vị %</small></td>
         <td><label>Khấu hao năm</label></td>
-        <td><input type="text"  name="khhn" >
+        <td><input type="text"  name="khhn" ><br>
         <small>đơn vị %</small></td>
       </tr>
       <tr>

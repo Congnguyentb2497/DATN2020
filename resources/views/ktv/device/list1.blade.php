@@ -94,7 +94,7 @@
         <td>{{$device->handover_date}}</td>
         <td style="text-align: center;">
           <a href="{{route('device.getEdit',['id'=>$device->id])}}"><i class="fa fa-pencil-square-o " title="Xem thông tin" style="font-size: 18px" aria-hidden="true"></i></a>
-          <a href="{{route('device.history',['id'=>$device->id])}}"><i class="fa fa-history " style="font-size: 18px" title="Xóa" aria-hidden="true"></i></a>
+          <a href="{{route('device.history',['id'=>$device->id])}}"><i class="fa fa-history " style="font-size: 18px" title="Lịc sử TB" aria-hidden="true"></i></a>
         </td>
       </tr>
       @endforeach
