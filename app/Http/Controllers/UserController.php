@@ -890,7 +890,7 @@ public function showmaintain(Request $request){
             $dv = $dv->where('dv_id','=',$request->dvId);
         }
         if($request->dvname){
-            $dv = $dv->where('dv_id','like','%'.$request->name.'%');
+            $dv = $dv->where('dv_id','like','%'.$request->dvname.'%');
         }
         if($request->dept){
             $dv = $dv->where('department_id','=',$request->dept);

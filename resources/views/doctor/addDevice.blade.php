@@ -19,7 +19,7 @@
       <tr>
         <td><div><input type="text" name="dvId" class="form-control" placeholder="nhập mã thiết bị"></div></td>
         <td><div style="margin-left: 10px;"><input type="text" name="dvName" class="form-control" placeholder="nhập tên thiết bị"></div></td>
-        <td width="20%"><div style="margin-left: 10px;width: 30px;">
+        <td width="20%"><div style="margin-left: 10px;">
           <select id="dvt" class="form-control" name="dvt">
             <option  value="">Chọn loại thiết bị</option>
           @foreach($dvts as $dvt)
