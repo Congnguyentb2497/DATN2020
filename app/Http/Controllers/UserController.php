@@ -880,7 +880,7 @@ public function showmaintain(Request $request){
     }
     
     public function viewDevice(Request $request){
-        $dv = Device::all();
+        $dv = Device::where('id','>',0)->orderBy('id','decs');
         $dvt = DB::table('device_type')->get();
         $dept = DB::table('department')->get();
         if($request->dvId){
