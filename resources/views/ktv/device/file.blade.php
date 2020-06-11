@@ -20,6 +20,20 @@
       </tr>
     </thead>
     <tbody>
+      @if(isset($hiss))
+      @foreach($hiss as $his)
+      <tr>
+        <td>{{ $his->time }}</td>
+        <td>{{ $his->action }}</td>
+        <td>{{ $his->ipmlementer }}</td>
+        @if($his->status == 'sadv')
+        <td>Nhập thiết bị thành công</td>
+        @else
+        <td></td>
+        @endif
+      </tr>
+      @endforeach
+      @enif
         @if(isset($file))
         @foreach($file as $row)
       <tr style="font-size: 15px;">
