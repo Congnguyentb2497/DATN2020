@@ -85,8 +85,6 @@ public function acceptNotice( $user_id, $id, $dv_id, $status){
         $notice->res_date = Carbon::now('Asia/Ho_Chi_Minh');
         $notice->res_content = "Đã xác nhận thông báo hỏng";
         $notice->save();
-        $device->status = 2;
-        $device->save();
         $response = new Notification;
         $response->req_date = Carbon::now('Asia/Ho_Chi_Minh');
         $response->req_content = "Đã xác nhận thông báo hỏng thiết bị ".$device->dv_name;
@@ -880,7 +878,10 @@ public function showmaintain(Request $request){
             $check->save();
             return redirect()->route('device.maintainCheck',['id'=>$d]);
     }
-   
+    
+    public function viewDevice(Request $request){
+
+    }
 }
 
 
