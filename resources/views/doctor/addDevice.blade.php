@@ -58,7 +58,7 @@
         <td>{{ \App\Device_type::where(['dv_type_id'=> $r->dv_type_id])->pluck('dv_type_name')->first() }}</td>
         <td>{{ $r->import_date }}</td>
         <td style="text-align: center;">
-          <a href="{{ route('doctor.print.device',['id'=>$r->id,'user_id'=>Auth::id()]) }}" style="text-decoration: none;color: green;"><i class="fa fa-print" title="In phiếu bàn giao" aria-hidden="true"></i></a>
+          <a href="{{ route('doctor.print.device',['id'=>$r->id,'user_id'=>Auth::user()->user_id]) }}" style="text-decoration: none;color: green;"><i class="fa fa-print" title="In phiếu bàn giao" aria-hidden="true"></i></a>
         </td>
       </tr>
       @endforeach
