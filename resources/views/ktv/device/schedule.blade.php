@@ -11,7 +11,6 @@
   	margin-left: 40px;
   }
   #sl_dv{
-  	width: 500px;
   	margin-left: 40px;
   }
   .form{
@@ -29,7 +28,7 @@
 	
  	<form class="form" action="{{ route('device.postScheduleAct')}}" method="post">
  		@csrf
- 		<div style="float: left;">
+ 		<div >
  		<select name="sl_dv" id="searchDv" class="form-control" style="width: 90%;"  >
  			<option disabled="" value="">Lựa chọn thiết bị cần tạo lịch</option>
  			@if(isset($devices))
@@ -42,7 +41,7 @@
  	</div>
   <br>
   <br>
-  	<div class="form-group">
+  	<div style="margin-left: 40px;">
     <label >Hoạt động bảo dưỡng</label>
     <input style="width: 50%" type="text" name="nameAct" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập hoạt động cần bảo dưỡng">
     <small id="emailHelp" class="form-text text-muted">VD: Kiểm tra buồng kính chiếu tia X</small>
