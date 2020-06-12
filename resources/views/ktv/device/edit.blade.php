@@ -170,7 +170,7 @@ label {
     <table border="0" width="100%" >
       <tr>
         <td><label>Tên thiết bị</label></td>
-        <td><input type="text"  name="name_device" value="{{$dev->dv_name}}"></td>
+        <td><input type="text"  name="name_device" value="{{$dev->dv_name}}" ></td>
         <td><label>Nhà cung cấp</label></td>
         <td><select type="text" name="provider" required>
         		<option value="{{$dev->provider_id}}">{{$dev->provider->provider_name}}</option>
@@ -263,13 +263,15 @@ label {
           <div style="float: left;" class="rgt1">
               <a class="rgt" style="text-decoration: none;font-weight: bold;font-size: 20px;color: black;" href="{{ route('device.view',['id'=>$dev->id]) }}">Hồ sơ TB</a>
           </div>
+          @if(Auth::user()->rule == 1)
           <div style="float: left; margin-top: 2px;"><input value="Lưu" class="btn" type="submit" ></div>
+          @endif
           @if($dev->status == 0)
           <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" href="{{route('device.show0')}}">Hủy</a></div> 
           @elseif($dev->status ==1)
           <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" href="{{route('device.show1')}}">Hủy</a></div>
           @else
-          <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" href="{{route('device.show2')}}">Hủy</a></div>
+          <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" onclick="return back()" >Hủy</a></div>
           @endif
           </div>
         </td>
