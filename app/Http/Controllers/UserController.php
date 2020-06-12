@@ -407,6 +407,7 @@ public function postAddDevice(Request $request){
     // }
     $this->validate($request,[
         'name_device' => 'required',
+        'serial' => 'unique:device,dv_serial',
         'amount' => 'numeric',
         'dv_id' => 'unique:device,dv_id'
     ],[
