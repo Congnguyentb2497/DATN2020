@@ -887,16 +887,16 @@ public function showmaintain(Request $request){
         $dvt = DB::table('device_type')->get();
         $dept = DB::table('department')->get();
         if($request->dvId){
-            $dv = $dv->where('dv_id','=', $request->dvId);
+            $dv = Device::where('dv_id','=', $request->dvId)->orderBy('id','desc');
         }
         if($request->dvname){
-            $dv = $dv->where('dv_name','like','%'.$request->dvname.'%');
+             $dv = Device::where('dv_name','like','%'.$request->dvname.'%')->orderBy('id','desc');
         }
         if($request->dept){ 
-            $dv = $dv->where('department_id','=', $request->dept);
+            $dv = Device::where('department_id','=', $request->dept)->orderBy('id','desc');
         }
         if($request->dvt){
-            $dv = $dv->where('dv_type_id','=', $request->dvt);
+            $dv = Device::where('dv_type_id','=', $request->dvt)->orderBy('id','desc');
         }
         $dv = $dv->paginate(100);
         return view('ktv.device.viewdv')->with(['devices'=>$dv,'dvts'=>$dvt,'depts'=>$dept]);

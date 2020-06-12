@@ -40,15 +40,14 @@
     <small style="margin-left: 5px;">Nhập mã thiết bị, tên thiết bị, loại thiết bị</small>
  	</div>
   <br>
-  <br>
-  	<div style="margin-left: 40px;">
+  	<div>
     <label >Hoạt động bảo dưỡng</label>
-    <input style="width: 50%" type="text" name="nameAct" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập hoạt động cần bảo dưỡng">
+    <input style="width: 90%" type="text" name="nameAct" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập hoạt động cần bảo dưỡng">
     <small id="emailHelp" class="form-text text-muted">VD: Kiểm tra buồng kính chiếu tia X</small>
   	</div>
   	<div class="form-group">
     <label for="exampleInputPassword1">Tần suất thực hiện</label>
-    <select style="width: 50%" type="text" name="timeAct" class="form-control">
+    <select style="width: 90%" type="text" name="timeAct" class="form-control">
       <option>1 tuần</option>
       <option>1 tháng</option>
       <option>2 tháng</option>
@@ -61,7 +60,7 @@
   	</div>
   	<div class="form-group">
     	<label for="exampleInputEmail1">Ghi chú</label>
-    	<input style="width: 50%" type="text" name="note" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    	<input style="width: 90%" type="text" name="note" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   	</div>
   	<div>
   		<button style="width: 70px; float: left;" id="luu" type="submit" class="btn btn-primary">Lưu</button>
