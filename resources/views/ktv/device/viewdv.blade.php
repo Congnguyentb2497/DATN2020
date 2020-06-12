@@ -37,10 +37,10 @@
 				</td>
 				<td width="15%">
 					<div style="margin-left: 5px;">
-						<select name="dvt" class="form-control">
+						<select  name="dvt" class="form-control">
 						<option value="">Chọn loại thiết bị</option>
 						@foreach($dvts as $r1)
-						<option value="{{ $r1->id }}">{{ $r1->dv_type_name }}</option>
+						<option value="{{ $r1->dv_type_id }}">{{ $r1->dv_type_name }}</option>
 						@endforeach
 					</select>
 					</div>
