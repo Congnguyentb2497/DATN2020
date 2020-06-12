@@ -890,7 +890,7 @@ public function showmaintain(Request $request){
             $dv = $dv->where('dv_id','=', $request->dvId);
         }
         if($request->dvname){
-            $dv = $dv->where('dv_id','like','%'.$request->dvname.'%');
+            $dv = $dv->where('dv_name','like','%'.$request->dvname.'%');
         }
         if($request->dept){ 
             $dv = $dv->where('department_id','=', $request->dept);
@@ -898,7 +898,6 @@ public function showmaintain(Request $request){
         if($request->dvt){
             $dv = $dv->where('dv_type_id','=', $request->dvt);
         }
-        $dv = $dv->paginate(100);
         return view('ktv.device.viewdv')->with(['devices'=>$dv,'dvts'=>$dvt,'depts'=>$dept]);
     }
 }
