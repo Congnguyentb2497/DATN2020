@@ -49,7 +49,7 @@
 					<div style="margin-left: 5px;"> <button class="btn btn-primary">Tìm kiếm </button></div>
 				</td>
 				<td width="10%">
-					<div style="margin-left: 5px;">Tổng: {{ $devices->total() }}</div>
+					<div style="margin-left: 5px;">Tổng: {{ count($devices) }}</div>
 				</td>
 			</tr>
 		</table>

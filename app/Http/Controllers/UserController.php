@@ -214,7 +214,7 @@ public function showDevice0(Request $request){
         $devices = $devices->where('dv_type_id', '=', $request->dv_type_id);
     }
 
-    $devices = $devices->paginate(10);
+    $devices = $devices->paginate(100);
 
     return view('ktv.device.list0', ['devices'=>$devices,'dv_types'=>$dv_types,'depts'=>$dept,'providers'=>$provider]);
 }
@@ -236,7 +236,7 @@ public function showDevice1(Request $request){
         $devices = $devices->where('department_id', '=', $request->department_id);
     }
 
-    $devices = $devices->paginate(8);
+    $devices = $devices->paginate(100);
     return view('ktv.device.list1',['devices'=>$devices,'dvts'=>$dvt,'depts'=>$dept]);
 
 }
@@ -257,7 +257,7 @@ public function showDevice2(Request $request){
     {
         $devices = $devices->where('dv_type_id', '=', $request->dv_type_id);
     }
-    $devices = $devices->paginate(8);
+    $devices = $devices->paginate(50);
     return view('ktv.device.list2',['devices'=>$devices, 'depts' => $department,'dv_types'=>$dv_type]);
 }
     //device fixing
@@ -278,7 +278,7 @@ public function showDevice3(Request $request) {
     {
         $device = $device->where('department_id', '=', $request->department_id);
     }
-    $device = $device->paginate(8);
+    $device = $device->paginate(50);
     return view('ktv.device.list3',['devices'=>$device,'departments'=>$dept,'providers'=>$provider]);
 }
 
@@ -386,7 +386,7 @@ public function showDevice4(Request $request) {
     {
         $devices = $devices->where('department_id', '=', $request->department_id);
     }
-    $devices = $devices->paginate(8);
+    $devices = $devices->paginate(100);
     return view('ktv.device.list4',['devices'=>$devices,'depts'=>$dep,'providers'=>$provider]);
 
 }
@@ -898,6 +898,7 @@ public function showmaintain(Request $request){
         if($request->dvt){
             $dv = $dv->where('dv_type_id','=', $request->dvt);
         }
+        $dv = $dv->paginate(100);
         return view('ktv.device.viewdv')->with(['devices'=>$dv,'dvts'=>$dvt,'depts'=>$dept]);
     }
 }
