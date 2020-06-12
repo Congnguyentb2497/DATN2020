@@ -139,7 +139,7 @@ class DoctorController extends Controller
         if($request->dvt){
             $dv = $dv->where('dv_type_id','=', $request->dvt);
         }
-        $dv = $dv->paginate(10);
+        $dv = $dv->paginate(100);
         return view('doctor.addDevice')->with(['dvs'=>$dv,'dvts'=>$dvt]);
     }
    
