@@ -30,15 +30,15 @@
  	<form class="form" action="{{ route('device.postScheduleAct')}}" method="post">
  		@csrf
  		<div style="float: left;">
- 		<select name="sl_dv" id="searchDv" class="form-control" style="width: 300px;"  >
+ 		<select name="sl_dv" id="searchDv" class="form-control" style="width: 90%;"  >
  			<option disabled="" value="">Lựa chọn thiết bị cần tạo lịch</option>
  			@if(isset($devices))
  			@foreach($devices as $row)
  			<option value="{{$row->dv_id}}">{{ $row->dv_id }}--{{ $row->dv_name }}--{{ \App\Device_type::where(['dv_type_id'=>$row->dv_type_id])->pluck('dv_type_name')->first() }}</option>
  			@endforeach
  			@endif
- 		</select>
-    <small>Nhập mã thiết bị, tên thiết bị, loại thiết bị</small>
+ 		</select><br>
+    <small style="margin-left: 5px;">Nhập mã thiết bị, tên thiết bị, loại thiết bị</small>
  	</div>
   <br>
   <br>
