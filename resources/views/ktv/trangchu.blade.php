@@ -45,7 +45,7 @@
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #00BD9C;">
       <tr style="font-size: 18px;">
-        <th width="3%">ID</th>
+        <th width="10%">ID</th>
         <th width="15%">Thời gian</th>
         <th>Nội dung thông báo</th>
         <th>Tên thiết bị</th>
@@ -61,7 +61,7 @@
         <td>{{$notice->req_date}}</td>
         <td>{{$notice->req_content}}</td>
         <td>{{ \App\Device::where(['dv_id' => $notice->dv_id])->pluck('dv_name')->first()}}</td>
-        <td>{{ \App\User::where(['user_id' => $notice->annunciator_id])->pluck('fullname')->first()}} </td>
+        <td>{{ \App\User::where(['id' => $notice->annunciator_id])->pluck('fullname')->first()}} </td>
         <td style="text-align: center;">
           <a href="{{route('ktv.acceptNotice',['user_id'=>Auth::id(),'id'=>$notice->id,'dv_id'=>$notice->dv_id,'status'=>$notice->status]) }}"><i class="fa fa-pencil-square-o " title="Xác nhận" aria-hidden="true" onclick="return confirm('Bạn có chắc chắn?')"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <!-- <a onclick="return confirm('Bạn có chắc chắn xóa?')" href="#"><i class="fa fa-trash " title="Xóa" aria-hidden="true"></i></a> -->
