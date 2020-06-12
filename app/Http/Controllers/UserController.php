@@ -898,7 +898,6 @@ public function showmaintain(Request $request){
         if($request->dvt){
             $dv = $dv->where('dv_type_id','=', $request->dvt);
         }
-        $dv = $dv->paginate(10);
         return view('ktv.device.viewdv')->with(['devices'=>$dv,'dvts'=>$dvt,'depts'=>$dept]);
     }
 }
