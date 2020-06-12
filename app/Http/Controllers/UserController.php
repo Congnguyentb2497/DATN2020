@@ -888,7 +888,7 @@ public function showmaintain(Request $request){
         $dvt = DB::table('device_type')->get();
         $dept = DB::table('department')->get();
         if($request->dvId){
-            $dv = Device::where('dv_id','=', $request->dvId)->orderBy('id','desc');
+            $dv = Device::where('dv_id','like','%'. $request->dvId. '%')->orderBy('id','desc');
         }
         if($request->dvname){
              $dv = Device::where('dv_name','like','%'.$request->dvname.'%')->orderBy('id','desc');
