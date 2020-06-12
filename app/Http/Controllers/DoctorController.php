@@ -214,4 +214,10 @@ class DoctorController extends Controller
         //return response()->file(public_path("pdf_export/".$name.".pdf"));
     }
 
+    public function delNoitce($id){
+        $note = Notification::findOrFail($id);
+        $note->delete();
+        return redirect()->route('doctor.home')->with('message','Đã xóa 1 thông báo');
+    }
+
 }

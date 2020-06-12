@@ -23,7 +23,7 @@
           <select id="dvt" class="form-control" name="dvt">
             <option  value="">Chọn loại thiết bị</option>
           @foreach($dvts as $dvt)
-            <option value="{{$dvt->id}}">{{$dvt->dv_type_name}}</option>
+            <option value="{{$dvt->dv_type_id}}">{{$dvt->dv_type_name}}</option>
           @endforeach
         </select></div>
         </td>

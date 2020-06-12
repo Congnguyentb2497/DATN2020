@@ -120,6 +120,7 @@ Route::group(['prefix'=>'ktv'],function(){
 		Route::post('/transformer/device/{id}','DoctorController@postMoveDev')->name('doctor.postMoveDev');
 		Route::get('add/device','DoctorController@addDevice')->name('doctor.addDevice');
 		Route::get('print/device/{id}/{user_id}','DoctorController@print_device')->name('doctor.print.device');
+		Route::get('del/notice/{id}','DoctorController@delNoitce')->name('doctor.delNoitce');
 	});
 
 
