@@ -48,8 +48,8 @@
 				<td width="20%">
 					<div style="margin-left: 5px;"> <button class="btn btn-primary">Tìm kiếm </button></div>
 				</td>
-				<td width="10%">
-					<div>Tổng: <b>{{ count($devices) }}</b> </div>
+				<td width="10%" style="text-align: left;">
+					Tổng: <b>{{ count($devices) }}</b>
 				</td>
 			</tr>
 			<tr><td colspan="6"><br></td></tr>
