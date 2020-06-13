@@ -64,6 +64,7 @@
           </td>
           
         </tr>
+        <tr><td colspan="4"><br></td></tr>
         <tr>
           <td width="25%"> 
             <input style="width: 300px;" type="text" class="form-control" placeholder="Nhập Model thiết bị" name="model" value="{{request()->model}}">
@@ -71,7 +72,9 @@
           <td>
             <input style="width: 300px;" type="text" class="form-control" placeholder="Nhập Serial thiết bị" name="serial" value="{{request()->serial}}">
           </td>
-          <td colspan="2"></td>
+          <td colspan="2">
+            <input style="width: 300px;" type="text" class="form-control" placeholder="Nhập Serial thiết bị" name="import_id" value="{{request()->import_id}}">
+          </td>
         </tr>
       </table>  
     </form>

@@ -253,7 +253,7 @@ label {
       <tr>
        <td></td>
         <td colspan="3">
-          <div style="margin-left: 100px;" class="rgt1">
+          <div style="margin-left: 50px;" class="rgt1">
               <a class="rgt" style="text-decoration: none;font-weight: bold;font-size: 20px;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id]) }}">Lịch sử bảo dưỡng</a>
           </div>
           <div>
