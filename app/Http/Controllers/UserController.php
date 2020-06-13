@@ -828,6 +828,7 @@ public function delAcc($id){
     return redirect()->route('accessory.show')->with('Đã xóa thành công một vật tư');
 
 }
+
 //xem hồ sơ thiết bị
 public function fileDevice($id){
     $device = Device::find($id);
@@ -847,11 +848,17 @@ public function showmaintain(Request $request){
     if($request->dv_name){
         $devices = $devices->where('dv_name','like','%'.$request->dv_name.'%');
     }
+    if($request->model){
+        $devices = $devices->where('dv_model','like','%'.$request->model.'%');
+    }
+    if($request->serial){
+        $devices = $devices->where('dv_serial','like','%'.$request->serial.'%');
+    }
     if($request->import_id){
         $devices = $devices->where('import_id','like','%'.$request->import_id.'%');
     }
     if($request->dvt_id){
-        $devices = $devices->where('dv_type_id','=',$request->dv_name);
+        $devices = $devices->where('dv_type_id','=',$request->dvt_id);
     }if($request->provider){
         $devices = $devices->where('provider_id','=',$request->provider);
     }

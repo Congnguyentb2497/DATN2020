@@ -36,7 +36,7 @@
             <input class="form-control" style="width: 90%" type="text" name="dv_name" placeholder="nhập tên thiết bị">  
           </td>
           <td width="25%">
-            <select class="form-control" id="searchDvt" name="dvt_id" style="background-color: #D8D8D8;width: 90%">
+            <select class="form-control" id="searchDvt" value="{{ request()->dvt_id}}" name="dvt_id" style="background-color: #D8D8D8;width: 90%">
               <option value="">Loại thiết bị</option>
               @if(isset($dvts))
               @foreach($dvts as $rows)

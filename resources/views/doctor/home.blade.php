@@ -42,9 +42,11 @@
 
   }
 </style>
-<h2>Đang có <span style="color: red">{{$notices->total()}}</span> thông báo</h2>
+<div style="margin-left: 40px;font-size: 17px;font-weight: bold;">Chào mừng đến với hệ thống quản lý thiết bị tại khoa phòng</div>
+<div style="margin-left: 40px;font-size: 17px;font-weight: bold;">Bạn đang có <span style="color: red">{{$notices->total()}}</span> thông báo</div>
 <div class="container2">
   <br>
+  @if($notices->total() != 0)
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #00BD9C;">
       <tr style="font-size: 20px;">
@@ -69,9 +71,10 @@
         </td>
       </tr>
       @endforeach
-      @endif
+      
     </tbody>
   </table>
+  @endif
   <div class="page-nav text-right">
     <nav aria-label="Page navigation">
       {{$notices->links()}}

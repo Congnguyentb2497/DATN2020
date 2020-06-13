@@ -134,7 +134,7 @@
         <th>Đơn vị tính</th>
         <th>Đã sử dụng</th>
         <th>Ngày nhập kho</th>
-        <th width="15%">Điều khiển</th>
+        <th width="10%">Điều khiển</th>
       </tr>
     </thead>
     <tbody>
@@ -150,10 +150,8 @@
         <td style="text-align: center;">
            <a class="ban_giao" data-deviceid="{{$acc->id}}"><i class="fa fa-share " title="Bàn giao cho thiết bị" style="font-size: 20px" aria-hidden="true"></i></a>&nbsp;&nbsp;
           <a href="{{route('accessory.getEdit',['id'=>$acc->id])}}"><i class="fa fa-pencil-square-o " title="Sửa" style="font-size: 20px" aria-hidden="true"></i></a>&nbsp;&nbsp;
-          <a class="add" data-deviceid="{{$acc->id}}"><i class="fa fa-plus " style="font-size: 20px;cursor: pointer;" title="Thêm số lượng" aria-hidden="true"></i></a>&nbsp;&nbsp;
-          <a href="{{ route('acc.markDevice',['id'=>$acc->id])}}">
-            <i class="fa fa-arrows" aria-hidden="true" title="Thiết bị sử dụng" style="font-size: 20px;"></i>
-          </a>
+          <a class="add" data-deviceid="{{$acc->id}}"><i class="fa fa-plus " style="font-size: 20px;cursor: pointer;" title="Thêm số lượng" aria-hidden="true"></i></a>
+          
         </td>
       </tr>
       @endforeach
