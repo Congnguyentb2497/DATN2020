@@ -253,7 +253,9 @@ label {
       <tr>
        <td></td>
         <td colspan="3">
-          <div class="rgt1" style="margin-left: 30px;float: left; background-color: green;text-align: center;" ><a class="rgt" style="text-decoration: none;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id])}}"> Lịch sử bảo dưỡng</a></div>
+          <div style="float: left;" class="rgt1">
+              <a class="rgt" style="text-decoration: none;font-weight: bold;font-size: 20px;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id]) }}">Lịch sử bảo dưỡng</a>
+          </div>
           <div>
           @if($dev->status == 2)
           <div style="float: left;margin-left: 10px;" class="rgt1"><a class="rgt" id="2" onclick="openForm()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Lịch sử sửa chữa</a></div>
@@ -285,6 +287,7 @@ label {
         <th>Tên vật tư</th>
         <th>Số lượng</th>
         <th>Loại vật tư</th>
+        <th>Ghi chú</th>
       </tr>
      </thead>
      <tbody>
@@ -293,7 +296,10 @@ label {
        <tr style="font-size: 15px;">
         <td>{{\App\Accessory::where(['id' =>$acc->acc_id])->pluck('acc_name')->first() }}</td>
         <td>{{ $acc->amount}} </td>
-        <td> {{ $acc->type}}</td>
+        <td>
+            {{\App\Accessory::where(['id' =>$acc->acc_id])->pluck('type')->first() }}
+        </td>
+        <td>{{\App\Accessory::where(['id' =>$acc->acc_id])->pluck('note')->first() }}</td>
       </tr>
       @endforeach
       @endif

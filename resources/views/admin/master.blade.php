@@ -140,12 +140,12 @@ body {
 &nbsp;&nbsp;Thêm khoa phòng</a>
   </div>
 
-  <button class="dropdown-btn"><i class="fa fa-hospital-o" style="font-size:20px"></i>&nbsp;&nbsp;Quản Lý Thiết Bị
+  <button class="dropdown-btn"><i class="fa fa-medkit" aria-hidden="true" style="font-size: 20px;"></i>&nbsp;&nbsp;Quản Lý Thiết Bị
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="{{route('device.viewdv')}}"><i class="fa fa-table" aria-hidden="true"></i>&nbsp;&nbsp;Hồ sơ thiết bị</a>
-    <a href="{{route('device.getAdd')}}"><i class="fa fa-eyedropper" aria-hidden="true"></i>
+    <a href="{{route('device.viewdv')}}"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;&nbsp;Hồ sơ thiết bị</a>
+    <a href="{{route('device.getAdd')}}"><i class="fa fa-plus-square" aria-hidden="true"></i></i>
 &nbsp;&nbsp;Thêm thiết bị</a>
   </div>
 </div>

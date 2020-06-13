@@ -852,7 +852,7 @@ public function showmaintain(Request $request){
     }if($request->provider){
         $devices = $devices->where('provider_id','=',$request->provider);
     }
-    $devices = $devices->paginate(10);
+    $devices = $devices->paginate(100);
     return view('ktv.device.maintain')->with(['devices'=>$devices,'dvts'=>$dvt,'providers'=>$provider]);
 }
     public function createSchedule(){
