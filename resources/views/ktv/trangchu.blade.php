@@ -42,7 +42,7 @@
 <h2>Bạn có <span style="font-size: 35px; color: red;">{{$notices->total()}}</span> thông báo</h2>
 <div class="container2">
   <br>
-  @if(isset($notices))
+  @if($notices->total() != 0)
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #00BD9C;">
       <tr style="font-size: 18px;">
