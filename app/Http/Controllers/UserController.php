@@ -207,10 +207,10 @@ public function showDevice0(Request $request){
     }
     if($request->model)
     {
-        $devices = $devices->where('dv_model', 'like', '%'.$request->model.'%');
+        $devices = $devices->where('dv_model', '=', $request->model);
     }if($request->serial)
     {
-        $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
+        $devices = $devices->where('dv_serial', '=', $request->serial);
     }
     if($request->import_id){
         $devices = Device::where('import_id','like','%'. $request->import_id. '%')->orderBy('id','desc');
@@ -237,12 +237,12 @@ public function showDevice1(Request $request){
     {
         $devices = $devices->where('dv_name', 'like', '%'.$request->dv_name.'%');
     }
-    if($request->model)
+     if($request->model)
     {
-        $devices = $devices->where('dv_model', 'like', '%'.$request->model.'%');
+        $devices = $devices->where('dv_model', '=', $request->model);
     }if($request->serial)
     {
-        $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
+        $devices = $devices->where('dv_serial', '=', $request->serial);
     }
     if($request->import_id){
         $devices = Device::where('import_id','like','%'. $request->import_id. '%')->orderBy('id','desc');
@@ -271,10 +271,10 @@ public function showDevice2(Request $request){
     }
     if($request->model)
     {
-        $devices = $devices->where('dv_model', 'like', '%'.$request->model.'%');
+        $devices = $devices->where('dv_model', '=', $request->model);
     }if($request->serial)
     {
-        $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
+        $devices = $devices->where('dv_serial', '=', $request->serial);
     }
     if($request->import_id){
         $devices = Device::where('import_id','like','%'. $request->import_id. '%')->orderBy('id','desc');
@@ -300,12 +300,12 @@ public function showDevice3(Request $request) {
 
         $device = $device->where('dv_name','like','%'.$request->dv_name.'%');
     }
-    if($request->model)
+     if($request->model)
     {
-        $devices = $devices->where('dv_model', 'like', '%'.$request->model.'%');
+        $devices = $devices->where('dv_model', '=', $request->model);
     }if($request->serial)
     {
-        $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
+        $devices = $devices->where('dv_serial', '=', $request->serial);
     }
     if($request->provider_id)
     {
@@ -415,12 +415,12 @@ public function showDevice4(Request $request) {
     {
         $devices = $devices->where('dv_name', 'like', '%'.$request->dv_name.'%');
     }
-    if($request->model)
+     if($request->model)
     {
-        $devices = $devices->where('dv_model', 'like', '%'.$request->model.'%');
+        $devices = $devices->where('dv_model', '=', $request->model);
     }if($request->serial)
     {
-        $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
+        $devices = $devices->where('dv_serial', '=', $request->serial);
     }
     if($request->import_id){
         $devices = Device::where('import_id','like','%'. $request->import_id. '%')->orderBy('id','desc');
@@ -948,10 +948,10 @@ public function showmaintain(Request $request){
             $dv = Device::where('dv_id','like','%'. $request->dvId. '%')->orderBy('id','desc');
         }
         if($request->model){
-            $dv = Device::where('dv_model','like','%'. $request->model. '%')->orderBy('id','desc');
+            $dv = Device::where('dv_model','=', $request->model)->orderBy('id','desc');
         }
         if($request->serial){
-            $dv = Device::where('dv_serial','like','%'. $request->serial. '%')->orderBy('id','desc');
+            $dv = Device::where('dv_serial','=',$request->serial)->orderBy('id','desc');
         }
         if($request->import_id){
             $dv = Device::where('import_id','like','%'. $request->import_id. '%')->orderBy('id','desc');
