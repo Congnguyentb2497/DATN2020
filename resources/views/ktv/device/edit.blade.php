@@ -258,7 +258,7 @@ label {
           </div>
           <div>
           
-          <div style="float: right;margin-left: 10px;" class="rgt1"><a class="rgt" id="2" onclick="openForm()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Lịch sử sửa chữa</a></div>
+          <div style="float: right;margin-left: 10px;" class="rgt1"><a class="rgt" id="ls2" onclick="openForm()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Lịch sử sửa chữa</a></div>
           
           <div style="float: right;margin-left: 10px;" class="rgt1"><a class="rgt"  onclick="openForm()" data-deviceid="{{ $dev->status}}" style="color: black;; text-decoration: none;font-weight: bold;">Xem vật tư kèm theo</a></div>
           
@@ -345,12 +345,13 @@ label {
         document.getElementById("myForm1").style.display = "none";
   }
 function openForm(){
-        var status = document.getElementsByClassName("rgt")[1].id;
+        var status = document.getElementById('ls2');
           if(status == "2"){
                     document.getElementById("myForm1").style.display = "block";
           }
           else
-          {        document.getElementById("myForm").style.display = "block";
+          {       
+                   document.getElementById("myForm").style.display = "block";
           }
 }
 $(document).ready(function(){
