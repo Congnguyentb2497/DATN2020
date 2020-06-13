@@ -116,7 +116,6 @@ select[type=text]{
           <div>
           <input style="width: 100px; margin-left: 50px;" type="submit" value="Lưu" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <button style="width: 100px;" class="btn btn-danger" type="reset">Tạo lại</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button  style="width: 100px;" onclick="return back()" class="btn"> Hủy</button>
           </div>
         </td>
       </tr>

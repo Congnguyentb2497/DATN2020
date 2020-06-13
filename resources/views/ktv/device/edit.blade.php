@@ -43,7 +43,7 @@ select[type=text]{
   margin-top: 17px;
 }
 .rgt{
-  width: 100px;
+  width: 120px;
   background-color: green;
   color: white;
   margin-left: 10px;
@@ -253,7 +253,7 @@ label {
       <tr>
        <td></td>
         <td colspan="3">
-          <div style="float: left;" class="rgt1">
+          <div style="margin-left: 100px;" class="rgt1">
               <a class="rgt" style="text-decoration: none;font-weight: bold;font-size: 20px;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id]) }}">Lịch sử bảo dưỡng</a>
           </div>
           <div>
@@ -268,8 +268,7 @@ label {
           @if(Auth::user()->rule == 1)
           <div style="float: left; margin-top: 2px;"><input value="Lưu" class="btn" type="submit" ></div>
           @endif
-          <div style="float: left;margin-left: 10px;" class="rgt1"><a  class="rgt_canl" onclick="return back()" >Hủy</a></div>
-          </div>
+
         </td>
       </tr>
     </table> 
