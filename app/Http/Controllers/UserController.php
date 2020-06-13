@@ -849,10 +849,10 @@ public function showmaintain(Request $request){
         $devices = $devices->where('dv_name','like','%'.$request->dv_name.'%');
     }
     if($request->model){
-        $devices = $devices->where('dv_model','like','%'.$request->model.'%');
+        $devices = $devices->where('dv_model','=',$request->model);
     }
     if($request->serial){
-        $devices = $devices->where('dv_serial','like','%'.$request->serial.'%');
+        $devices = $devices->where('dv_serial','=',$request->serial);
     }
     if($request->import_id){
         $devices = $devices->where('import_id','like','%'.$request->import_id.'%');

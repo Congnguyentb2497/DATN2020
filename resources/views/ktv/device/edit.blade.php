@@ -258,7 +258,7 @@ label {
           </div>
           <div>
           
-          <div style="float: right;margin-left: 10px;" class="rgt1"><a class="rgt" id="ls2" onclick="openForm()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Lịch sử sửa chữa</a></div>
+          <div style="float: right;margin-left: 10px;" class="rgt1"><a class="rgt"  onclick="openForm1()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Lịch sử sửa chữa</a></div>
           
           <div style="float: right;margin-left: 10px;" class="rgt1"><a class="rgt"  onclick="openForm()" data-deviceid="{{ $dev->status}}" style="color: black;; text-decoration: none;font-weight: bold;">Xem vật tư kèm theo</a></div>
           
@@ -344,16 +344,15 @@ label {
         document.getElementById("myForm").style.display = "none";
         document.getElementById("myForm1").style.display = "none";
   }
-function openForm(){
-        var status = document.getElementById('ls2');
-          if(status == "2"){
+function openForm1(){
+        
                     document.getElementById("myForm1").style.display = "block";
           }
-          else
+function openForm()
           {       
                    document.getElementById("myForm").style.display = "block";
           }
-}
+
 $(document).ready(function(){
   $('#searchDvt').select2();
 })
