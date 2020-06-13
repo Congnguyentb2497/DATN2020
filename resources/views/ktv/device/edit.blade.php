@@ -157,9 +157,9 @@ label {
   padding: 2px;
   background-color: #81DAF5;
   border: solid 0px;
-    border-radius: 4px;
-    width: 150px;
-    text-align: center;
+  border-radius: 4px;
+  width: 150px;
+  text-align: center;
 }
 </style>
 <div style="font-size: 30px;padding-left: 50px;padding-top: 10px;font-weight: bold; ">Cập nhật thông tin thiết bị</div>
@@ -215,7 +215,7 @@ label {
        <tr>
         <td><label>Ngày nhập kho</label></td>
         <td><input type="date"  name="import_date" value="{{$dev->import_date}}" ></td>
-        <td><label>Mã phiếu nhập</label></td>
+        <td><label style="font-size: 15px;">Dự án thầu</label></td>
         <td><input type="text"  name="import_id" value="{{$dev->import_id}}" ></td>
       </tr>
       <tr>
@@ -227,7 +227,7 @@ label {
       <tr>
         <td><label>Số lưu hành</label></td>
         <td><input type="text"  name="license_number" value="{{$dev->license_number}}" ></td>
-        <td><label>Ngày cấp</label></td>
+        <td><label style="font-size: 14px;">Ngày cấp SLH</label></td>
         <td><input type="date"  name="license_number_date" value="{{$dev->license_number_date}}" ></td>
       </tr>
        <tr>
@@ -237,12 +237,12 @@ label {
         <td><input type="text"  name="department" value="{{\App\Department::where(['id' =>$dev->department_id])->pluck('department_name')->first() }}"></td>
       </tr>
       <tr>
-        <td><label>Khấu hao bđ</label></td>
-        <td><input type="text"  name="khbd" value="{{$dev->khbd}}" ><br>
-          <small>đơn vị khấu hao%</small></td>
+        <td><label>Khấu hao</label></td>
+        <td><input style="width: 80%" type="text"  name="khbd" value="{{$dev->khbd}}" ><span style="margin-left: 5px;">%</span>
+          </td>
         <td><label>Khấu hao năm</label></td>
-        <td><input type="text"  name="khhn" value="{{$dev->khhn}}"><br>
-        <small>đơn vị khấu hao %</small></td>
+        <td><input style="width: 80%" type="text"  name="khhn" value="{{$dev->khhn}}"><span style="margin-left: 5px;">%</span> 
+        </td>
       </tr>
       <tr>
         <td><label>Ghi chú</label></td>
@@ -254,6 +254,7 @@ label {
        <td></td>
        <td></td>
         <td colspan="2">
+          <div style="width: 200px;padding: 5px;float: left; background-color: green;text-align: center; margin-left: 40px;border-radius: 5px;" ><a style="text-decoration: none;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id])}}"> Lịch sử bảo dưỡng</a></div>
           <div>
             @if($dev->status == 2)
             <div style="float: left;margin-left: 50px;" class="rgt1"><a class="rgt" id="2" onclick="openForm()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Xem lịch sử thiết bị</a></div>

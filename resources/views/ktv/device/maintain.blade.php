@@ -32,10 +32,10 @@
       @csrf
       <table width="100%" border="0">
         <tr>
-          <td>
+          <td width="25%">
             <input class="form-control" style="width: 90%" type="text" name="dv_name" placeholder="nhập tên thiết bị">  
           </td>
-          <td>
+          <td width="25%">
             <select class="form-control" id="searchDvt" name="dvt_id" style="background-color: #D8D8D8;width: 90%">
               <option value="">Loại thiết bị</option>
               @if(isset($dvts))
@@ -47,7 +47,7 @@
               @endif
             </select>
           </td>
-          <td>
+          <td width="25%">
           <select class="form-control" name="provider" style="background-color: #D8D8D8;width: 90%">
               <option value="">Nhà cung cấp</option>
               @if(isset($providers))
@@ -63,6 +63,15 @@
             <button class="btnsearch" type="submit" style="width: 100px; margin-left: 5px;padding: 4px;"><i class="fa fa-search">&nbsp;Tìm kiếm</i></button>
           </td>
           
+        </tr>
+        <tr>
+          <td width="25%"> 
+            <input style="width: 300px;" type="text" class="form-control" placeholder="Nhập Model thiết bị" name="model" value="{{request()->model}}">
+          </td>
+          <td>
+            <input style="width: 300px;" type="text" class="form-control" placeholder="Nhập Serial thiết bị" name="serial" value="{{request()->serial}}">
+          </td>
+          <td colspan="2"></td>
         </tr>
       </table>  
     </form>

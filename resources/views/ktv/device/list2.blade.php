@@ -124,6 +124,15 @@
           </td>
           <td width="7%" style="text-align: left;font-size: 18px;">Tất cả:{{$devices->total()}}</td>
         </tr>
+        <tr>
+          <td width="25%"> 
+            <input style="width: 90%;" type="text" class="form-control" placeholder="Nhập Model thiết bị" name="model" value="{{request()->model}}">
+          </td>
+          <td>
+            <input style="width: 90%;" type="text" class="form-control" placeholder="Nhập Serial thiết bị" name="serial" value="{{request()->serial}}">
+          </td>
+          <td colspan="3"></td>
+        </tr>
       </table>  
     </form>
   </div>

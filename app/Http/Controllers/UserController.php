@@ -205,6 +205,13 @@ public function showDevice0(Request $request){
     {
         $devices = $devices->where('dv_name', 'like', '%'.$request->dv_name.'%');
     }
+    if($request->model)
+    {
+        $devices = $devices->where('dv_model', 'like', '%'.$request->model.'%');
+    }if($request->serial)
+    {
+        $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
+    }
     if($request->provider_id)
     {
         $devices = $devices->where('provider_id', '=', $request->provider_id);
@@ -226,6 +233,13 @@ public function showDevice1(Request $request){
     if($request->dv_name)
     {
         $devices = $devices->where('dv_name', 'like', '%'.$request->dv_name.'%');
+    }
+    if($request->model)
+    {
+        $devices = $devices->where('dv_model', 'like', '%'.$request->model.'%');
+    }if($request->serial)
+    {
+        $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
     }
     if($request->provider_id)
     {
@@ -249,6 +263,13 @@ public function showDevice2(Request $request){
     {
         $devices = $devices->where('dv_name', 'like', '%'.$request->dv_name.'%');
     }
+    if($request->model)
+    {
+        $devices = $devices->where('dv_model', 'like', '%'.$request->model.'%');
+    }if($request->serial)
+    {
+        $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
+    }
     if($request->provider_id)
     {
         $devices = $devices->where('provider_id', '=', $request->provider_id);
@@ -269,6 +290,13 @@ public function showDevice3(Request $request) {
     {
 
         $device = $device->where('dv_name','like','%'.$request->dv_name.'%');
+    }
+    if($request->model)
+    {
+        $devices = $devices->where('dv_model', 'like', '%'.$request->model.'%');
+    }if($request->serial)
+    {
+        $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
     }
     if($request->provider_id)
     {
@@ -377,6 +405,13 @@ public function showDevice4(Request $request) {
     if($request->dv_name)
     {
         $devices = $devices->where('dv_name', 'like', '%'.$request->dv_name.'%');
+    }
+    if($request->model)
+    {
+        $devices = $devices->where('dv_model', 'like', '%'.$request->model.'%');
+    }if($request->serial)
+    {
+        $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
     }
     if($request->provider_id)
     {

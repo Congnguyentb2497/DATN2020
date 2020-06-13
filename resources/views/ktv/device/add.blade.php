@@ -149,7 +149,7 @@ label {
        <tr>
         <td><label>Ngày nhập kho</label></td>
         <td><input type="date" id="import_date" name="import_date" value="{{ date('Y-m-d') }}" ></td>
-        <td><label>Mã phiếu nhập</label></td>
+        <td><label style="font-size: 15px;">Dự án thầu</label></td>
         <td><input type="text"  name="import_id" ></td>
       </tr>
       <tr>
@@ -161,7 +161,7 @@ label {
       <tr>
         <td><label>Số lưu hành</label></td>
         <td><input type="text"  name="license_number" ></td>
-        <td><label>Ngày cấp</label></td>
+        <td><label style="font-size: 14px;">Ngày cấp SLH</label></td>
         <td><input type="date"  name="license_number_date" ></td>
       </tr>
        <tr>
@@ -182,12 +182,12 @@ label {
         <td><input type="text" id="dvId"  name="dv_id" required=""></td>
       </tr>
       <tr>
-        <td><label>Khấu hao bđ</label></td>
-        <td><input type="text"  name="khbd" ><br>
-          <small>đơn vị khấu hao %</small></td>
-        <td><label>Khấu hao năm</label></td>
-        <td><input type="text"  name="khhn" ><br>
-        <small>đơn vị khấu hao %</small></td>
+        <td><label>Khấu hao</label></td>
+        <td><input style="width: 80%" type="text"  name="khbd" ><label class="form-control">%</label>
+          </td>
+        <td><label style="font-size: 15px;">Khấu hao năm</label></td>
+        <td><input style="width: 80%" type="text"  name="khhn" ><label class="form-control">%</label>
+        </td>
       </tr>
       <tr>
         <td><label>Ghi chú</label></td>
