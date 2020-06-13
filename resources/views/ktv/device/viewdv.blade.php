@@ -49,7 +49,7 @@
 					<div style="margin-left: 5px;"> <button class="btn btn-primary">Tìm kiếm </button></div>
 				</td>
 				<td width="10%">
-					<div style="margin-left: 5px;">Tổng: {{ count($devices) }}</div>
+					<div>Tổng: <b>{{ count($devices) }}</b> </div>
 				</td>
 			</tr>
 			<tr><td colspan="6"><br></td></tr>
@@ -68,13 +68,14 @@
         	</tr>
 		</table>
 	</form>
-	</div><br><br>
+	</div><br>
 	<div>
 		<table class="table table-condensed table-bordered table-hover">
 			<thead style="background-color: #D8D8D8">
-				<th width="20%">Mã thiết bị</th>
-				<th width="30%">Tên thiết bị</th>
+				<th width="15%">Mã thiết bị</th>
+				<th width="25%">Tên thiết bị</th>
 				<th width="10%">Model</th>
+				<th width="10%">Serial</th>
 				<th width="20%">Nhà cung cấp</th>
 				<th width="5%">Năm SX</th>
 				<th width="5%">Chi tiết</th>
@@ -86,6 +87,7 @@
 					<td>{{ $r->dv_id }}</td>
 					<td>{{ $r->dv_name }}</td>
 					<td>{{ $r->dv_model }}</td>
+					<td>{{ $r->dv_serial }}</td>
 					<td>{{ $r->provider->provider_name }}</td>
 					<td>{{ $r->produce_date }}</td>
 					<td style="text-align: center;">
