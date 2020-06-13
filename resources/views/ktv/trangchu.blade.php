@@ -24,10 +24,7 @@
     margin: 40px;
     margin-top: 40px;
   }
-  h2, h3{
-    margin-left: 40px;
-    font-weight: bold;
-  }
+
   label {
     font-weight: bold;
     font-size: 15px;
@@ -39,8 +36,17 @@
 
   }
 </style>
-<h2>Chào mừng đến với hệ thống quản lý trang thiết bị y tế BME-HUST</h2>
-<h3>Bạn đang có <span style="font-size: 35px; color: red;">{{$notices->total()}}</span> thông báo</h2>
+<table style="margin-left: 40px;">
+  <tr>
+    <td>
+      <div style="font-size: 15px;font-weight: bold;">Chào mừng đến với hệ thống quản lý trang thiết bị y tế BME-HUST</div>
+    </td>
+    <td>
+      <div style="margin-left: 50px;">Bạn đang có <span style="font-size: 35px; color: red;">{{$notices->total()}}</span> thông báo</div>
+    </td>
+  </tr>
+</table>
+
 <div class="container2">
   <br>
   @if($notices->total() != 0)

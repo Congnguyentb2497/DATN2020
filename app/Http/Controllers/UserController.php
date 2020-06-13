@@ -847,6 +847,9 @@ public function showmaintain(Request $request){
     if($request->dv_name){
         $devices = $devices->where('dv_name','like','%'.$request->dv_name.'%');
     }
+    if($request->import_id){
+        $devices = $devices->where('import_id','like','%'.$request->import_id.'%');
+    }
     if($request->dvt_id){
         $devices = $devices->where('dv_type_id','=',$request->dv_name);
     }if($request->provider){
