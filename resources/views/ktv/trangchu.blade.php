@@ -24,7 +24,7 @@
     margin: 40px;
     margin-top: 40px;
   }
-  h2{
+  h2, h3{
     margin-left: 40px;
     font-weight: bold;
   }

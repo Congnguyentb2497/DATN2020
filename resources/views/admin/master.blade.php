@@ -119,7 +119,7 @@ body {
     <table style="background-color: #04B4AE; width: 100%;height: 40px;">
       <tr>
         <td width="10%" style="text-align: center;font-size: 22px;"><i class="fa fa-fw fa-home"></i><a href="{{route('get.admin')}}"  class="admin">ADMIN</a></td>
-        <td style="height: 40;"><a href="{{route('get.logout')}}"><button class="logout" ><i class="fa fa-fw fa-user"></i>&nbsp;&nbsp;Logout</button></a></td>
+        <td ><a href="{{route('get.logout')}}"><button class="logout" ><i class="fa fa-fw fa-user"></i>Logout</button></a></td>
       </tr>
     </table></div>
 <div>

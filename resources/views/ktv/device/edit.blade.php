@@ -46,7 +46,7 @@ select[type=text]{
   width: 100px;
   background-color: green;
   color: white;
-  margin-left: 7px;
+  margin-left: 10px;
   margin-top: 10px;
   padding: 10px;
   border: none;
@@ -314,7 +314,6 @@ label {
         <th>Ngày báo hỏng</th>
         <th>Ngày sửa chữa</th>
         <th>Đơn vị sửa chữa</th>
-        <th>Ghi chú</th>
       </tr>
      </thead>
      <tbody>
@@ -324,7 +323,6 @@ label {
         <td>{{$his->schedule_date}}</td>
         <td>{{$his->proceed_date}} </td>
         <td> {{$his->repair_responsible}}</td>
-        <td>{{$his->note}}</td>
       </tr>
       @endforeach
       @endif
