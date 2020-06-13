@@ -238,10 +238,10 @@ label {
       </tr>
       <tr>
         <td><label>Khấu hao</label></td>
-        <td><input style="width: 80%" type="text"  name="khbd" value="{{$dev->khbd}}" ><span style="margin-left: 5px;">%</span>
+        <td><input style="width: 90%" type="text"  name="khbd" value="{{$dev->khbd}}" ><span style="margin-left: 5px;">%</span>
           </td>
         <td><label>Khấu hao năm</label></td>
-        <td><input style="width: 80%" type="text"  name="khhn" value="{{$dev->khhn}}"><span style="margin-left: 5px;">%</span> 
+        <td><input style="width: 90%" type="text"  name="khhn" value="{{$dev->khhn}}"><span style="margin-left: 5px;">%</span> 
         </td>
       </tr>
       <tr>
@@ -254,12 +254,12 @@ label {
        <td></td>
        <td></td>
         <td colspan="2">
-          <div style="width: 200px;padding: 5px;float: left; background-color: green;text-align: center; margin-left: 40px;border-radius: 5px;" ><a style="text-decoration: none;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id])}}"> Lịch sử bảo dưỡng</a></div>
+          <div style="width: 200px;padding: 5px;float: left; background-color: green;text-align: center; border-radius: 5px;" ><a style="text-decoration: none;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id])}}"> Lịch sử bảo dưỡng</a></div>
           <div>
             @if($dev->status == 2)
-            <div style="float: left;margin-left: 50px;" class="rgt1"><a class="rgt" id="2" onclick="openForm()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Xem lịch sử thiết bị</a></div>
+            <div style="float: left;margin-left: 10px;" class="rgt1"><a class="rgt" id="2" onclick="openForm()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Xem lịch sử thiết bị</a></div>
             @else
-          <div style="float: left;margin-left: 50px;" class="rgt1"><a class="rgt"  onclick="openForm()" data-deviceid="{{ $dev->status}}" style="color: black;; text-decoration: none;font-weight: bold;">Xem vật tư kèm theo</a></div>
+          <div style="float: left;margin-left: 10px;" class="rgt1"><a class="rgt"  onclick="openForm()" data-deviceid="{{ $dev->status}}" style="color: black;; text-decoration: none;font-weight: bold;">Xem vật tư kèm theo</a></div>
           @endif
           <div style="float: left;" class="rgt1">
               <a class="rgt" style="text-decoration: none;font-weight: bold;font-size: 20px;color: black;" href="{{ route('device.view',['id'=>$dev->id]) }}">Hồ sơ TB</a>

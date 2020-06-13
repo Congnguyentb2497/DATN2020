@@ -183,10 +183,10 @@ label {
       </tr>
       <tr>
         <td><label>Khấu hao</label></td>
-        <td><input style="width: 80%" type="text"  name="khbd" ><label class="form-control">%</label>
+        <td><input style="width: 90%" type="text"  name="khbd" ><span style="margin-left: 5px;">%</span>
           </td>
         <td><label style="font-size: 15px;">Khấu hao năm</label></td>
-        <td><input style="width: 80%" type="text"  name="khhn" ><label class="form-control">%</label>
+        <td><input style="width: 90%" type="text"  name="khhn" ><span style="margin-left: 5px;">%</span>
         </td>
       </tr>
       <tr>

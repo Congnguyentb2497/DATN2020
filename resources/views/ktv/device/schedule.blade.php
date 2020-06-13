@@ -33,11 +33,11 @@
  			<option disabled="" value="">Lựa chọn thiết bị cần tạo lịch</option>
  			@if(isset($devices))
  			@foreach($devices as $row)
- 			<option value="{{$row->dv_id}}">{{ $row->dv_id }}--{{ $row->dv_name }}--{{ \App\Device_type::where(['dv_type_id'=>$row->dv_type_id])->pluck('dv_type_name')->first() }}</option>
+ 			<option value="{{$row->dv_id}}">{{ $row->dv_model }}--{{ $row->dv_serial }}--{{ $row->dv_name }}</option>
  			@endforeach
  			@endif
  		</select><br>
-    <small style="margin-left: 5px;">Nhập mã thiết bị, tên thiết bị, loại thiết bị</small>
+    <small style="margin-left: 5px;">Nhập model ,serial thiết bị, tên thiết bị</small>
  	</div>
   <br>
   	<div>

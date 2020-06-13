@@ -109,7 +109,7 @@
             </select>
           </td>
           <td width="25%">
-            <select class="form-control" name="dv_type_id" style="background-color: #D8D8D8;">
+            <select class="form-control" name="dv_type_id" style="background-color: #D8D8D8;width: 90%">
               <option value="">Tất cả loại thiết bị</option>
               @if(isset($dv_types))
               @foreach($dv_types as $rows)
@@ -123,6 +123,9 @@
             <button class="btnsearch" type="submit" style="width: 100px;padding: 4px;margin-left: 10px;"><i class="fa fa-search"></i>&nbsp;Tìm kiếm</button>
           </td>
           <td width="7%" style="text-align: left;font-size: 18px;">Tất cả:{{$devices->total()}}</td>
+        </tr>
+        <tr>
+          <td colspan="5"><br><br></td>
         </tr>
         <tr>
           <td width="25%"> 

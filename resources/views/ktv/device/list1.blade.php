@@ -34,7 +34,7 @@
       <table width="100%" border="0">
         <tr>
           <td width="25%">
-            <input style="width: 300px;" type="text" class="form-control" placeholder="Tên thiết bị" name="dv_name" value="{{request()->dv_name}}">
+            <input style="width: 90%;" type="text" class="form-control" placeholder="Tên thiết bị" name="dv_name" value="{{request()->dv_name}}">
           </td>
           <td width="25%">
             <select class="form-control" name="dvt_id" style="background-color: #D8D8D8;width: 90%">
@@ -49,7 +49,7 @@
             </select>
           </td>
           <td width="25%">
-            <select class="form-control" name="department_id" style="background-color: #D8D8D8;">
+            <select class="form-control" name="department_id" style="background-color: #D8D8D8; width: 90%"  >
               <option value="">Mọi khoa</option>
               @if(isset($depts))
               @foreach($depts as $row)
@@ -66,11 +66,14 @@
           <td style="text-align: left;font-size: 18px;">Tất cả: {{$devices->total()}}</td>
         </tr>
         <tr>
+          <td colspan="5"><br><br></td>
+        </tr>
+        <tr>
           <td width="25%"> 
-            <input style="width: 300px;" type="text" class="form-control" placeholder="Nhập Model thiết bị" name="model" value="{{request()->model}}">
+            <input style="width: 90%;" type="text" class="form-control" placeholder="Nhập Model thiết bị" name="model" value="{{request()->model}}">
           </td>
           <td>
-            <input style="width: 300px;" type="text" class="form-control" placeholder="Nhập Serial thiết bị" name="serial" value="{{request()->serial}}">
+            <input style="width: 90%;" type="text" class="form-control" placeholder="Nhập Serial thiết bị" name="serial" value="{{request()->serial}}">
           </td>
           <td colspan="3"></td>
         </tr>

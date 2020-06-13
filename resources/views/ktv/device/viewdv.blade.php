@@ -52,6 +52,20 @@
 					<div style="margin-left: 5px;">Tổng: {{ count($devices) }}</div>
 				</td>
 			</tr>
+			<tr><td colspan="6"><br></td></tr>
+			<tr>
+          		<td width="25%"> 
+           		 <div style="margin-left: 5px;">
+            	<input  type="text" class="form-control" placeholder="Nhập Model thiết bị" name="model" value="{{request()->model}}">
+            	</div>
+         		 </td>
+          			<td>
+            		<div style="margin-left: 5px;">
+            	<input  type="text" class="form-control" placeholder="Nhập Serial thiết bị" name="serial" value="{{request()->serial}}">
+            		</div>
+          		</td>
+          		<td colspan="4"></td>
+        	</tr>
 		</table>
 	</form>
 	</div><br><br>
