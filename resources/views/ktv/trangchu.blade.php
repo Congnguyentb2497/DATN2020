@@ -39,7 +39,8 @@
 
   }
 </style>
-<h2>Bạn có <span style="font-size: 35px; color: red;">{{$notices->total()}}</span> thông báo</h2>
+<h2>Chào mừng đến với hệ thống quản lý trang thiết bị y tế BME-HUST</h2>
+<h3>Bạn đang có <span style="font-size: 35px; color: red;">{{$notices->total()}}</span> thông báo</h2>
 <div class="container2">
   <br>
   @if($notices->total() != 0)

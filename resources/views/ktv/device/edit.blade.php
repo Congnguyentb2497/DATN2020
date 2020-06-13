@@ -253,9 +253,9 @@ label {
       <tr>
        <td></td>
         <td colspan="3">
-          <div class="rgt1" style="width: 200px;margin-left: 30px; padding: 5px;float: left; background-color: green;text-align: center; border-radius: 5px;" ><a class="rgt" style="text-decoration: none;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id])}}"> Lịch sử bảo dưỡng</a></div>
+          <div class="rgt1" style="margin-left: 30px;float: left; background-color: green;text-align: center;" ><a class="rgt" style="text-decoration: none;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id])}}"> Lịch sử bảo dưỡng</a></div>
           <div>
-          @if($dev->status = 2)
+          @if($dev->status == 2)
           <div style="float: left;margin-left: 10px;" class="rgt1"><a class="rgt" id="2" onclick="openForm()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Lịch sử sửa chữa</a></div>
           @else
           <div style="float: left;margin-left: 10px;" class="rgt1"><a class="rgt"  onclick="openForm()" data-deviceid="{{ $dev->status}}" style="color: black;; text-decoration: none;font-weight: bold;">Xem vật tư kèm theo</a></div>
