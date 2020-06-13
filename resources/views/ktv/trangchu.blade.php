@@ -42,10 +42,11 @@
 <h2>Bạn có <span style="font-size: 35px; color: red;">{{$notices->total()}}</span> thông báo</h2>
 <div class="container2">
   <br>
+  @if(isset($notices))
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #00BD9C;">
       <tr style="font-size: 18px;">
-        <th width="10%">ID</th>
+        <th width="10%">Mã TB</th>
         <th width="15%">Thời gian</th>
         <th>Nội dung thông báo</th>
         <th>Tên thiết bị</th>
@@ -54,7 +55,7 @@
       </tr>
     </thead>
     <tbody>
-        @if(isset($notices))
+        
         @foreach($notices as $notice)
       <tr style="font-size: 15px;">
         <td>{{$notice->dv_id}}</td>
@@ -68,9 +69,10 @@
         </td>
       </tr>
       @endforeach
-      @endif
+     
     </tbody>
   </table>
+   @endif
   <div class="page-nav text-right">
     <nav aria-label="Page navigation">
       {{$notices->links()}}

@@ -31,16 +31,24 @@
        <td colspan="3"><label class="form-control" style="background-color: #D8D8D8; width: 100%;font-size: 20px;height: 90%">{{$device->provider->provider_name}}</label></td>
      </tr>
      <tr>
-      <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Loại thiết bị</label></td>
+       <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Loại thiết bị</label></td>
         <td ><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 20px;height: 90%">{{$device->dv_type->dv_type_name}}</label></td>
-        <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Ngày nhập kho</label></td>
+        <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Ngày nhập</label></td>
         <td 20%><label class="form-control" style="background-color: #D8D8D8; width: 95%;font-size: 18px;height: 90%">{{$device->import_date}}</label></td>
         <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Năm sản xuất</label></td>
         <td 20%><label class="form-control" style="background-color: #D8D8D8; width: 100%;font-size: 18px;height: 90%">{{$device->produce_date}}</label></td>
      </tr>
+     <tr>
+       <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Dự án</label></td>
+        <td ><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 20px;height: 90%">{{$device->import_id}}</label></td>
+        <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Serial</label></td>
+        <td 20%><label class="form-control" style="background-color: #D8D8D8; width: 95%;font-size: 18px;height: 90%">{{$device->dv_serial}}</label></td>
+        <td width="12%"><label class="form-control" style="background-color: #D8D8D8; width: 97%;font-size: 18px;height: 90%;">Model</label></td>
+        <td 20%><label class="form-control" style="background-color: #D8D8D8; width: 100%;font-size: 18px;height: 90%">{{$device->dv_model}}</label></td>
+     </tr>
    </table>
   </div>
-  <br><br>
+  <br>
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #81BEF7;">
       <tr style="font-size: 18px;">

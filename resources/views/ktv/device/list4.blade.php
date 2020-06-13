@@ -73,7 +73,10 @@
           <td>
             <input style="width: 90%;" type="text" class="form-control" placeholder="Nhập Serial thiết bị" name="serial" value="{{request()->serial}}">
           </td>
-          <td colspan="3"></td>
+          <td colspan="2">
+            <input style="width: 90%;" type="text" class="form-control" placeholder="Nhập tên dự án gói thầu" name="import_id" value="{{request()->import_id}}">
+          </td>
+          <td></td>
         </tr>
       </table>  
     </form>
@@ -85,9 +88,9 @@
         <th>ID</th>
         <th>Tên thiết bị</th>
         <th>Model</th>
-        <th>Khoa phòng</th>
+        <th>Serial</th>
         <th>Nhà cung cấp</th>
-        <th>Hạn sử dụng</th>
+        <th>Ngày bàn giao</th>
         <th>Ngày thu hồi</th>
         <th width="7%">Điều khiển</th>
       </tr>
@@ -98,7 +101,7 @@
         <td>{{$device->dv_id}}</td>
         <td>{{$device->dv_name}}</td>
         <td>{{$device->dv_model}}</td>
-        <td>{{$device->department->department_name}}</td>
+        <td>{{$device->dv_serial}}</td>
         <td>{{$device->provider->provider_name}}</td>
         <td>{{$device->handover_date}}</td>
         <td>{{ \App\Maintenance_schedule::where(['dv_id' => $device->id])->where(['status'=>2])->pluck('proceed_date')->first()}}</td>

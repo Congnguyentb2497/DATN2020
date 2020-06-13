@@ -230,7 +230,7 @@ label {
         <td><label style="font-size: 18px;">Ngày cấp SLH</label></td>
         <td><input type="date"  name="license_number_date" value="{{$dev->license_number_date}}" ></td>
       </tr>
-       <tr>
+      <tr>
         <td><label>Bảo dưỡng ĐK</label></td>
         <td><input type="text"  name="maintain_date" value="{{$dev->maintain_date}}"></td>
        <td><label>Khoa</label></td>
@@ -252,8 +252,7 @@ label {
       </tr>
       <tr>
        <td></td>
-       <td></td>
-        <td colspan="3">
+       <td colspan="3">
           <div class="rgt1" style="width: 200px;margin-left: 30px; padding: 5px;float: left; background-color: green;text-align: center; border-radius: 5px;" ><a class="rgt" style="text-decoration: none;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id])}}"> Lịch sử bảo dưỡng</a></div>
           <div>
           

@@ -212,6 +212,9 @@ public function showDevice0(Request $request){
     {
         $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
     }
+    if($request->import_id){
+        $devices = Device::where('import_id','like','%'. $request->import_id. '%')->orderBy('id','desc');
+    }
     if($request->provider_id)
     {
         $devices = $devices->where('provider_id', '=', $request->provider_id);
@@ -241,6 +244,9 @@ public function showDevice1(Request $request){
     {
         $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
     }
+    if($request->import_id){
+        $devices = Device::where('import_id','like','%'. $request->import_id. '%')->orderBy('id','desc');
+    }
     if($request->provider_id)
     {
         $devices = $devices->where('dv_type_id', '=', $request->dvt_id);
@@ -269,6 +275,9 @@ public function showDevice2(Request $request){
     }if($request->serial)
     {
         $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
+    }
+    if($request->import_id){
+        $devices = Device::where('import_id','like','%'. $request->import_id. '%')->orderBy('id','desc');
     }
     if($request->provider_id)
     {
@@ -412,6 +421,9 @@ public function showDevice4(Request $request) {
     }if($request->serial)
     {
         $devices = $devices->where('dv_serial', 'like', '%'.$request->serial.'%');
+    }
+    if($request->import_id){
+        $devices = Device::where('import_id','like','%'. $request->import_id. '%')->orderBy('id','desc');
     }
     if($request->provider_id)
     {
@@ -924,6 +936,15 @@ public function showmaintain(Request $request){
         $dept = DB::table('department')->get();
         if($request->dvId){
             $dv = Device::where('dv_id','like','%'. $request->dvId. '%')->orderBy('id','desc');
+        }
+        if($request->model){
+            $dv = Device::where('dv_model','like','%'. $request->model. '%')->orderBy('id','desc');
+        }
+        if($request->serial){
+            $dv = Device::where('dv_serial','like','%'. $request->serial. '%')->orderBy('id','desc');
+        }
+        if($request->import_id){
+            $dv = Device::where('import_id','like','%'. $request->import_id. '%')->orderBy('id','desc');
         }
         if($request->dvname){
              $dv = Device::where('dv_name','like','%'.$request->dvname.'%')->orderBy('id','desc');

@@ -75,7 +75,10 @@
           <td>
             <input style="width: 90%;" type="text" class="form-control" placeholder="Nhập Serial thiết bị" name="serial" value="{{request()->serial}}">
           </td>
-          <td colspan="3"></td>
+          <td colspan="2">
+            <input style="width: 90%;" type="text" class="form-control" placeholder="Nhập tên dự án gói thầu" name="import_id" value="{{request()->import_id}}">
+          </td>
+          <td></td>
         </tr>
       </table>  
     </form>

@@ -12,7 +12,7 @@
       <h2>Hồ Sơ Thiết Bị: {{ \App\Device::where(['id' => $dv])->pluck('dv_name')->first()}}</h2>
     </td>
     <td>
-      <div style="width: 20%;padding: 5px;float: left; background-color: yellow;text-align: center; margin-left: 40px;border-radius: 5px;" ><a style="text-decoration: none;color: black;font-size: 20px;" href="{{ route('device.getEdit',['id'=>$dv])}}"><b>Thông tin thiết bị</b></a></div>
+      <div style="padding: 5px;float: left; background-color: yellow;text-align: center; margin-left: 40px;border-radius: 5px;" ><a style="text-decoration: none;color: black;font-size: 20px;" href="{{ route('device.getEdit',['id'=>$dv])}}"><b>Thông tin thiết bị</b></a></div>
     </td>
   </tr>
   <tr>
