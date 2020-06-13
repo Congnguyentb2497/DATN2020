@@ -284,7 +284,7 @@ label {
       <tr style="font-size: 17px;">
         <th>Tên vật tư</th>
         <th>Số lượng</th>
-        <th>Ghi chú</th>
+        <th>Loại vật tư</th>
       </tr>
      </thead>
      <tbody>
@@ -293,7 +293,7 @@ label {
        <tr style="font-size: 15px;">
         <td>{{\App\Accessory::where(['id' =>$acc->acc_id])->pluck('acc_name')->first() }}</td>
         <td>{{ $acc->amount}} </td>
-        <td> {{$acc->note}}</td>
+        <td> {{ $acc->type}}</td>
       </tr>
       @endforeach
       @endif
@@ -314,6 +314,7 @@ label {
         <th>Ngày báo hỏng</th>
         <th>Ngày sửa chữa</th>
         <th>Đơn vị sửa chữa</th>
+        <th>Ghi chú</th>
       </tr>
      </thead>
      <tbody>
@@ -323,6 +324,7 @@ label {
         <td>{{$his->schedule_date}}</td>
         <td>{{$his->proceed_date}} </td>
         <td> {{$his->repair_responsible}}</td>
+        <th>{{ $his->note}}</th>
       </tr>
       @endforeach
       @endif
@@ -338,7 +340,7 @@ label {
         document.getElementById("myForm1").style.display = "none";
   }
 function openForm(){
-        var status = document.getElementsByClassName("rgt")[0].id;
+        var status = document.getElementsByClassName("rgt")[1].id;
           if(status == "2"){
                     document.getElementById("myForm1").style.display = "block";
           }
