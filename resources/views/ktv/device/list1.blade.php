@@ -66,7 +66,7 @@
           <td style="text-align: left;font-size: 18px;">Tất cả: {{$devices->total()}}</td>
         </tr>
         <tr>
-          <td colspan="5"><br><br></td>
+          <td colspan="5"><br></td>
         </tr>
         <tr>
           <td width="25%"> 
@@ -80,16 +80,16 @@
       </table>  
     </form>
   </div>
-  <br><br><br>
+  <br><br><br><br>
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #81BEF7;">
       <tr style="font-size: 18px;">
         <th>ID</th>
         <th>Tên thiết bị</th>
         <th>Model</th>
+        <th>Serial</th>
         <th>Khoa phòng</th>
-        <th>Nhà cung cấp</th>
-        <th>Hạn sử dụng</th>
+        <th>Năm SX</th>
         <th>Ngày bàn giao</th>
         <th width="10%">Điều khiển</th>
       </tr>
@@ -100,9 +100,9 @@
         <td>{{$device->dv_id}}</td>
         <td>{{$device->dv_name}}</td>
         <td>{{$device->dv_model}}</td>
+        <td>{{$device->dv_serial}}</td>
         <td>{{$device->department->department_name}}</td>
-        <td>{{$device->provider->provider_name}}</td>
-        <td>{{$device->expire_date}}</td>
+        <td>{{$device->produce_date}}</td>
         <td>{{$device->handover_date}}</td>
         <td style="text-align: center;">
           <a href="{{route('device.getEdit',['id'=>$device->id])}}"><i class="fa fa-pencil-square-o " title="Xem thông tin" style="font-size: 18px" aria-hidden="true"></i></a>

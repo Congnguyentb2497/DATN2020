@@ -215,7 +215,7 @@ label {
        <tr>
         <td><label>Ngày nhập kho</label></td>
         <td><input type="date"  name="import_date" value="{{$dev->import_date}}" ></td>
-        <td><label style="font-size: 15px;">Dự án thầu</label></td>
+        <td><label style="font-size: 18px;">Dự án thầu</label></td>
         <td><input type="text"  name="import_id" value="{{$dev->import_id}}" ></td>
       </tr>
       <tr>
@@ -227,7 +227,7 @@ label {
       <tr>
         <td><label>Số lưu hành</label></td>
         <td><input type="text"  name="license_number" value="{{$dev->license_number}}" ></td>
-        <td><label style="font-size: 14px;">Ngày cấp SLH</label></td>
+        <td><label style="font-size: 18px;">Ngày cấp SLH</label></td>
         <td><input type="date"  name="license_number_date" value="{{$dev->license_number_date}}" ></td>
       </tr>
        <tr>
@@ -253,27 +253,20 @@ label {
       <tr>
        <td></td>
        <td></td>
-        <td colspan="2">
-          <div style="width: 200px;padding: 5px;float: left; background-color: green;text-align: center; border-radius: 5px;" ><a style="text-decoration: none;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id])}}"> Lịch sử bảo dưỡng</a></div>
+        <td colspan="3">
+          <div class="rgt1" style="width: 200px;margin-left: 30px; padding: 5px;float: left; background-color: green;text-align: center; border-radius: 5px;" ><a class="rgt" style="text-decoration: none;color: black;" href="{{ route('device.maintainCheck',['id'=>$dev->dv_id])}}"> Lịch sử bảo dưỡng</a></div>
           <div>
-            @if($dev->status == 2)
-            <div style="float: left;margin-left: 10px;" class="rgt1"><a class="rgt" id="2" onclick="openForm()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Xem lịch sử thiết bị</a></div>
-            @else
+          
+          <div style="float: left;margin-left: 10px;" class="rgt1"><a class="rgt" id="2" onclick="openForm()" data-deviceid="{{$dev->status }}" style="color: black;; text-decoration: none;font-weight: bold;">Lịch sử sửa chữa</a></div>
+          
           <div style="float: left;margin-left: 10px;" class="rgt1"><a class="rgt"  onclick="openForm()" data-deviceid="{{ $dev->status}}" style="color: black;; text-decoration: none;font-weight: bold;">Xem vật tư kèm theo</a></div>
-          @endif
           <div style="float: left;" class="rgt1">
               <a class="rgt" style="text-decoration: none;font-weight: bold;font-size: 20px;color: black;" href="{{ route('device.view',['id'=>$dev->id]) }}">Hồ sơ TB</a>
           </div>
           @if(Auth::user()->rule == 1)
           <div style="float: left; margin-top: 2px;"><input value="Lưu" class="btn" type="submit" ></div>
           @endif
-          @if($dev->status == 0)
-          <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" href="{{route('device.show0')}}">Hủy</a></div> 
-          @elseif($dev->status ==1)
-          <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" href="{{route('device.show1')}}">Hủy</a></div>
-          @else
-          <div style="float: left;margin-left: 5px;" class="rgt1"><a  class="rgt_canl" onclick="return back()" >Hủy</a></div>
-          @endif
+          <div style="float: left;margin-left: 10px;" class="rgt1"><a  class="rgt_canl" onclick="return back()" >Hủy</a></div>
           </div>
         </td>
       </tr>

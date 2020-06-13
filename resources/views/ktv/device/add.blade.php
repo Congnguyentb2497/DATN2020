@@ -149,7 +149,7 @@ label {
        <tr>
         <td><label>Ngày nhập kho</label></td>
         <td><input type="date" id="import_date" name="import_date" value="{{ date('Y-m-d') }}" ></td>
-        <td><label style="font-size: 15px;">Dự án thầu</label></td>
+        <td><label style="font-size: 18px;">Dự án thầu</label></td>
         <td><input type="text"  name="import_id" ></td>
       </tr>
       <tr>
@@ -161,7 +161,7 @@ label {
       <tr>
         <td><label>Số lưu hành</label></td>
         <td><input type="text"  name="license_number" ></td>
-        <td><label style="font-size: 14px;">Ngày cấp SLH</label></td>
+        <td><label style="font-size: 18px;">Ngày cấp SLH</label></td>
         <td><input type="date"  name="license_number_date" ></td>
       </tr>
        <tr>

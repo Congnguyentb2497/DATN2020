@@ -65,7 +65,7 @@
           </td>
           <td style="text-align: left;font-size: 18px;">Tất cả: {{$devices->total()}}</td>
         </tr>
-        <tr><td colspan="5"><br></td></tr>
+        <tr><td colspan="5"></td></tr>
         <tr>
           <td width="25%"> 
             <input style="width: 90%;" type="text" class="form-control" placeholder="Nhập Model thiết bị" name="model" value="{{request()->model}}">
@@ -78,7 +78,7 @@
       </table>  
     </form>
   </div>
-  <br><br><br>
+  <br><br><br><br>
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #81BEF7;">
       <tr style="font-size: 18px;">

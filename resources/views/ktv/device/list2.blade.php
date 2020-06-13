@@ -125,7 +125,7 @@
           <td width="7%" style="text-align: left;font-size: 18px;">Tất cả:{{$devices->total()}}</td>
         </tr>
         <tr>
-          <td colspan="5"><br><br></td>
+          <td colspan="5"><br></td>
         </tr>
         <tr>
           <td width="25%"> 
@@ -140,7 +140,7 @@
     </form>
   </div>
 
-  <br><br><br>
+  <br><br><br><br>
 
   <table class="table table-condensed table-bordered table-hover">
     <thead style="background-color: #81BEF7;">
