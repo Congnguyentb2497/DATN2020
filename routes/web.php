@@ -101,7 +101,7 @@ Route::group(['prefix'=>'ktv'],function(){
 		Route::post('accessory/edit/{id}','UserController@postEditAcc')->name('accessory.postEdit');
 		Route::get('accessory/delete/{id}','UserController@delACC')->name('accessory.del');
 		Route::post('accessory/plus/{id}/{user_id}','UserController@plusAcc')->name('accessory.plus');
-
+		Route::get('accessory/mark/device/{id}','UserController@markDevice')->name('acc.markDevice');
 
 	});
 	Route::group(['prefix'=>'doctor'],function(){
