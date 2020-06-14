@@ -186,7 +186,7 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<select type="text" name="select_dept" style="font-style: 17px;">
+						<select type="text" class="form-control" name="select_dept" style="font-style: 17px;">
 							@if(isset($depts))
 							@foreach($depts as $rows)
 							<option  value="{{$rows->id}}">{{$rows->department_name}}</option>
@@ -197,7 +197,12 @@
 				</tr>
 				<tr>
 					<td>Người phụ trách</td>
-					<td><input style="margin-left: 3px;" type="text" name="receiver"></td>
+					<td><input style="margin-left: 3px;" class="form-control" type="text" name="receiver"></td>
+				</tr>
+				<tr>
+					<td>Biên bản</td>
+					<td><input type="file" class="form-control" name="photo" value="Chọn ảnh">
+					</td>
 				</tr>
 				<tr>
 					<td colspan="2"><button type="submit" class="btn" onclick="return confirm('Bạn có chắc chắn bàn giao thiết bị?')">Lưu

@@ -20,7 +20,7 @@
  
 </style>
 
-<h2>Thống kê lịch sử vòng đời thiết bị</h2>
+<h2>Thống kê lịch sử sửa chữa thiết bị</h2>
 <div class="container2">
   <div>
    <table width="95%" border="0">

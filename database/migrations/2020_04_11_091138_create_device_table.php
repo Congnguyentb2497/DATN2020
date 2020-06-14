@@ -37,6 +37,7 @@ class CreateDeviceTable extends Migration
             $table->string('produce_date')->nullable();
             $table->date('import_date')->nullable();
             $table->date('handover_date')->nullable();
+            $table->string('handover_img')->nullable();
             $table->timestamps();
         });
     }
