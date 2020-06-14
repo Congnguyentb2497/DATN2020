@@ -200,7 +200,7 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<select type="text" class="form-control" name="select_dept" style="font-style: 15px;">
+						<select type="text"  name="select_dept" style="font-style: 15px;">
 							<option value="">Lựa chọn khoa phòng</option>
 							@if(isset($depts))
 							@foreach($depts as $rows)
@@ -217,9 +217,9 @@
 				<tr>
 					<td colspan="2"><br></td>
 				</tr>
-				<tr>
-					<td>Biên bản</td>
-					<td><input type="file" id="fileUpload" class="form-control" name="photo" value="Chọn ảnh">
+				<tr >
+					<td rowspan="2">Biên bản</td>
+					<td rowspan="2"><input type="file" id="fileUpload" class="form-control" name="photo" value="Chọn ảnh">
 						<br />
 						<span id="lblError" style="color: red;"></span>
 						<br />

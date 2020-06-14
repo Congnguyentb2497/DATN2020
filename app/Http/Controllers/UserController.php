@@ -546,8 +546,12 @@ public function moveDevice(Request $request, $id)
             'photo.max'    => 'Kích thước file vượt quá 4MB.'
         ]
     );
-     $img = $request->photo;
-     $img = $img->store('photos');
+
+        $destinationPath = public_path('/images');
+        $image = $request->file('photo');
+        $filename = time().'.'.$image->getClientOriginalExtension();
+        $image->move($destinationPath, $filename);
+        $dbPath = $destinationPath. '/'.$filename; 
     $dep = $request->select_dept;
     $dep_name = Department::where(['id' => $dep])->pluck('department_name')->first();
     $device = Device::find($id);
@@ -556,7 +560,7 @@ public function moveDevice(Request $request, $id)
     $device->status = 1;
     $device->department_id = $request->select_dept;
     $device->handover_date = date('Y-m-d H:i:s');
-    $device->handover_img = $img;
+    $device->handover_img = $dbPath;
     $device->save();
     $notice = new Notification;
     $notice->req_content = "Phòng vật tư xác nhận bàn giao thiết bị ".$name."cho khoa ".$dep_name;
