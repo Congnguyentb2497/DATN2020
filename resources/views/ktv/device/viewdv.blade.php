@@ -45,7 +45,7 @@
 					</select>
 					</div>
 				</td>
-				<td width="20%">
+				<td width="15%">
 					<div style="margin-left: 5px;"> <button class="btn btn-primary">Tìm kiếm </button></div>
 				</td>
 				<td width="10%" style="text-align: left;">
@@ -55,7 +55,7 @@
 			<tr><td colspan="6"><br></td></tr>
 			<tr>
           		<td width="25%"> 
-           		 <div style="margin-left: 5px;">
+           		 <div >
             	<input  type="text" class="form-control" placeholder="Nhập Model thiết bị" name="model" value="{{request()->model}}">
             	</div>
          		 </td>
