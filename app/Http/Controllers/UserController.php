@@ -547,6 +547,7 @@ public function moveDevice(Request $request, $id)
         ]
     );
      $img = $request->photo;
+     $img = $img->store('photos');
     $dep = $request->select_dept;
     $dep_name = Department::where(['id' => $dep])->pluck('department_name')->first();
     $device = Device::find($id);
@@ -555,7 +556,7 @@ public function moveDevice(Request $request, $id)
     $device->status = 1;
     $device->department_id = $request->select_dept;
     $device->handover_date = date('Y-m-d H:i:s');
-    $device->handover_img = $img->storeAs('photos', $img->getClientOriginalName());
+    $device->handover_img = $img;
     $device->save();
     $notice = new Notification;
     $notice->req_content = "Phòng vật tư xác nhận bàn giao thiết bị ".$name."cho khoa ".$dep_name;

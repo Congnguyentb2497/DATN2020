@@ -46,7 +46,7 @@
 		max-width: 800px;
 		padding: 10px;
 		background-color: #BDBDBD;
-		max-height: 300px;
+		max-height: 500px;
 		border-radius: 5px;
 	}
 	/* Full-width input fields */
@@ -201,6 +201,7 @@
 				<tr>
 					<td colspan="2">
 						<select type="text" class="form-control" name="select_dept" style="font-style: 15px;">
+							<option value="">Lựa chọn khoa phòng</option>
 							@if(isset($depts))
 							@foreach($depts as $rows)
 							<option  value="{{$rows->id}}">{{$rows->department_name}}</option>
@@ -212,6 +213,9 @@
 				<tr>
 					<td>Người phụ trách</td>
 					<td><input style="margin-left: 3px;" class="form-control" type="text" name="receiver"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><br></td>
 				</tr>
 				<tr>
 					<td>Biên bản</td>
