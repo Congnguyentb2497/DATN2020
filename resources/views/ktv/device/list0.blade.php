@@ -218,8 +218,8 @@
 					<td colspan="2"><br></td>
 				</tr>
 				<tr >
-					<td rowspan="2">Biên bản</td>
-					<td rowspan="2"><input type="file" id="fileUpload" class="form-control" name="photo" value="Chọn ảnh">
+					<td >Biên bản</td>
+					<td ><input type="file" id="fileUpload" class="form-control" name="photo" value="Chọn ảnh">
 						<br />
 						<span id="lblError" style="color: red;"></span>
 						<br />

@@ -548,10 +548,9 @@ public function moveDevice(Request $request, $id)
     );
 
         $destinationPath = public_path('/images');
-        $image = $request->file('photo');
-        $filename = time().'.'.$image->getClientOriginalExtension();
-        $image->move($destinationPath, $filename);
-        $dbPath = $destinationPath. '/'.$filename; 
+        $image = $request->photo;
+        $image->move($destinationPath, $image);
+        $dbPath = $destinationPath. '/'.$image; 
     $dep = $request->select_dept;
     $dep_name = Department::where(['id' => $dep])->pluck('department_name')->first();
     $device = Device::find($id);
