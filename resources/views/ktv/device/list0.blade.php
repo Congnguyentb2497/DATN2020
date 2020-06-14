@@ -87,6 +87,20 @@
 		opacity: 1;
 	}
 </style>
+<script type="text/javascript">
+    $("body").on("click", "#luuAnh", function () {
+        var allowedFiles = [".png", ".jpg", ".giff", "tiff"];
+        var fileUpload = $("#fileUpload");
+        var lblError = $("#lblError");
+        var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(" + allowedFiles.join('|') + ")$");
+        if (!regex.test(fileUpload.val().toLowerCase())) {
+            lblError.html("Chỉ chấp nhận file chứa đuôi: <b>" + allowedFiles.join(', ') + "</b> only.");
+            return false;
+        }
+        lblError.html('');
+        return true;
+    });
+</script>
 <h2>Danh Sách Thiết Bị Chưa Bàn Giao</h2>
 <div class="container2">
 	<div>
@@ -186,7 +200,7 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<select type="text" class="form-control" name="select_dept" style="font-style: 17px;">
+						<select type="text" class="form-control" name="select_dept" style="font-style: 15px;">
 							@if(isset($depts))
 							@foreach($depts as $rows)
 							<option  value="{{$rows->id}}">{{$rows->department_name}}</option>
@@ -201,11 +215,14 @@
 				</tr>
 				<tr>
 					<td>Biên bản</td>
-					<td><input type="file" class="form-control" name="photo" value="Chọn ảnh">
+					<td><input type="file" id="fileUpload" class="form-control" name="photo" value="Chọn ảnh">
+						<br />
+						<span id="lblError" style="color: red;"></span>
+						<br />
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2"><button type="submit" class="btn" onclick="return confirm('Bạn có chắc chắn bàn giao thiết bị?')">Lưu
+					<td colspan="2"><button type="submit" id="luuAnh" class="btn" onclick="return confirm('Bạn có chắc chắn bàn giao thiết bị?')">Lưu
 					</button>
 					<button type="button" class="btn cancel" onclick="closeForm()">Hủy</button></td>
 				</tr>

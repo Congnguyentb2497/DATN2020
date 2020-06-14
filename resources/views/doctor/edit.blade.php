@@ -59,6 +59,8 @@ label {
     <input type="text"  name="address" value="{{$user->address}}"><br>
     <label for="country">Số điện thoại</label><br>
     <input type="text"  name="phone" value="{{$user->mobile}}"><br>
+    <label for="country">Khoa phòng</label><br>
+    <input type="text"  name="phone" value="{{$user->department->department_name}}"><br>
     <input class="btn" type="submit" value="Cập nhật thông tin" style="margin-left: 50px" ></input>
       <div class="btn">
         <a href="{{route('doctor.home')}}" style="color: black; text-decoration: none;">Hủy</a>

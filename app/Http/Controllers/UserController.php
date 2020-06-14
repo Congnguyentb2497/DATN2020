@@ -540,10 +540,9 @@ public function saveAcc(Request $request, $id){
 public function moveDevice(Request $request, $id)
 {  
      $this->validate($request, [
-        'photo' => 'mimes:jpeg,png,bmp,tiff |max:4096',
+        'photo' => 'max:4096'
     ],
         $messages = [
-            'photo.mimes' => 'Chỉ nhận định dạng jpeg, png, bmp,tiff.',
             'photo.max'    => 'Kích thước file vượt quá 4MB.'
         ]
     );
